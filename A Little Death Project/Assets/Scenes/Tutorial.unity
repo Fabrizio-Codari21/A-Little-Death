@@ -53014,6 +53014,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Harpy Preset
       objectReference: {fileID: 0}
+    - target: {fileID: 2893020114931740424, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3059947801594506112, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 92.6
@@ -53056,7 +53060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6502808303874589826, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
