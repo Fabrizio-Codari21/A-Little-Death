@@ -36,7 +36,6 @@ public class JumpManager : MonoBehaviour
         {
             if (dJumped == true && grounded)
             {
-                //anim.jumped = true;
                 dJumped = false;
                 currentJump = 0;
             }

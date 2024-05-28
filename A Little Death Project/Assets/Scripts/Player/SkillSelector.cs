@@ -24,7 +24,6 @@ public class SkillSelector : MonoBehaviour
             //este if es temporal despues lo tenes que sacar pelotudo!
             if (enemyID == "alas")
             {
-                //player.transform.GetChild(0).gameObject.SetActive(true);
                 player.transform.GetChild(1).gameObject.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -33,7 +32,7 @@ public class SkillSelector : MonoBehaviour
                     {
                         attackManager.secondaryFire = enemyID;
                         selecting = false;
-                        player.transform.GetChild(1).gameObject.SetActive(false);
+                        Deactivate();
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -45,7 +44,7 @@ public class SkillSelector : MonoBehaviour
                         dashManager.dashID = enemyID;
                         Debug.Log(enemyID);
                         selecting = false;
-                        player.transform.GetChild(1).gameObject.SetActive(false);
+                        Deactivate();
                     }
                     else
                     {
@@ -53,7 +52,7 @@ public class SkillSelector : MonoBehaviour
                         dashManager.dashID = enemyID;
                         Debug.Log(enemyID);
                         selecting = false;
-                        player.transform.GetChild(1).gameObject.SetActive(false);
+                        Deactivate();
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -63,14 +62,14 @@ public class SkillSelector : MonoBehaviour
                         habilityUI.AlasAtaque();
                         attackManager.primaryFire = enemyID;
                         selecting = false;
-                        player.transform.GetChild(1).gameObject.SetActive(false);
+                        Deactivate();
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     Debug.Log("AAAAAAAAA");
                     selecting = false;
-                    player.transform.GetChild(1).gameObject.SetActive(false);
+                    Deactivate();
                 }
             }
             else
@@ -83,7 +82,7 @@ public class SkillSelector : MonoBehaviour
                     {
                         attackManager.secondaryFire = enemyID;
                         selecting = false;
-                        player.transform.GetChild(0).gameObject.SetActive(false);
+                        Deactivate();
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -94,7 +93,7 @@ public class SkillSelector : MonoBehaviour
                         dashManager.dashID = enemyID;
                         Debug.Log(enemyID);
                         selecting = false;
-                        player.transform.GetChild(0).gameObject.SetActive(false);
+                        Deactivate();
                     }
                     else
                     {
@@ -103,7 +102,7 @@ public class SkillSelector : MonoBehaviour
                         dashManager.dashID = enemyID;
                         Debug.Log(enemyID);
                         selecting = false;
-                        player.transform.GetChild(0).gameObject.SetActive(false);
+                        Deactivate();
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -112,16 +111,22 @@ public class SkillSelector : MonoBehaviour
                     {
                         attackManager.primaryFire = enemyID;
                         selecting = false;
-                        player.transform.GetChild(0).gameObject.SetActive(false);
+                        Deactivate();
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     Debug.Log("AAAAAAAAA");
                     selecting = false;
-                    player.transform.GetChild(0).gameObject.SetActive(false);
+                    Deactivate();
                 }
             }
         }
+    }
+
+    public void Deactivate()
+    {
+        player.transform.GetChild(1).gameObject.SetActive(false);
+        player.transform.GetChild(0).gameObject.SetActive(false);
     }
 }

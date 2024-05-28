@@ -15,19 +15,18 @@ public class BaseAttack : AttackList
     private void Awake()
     {
         classType = "base";
-        anim = GetComponentInParent<AnimationManager>();
     }
 
     private void Update()
     {
         if (attacked == true)
         {
-            Debug.Log("Dealt Damage");
-
             hits = Physics2D.CircleCast(attackTransform.position, attackRange, transform.right, 0f, attackableLayer);
 
             if (hits != false)
             {
+                Debug.Log("Dealt Damage");
+
                 IDamageable damageable = hits.collider.gameObject.GetComponent<IDamageable>();
 
                 if (damageable != null)
@@ -55,7 +54,7 @@ public class BaseAttack : AttackList
         transform.GetChild(2).gameObject.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         attacked = false;
-        anim.StopAttack();
+        anim.attacked = false;
         transform.GetChild(2).gameObject.SetActive(false);
     }
 

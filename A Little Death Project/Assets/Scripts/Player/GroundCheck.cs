@@ -18,8 +18,8 @@ public class GroundCheck : MonoBehaviour
         if (collision.transform.tag == "Platform")
         {
             manager.grounded = true;
-                    manager.anim.StopJump();
-}
+            manager.anim.jumped = false;
+        }
     }
     
     private void OnCollisionExit2D(Collision2D collision)
