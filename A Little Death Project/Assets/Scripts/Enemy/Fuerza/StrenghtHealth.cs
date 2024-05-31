@@ -7,6 +7,7 @@ public class StrenghtHealth : Health
     public GameObject manager;
     SkillSelector skillSelector;
     [SerializeField] int damage = 1;
+    [SerializeField] ParticleSystem[] particleSystems;
 
     public override void Start()
     {
@@ -14,11 +15,15 @@ public class StrenghtHealth : Health
         manager = GameObject.FindWithTag("Manager");
         skillSelector = manager.GetComponent<SkillSelector>();
     }
-
+    
     public override void Die() 
     {
         skillSelector.selecting = true;
         skillSelector.enemyID = "fuerza";
+        foreach (var p in particleSystems)
+        {
+            Instantiate(p,transform.position,Quaternion.Euler(270, 180, 0));
+        }
         Destroy(gameObject);
     }
 

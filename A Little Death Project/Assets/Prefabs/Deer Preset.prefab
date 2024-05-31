@@ -255,6 +255,9 @@ MonoBehaviour:
   currentHealth: 0
   manager: {fileID: 0}
   damage: 1
+  particleSystems:
+  - {fileID: 7111772830808259799, guid: b8fd1d2b7835586428880349f823a8f6, type: 3}
+  - {fileID: 2268716391601558820, guid: 227cfe0675dfd054c9e3057af9d678da, type: 3}
 --- !u!114 &6104723703230252015
 MonoBehaviour:
   m_ObjectHideFlags: 0

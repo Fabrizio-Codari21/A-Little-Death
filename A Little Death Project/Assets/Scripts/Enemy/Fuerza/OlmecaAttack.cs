@@ -64,6 +64,7 @@ public class OlmecaAttack : FreeRoamMovement
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(groundDetect.position, boxSize);
+        Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, LOS);
     }
 

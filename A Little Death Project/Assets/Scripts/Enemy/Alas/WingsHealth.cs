@@ -7,6 +7,7 @@ public class WingsHealth : Health
     public GameObject manager;
     SkillSelector skillSelector;
     [SerializeField] int damage = 1;
+    [SerializeField] ParticleSystem[] particleSystems;
 
     public override void Start()
     {
@@ -19,6 +20,10 @@ public class WingsHealth : Health
     {
         skillSelector.selecting = true;
         skillSelector.enemyID = "alas";
+        foreach (var p in particleSystems)
+        {
+            Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
+        }
         Destroy(gameObject);
     }
 
