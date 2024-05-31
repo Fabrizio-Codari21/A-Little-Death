@@ -49,9 +49,12 @@ public class WingsAttack : AttackList
     private IEnumerator ShowHitbox()
     {
         transform.GetChild(3).gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
-        attacked = false;
+        yield return new WaitForSeconds(0.25f);
         transform.GetChild(3).gameObject.SetActive(false);
+        transform.GetChild(4).gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        attacked = false;
+        transform.GetChild(4).gameObject.SetActive(false);
     }
 
     private void OnDrawGizmos()

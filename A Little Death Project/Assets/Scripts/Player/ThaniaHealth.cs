@@ -13,7 +13,7 @@ public class ThaniaHealth : Health
     public override void Start()
     {
         base.Start();
-        sRenderer = transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>();
+        sRenderer = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
     }
 
     public override void Damage(float damage)
