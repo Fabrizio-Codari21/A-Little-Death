@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 6798088688928900711}
   - component: {fileID: 210716095454238266}
   - component: {fileID: 6104723703230252015}
+  - component: {fileID: 5582059401838038680}
   m_Layer: 6
   m_Name: Deer
   m_TagString: Untagged
@@ -154,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.220876, y: -2.5085673}
+  m_Offset: {x: 1.1412088, y: -2.5085673}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -165,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.4078445, y: 5.6265993}
+  m_Size: {x: 3.2485101, y: 5.6265993}
   m_EdgeRadius: 0
 --- !u!50 &7839064984782423501
 Rigidbody2D:
@@ -226,7 +227,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.5511365, y: -0.53329754}
+  m_Offset: {x: -1.5511363, y: -0.53329754}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -237,7 +238,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.1364594, y: 9.703192}
+  m_Size: {x: 2.1364589, y: 9.703192}
   m_EdgeRadius: 0
 --- !u!114 &210716095454238266
 MonoBehaviour:
@@ -280,6 +281,27 @@ MonoBehaviour:
   touchingGround: 0
   touchingWall: 0
   rb: {fileID: 0}
+--- !u!95 &5582059401838038680
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4067276452488846464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b7864a4c773a65147b5830f23eea759f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4107914226031369051
 GameObject:
   m_ObjectHideFlags: 0
