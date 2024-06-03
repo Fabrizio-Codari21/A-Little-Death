@@ -157,6 +157,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2246106079841941762}
   - component: {fileID: 667414005413727797}
+  - component: {fileID: 6429558052257034647}
+  - component: {fileID: 6852644306105563988}
   m_Layer: 6
   m_Name: Sprites
   m_TagString: Untagged
@@ -231,6 +233,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6429558052257034647
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893020114931740424}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3d844d1f651550b42beee0d1fdec84eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6852644306105563988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893020114931740424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23dab2f1ecaa0f64e810cd268391ac7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attacked: 0
+  harpy: {fileID: 1507937835944336884}
+  animator: {fileID: 6429558052257034647}
 --- !u!1 &3527550949414860610
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,6 +468,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   harpy: {fileID: 0}
   damage: 2
+  anim: {fileID: 6852644306105563988}
+  nextFireTime: 0
+  cooldown: 1
 --- !u!1 &5846639739174284961
 GameObject:
   m_ObjectHideFlags: 0

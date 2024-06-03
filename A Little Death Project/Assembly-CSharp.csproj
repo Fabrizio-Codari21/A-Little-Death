@@ -93,6 +93,7 @@
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityArmatureComponent.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Slot.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\IArmatureProxy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Alas\HarpyAnimController.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\DashManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\ObjectDataParser.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\CanvasData.cs" />
