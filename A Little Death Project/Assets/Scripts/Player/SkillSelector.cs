@@ -21,8 +21,7 @@ public class SkillSelector : MonoBehaviour
     {
         if (selecting == true)
         {
-            //este if es temporal despues lo tenes que sacar pelotudo!
-            if (enemyID == "alas")
+            if (enemyID == "alas")            //este if es temporal despues lo tenes que sacar pelotudo!
             {
                 player.transform.GetChild(1).gameObject.SetActive(true);
 
@@ -68,6 +67,19 @@ public class SkillSelector : MonoBehaviour
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     Debug.Log("AAAAAAAAA");
+                    selecting = false;
+                    Deactivate();
+                }
+            }
+            else if (enemyID == "tutorial")
+            {
+                player.transform.GetChild(0).gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    habilityUI.FuerzaDash();
+                    wingsDash.DJump(false);
+                    dashManager.dashID = "fuerza";
+                    Debug.Log("fuerza");
                     selecting = false;
                     Deactivate();
                 }

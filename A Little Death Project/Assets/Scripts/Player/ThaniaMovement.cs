@@ -23,18 +23,6 @@ public class ThaniaMovement : MonoBehaviour
             rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
             direction = Input.GetAxisRaw("Horizontal");
             Flip();
-
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                if (Time.timeScale == 1)
-                {
-                    Time.timeScale = 0;
-                }
-                else
-                {
-                    Time.timeScale = 1;
-                }
-            }
         }
     }
 

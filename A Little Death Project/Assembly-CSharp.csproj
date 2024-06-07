@@ -120,6 +120,7 @@
     <Compile Include="Assets\DragonBones\Demos\Scripts\CoreElement.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\TextureAtlasData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\DataParser.cs" />
+    <Compile Include="Assets\Scripts\TutorialColliders.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\Point.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\StrengthDash.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceDisplayTextureTest.cs" />
@@ -140,6 +141,7 @@
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityDragonBonesData.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\CombineMeshTest.cs" />
+    <Compile Include="Assets\Scripts\VenadoTutorial.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\BoundingBoxData.cs" />
     <Compile Include="Assets\Scripts\Player\SkillSelector.cs" />
     <Compile Include="Assets\DragonBones\Scripts\factory\BaseFactory.cs" />
@@ -148,6 +150,7 @@
     <Compile Include="Assets\Scripts\Enemy\Alas\WingsAttackDetection.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityCombineMesh.cs" />
     <Compile Include="Assets\Scripts\Player\GroundCheck.cs" />
+    <Compile Include="Assets\Scripts\DeerTutorial.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\WorldClock.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\AnimationConfig.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
@@ -440,15 +443,6 @@
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
       <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Android.GradleProject">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

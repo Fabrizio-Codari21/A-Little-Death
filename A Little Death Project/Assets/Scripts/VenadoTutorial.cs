@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StrenghtHealth : Health
+public class VenadoTutorial : Health
 {
     public GameObject manager;
     SkillSelector skillSelector;
@@ -15,14 +15,14 @@ public class StrenghtHealth : Health
         manager = GameObject.FindWithTag("Manager");
         skillSelector = manager.GetComponent<SkillSelector>();
     }
-    
-    public override void Die() 
+
+    public override void Die()
     {
         skillSelector.selecting = true;
-        skillSelector.enemyID = "fuerza";
+        skillSelector.enemyID = "tutorial";
         foreach (var p in particleSystems)
         {
-            Instantiate(p,transform.position,Quaternion.Euler(270, 180, 0));
+            Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
         }
         Destroy(gameObject);
     }
