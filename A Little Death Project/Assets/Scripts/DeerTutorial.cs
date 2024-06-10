@@ -18,7 +18,8 @@ public class DeerTutorial : MonoBehaviour
         {
             TimePause();
             tutorialBox.SetActive(true);
-            TMPTutorial.text = "Presiona (UP ARROW) para absorver la habilidad de movimiento del venado, recuerda que cada enemigo tendra habilidades distintas";
+            TMPTutorial.text = "As a thanks for freeing it's soul, the stag grants you one of its abilities, press 'UP ARROW' to select the movement one," +
+                "Do remember lost souls may grant you more than one of their abilities, so you can mix-and-match as you please.";
         }
 
         if (paused)
