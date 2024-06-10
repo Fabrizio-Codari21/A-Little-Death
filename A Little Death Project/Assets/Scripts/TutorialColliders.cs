@@ -16,22 +16,23 @@ public class TutorialColliders : MonoBehaviour
     {
         if (tutorialValue == 1)
         {
-            textToPrint = "Hiya sweetie! Remember, one step at a time, " +
-                "you can use 'A' and 'D' to move. And jumping is as easy as pressing 'W'";
+            textToPrint = "Hola hija mía, recordá, paso por paso, " +
+                "presioná 'A' y 'D' para moverte y saltar es tan fácil como apretar 'W'.";
         }
         else if (tutorialValue == 2)
         {
-            textToPrint = "You'll soon encounter a lost soul. " +
-                "It is your task to retrieve it back to your Father's realm with your scythe by clicking 'SPACE'";
+            textToPrint = "Adelante vas a ver un alma perdida. " +
+                "Tu tarea es recuperarlas para que regresen al reino de tu Padre usando la guadaña, solo tenés que apretar 'ESPACIO'.";
         }
         else if (tutorialValue == 3)
         {
-            textToPrint = "With 'SHIFT' you may utilize the greatness bestowed upon you by the stag" +
-                " to shift away from danger and clear large gaps";
+            textToPrint = "Con 'SHIFT' vas a poder usar el poder brindado por el gran venado para escapar de peligros " +
+                "y saltar grandes distancias.";
         }
         else if (tutorialValue == 4)
         {
-            textToPrint = "Ten cuidado con la harpia, una vez que la elimines tendras que elegir entre su habilidad de movimiento (UP ARROW) y su ataque (RIGHT ARROW)";
+            textToPrint = "Va a haber una gran cantidad de oponentes en tu camino, algunos incluso van a tener mas de una habilidad para elegir, " +
+                "como una de ataque, que podés elegir con la flecha derecha.";
         }
     }
 

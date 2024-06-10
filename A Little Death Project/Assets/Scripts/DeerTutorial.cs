@@ -14,12 +14,13 @@ public class DeerTutorial : MonoBehaviour
 
     private void Update()
     {
-        if(health.currentHealth <= 0 && alreadyPaused == false)
+        if (health.currentHealth <= 0 && alreadyPaused == false)
         {
             TimePause();
             tutorialBox.SetActive(true);
-            TMPTutorial.text = "As a thanks for freeing it's soul, the stag grants you one of its abilities, press 'UP ARROW' to select the movement one," +
-                "Do remember lost souls may grant you more than one of their abilities, so you can mix-and-match as you please.";
+            TMPTutorial.text = "Como agradecimiento por liberar su alma, este ciervo te otorga una de sus habilidades, " +
+                "con la flecha de arriba podés obtener la habilidad de movimiento. " +
+                "Recordá que diversos enemigos dará diversas habilidades, y podés combinar y mezclarlas como quieras!";
         }
 
         if (paused)
