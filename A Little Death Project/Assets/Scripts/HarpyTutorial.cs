@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Android;
 
-public class DeerTutorial : MonoBehaviour
+public class HarpyTutorial : MonoBehaviour
 {
     private bool paused;
-    public VenadoTutorial health;
+    public WingsHealth health;
     private bool alreadyPaused;
     public GameObject tutorialBox;
     public TextMeshProUGUI TMPTutorial;
@@ -18,13 +17,12 @@ public class DeerTutorial : MonoBehaviour
         {
             TimePause();
             tutorialBox.SetActive(true);
-            TMPTutorial.text = "Como agradecimiento por liberar su alma, este ciervo te otorga una de sus habilidades, con la flecha de arriba podés obtener la habilidad de movimiento. " +
-                "Recordá que diversos enemigos darán diversas habilidades, y podés combinar y mezclarlas como quieras!";
+            TMPTutorial.text = "Va a haber una gran cantidad de oponentes en tu camino, algunos incluso van a tener mas de una habilidad para elegir, como una de ataque, que podés elegir con la flecha derecha.";
         }
 
         if (paused)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 Time.timeScale = 1;
                 paused = false;

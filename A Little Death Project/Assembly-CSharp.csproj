@@ -107,6 +107,7 @@
     <Compile Include="Assets\DragonBones\Scripts\armature\Armature.cs" />
     <Compile Include="Assets\Scripts\Interfaces\DashList.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityFactory.cs" />
+    <Compile Include="Assets\Scripts\HarpyTutorial.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\TransformObject.cs" />
     <Compile Include="Assets\Scripts\Player\JumpManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\RoamingMovement.cs" />
