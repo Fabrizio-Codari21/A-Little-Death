@@ -1,32 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class GroundCheck : MonoBehaviour
 {
     [SerializeField] 
     JumpManager manager;
-    [SerializeField]
+    [SerializeField] Vector2 feet;
 
     private void Start()
     {
         manager = GetComponentInParent<JumpManager>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Update()
     {
-        if (collision.transform.tag == "Platform")
-        {
-            manager.grounded = true;
-            manager.anim.jumped = false;
-        }
+        manager.grounded = Physics2D.OverlapBox(transform.position, feet, 0, manager.groundLayer);
+
     }
-    
-    private void OnCollisionExit2D(Collision2D collision)
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position, feet);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.tag == "Platform")
         {
-            manager.grounded = false;
+            manager.anim.jumped = false;
         }
     }
 }

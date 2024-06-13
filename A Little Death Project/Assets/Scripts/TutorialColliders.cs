@@ -16,19 +16,15 @@ public class TutorialColliders : MonoBehaviour
     {
         if (tutorialValue == 1)
         {
-            textToPrint = "Hola hija mía, recordá, paso por paso, presioná 'A' y 'D' para moverte y saltar es tan fácil como apretar 'W'.";
+            textToPrint = "Hola hija mía, recordá, paso por paso, presioná <b>'A'</b> y <b>'D'</b> para moverte y saltar es tan fácil como apretar <b>'W'</b>.";
         }
         else if (tutorialValue == 2)
         {
-            textToPrint = "Adelante vas a ver un alma perdida. Tu tarea es recuperarlas para que regresen al reino de tu Padre usando la guadaña, solo tenés que apretar 'ESPACIO'.";
+            textToPrint = "Adelante vas a ver un alma perdida. Tu tarea es recuperarlas para que regresen al reino de tu Padre usando la guadaña, solo tenés que apretar <b>'ESPACIO'</b>.";
         }
         else if (tutorialValue == 3)
         {
-            textToPrint = "Con 'SHIFT' vas a poder usar el poder brindado por el gran venado para escapar de peligros y saltar grandes distancias.";
-        }
-        else if (tutorialValue == 4)
-        {
-            textToPrint = "Va a haber una gran cantidad de oponentes en tu camino, algunos incluso van a tener mas de una habilidad para elegir, como una de ataque, que podés elegir con la flecha derecha.";
+            textToPrint = "Con <b>'SHIFT'</b> vas a poder usar el poder brindado por el gran venado para escapar de peligros y saltar grandes distancias.";
         }
     }
 
@@ -38,14 +34,15 @@ public class TutorialColliders : MonoBehaviour
         {
             tutorialBox.SetActive(true);
             TMPTutorial.text = textToPrint;
-            StartCoroutine(DialogueCooldown());
         }
     }
 
-    private IEnumerator DialogueCooldown()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        yield return new WaitForSecondsRealtime(time);
-        TMPTutorial.text = "";
-        tutorialBox.SetActive(false);
+        if (collision.transform.tag == "Player")
+        {
+            tutorialBox.SetActive(false);
+            TMPTutorial.text = "";
+        }
     }
 }

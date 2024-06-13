@@ -5,7 +5,7 @@ using UnityEngine;
 public class JumpManager : MonoBehaviour
 {
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private LayerMask groundLayer;
+    public LayerMask groundLayer;
     private Rigidbody2D rb;
     public float jumpForce = 14f;
     public bool dJump;
@@ -57,10 +57,5 @@ public class JumpManager : MonoBehaviour
                 }
             }
         }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(groundCheck.position, 0.5f);
     }
 }
