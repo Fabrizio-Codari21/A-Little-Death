@@ -18,8 +18,7 @@ public class DeerTutorial : MonoBehaviour
         {
             TimePause();
             tutorialBox.SetActive(true);
-            TMPTutorial.text = "Como agradecimiento por liberar su alma, este ciervo te otorga una de sus habilidades, con la <b>flecha de arriba</b> podés obtener la habilidad de movimiento. " +
-                "Recordá que diversos enemigos darán diversas habilidades, y podés combinar y mezclarlas como quieras!";
+            TMPTutorial.text = "Gracias a tu arma, podras copiar una de las habilidades de tu enemigo, con la <b>flecha de arriba</b> podés obtener la habilidad de movimiento.";
         }
 
         if (paused)
