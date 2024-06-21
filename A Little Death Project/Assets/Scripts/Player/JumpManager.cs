@@ -14,6 +14,9 @@ public class JumpManager : MonoBehaviour
     public AnimationManager anim;
     public bool grounded = true;
 
+    private float coyoteTime = 0.2f;
+    private float coyoteCounter;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,15 +24,26 @@ public class JumpManager : MonoBehaviour
 
     void Update()
     {
+        if (grounded)
+        {
+            coyoteCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteCounter -= Time.deltaTime;
+        }
+
         if (dJump == false)
         {
-            if (grounded)
+            if (coyoteCounter > 0f && Input.GetKeyDown(KeyCode.W))
             {
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    anim.jumped = true;
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                }
+                anim.jumped = true;
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            }
+
+            if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
             }
         }
         else
@@ -40,22 +54,26 @@ public class JumpManager : MonoBehaviour
                 currentJump = 0;
             }
 
-            if (Input.GetKeyDown(KeyCode.W))
+            if (coyoteCounter > 0f && dJumped == false && Input.GetKeyDown(KeyCode.W))
             {
-                if (grounded && dJumped == false)
-                {
-                    anim.jumped = true;
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    currentJump++;
-                }
-                else if (!grounded && dJumped == false)
-                {
-                    anim.jumped = true;
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    currentJump++;
-                    dJumped = true;
-                }
+                anim.jumped = true;
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                currentJump++;
+            }
+            else if (!grounded && dJumped == false && Input.GetKeyDown(KeyCode.W))
+            {
+                anim.jumped = true;
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                currentJump++;
+                dJumped = true;
+            }
+
+            if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.W))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
+                coyoteCounter = 0;
             }
         }
     }
 }
+

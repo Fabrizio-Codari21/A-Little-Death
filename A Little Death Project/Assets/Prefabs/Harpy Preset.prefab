@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   harpy: {fileID: 0}
-  damage: 2
+  damage: 1
   anim: {fileID: 6852644306105563988}
   nextFireTime: 0
   cooldown: 1
