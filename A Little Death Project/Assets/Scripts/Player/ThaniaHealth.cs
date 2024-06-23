@@ -16,7 +16,7 @@ public class ThaniaHealth : Health
         sRenderer = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
     }
 
-    public override void Damage(float damage)
+    public override void Damage(int damage)
     {
         if (Time.time > invulnerable)
         {
@@ -38,10 +38,8 @@ public class ThaniaHealth : Health
 
     IEnumerator takeDamage()
     {
-        //transform.GetChild(4).gameObject.SetActive(true);
         sRenderer.color = Color.red;
         yield return new WaitForSeconds(0.3f);
         sRenderer.color = Color.white;
-        //transform.GetChild(4).gameObject.SetActive(false);
     }
 }

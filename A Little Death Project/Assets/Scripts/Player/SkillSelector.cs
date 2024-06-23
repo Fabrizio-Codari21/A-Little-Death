@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SkillSelector : MonoBehaviour
@@ -11,6 +12,11 @@ public class SkillSelector : MonoBehaviour
     public GameObject player;
     public WingsDash wingsDash;
     public HabilityUI habilityUI;
+    public bool cooldownStarted = false;
+    public bool cooldownEnded = false;
+
+    [SerializeField] float timerCooldown;
+    public float timeCooldown;
 
     void Update()
     {
@@ -19,6 +25,18 @@ public class SkillSelector : MonoBehaviour
 
     public void Selection()
     {
+        if (cooldownEnded == true)
+        {
+            cooldownStarted = false;
+            Deactivate();
+            cooldownEnded = false;
+        }
+
+        if (cooldownStarted == false && selecting)
+        {
+            cooldown();
+        }
+
         if (selecting == true)
         {
             if (enemyID == "alas")            //este if es temporal despues lo tenes que sacar pelotudo!
@@ -31,7 +49,6 @@ public class SkillSelector : MonoBehaviour
                     if (attackManager.attackType.ContainsKey(enemyID))
                     {
                         attackManager.secondaryFire = enemyID;
-                        selecting = false;
                         Deactivate();
                     }
                 }
@@ -43,7 +60,6 @@ public class SkillSelector : MonoBehaviour
                         wingsDash.DJump(true);
                         dashManager.dashID = enemyID;
                         Debug.Log(enemyID);
-                        selecting = false;
                         Deactivate();
                     }
                     else
@@ -51,7 +67,6 @@ public class SkillSelector : MonoBehaviour
                         wingsDash.DJump(false);
                         dashManager.dashID = enemyID;
                         Debug.Log(enemyID);
-                        selecting = false;
                         Deactivate();
                     }
                 }
@@ -61,14 +76,12 @@ public class SkillSelector : MonoBehaviour
                     {
                         habilityUI.AlasAtaque();
                         attackManager.primaryFire = enemyID;
-                        selecting = false;
                         Deactivate();
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     Debug.Log("AAAAAAAAA");
-                    selecting = false;
                     Deactivate();
                 }
             }
@@ -82,7 +95,6 @@ public class SkillSelector : MonoBehaviour
                     wingsDash.DJump(false);
                     dashManager.dashID = "fuerza";
                     Debug.Log("fuerza");
-                    selecting = false;
                     Deactivate();
                 }
             }
@@ -96,7 +108,6 @@ public class SkillSelector : MonoBehaviour
                     if (attackManager.attackType.ContainsKey(enemyID))
                     {
                         attackManager.secondaryFire = enemyID;
-                        selecting = false;
                         Deactivate();
                     }
                 }
@@ -107,7 +118,6 @@ public class SkillSelector : MonoBehaviour
                         wingsDash.DJump(true);
                         dashManager.dashID = enemyID;
                         Debug.Log(enemyID);
-                        selecting = false;
                         Deactivate();
                     }
                     else
@@ -116,7 +126,6 @@ public class SkillSelector : MonoBehaviour
                         wingsDash.DJump(false);
                         dashManager.dashID = enemyID;
                         Debug.Log(enemyID);
-                        selecting = false;
                         Deactivate();
                     }
                 }
@@ -125,17 +134,29 @@ public class SkillSelector : MonoBehaviour
                     if (attackManager.attackType.ContainsKey(enemyID))
                     {
                         attackManager.primaryFire = enemyID;
-                        selecting = false;
                         Deactivate();
                     }
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow))
                 {
                     Debug.Log("AAAAAAAAA");
-                    selecting = false;
                     Deactivate();
                 }
             }
+        }
+    }
+
+    void cooldown()
+    {
+        if (timerCooldown >= timeCooldown)
+        {
+            timeCooldown += Time.deltaTime;
+        }
+        else
+        {
+            cooldownStarted = true;
+            cooldownEnded = true;
+            timeCooldown = 0f;
         }
     }
 
@@ -143,5 +164,7 @@ public class SkillSelector : MonoBehaviour
     {
         player.transform.GetChild(1).gameObject.SetActive(false);
         player.transform.GetChild(0).gameObject.SetActive(false);
+        timeCooldown = 0f; 
+        selecting = false;
     }
 }

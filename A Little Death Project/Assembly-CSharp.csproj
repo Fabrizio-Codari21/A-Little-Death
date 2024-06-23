@@ -90,6 +90,7 @@
     <Compile Include="Assets\DragonBones\Scripts\model\AnimationData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\Transform.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\RectangleBoundingBoxData.cs" />
+    <Compile Include="Assets\Scripts\KeyManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityArmatureComponent.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Slot.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\IArmatureProxy.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\DragonBones\Scripts\model\ConstraintData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityBone.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataWriter.cs" />
+    <Compile Include="Assets\Scripts\Hearts.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Armature.cs" />
     <Compile Include="Assets\Scripts\Interfaces\DashList.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityFactory.cs" />
@@ -133,7 +135,6 @@
     <Compile Include="Assets\Scripts\Interfaces\AttackList.cs" />
     <Compile Include="Assets\DragonBones\Scripts\3rdParty\MiniJSON.cs" />
     <Compile Include="Assets\DragonBones\Scripts\event\EventObject.cs" />
-    <Compile Include="Assets\Scripts\UIUpdater.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataParser.cs" />
     <Compile Include="Assets\Scripts\DeathBarrier.cs" />
     <Compile Include="Assets\DragonBones\Scripts\core\DragonBones.cs" />

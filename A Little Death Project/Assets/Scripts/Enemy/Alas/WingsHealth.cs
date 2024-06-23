@@ -19,6 +19,8 @@ public class WingsHealth : Health
     public override void Die()
     {
         skillSelector.selecting = true;
+        skillSelector.timeCooldown = 0f;
+
         skillSelector.enemyID = "alas";
         foreach (var p in particleSystems)
         {

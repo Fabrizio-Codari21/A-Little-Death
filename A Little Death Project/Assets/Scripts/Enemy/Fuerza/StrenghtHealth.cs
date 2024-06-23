@@ -19,6 +19,7 @@ public class StrenghtHealth : Health
     public override void Die() 
     {
         skillSelector.selecting = true;
+        skillSelector.timeCooldown = 0f;
         skillSelector.enemyID = "fuerza";
         foreach (var p in particleSystems)
         {

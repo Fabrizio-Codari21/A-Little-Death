@@ -6,9 +6,9 @@ public class Health : MonoBehaviour, IDamageable
 {
     [SerializeField] private int maxHealth = 1;
 
-    public float currentHealth;
+    public int currentHealth;
 
-    public virtual void Damage(float damage)
+    public virtual void Damage(int damage)
     {
         Debug.Log(this + "took damage");
         currentHealth -= damage;
