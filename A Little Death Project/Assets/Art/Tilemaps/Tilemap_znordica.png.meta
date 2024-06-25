@@ -1,0 +1,1667 @@
+fileFormatVersion: 2
+guid: 74a5c5a915152c94ba4af5ce2b046715
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tilemap_znordica_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ae14f8ffd0b1e4d924dd3e52f571a5
+      internalID: 1434323000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916f49dcd50a58049a86a55a4b179a81
+      internalID: 1510790377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbdb848c94637a848beedb4c1da73b40
+      internalID: 135265369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_3
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e770bb02ab771944c86b4a7815323544
+      internalID: -983152783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_4
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c4f975863fa6cf43acc79273265f527
+      internalID: 864373126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_5
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362a5cbb684264c41a22405e6e6c2b03
+      internalID: -502637350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_6
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67d599d2f3189b4cb3ae323a662a25d
+      internalID: 1801327693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_7
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3209845799f30af428e6add2e480f0c0
+      internalID: -2025722182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_8
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 1103
+        width: 158
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fdd195bcf830524199b52ff8d5e5ed2
+      internalID: -652884943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_9
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1103
+        width: 158
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fafdc531a66080e4d88ce82e538006f2
+      internalID: -326596819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_10
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 1102.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07df22326a3083e43b83554fbd96940e
+      internalID: -234700142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506aa7314a5c7914bbeb6d887597182f
+      internalID: -161101051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_12
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9542dcf95ef12e34b9e29ec032681d36
+      internalID: -670083812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_13
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb4c9bfa0fba3494eb75b3e015f14022
+      internalID: 1168460059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_14
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016941855499746498cc43bbca6c486b
+      internalID: 1482882836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_15
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c00ea7f7e233047a119b57b80a714e
+      internalID: 471970326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_16
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e0c3d4cbe8ce643b8b764609cf4d0d
+      internalID: -1604879036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_17
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79314f3b8b7dc454ba003133f6dc8c0c
+      internalID: 1409644227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_18
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810b1360d4e2a944eadff77e619885bc
+      internalID: -2120972347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_19
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 945
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226127814303b524f8a68f9ca0d6c3f3
+      internalID: 1136642031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_20
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 945
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed157a1d92ce61d4fac4ca9e320efb28
+      internalID: -1817013697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_21
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 945.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30c188ae5799eb49a2f734fb068864c
+      internalID: 1447388095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ff65f2e092afc4d9ebe16b3d128c29
+      internalID: 635419287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_23
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797060ebd0b39f14d8ec24d03be09d8b
+      internalID: 1004577076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_24
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d7c98d2cab99c44aef3e33cd6bf457
+      internalID: -194982165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_25
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4118346666fedaf40af021aa4fcfd829
+      internalID: 1183167590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_26
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 428c15836aadef84689417c4a86365ad
+      internalID: 1067318102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_27
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78d1cd6d1cc02574ba5e2fa61013ecb9
+      internalID: 1725542820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_28
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db80c844939cbc4c911bef2fb5c8bf9
+      internalID: 1047888951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_29
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 700d27e9721f4a64abbc11b22eb82c65
+      internalID: 2005915420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_30
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a51ae3aeeee4ac438bdba6407fa6928
+      internalID: -1182958387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_31
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170cf041dcb399a44ba49672e6deef7b
+      internalID: -414123046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_32
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 788.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e86db1bc745eacd4cb1993f08cf1c3de
+      internalID: 1946198213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 632
+        width: 157
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe88af2acafed84aa3c28305de13294
+      internalID: 507587565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_34
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 632
+        width: 157
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c7f4cbf6c9ab84ab7d2d3ac8417bb5
+      internalID: 602543553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_35
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 631.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352f80d99fa99674ba9d8ca5f9e4387f
+      internalID: -1110744154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_36
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 631.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22bcd34710ca974459ff15b6dd7728f7
+      internalID: 1269109951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_37
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 631.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51db6d226c815df4ba9299365e083a35
+      internalID: -1384860251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_38
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 631.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 377c532e9cfea664aba6cc5d9a362e4a
+      internalID: -1454225627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_39
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 631.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f3c1dbb32573174d9d46c4d9b8344c6
+      internalID: 1112226423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_40
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 631.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a746e8cdbfb73e0448708bb433219f20
+      internalID: 1501791182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_41
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 630
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2269867df81778f4ab61f9eddea74047
+      internalID: 2064080994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_42
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 630
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f723110ec7f40844e9b21d622d976651
+      internalID: -1641863957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_43
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 630
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1299eae11dd51aa4d9f64c9456176b41
+      internalID: -1263201032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_44
+      rect:
+        serializedVersion: 2
+        x: 1727
+        y: 631.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39b9a2a1423df3440b2d62706765c897
+      internalID: 2077890861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c060ac428574f554f9e755cbc42c7c00
+      internalID: -544560221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_46
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dda4d5ce4a2f8f74caad21ea924325a2
+      internalID: -791841800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_47
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f09104fbdbc0c43ae7dac7bfa178e5
+      internalID: 620185894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_48
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a604e154752404fa45b21ffb450d97
+      internalID: -2035905868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_49
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8dff07290acabc4182e4416880f0d1f
+      internalID: -311124802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_50
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc3afff2af89b5d40bdc282af81c0383
+      internalID: -1744836332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_51
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5381d5cde8615c0428cc0add4b0b43bc
+      internalID: -1817265463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_52
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eafc83e4ccd27147abd53a3e5443fe4
+      internalID: -1046199597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_53
+      rect:
+        serializedVersion: 2
+        x: 1418
+        y: 474
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6f263259a4fe545b705691c1558d87
+      internalID: -1406532066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_54
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 474.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c36523cf1d7bad46a49d8ef1d21c517
+      internalID: -1638645334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 317.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d064bcec6079244489d5cf2faa0186cc
+      internalID: 456098325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_56
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 317.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13c30d3615c9fa648bf7e08c2d280eff
+      internalID: -1803487514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_57
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 317.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71e3bb5506ebb648b429ac4b7d49ef6
+      internalID: 1673602002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_58
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 317.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8be36648f6c0640991ff1172813b2c
+      internalID: -227235325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_59
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 317.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3f3f23061dc4994ab1de235a8cd8c94
+      internalID: 2068699848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_60
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 317
+        width: 158
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39166bb4e5f351f46b536d113a5cecd4
+      internalID: 1525001572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_61
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 317.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b731f512e25744f9a19ecb38b01943
+      internalID: 1145305761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b574f1cb3c6f04c95658de6764779e
+      internalID: 115383669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_63
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 160.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa5711597082ee4fbf3e22fb00d36ca
+      internalID: -556952701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_64
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 160.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5be300d6963bf0449a3cbe0cfb2afb0
+      internalID: 1374506743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_65
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 159
+        width: 158
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f343ac5974f474a4ab0f2f393ce71fca
+      internalID: -527512955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_66
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 160.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eded45d939dca8e4f92a1be08b3b392c
+      internalID: 1350153678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_67
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3657449e03a76b140b0ce2ba059f6c7b
+      internalID: -638372625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_68
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 3.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21167a9b65ac24c4c8cf0ea85f201331
+      internalID: 840896501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tilemap_znordica_69
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 3.5
+        width: 157.5
+        height: 157.5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61dbe039ed6044f4798e1b560f43372d
+      internalID: 1264294939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tilemap_znordica_0: 1434323000
+      Tilemap_znordica_1: 1510790377
+      Tilemap_znordica_10: -234700142
+      Tilemap_znordica_11: -161101051
+      Tilemap_znordica_12: -670083812
+      Tilemap_znordica_13: 1168460059
+      Tilemap_znordica_14: 1482882836
+      Tilemap_znordica_15: 471970326
+      Tilemap_znordica_16: -1604879036
+      Tilemap_znordica_17: 1409644227
+      Tilemap_znordica_18: -2120972347
+      Tilemap_znordica_19: 1136642031
+      Tilemap_znordica_2: 135265369
+      Tilemap_znordica_20: -1817013697
+      Tilemap_znordica_21: 1447388095
+      Tilemap_znordica_22: 635419287
+      Tilemap_znordica_23: 1004577076
+      Tilemap_znordica_24: -194982165
+      Tilemap_znordica_25: 1183167590
+      Tilemap_znordica_26: 1067318102
+      Tilemap_znordica_27: 1725542820
+      Tilemap_znordica_28: 1047888951
+      Tilemap_znordica_29: 2005915420
+      Tilemap_znordica_3: -983152783
+      Tilemap_znordica_30: -1182958387
+      Tilemap_znordica_31: -414123046
+      Tilemap_znordica_32: 1946198213
+      Tilemap_znordica_33: 507587565
+      Tilemap_znordica_34: 602543553
+      Tilemap_znordica_35: -1110744154
+      Tilemap_znordica_36: 1269109951
+      Tilemap_znordica_37: -1384860251
+      Tilemap_znordica_38: -1454225627
+      Tilemap_znordica_39: 1112226423
+      Tilemap_znordica_4: 864373126
+      Tilemap_znordica_40: 1501791182
+      Tilemap_znordica_41: 2064080994
+      Tilemap_znordica_42: -1641863957
+      Tilemap_znordica_43: -1263201032
+      Tilemap_znordica_44: 2077890861
+      Tilemap_znordica_45: -544560221
+      Tilemap_znordica_46: -791841800
+      Tilemap_znordica_47: 620185894
+      Tilemap_znordica_48: -2035905868
+      Tilemap_znordica_49: -311124802
+      Tilemap_znordica_5: -502637350
+      Tilemap_znordica_50: -1744836332
+      Tilemap_znordica_51: -1817265463
+      Tilemap_znordica_52: -1046199597
+      Tilemap_znordica_53: -1406532066
+      Tilemap_znordica_54: -1638645334
+      Tilemap_znordica_55: 456098325
+      Tilemap_znordica_56: -1803487514
+      Tilemap_znordica_57: 1673602002
+      Tilemap_znordica_58: -227235325
+      Tilemap_znordica_59: 2068699848
+      Tilemap_znordica_6: 1801327693
+      Tilemap_znordica_60: 1525001572
+      Tilemap_znordica_61: 1145305761
+      Tilemap_znordica_62: 115383669
+      Tilemap_znordica_63: -556952701
+      Tilemap_znordica_64: 1374506743
+      Tilemap_znordica_65: -527512955
+      Tilemap_znordica_66: 1350153678
+      Tilemap_znordica_67: -638372625
+      Tilemap_znordica_68: 840896501
+      Tilemap_znordica_69: 1264294939
+      Tilemap_znordica_7: -2025722182
+      Tilemap_znordica_8: -652884943
+      Tilemap_znordica_9: -326596819
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

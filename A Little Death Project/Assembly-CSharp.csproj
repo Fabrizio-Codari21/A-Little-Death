@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Player\ThaniaMovement.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityTextureAtlasData.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamager.cs" />
+    <Compile Include="Assets\Scripts\CreepersMenu.cs" />
     <Compile Include="Assets\Scripts\Enemy\Fuerza\OlmecaAttack.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\AnimationState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Alas\Harpy.cs" />
