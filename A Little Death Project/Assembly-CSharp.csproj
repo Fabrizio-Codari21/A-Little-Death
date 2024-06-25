@@ -105,6 +105,7 @@
     <Compile Include="Assets\DragonBones\Scripts\core\BaseObject.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\ConstraintData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityBone.cs" />
+    <Compile Include="Assets\Scripts\Player\SoundManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataWriter.cs" />
     <Compile Include="Assets\Scripts\Hearts.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Armature.cs" />

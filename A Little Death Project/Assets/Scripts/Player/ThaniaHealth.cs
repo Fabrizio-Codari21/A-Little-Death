@@ -10,6 +10,8 @@ public class ThaniaHealth : Health
     public float damageCooldown;
     public SpriteRenderer sRenderer;
 
+    [SerializeField] AudioSource damageSound;
+
     public override void Start()
     {
         base.Start();
@@ -39,6 +41,7 @@ public class ThaniaHealth : Health
     IEnumerator takeDamage()
     {
         sRenderer.color = Color.red;
+        damageSound.Play();
         yield return new WaitForSeconds(0.3f);
         sRenderer.color = Color.white;
     }

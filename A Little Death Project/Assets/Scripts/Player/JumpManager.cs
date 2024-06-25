@@ -17,6 +17,8 @@ public class JumpManager : MonoBehaviour
     private float coyoteTime = 0.2f;
     private float coyoteCounter;
 
+    [SerializeField] AudioSource jumpSound;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -38,6 +40,7 @@ public class JumpManager : MonoBehaviour
             if (coyoteCounter > 0f && Input.GetKeyDown(KeyCode.W))
             {
                 anim.jumped = true;
+                jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
 
@@ -57,12 +60,14 @@ public class JumpManager : MonoBehaviour
             if (coyoteCounter > 0f && dJumped == false && Input.GetKeyDown(KeyCode.W))
             {
                 anim.jumped = true;
+                jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 currentJump++;
             }
             else if (!grounded && dJumped == false && Input.GetKeyDown(KeyCode.W))
             {
                 anim.jumped = true;
+                jumpSound.Play();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 currentJump++;
                 dJumped = true;

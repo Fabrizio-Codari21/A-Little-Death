@@ -11,6 +11,8 @@ public class StrengthDash : DashList
     private Rigidbody2D rb;
     public ThaniaMovement thania;
 
+    [SerializeField] AudioSource dashSound;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,6 +24,7 @@ public class StrengthDash : DashList
     {
         if(canDash == true)
         {
+            dashSound.Play();
             StartCoroutine(DoDash());
         }
     }
