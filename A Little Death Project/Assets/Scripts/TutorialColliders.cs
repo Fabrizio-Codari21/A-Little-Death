@@ -16,11 +16,11 @@ public class TutorialColliders : MonoBehaviour
     {
         if (tutorialValue == 1)
         {
-            textToPrint = "Bien Thania, presioná <b>'A'</b> y <b>'D'</b> para moverte y  <b>'W'</b> para saltar.";
+            textToPrint = "Bien Thania, presiona <b>'A'</b> y <b>'D'</b> para moverte y  <b>'W'</b> para saltar.";
         }
         else if (tutorialValue == 2)
         {
-            textToPrint = "Adelante vas a ver un alma perdida. Tu tarea es cazarlas usando la guadaña, solo tenés que apretar <b>'ESPACIO'</b>.";
+            textToPrint = "Adelante vas a ver un alma perdida. Tu tarea es cazarlas usando la guadaña, solo tenes que apretar <b>'ESPACIO'</b>.";
         }
         else if (tutorialValue == 3)
         {

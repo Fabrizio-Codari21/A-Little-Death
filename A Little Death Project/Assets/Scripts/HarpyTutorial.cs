@@ -17,7 +17,7 @@ public class HarpyTutorial : MonoBehaviour
         {
             TimePause();
             tutorialBox.SetActive(true);
-            TMPTutorial.text = "Algunos enemigos van a tener mas de una habilidad para elegir, como una de ataque, que podés elegir con la <b>flecha derecha</b>.";
+            TMPTutorial.text = "Algunos enemigos van a tener mas de una habilidad para elegir, como una de ataque, que podes elegir con la <b>flecha derecha</b>.";
         }
 
         if (paused)

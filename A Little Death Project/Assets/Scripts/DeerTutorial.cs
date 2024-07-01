@@ -18,7 +18,7 @@ public class DeerTutorial : MonoBehaviour
         {
             TimePause();
             tutorialBox.SetActive(true);
-            TMPTutorial.text = "Gracias a tu arma, podras copiar una de las habilidades de tu enemigo, con la <b>flecha de arriba</b> podés obtener la habilidad de movimiento.";
+            TMPTutorial.text = "Gracias a tu arma, podras copiar una de las habilidades de tu enemigo, con la <b>flecha de arriba</b> podes obtener la habilidad de movimiento.";
         }
 
         if (paused)
