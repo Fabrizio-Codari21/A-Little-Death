@@ -63,6 +63,7 @@
     <Compile Include="Assets\DragonBones\Scripts\animation\BaseTimelineState.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\PolygonBoundingBoxData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\Matrix.cs" />
+    <Compile Include="Assets\Scripts\Opciones.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\ColorTransform.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\Animation.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\WingsDash.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\Enemy\Fuerza\OlmecaAttack.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\AnimationState.cs" />
     <Compile Include="Assets\Scripts\Enemy\Alas\Harpy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Fuerza\OlmecaAnimManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\event\IEventDispatcher.cs" />
     <Compile Include="Assets\Scripts\Player\AnimationManager.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\LightTest.cs" />
@@ -94,12 +96,14 @@
     <Compile Include="Assets\Scripts\KeyManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityArmatureComponent.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Slot.cs" />
+    <Compile Include="Assets\Scripts\Spikes.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\IArmatureProxy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Alas\HarpyAnimController.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\DashManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\ObjectDataParser.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\CanvasData.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSlotDisplay.cs" />
+    <Compile Include="Assets\Scripts\NPCRunner.cs" />
     <Compile Include="Assets\Scripts\Enemy\FreeRoamMovement.cs" />
     <Compile Include="Assets\Scripts\Interfaces\HabilityList.cs" />
     <Compile Include="Assets\DragonBones\Scripts\core\BaseObject.cs" />
@@ -129,6 +133,7 @@
     <Compile Include="Assets\DragonBones\Scripts\geom\Point.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\StrengthDash.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceDisplayTextureTest.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Fuerza\OlmecaGroundCheck.cs" />
     <Compile Include="Assets\Scripts\Player\Attacks\BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Player\ThaniaHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\Alas\WingsHealth.cs" />
@@ -157,6 +162,7 @@
     <Compile Include="Assets\Scripts\DeerTutorial.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\WorldClock.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\AnimationConfig.cs" />
+    <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\UserData.cs" />
     <Compile Include="Assets\Scripts\Player\Attacks\WingsAttack.cs" />

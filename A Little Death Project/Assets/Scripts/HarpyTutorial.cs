@@ -22,7 +22,7 @@ public class HarpyTutorial : MonoBehaviour
 
         if (paused)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 Time.timeScale = 1;
                 paused = false;

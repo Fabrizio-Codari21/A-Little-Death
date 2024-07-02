@@ -18,6 +18,8 @@ public class OlmecaAttack : FreeRoamMovement
     float nextAttack;
     public float cooldown;
     [SerializeField] public LayerMask groundedLayer;
+    public OlmecaAnimManager anim;
+    float lastGrounded;
 
     void Start()
     {
@@ -35,19 +37,17 @@ public class OlmecaAttack : FreeRoamMovement
         if (!canSeePlayer && grounded)
         {
             Patrol();
+            anim.canSeePlayer = false;
         }
         else if (canSeePlayer && grounded)
         {
+            anim.canSeePlayer = true;
             if (Time.time > nextAttack)
             {
                 nextAttack = Time.time + cooldown;
                 FlipToPlayer();
                 JumpAttack();
             }
-        }
-        else if (!canSeePlayer && !grounded)
-        {
-            Debug.Log("floating");
         }
     }
 
@@ -58,6 +58,8 @@ public class OlmecaAttack : FreeRoamMovement
         if(grounded)
         {
             rb.AddForce(new Vector2(distance, jumpHeight), ForceMode2D.Impulse);
+            anim.landed = false;
+            anim.attacked = true;
         }
     }
 

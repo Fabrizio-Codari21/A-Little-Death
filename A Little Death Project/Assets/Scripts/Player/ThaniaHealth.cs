@@ -46,12 +46,11 @@ public class ThaniaHealth : Health
     {
         sRenderer.color = Color.red;
         damageSound.Play();
-        StartCoroutine(Knockback(this.transform.position));
         yield return new WaitForSeconds(0.3f);
         sRenderer.color = Color.white;
     }
 
-    IEnumerator Knockback(Vector3 knockbackDir)
+    public IEnumerator Knockback(Vector3 knockbackDir)
     {
         float timer = 0;
 
@@ -59,8 +58,7 @@ public class ThaniaHealth : Health
         {
             timer += Time.deltaTime;
 
-            rb.velocity = new Vector3(transform.position.x + knockbackDir.x * 200, knockbackPow, transform.position.z);
-            rb.AddForce(new Vector3(knockbackDir.x * 200, transform.position.y, transform.position.z));
+            rb.velocity = new Vector2(knockbackPow, knockbackPow);
         }
 
         yield return 0;

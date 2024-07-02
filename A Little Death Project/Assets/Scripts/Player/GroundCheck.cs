@@ -17,7 +17,6 @@ public class GroundCheck : MonoBehaviour
     private void Update()
     {
         manager.grounded = Physics2D.OverlapBox(transform.position, feet, 0, manager.groundLayer);
-
     }
 
     private void OnDrawGizmos()
