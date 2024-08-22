@@ -25,7 +25,6 @@ public class NPCRunner : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("BBBBBBBB");
         if(collision.transform.tag == "Player")
         {
             activated = true;

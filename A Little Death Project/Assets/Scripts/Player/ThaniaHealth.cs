@@ -12,14 +12,15 @@ public class ThaniaHealth : Health
     public Rigidbody2D rb;
     [SerializeField] float knockDur;
     [SerializeField] float knockbackPow;
-
     [SerializeField] AudioSource damageSound;
+    Vector2 checkpoint;
 
     public override void Start()
     {
         base.Start();
         sRenderer = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        checkpoint = transform.position;
     }
 
     public override void Damage(int damage)
@@ -62,5 +63,22 @@ public class ThaniaHealth : Health
         }
 
         yield return 0;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Checkpoint")
+        {
+            checkpoint = transform.position;
+            if (collision.transform.GetChild(0).gameObject.activeSelf == false)
+            {
+                collision.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.Log("Already active");
+            }
+            Debug.Log(checkpoint);
+        }
     }
 }
