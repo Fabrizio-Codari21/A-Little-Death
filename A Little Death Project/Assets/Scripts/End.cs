@@ -17,6 +17,7 @@ public class End : MonoBehaviour
         Debug.Log("Nos re vimos");
         if (collision.gameObject == thania) 
         {
+            Checkpoints.savedPos = default;
             SceneManager.LoadScene("Victory");
         }
     }

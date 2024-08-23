@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Console
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -191,8 +191,8 @@ MonoBehaviour:
     y: 0
     width: 1170
     height: 706
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -483,7 +483,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Enemy/Alas
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -491,17 +491,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 51
   m_LastFolders:
-  - Assets/Scripts/Enemy/Alas
+  - Assets/Scripts
   m_LastFoldersGridSize: 51
   m_LastProjectPath: C:\Users\Martin\Desktop\School\Tesis\Github\A-Little-Death\A
     Little Death Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 656}
-    m_SelectedIDs: 2a970000
-    m_LastClickedID: 38698
-    m_ExpandedIDs: 000000002a9400002c9400002e94000030940000329400003494000036940000389400003a9400003c9400003e94000040940000429400004494000046940000489400004a9400004c9400004e940000c696000000ca9a3b
+    scrollPos: {x: 0, y: 592}
+    m_SelectedIDs: 44940000
+    m_LastClickedID: 37956
+    m_ExpandedIDs: 000000004494000046940000489400004a9400004c9400004e94000050940000529400005494000056940000589400005a9400005c9400005e94000060940000629400006494000066940000689400000438040000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -529,7 +529,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 22}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002a9400002c9400002e94000030940000329400003494000036940000389400003a9400003c9400003e94000040940000429400004494000046940000489400004a9400004c9400004e940000
+    m_ExpandedIDs: 000000004494000046940000489400004a9400004c9400004e94000050940000529400005494000056940000589400005a9400005c9400005e9400006094000062940000649400006694000068940000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -554,8 +554,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: e27f0000
-    m_LastClickedInstanceID: 32738
+    m_SelectedInstanceIDs: 367d0400
+    m_LastClickedInstanceID: 294198
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300003ce20000287b0000000000007cadfefff4dc0b00
     m_RenameOverlay:
@@ -624,7 +624,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: f2faffff007700008a790000e07c0000207d00001e7f0000b47f0000b08300007c8a0000
+      m_ExpandedIDs: 524cfefff84cfeff2250feff2650feffce56feffea56feff7a4ffffff64fffff0853ffff1053ffffba59ffffda59ffff1e63ffff9c63ffffc466ffffc866ffff6e6dffff8a6dffff6af7ffffb0faffffb2faffff42550400b07b0400
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1056,9 +1056,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 231.8312, y: 17.264973, z: 0}
+    m_Target: {x: 233.17169, y: 11.8941555, z: -0.082640275}
     speed: 2
-    m_Value: {x: 231.8312, y: 17.264973, z: 0}
+    m_Value: {x: 233.17169, y: 11.8941555, z: -0.082640275}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1108,9 +1108,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.991979
+    m_Target: 3.714219
     speed: 2
-    m_Value: 8.991979
+    m_Value: 3.714219
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1528,7 +1528,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 32738
+  m_LastSelectedObjectID: 294198
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52

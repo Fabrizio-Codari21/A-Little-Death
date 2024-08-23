@@ -13,7 +13,6 @@ public class ThaniaHealth : Health
     [SerializeField] float knockDur;
     [SerializeField] float knockbackPow;
     [SerializeField] AudioSource damageSound;
-    Vector2 checkpoint;
 
     public override void Start()
     {
@@ -21,7 +20,10 @@ public class ThaniaHealth : Health
         sRenderer = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
 
-        if(Checkpoints.savedPos != default) transform.position = Checkpoints.savedPos;
+        if (Checkpoints.savedPos != default)
+        { 
+            transform.position = Checkpoints.savedPos; 
+        }
         else Checkpoints.savedPos = transform.position;
     }
 
@@ -72,6 +74,7 @@ public class ThaniaHealth : Health
         if (collision.tag == "Checkpoint")
         {
             Checkpoints.savedPos = collision.gameObject.transform.position - Vector3.one;
+            Checkpoints.active = true;
             if (collision.transform.GetChild(0).gameObject.activeSelf == false)
             {
                 collision.transform.GetChild(0).gameObject.SetActive(true);
@@ -80,7 +83,6 @@ public class ThaniaHealth : Health
             {
                 Debug.Log("Already active");
             }
-            Debug.Log(checkpoint);
         }
     }
 }
