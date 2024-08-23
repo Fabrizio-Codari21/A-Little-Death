@@ -20,7 +20,9 @@ public class ThaniaHealth : Health
         base.Start();
         sRenderer = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
-        checkpoint = transform.position;
+
+        if(Checkpoints.savedPos != default) transform.position = Checkpoints.savedPos;
+        else Checkpoints.savedPos = transform.position;
     }
 
     public override void Damage(int damage)
@@ -69,7 +71,7 @@ public class ThaniaHealth : Health
     {
         if (collision.tag == "Checkpoint")
         {
-            checkpoint = transform.position;
+            Checkpoints.savedPos = collision.gameObject.transform.position - Vector3.one;
             if (collision.transform.GetChild(0).gameObject.activeSelf == false)
             {
                 collision.transform.GetChild(0).gameObject.SetActive(true);

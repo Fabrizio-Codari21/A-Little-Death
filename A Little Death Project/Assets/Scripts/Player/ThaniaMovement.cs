@@ -10,6 +10,7 @@ public class ThaniaMovement : MonoBehaviour
     bool isFacingRight = true;
     public bool isDashing;
     [SerializeField] private AnimationManager anim;
+    public Transform checkpointOne;
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class ThaniaMovement : MonoBehaviour
             direction = Input.GetAxisRaw("Horizontal");
             Flip();
         }
+
+        if(Input.GetKeyDown(KeyCode.F1)) transform.position = checkpointOne.position;
     }
 
     private void Flip()
