@@ -13,6 +13,7 @@ public class JumpManager : MonoBehaviour
     private bool dJumped;
     public AnimationManager anim;
     public bool grounded = true;
+    public ParticleSystem dust;
 
     private float coyoteTime = 0.2f;
     private float coyoteCounter;
@@ -41,6 +42,7 @@ public class JumpManager : MonoBehaviour
             {
                 anim.jumped = true;
                 jumpSound.Play();
+                CreateDust();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
 
@@ -61,6 +63,7 @@ public class JumpManager : MonoBehaviour
             {
                 anim.jumped = true;
                 jumpSound.Play();
+                CreateDust();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 currentJump++;
             }
@@ -68,6 +71,7 @@ public class JumpManager : MonoBehaviour
             {
                 anim.jumped = true;
                 jumpSound.Play();
+                CreateDust();
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 currentJump++;
                 dJumped = true;
@@ -79,6 +83,11 @@ public class JumpManager : MonoBehaviour
                 coyoteCounter = 0;
             }
         }
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 }
 

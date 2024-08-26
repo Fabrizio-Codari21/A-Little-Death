@@ -13,6 +13,8 @@ public class StrengthDash : DashList
 
     [SerializeField] AudioSource dashSound;
 
+    public ParticleSystem dash;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +27,7 @@ public class StrengthDash : DashList
         if(canDash == true)
         {
             dashSound.Play();
+            CreateDash();
             StartCoroutine(DoDash());
         }
     }
@@ -41,5 +44,10 @@ public class StrengthDash : DashList
         thania.isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
+    }
+
+    void CreateDash()
+    {
+        dash.Play();
     }
 }
