@@ -20,13 +20,21 @@ public class CheckpointTexture : MonoBehaviour
         if (!active)
         {
             if (spriteRenderer.sprite != skin[0])
+            {
                 spriteRenderer.sprite = skin[0];
+                transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(1).gameObject.SetActive(false);
+                transform.GetChild(2).gameObject.SetActive(false);
+            }
         }
         else
         {
             if (spriteRenderer.sprite != skin[1])
             {
                 spriteRenderer.sprite = skin[1];
+                transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(1).gameObject.SetActive(true);
+                transform.GetChild(2).gameObject.SetActive(true);
             }
         }
     }

@@ -75,14 +75,14 @@ public class ThaniaHealth : Health
         {
             Checkpoints.savedPos = collision.gameObject.transform.position - Vector3.one;
             Checkpoints.active = true;
-            if (collision.transform.GetChild(0).gameObject.activeSelf == false)
+            /*if (collision.transform.GetChild(0).gameObject.activeSelf == false)
             {
                 collision.transform.GetChild(0).gameObject.SetActive(true);
             }
             else
             {
                 Debug.Log("Already active");
-            }
+            }*/
         }
     }
 }

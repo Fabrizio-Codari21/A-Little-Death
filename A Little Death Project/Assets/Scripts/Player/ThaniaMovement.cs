@@ -31,18 +31,21 @@ public class ThaniaMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (isFacingRight && direction < 0f || !isFacingRight && direction > 0f)
+        if (Time.timeScale > 0)
         {
-            Vector3 wheel = transform.GetChild(0).transform.localScale;
-            Vector3 wheel2 = transform.GetChild(1).transform.localScale;
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            wheel.x *= -1f;
-            wheel2.x *= -1f;
-            transform.localScale = localScale;
-            transform.GetChild(0).transform.localScale = wheel;
-            transform.GetChild(1).transform.localScale = wheel2;
+            if (isFacingRight && direction < 0f || !isFacingRight && direction > 0f)
+            {
+                Vector3 wheel = transform.GetChild(0).transform.localScale;
+                Vector3 wheel2 = transform.GetChild(1).transform.localScale;
+                isFacingRight = !isFacingRight;
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                wheel.x *= -1f;
+                wheel2.x *= -1f;
+                transform.localScale = localScale;
+                transform.GetChild(0).transform.localScale = wheel;
+                transform.GetChild(1).transform.localScale = wheel2;
+            }
         }
     }
 }

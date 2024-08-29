@@ -27,60 +27,63 @@ public class JumpManager : MonoBehaviour
 
     void Update()
     {
-        if (grounded)
+        if (Time.timeScale > 0)
         {
-            coyoteCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteCounter -= Time.deltaTime;
-        }
-
-        if (dJump == false)
-        {
-            if (coyoteCounter > 0f && Input.GetKeyDown(KeyCode.W))
+            if (grounded)
             {
-                anim.jumped = true;
-                jumpSound.Play();
-                CreateDust();
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                coyoteCounter = coyoteTime;
+            }
+            else
+            {
+                coyoteCounter -= Time.deltaTime;
             }
 
-            if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)
+            if (dJump == false)
             {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
-            }
-        }
-        else
-        {
-            if (dJumped == true && grounded)
-            {
-                dJumped = false;
-                currentJump = 0;
-            }
+                if (coyoteCounter > 0f && Input.GetKeyDown(KeyCode.W))
+                {
+                    anim.jumped = true;
+                    jumpSound.Play();
+                    CreateDust();
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                }
 
-            if (coyoteCounter > 0f && dJumped == false && Input.GetKeyDown(KeyCode.W))
-            {
-                anim.jumped = true;
-                jumpSound.Play();
-                CreateDust();
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                currentJump++;
+                if (Input.GetKeyUp(KeyCode.W) && rb.velocity.y > 0f)
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
+                }
             }
-            else if (!grounded && dJumped == false && Input.GetKeyDown(KeyCode.W))
+            else
             {
-                anim.jumped = true;
-                jumpSound.Play();
-                CreateDust();
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                currentJump++;
-                dJumped = true;
-            }
+                if (dJumped == true && grounded)
+                {
+                    dJumped = false;
+                    currentJump = 0;
+                }
 
-            if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.W))
-            {
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
-                coyoteCounter = 0;
+                if (coyoteCounter > 0f && dJumped == false && Input.GetKeyDown(KeyCode.W))
+                {
+                    anim.jumped = true;
+                    jumpSound.Play();
+                    CreateDust();
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    currentJump++;
+                }
+                else if (!grounded && dJumped == false && Input.GetKeyDown(KeyCode.W))
+                {
+                    anim.jumped = true;
+                    jumpSound.Play();
+                    CreateDust();
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+                    currentJump++;
+                    dJumped = true;
+                }
+
+                if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.W))
+                {
+                    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
+                    coyoteCounter = 0;
+                }
             }
         }
     }
