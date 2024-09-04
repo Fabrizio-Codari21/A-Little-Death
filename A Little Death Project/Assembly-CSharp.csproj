@@ -88,10 +88,10 @@
     <Compile Include="Assets\Scripts\End.cs" />
     <Compile Include="Assets\Fonts\Script\scriptTexttest.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityEventDispatcher.cs" />
+    <Compile Include="Assets\Scripts\DeathCooldown.cs" />
     <Compile Include="Assets\Scripts\Paralax.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\EllipseBoundingBoxData.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\PerformanceTest.cs" />
-    <Compile Include="Assets\Scripts\DeathScreen.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\AnimationData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\Transform.cs" />
