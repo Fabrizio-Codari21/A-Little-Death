@@ -8,7 +8,7 @@ public class Spikes : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision == player.gameObject.GetComponent<Collider2D>())
+        if (collision.transform.tag == "Player")
         {
             player.Damage(1);
             StartCoroutine(player.Knockback(transform.position));
