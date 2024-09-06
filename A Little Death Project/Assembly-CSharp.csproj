@@ -153,8 +153,8 @@
     <Compile Include="Assets\DragonBones\Scripts\core\DragonBones.cs" />
     <Compile Include="Assets\Scripts\Enemy\Fuerza\StrenghtHealth.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataReader.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnityDragonBonesData.cs" />
     <Compile Include="Assets\Scripts\USP TEMPORAL\TimerBar.cs" />
+    <Compile Include="Assets\DragonBones\Scripts\unity\UnityDragonBonesData.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\CombineMeshTest.cs" />
     <Compile Include="Assets\Scripts\VenadoTutorial.cs" />
@@ -464,6 +464,15 @@
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
       <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.GradleProject">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

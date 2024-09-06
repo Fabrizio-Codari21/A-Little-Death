@@ -10,6 +10,14 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            SceneManager.LoadScene("USP TEST");
+        }
+    }
+
     public void Play()
     {
         SceneManager.LoadScene("Tutorial");
