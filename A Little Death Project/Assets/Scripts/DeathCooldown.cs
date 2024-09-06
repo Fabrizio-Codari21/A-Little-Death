@@ -13,6 +13,6 @@ public class DeathCooldown : MonoBehaviour
     IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
     }
 }

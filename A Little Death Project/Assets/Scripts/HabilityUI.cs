@@ -23,4 +23,11 @@ public class HabilityUI : MonoBehaviour
         Debug.Log("Alas en Ataque");
         transform.GetChild(2).gameObject.SetActive(true);
     }
+
+    public void Default()
+    {
+        Debug.Log("Nada en Dash");
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
+    }
 }

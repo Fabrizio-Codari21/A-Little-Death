@@ -73,6 +73,7 @@
     <Compile Include="Assets\DragonBones\Scripts\armature\Constraint.cs" />
     <Compile Include="Assets\Scripts\Player\ThaniaMovement.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityTextureAtlasData.cs" />
+    <Compile Include="Assets\Scripts\USP TEMPORAL\USPMANAGER.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamager.cs" />
     <Compile Include="Assets\Scripts\CheckpointTexture.cs" />
     <Compile Include="Assets\Scripts\CreepersMenu.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets\Scripts\Enemy\Alas\HarpyAnimController.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\DashManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\ObjectDataParser.cs" />
+    <Compile Include="Assets\Scripts\USP TEMPORAL\DeerAttack.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\CanvasData.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSlotDisplay.cs" />
     <Compile Include="Assets\Scripts\NPCRunner.cs" />
@@ -152,6 +154,7 @@
     <Compile Include="Assets\Scripts\Enemy\Fuerza\StrenghtHealth.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataReader.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityDragonBonesData.cs" />
+    <Compile Include="Assets\Scripts\USP TEMPORAL\TimerBar.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\CombineMeshTest.cs" />
     <Compile Include="Assets\Scripts\VenadoTutorial.cs" />
@@ -167,6 +170,7 @@
     <Compile Include="Assets\Scripts\DeerTutorial.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\WorldClock.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\AnimationConfig.cs" />
+    <Compile Include="Assets\Scripts\USP TEMPORAL\USPTutorial.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
     <Compile Include="Assets\Scripts\Interfaces\IDamageable.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\UserData.cs" />
