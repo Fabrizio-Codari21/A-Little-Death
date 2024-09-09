@@ -59,8 +59,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemy\EffectObject.cs" />
+    <Compile Include="Assets\Scripts\Player\VFXs &amp; Animations\AnimationManager.cs" />
     <Compile Include="Assets\Scripts\Player\BaseHability.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\BaseTimelineState.cs" />
+    <Compile Include="Assets\Scripts\Player\VFXs &amp; Animations\MovementParticleController.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\PolygonBoundingBoxData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\Matrix.cs" />
     <Compile Include="Assets\Scripts\Opciones.cs" />
@@ -82,7 +84,6 @@
     <Compile Include="Assets\Scripts\Enemy\Alas\Harpy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Fuerza\OlmecaAnimManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\event\IEventDispatcher.cs" />
-    <Compile Include="Assets\Scripts\Player\AnimationManager.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\LightTest.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Bone.cs" />
     <Compile Include="Assets\Scripts\HabilityUI.cs" />
@@ -106,6 +107,7 @@
     <Compile Include="Assets\Scripts\Player\Dashes\DashManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\ObjectDataParser.cs" />
     <Compile Include="Assets\Scripts\USP TEMPORAL\DeerAttack.cs" />
+    <Compile Include="Assets\Scripts\Player\VFXs &amp; Animations\SoundManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\CanvasData.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSlotDisplay.cs" />
     <Compile Include="Assets\Scripts\NPCRunner.cs" />
@@ -115,7 +117,6 @@
     <Compile Include="Assets\DragonBones\Scripts\core\BaseObject.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\ConstraintData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityBone.cs" />
-    <Compile Include="Assets\Scripts\Player\SoundManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataWriter.cs" />
     <Compile Include="Assets\Scripts\Hearts.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Armature.cs" />
@@ -464,15 +465,6 @@
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
       <HintPath>Assets\AstarPathfindingProject\Plugins\DotNetZip\Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Android.Types">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Android.Gradle">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Android.GradleProject">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.GradleProject.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.5f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

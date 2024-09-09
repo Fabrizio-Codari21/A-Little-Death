@@ -8,6 +8,7 @@ public class GroundCheck : MonoBehaviour
     [SerializeField] 
     JumpManager manager;
     [SerializeField] Vector2 feet;
+    [SerializeField] ParticleSystem landedVFX;
 
     private void Start()
     {
@@ -29,6 +30,7 @@ public class GroundCheck : MonoBehaviour
         if (collision.transform.tag == "Platform")
         {
             manager.anim.jumped = false;
+            landedVFX.Play();
         }
     }
 }
