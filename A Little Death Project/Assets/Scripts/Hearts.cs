@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,7 +34,8 @@ public class Hearts : MonoBehaviour
             }
             else
             {
-                hearts[i].sprite = emptyHeart;
+                //hearts[i].sprite = emptyHeart;
+                hearts[i].gameObject.SetActive(false);
             }
 
             if (i < numOfHearts)
