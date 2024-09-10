@@ -9,7 +9,7 @@ public class ThaniaMovement : MonoBehaviour
     public float moveSpeed = 7f;
     bool isFacingRight = true;
     public bool isDashing;
-    [SerializeField] private AnimationManager anim;
+    public AnimationManager anim;
     public Transform checkpointOne;
 
     void Start()
