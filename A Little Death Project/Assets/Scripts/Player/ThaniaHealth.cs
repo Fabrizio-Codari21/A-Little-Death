@@ -14,6 +14,8 @@ public class ThaniaHealth : Health
     [SerializeField] float knockbackPow;
     [SerializeField] AudioSource damageSound;
 
+    [SerializeField] Menu menu;
+
     public override void Start()
     {
         base.Start();
@@ -43,8 +45,8 @@ public class ThaniaHealth : Health
 
     public override void Die()
     {
-        Destroy(gameObject);
-        SceneManager.LoadScene("Death");
+        menu.Death();
+        gameObject.SetActive(false);
     }
 
     IEnumerator takeDamage()

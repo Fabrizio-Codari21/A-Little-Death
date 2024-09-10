@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] GameObject fadeEfect;
+
     private void Start()
     {
         Time.timeScale = 1;
@@ -14,27 +16,54 @@ public class Menu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            SceneManager.LoadScene("USP TEST");
+            StartCoroutine(waitForTransition("USP TEST"));
         }
     }
 
     public void Play()
     {
-        SceneManager.LoadScene("Tutorial");
+        StartCoroutine(waitForTransition("Tutorial"));
     }    
     
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
-    }    
+        StartCoroutine(waitForTransitionRestart());
+    }   
     
+    public void MainMenu()
+    {
+        StartCoroutine(waitForTransitionMenu());
+    }
+    
+    public void Death()
+    {
+        StartCoroutine(waitForTransition("Death"));
+    }
+
     public void Quit()
     {
         Application.Quit();
     }
 
-    public void MainMenu()
+    public IEnumerator waitForTransition(string name)
     {
+        fadeEfect.SetActive(true);
+        yield return new WaitForSeconds(4);
+        SceneManager.LoadScene(name);
+    }
+
+    IEnumerator waitForTransitionRestart()
+    {
+        fadeEfect.SetActive(true);
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    }
+    
+    IEnumerator waitForTransitionMenu()
+    {
+        fadeEfect.SetActive(true);
+        Time.timeScale = 1;
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("MainMenu");
     }
 }
