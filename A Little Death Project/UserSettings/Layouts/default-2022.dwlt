@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -191,8 +191,8 @@ MonoBehaviour:
     y: 0
     width: 1170
     height: 699
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -200,7 +200,7 @@ MonoBehaviour:
   - {fileID: 16}
   - {fileID: 11}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -220,16 +220,16 @@ MonoBehaviour:
     y: 699
     width: 1170
     height: 288
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,8 +249,8 @@ MonoBehaviour:
     y: 0
     width: 411
     height: 987
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -1029,7 +1029,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 0
+      displayed: 1
       snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -1079,7 +1079,7 @@ MonoBehaviour:
       sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -1088,9 +1088,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3264, y: 1836, z: 0}
+    m_Target: {x: -59.553596, y: -4.9242673, z: 0.014132941}
     speed: 2
-    m_Value: {x: 3264, y: 1836, z: 0}
+    m_Value: {x: -59.553596, y: -4.9242673, z: 0.014132941}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1140,9 +1140,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2202.9072
+    m_Target: 3.3593516
     speed: 2
-    m_Value: 2202.9072
+    m_Value: 3.3593516
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1206,21 +1206,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7093fdff1694fdff9e97fdffae97fdffb497fdff6a9efdff969efdff82faffffd09f000038a00000e8150100a84501004e63010036c30100f8f2010062290200a42a0200943202009e7a0400f48e0400ba97040046210500a44b06001e4d0600965a06005c63060008c306001afd060072200700c6400700d8560700da590700
+      m_ExpandedIDs: f2faffff32800000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Fade In
-        m_OriginalName: Fade In
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -145402
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 6}
       m_SearchString: 
@@ -1275,7 +1275,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Art/PJs/Thania/Base Form
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1283,17 +1283,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 51
   m_LastFolders:
-  - Assets
+  - Assets/Art/PJs/Thania/Base Form
   m_LastFoldersGridSize: 51
   m_LastProjectPath: C:\Users\Martin\Desktop\School\Tesis\Github\A-Little-Death\A
     Little Death Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a0970000
-    m_LastClickedID: 38816
-    m_ExpandedIDs: 00000000f6940000f8940000fa940000fc940000fe94000000950000029500000495000006950000089500000a9500000c9500000e95000010950000129500001495000016950000189500001a9500001c9500001e95000020950000229500002495000000ca9a3b
+    scrollPos: {x: 0, y: 505}
+    m_SelectedIDs: 78990000
+    m_LastClickedID: 39288
+    m_ExpandedIDs: 00000000a27a0000a47a0000a67a0000a87a0000aa7a0000ac7a0000ae7a0000b07a0000b27a0000b47a0000b67a0000b87a0000ba7a0000bc7a0000be7a0000c07a0000c27a0000c47a0000c67a0000c87a0000ca7a0000cc7a0000ce7a0000d07a00001c9900007899000026b7000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1321,7 +1321,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 22}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f6940000f8940000fa940000fc940000fe94000000950000029500000495000006950000089500000a9500000c9500000e95000010950000129500001495000016950000189500001a9500001c9500001e950000209500002295000024950000
+    m_ExpandedIDs: 00000000a27a0000a47a0000a67a0000a87a0000aa7a0000ac7a0000ae7a0000b07a0000b27a0000b47a0000b67a0000b87a0000ba7a0000bc7a0000be7a0000c07a0000c27a0000c47a0000c67a0000c87a0000ca7a0000cc7a0000ce7a0000d07a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1500,7 +1500,7 @@ MonoBehaviour:
     x: 339
     y: 73
     width: 1168
-    height: 546
+    height: 678
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1527,11 +1527,11 @@ MonoBehaviour:
     - e00: 1
       e01: 0
       e02: 0
-      e03: 97
+      e03: 3
       e10: 0
       e11: 1
       e12: 0
-      e13: 122
+      e13: 183.5
       e20: 0
       e21: 0
       e22: 1
@@ -1685,9 +1685,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: b7864a4c773a65147b5830f23eea759f, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 816aeab7dcb44a941a2e34f2c49b8e2d, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 882583848840764479, guid: b7864a4c773a65147b5830f23eea759f, type: 2}
+  - m_Target: {fileID: -7957221637568573063, guid: 816aeab7dcb44a941a2e34f2c49b8e2d, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1755,9 +1755,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 339
-    y: 640
+    y: 772
     width: 1168
-    height: 399
+    height: 267
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1770,7 +1770,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 141630
+  m_LastSelectedObjectID: 37956
 --- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
