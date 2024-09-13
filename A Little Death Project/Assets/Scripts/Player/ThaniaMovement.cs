@@ -26,7 +26,7 @@ public class ThaniaMovement : MonoBehaviour
             Flip();
         }
 
-        if(Input.GetKeyDown(KeyCode.F1)) transform.position = checkpointOne.position;
+        if(Input.GetKeyDown(KeyCode.F2)) transform.position = checkpointOne.position;
     }
 
     private void Flip()
