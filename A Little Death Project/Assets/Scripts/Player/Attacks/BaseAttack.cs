@@ -51,11 +51,11 @@ public class BaseAttack : AttackList
 
     private IEnumerator ShowHitbox()
     {
-        transform.GetChild(2).gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        //transform.GetChild(2).gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.3f);
         attacked = false;
         anim.attacked = false;
-        transform.GetChild(2).gameObject.SetActive(false);
+        //transform.GetChild(2).gameObject.SetActive(false);
     }
 
     private void OnDrawGizmos()
