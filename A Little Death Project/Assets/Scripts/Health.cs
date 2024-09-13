@@ -8,14 +8,16 @@ public class Health : MonoBehaviour, IDamageable
 
     public int currentHealth;
 
-    public virtual void Damage(int damage)
+    public virtual bool Damage(int damage)
     {
         Debug.Log(this + "took damage");
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
             Die();
+            return true;
         }
+        else return false;
     }
 
     public virtual void Start()
@@ -25,6 +27,6 @@ public class Health : MonoBehaviour, IDamageable
 
     public virtual void Die()
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 0.05f);
     }
 }

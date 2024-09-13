@@ -47,11 +47,11 @@ public class PlayerSkillManager : MonoBehaviour
             print("usando habilidad");
 
             // ...chequeamos si tenemos la habilidad necesaria y de ser asi la ejecutamos.
-            if (sk.mySkills.ContainsKey(sk.skills[skillId].skillType)) 
+            if (sk.mySkills.ContainsKey(sk.skills[skillId].skillType))
                 sk.mySkills[sk.skills[skillId].skillType].Execute();
 
             // Si no, se realiza la habilidad por defecto
-            else sk.mySkills[SkillType.Default].Execute();
+            else { sk.mySkills[SkillType.Default].Execute(); print("default"); }
         }
     }
 }

@@ -8,9 +8,10 @@ public struct SkillSet
 {
     public SkillType skillType;
     public SkillSlot skillSlot;
-    public float range;
+    public float distance;
     public float effectAmount;
     public LayerMask validLayer;
+    public Transform origin;
     public float cooldown;
     public float nextFireTime;
     public bool hasExecuted;

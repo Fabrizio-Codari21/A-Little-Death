@@ -29,7 +29,7 @@ public class ThaniaHealth : Health
         else Checkpoints.savedPos = transform.position;
     }
 
-    public override void Damage(int damage)
+    public override bool Damage(int damage)
     {
         if (Time.time > invulnerable)
         {
@@ -39,8 +39,12 @@ public class ThaniaHealth : Health
             if (currentHealth <= 0)
             {
                 Die();
+                return true;
             }
+            
         }
+        return false;
+
     }
 
     public override void Die()

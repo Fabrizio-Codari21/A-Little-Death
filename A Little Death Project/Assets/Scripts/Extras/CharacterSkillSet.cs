@@ -9,11 +9,13 @@ public class CharacterSkillSet : MonoBehaviour
     [Header("PRIMARY SKILL")]
     public SkillType primarySkillType;
     [Tooltip("Represents distance values of your current action, such as range, radius, etc.")]
-    public float primaryRange;
+    public float primaryDistance;
     [Tooltip("Represents the amount of something that your action applies, such as damage, points, etc.")]
     public float primaryEffectAmount;
     [Tooltip("Represents the layer that your action may affect.")]
     public LayerMask primaryValidLayer;
+    [Tooltip("Represents the origin point of your action.")]
+    public Transform primaryOrigin;
     [Tooltip("Represents the time it takes before your action can be executed again.")]
     public float primaryCooldown;
     [HideInInspector] public float primaryExecTime;
@@ -23,11 +25,13 @@ public class CharacterSkillSet : MonoBehaviour
     [Space(20), Header("SECONDARY SKILL")]   
     public SkillType secondarySkillType;
     [Tooltip("Represents distance values of your current action, such as range, radius, etc.")]
-    public float secondaryRange;
+    public float secondaryDistance;
     [Tooltip("Represents the amount of something that your action applies, such as damage, points, etc.")]
     public float secondaryEffectAmount;
     [Tooltip("Represents the layer that your action may affect.")]
     public LayerMask secondaryValidLayer;
+    [Tooltip("Represents the origin point of your action.")]
+    public Transform secondaryOrigin;
     [Tooltip("Represents the time it takes before your action can be executed again.")]
     public float secondaryCooldown;
     [HideInInspector] public float secondaryExecTime;
@@ -42,8 +46,13 @@ public class CharacterSkillSet : MonoBehaviour
     private void Awake()
     {
         primarySkill = new SkillSet
-        { 
+        {
             skillType = primarySkillType,
+            skillSlot = SkillSlot.primary,
+            distance = primaryDistance,
+            effectAmount = primaryEffectAmount,
+            validLayer = primaryValidLayer,
+            origin = primaryOrigin,
             cooldown = primaryCooldown,
             nextFireTime = primaryExecTime,
             hasExecuted = primaryHasExecuted,
@@ -53,6 +62,11 @@ public class CharacterSkillSet : MonoBehaviour
         secondarySkill = new SkillSet
         {
             skillType = secondarySkillType,
+            skillSlot = SkillSlot.secondary,
+            distance = secondaryDistance,
+            effectAmount = secondaryEffectAmount,
+            validLayer = secondaryValidLayer,
+            origin = secondaryOrigin,
             cooldown = secondaryCooldown,
             nextFireTime = secondaryExecTime,
             hasExecuted = secondaryHasExecuted,

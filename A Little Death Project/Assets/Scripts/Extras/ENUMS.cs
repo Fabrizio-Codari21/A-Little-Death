@@ -17,5 +17,8 @@ public enum SkillType
     ThaniaPrimary,
     ThaniaSecondary,
 
+    DeerPrimary,
+    DeerSecondary,
+
 
 }
