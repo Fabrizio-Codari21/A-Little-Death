@@ -6,8 +6,11 @@ using UnityEngine;
 public class SkillList
 {
     //public string classType;
-    public ENUMS.SkillType skillType;
-    public ENUMS.SkillSlot skillSlot;
+    public SkillType skillType;
+    public SkillSlot skillSlot;
+    public float range;
+    public float effectAmount;
+    public LayerMask validLayer;
     public float cooldown;
     public float nextFireTime;
     public bool executed;
@@ -21,10 +24,11 @@ public class SkillList
         skillType = skillSet.skillType;
         skillSlot = skillSet.skillSlot;
         cooldown = skillSet.cooldown;
+        range = skillSet.range;
         nextFireTime = skillSet.nextFireTime;
         Execute = skillSet.Execute;
 
         // El input a usar depende de su valor de skillSlot
-        input = (skillSlot == ENUMS.SkillSlot.primary) ? 0 : 1;
+        input = (skillSlot == SkillSlot.primary) ? 0 : 1;
     }
 }

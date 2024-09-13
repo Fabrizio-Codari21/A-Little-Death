@@ -6,8 +6,11 @@ using UnityEngine;
 // Contiene las variables de la habilidad de cada personaje
 public struct SkillSet
 {
-    public ENUMS.SkillType skillType;
-    public ENUMS.SkillSlot skillSlot;
+    public SkillType skillType;
+    public SkillSlot skillSlot;
+    public float range;
+    public float effectAmount;
+    public LayerMask validLayer;
     public float cooldown;
     public float nextFireTime;
     public bool hasExecuted;

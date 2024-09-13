@@ -4348,6 +4348,9 @@ GameObject:
   - component: {fileID: 1059228612}
   - component: {fileID: 1059228626}
   - component: {fileID: 1059228627}
+  - component: {fileID: 1059228630}
+  - component: {fileID: 1059228628}
+  - component: {fileID: 1059228631}
   m_Layer: 8
   m_Name: Thania
   m_TagString: Player
@@ -4639,6 +4642,63 @@ MonoBehaviour:
   cooldown: 0
   nextFireTime: 0
   attacked: 0
+--- !u!114 &1059228628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059228611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd0643e65365374aaeb6a3498419ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sk: {fileID: 11400000, guid: 98264923dbd3ad64b971cd6d6a5d2d8c, type: 2}
+--- !u!114 &1059228630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059228611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3209e71da9d01de41878042cf40a4bf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySkills: {fileID: 1059228631}
+  movement: {fileID: 1059228622}
+--- !u!114 &1059228631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059228611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15fb6a5150729264b90c69aca97a941d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primarySkillType: 1
+  primaryRange: 1.8
+  primaryEffectAmount: 1
+  primaryValidLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  primaryCooldown: 0.8
+  primaryExecTime: 0
+  primaryHasExecuted: 0
+  secondarySkillType: 0
+  secondaryRange: 0
+  secondaryEffectAmount: 0
+  secondaryValidLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  secondaryCooldown: 0
+  secondaryExecTime: 0
+  secondaryHasExecuted: 0
 --- !u!1 &1103198623
 GameObject:
   m_ObjectHideFlags: 0
