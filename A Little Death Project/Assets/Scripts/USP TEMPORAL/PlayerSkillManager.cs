@@ -15,7 +15,7 @@ public class PlayerSkillManager : MonoBehaviour
            || sk.baseSkills.secondarySkill.Equals(default)) print("no encuentro los structs");
 
         var readyUpSkills = BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
-        if (!readyUpSkills) Debug.Log("No se pudieron crear las habilidades");
+        if (!readyUpSkills) Debug.Log("No se pudieron crear las habilidades"); else print(sk.baseSkills.secondarySkill.skillType);
     }
 
     public bool BuildSkillSet(SkillSet primary, SkillSet secondary)

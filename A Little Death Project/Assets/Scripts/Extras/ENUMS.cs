@@ -20,5 +20,4 @@ public enum SkillType
     DeerPrimary,
     DeerSecondary,
 
-
 }
