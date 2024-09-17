@@ -36,6 +36,7 @@ public class CharacterSkillSet : MonoBehaviour
     public float secondaryCooldown;
     [HideInInspector] public float secondaryExecTime;
     [HideInInspector] public bool secondaryHasExecuted;
+    // Action<GameObject> o lo que haga falta
     public Action secondaryExecute;
 
     // En estos structs se guarda el set de habilidades para que el jugador pueda acceder

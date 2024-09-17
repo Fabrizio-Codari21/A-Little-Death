@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerSkillManager : MonoBehaviour
@@ -11,7 +12,7 @@ public class PlayerSkillManager : MonoBehaviour
         sk.baseSkills = GetComponent<CharacterSkillSet>();
 
         if (sk.baseSkills == null) print("no encuentro el script");
-        if (sk.baseSkills.primarySkill.Equals(default) 
+        if (sk.baseSkills.primarySkill.Equals(default)
            || sk.baseSkills.secondarySkill.Equals(default)) print("no encuentro los structs");
 
         var readyUpSkills = BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
@@ -28,7 +29,23 @@ public class PlayerSkillManager : MonoBehaviour
         sk.skills[1] = new SkillList(secondary);
 
         // Agregamos las skills asignadas
-        foreach (var skill in sk.skills) sk.mySkills.Add(skill.skillType, skill);
+
+        if (!sk.mySkills.ContainsKey(sk.skills[0].skillType))
+            sk.mySkills.Add(sk.skills[0].skillType, sk.skills[0]);
+        else
+            sk.mySkills[sk.skills[0].skillType] = sk.skills[0];
+
+        if (!sk.mySkills.ContainsKey(sk.skills[1].skillType))
+            sk.mySkills.Add(sk.skills[1].skillType, sk.skills[1]);
+        else
+            sk.mySkills[sk.skills[1].skillType] = sk.skills[1];
+
+        //foreach (var skill in sk.skills) {
+        //    if (!sk.mySkills.ContainsKey(skill.skillType))
+        //        sk.mySkills.Add(skill.skillType, skill);
+        //    else
+        //        sk.mySkills[skill.skillType] = skill;
+        //}
 
         return sk.mySkills != default;
     }
