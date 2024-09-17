@@ -9,12 +9,13 @@ public class TimerBar : MonoBehaviour
     float maxTime = 10;
     float timeLeft;
     public bool timerActive;
+    public GameObject UI;
 
     void Start()
     {
         timer = GetComponent<Image>();
         timeLeft = maxTime;
-        gameObject.SetActive(false);
+        UI.gameObject.SetActive(false);
     }
 
     void Update()
@@ -29,7 +30,7 @@ public class TimerBar : MonoBehaviour
             else
             {
                 timeLeft = maxTime;
-                timer.gameObject.SetActive(false);
+                UI.gameObject.SetActive(false);
             }
         }
     }

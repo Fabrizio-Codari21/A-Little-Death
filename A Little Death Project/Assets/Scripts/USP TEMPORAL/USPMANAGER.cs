@@ -19,6 +19,7 @@ public class USPMANAGER : MonoBehaviour
     public GameObject deerSprite;
 
     public TimerBar timerBar;
+    public GameObject UI;
 
     private void Update()
     {
@@ -40,7 +41,7 @@ public class USPMANAGER : MonoBehaviour
                 thaniaSprite.SetActive(false);
                 deerSprite.SetActive(true);
                 StartCoroutine(timer());
-                timerBar.gameObject.SetActive(true);
+                UI.gameObject.SetActive(true);
                 timerBar.timerActive = true;
                 Time.timeScale = 1;
                 paused = false;
