@@ -24,6 +24,8 @@ public class PlayerSkillManager : MonoBehaviour
         // Borramos las habilidades previas si es que existen
         //if(sk.skills != default) sk.skills = default;
 
+        var oldSkills = sk.mySkills;
+
         // Creamos nuevas habilidades con los struct recibidos
         sk.skills[0] = new SkillList(primary);
         sk.skills[1] = new SkillList(secondary);
@@ -47,7 +49,8 @@ public class PlayerSkillManager : MonoBehaviour
         //        sk.mySkills[skill.skillType] = skill;
         //}
 
-        return sk.mySkills != default;
+        return sk.mySkills != oldSkills;
+        //return sk.mySkills != default;
     }
 
     private void Update()

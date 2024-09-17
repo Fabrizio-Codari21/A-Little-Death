@@ -19,7 +19,7 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
         // Probar de hacer que las acciones reciban el GameObject del jugador como parametro
         mySkills.secondaryExecute = () =>
         {
-            Debug.Log("Define secondary");
+            Debug.Log("Define secondary: " + mySkills.secondarySkillType);
             if (mySkills != null && !mySkills.secondaryHasExecuted)
             {
                 IEnumerator Dash()
