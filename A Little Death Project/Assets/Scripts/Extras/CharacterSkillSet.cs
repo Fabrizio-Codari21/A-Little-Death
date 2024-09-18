@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Nos permite asignar las habilidades de cada personaje desde el inspector.
+// (ESTE ES EL SCRIPT QUE HAY QUE ARRASTRAR PARA EL PLAYER Y CADA ENEMIGO POSEIBLE)
 public class CharacterSkillSet : MonoBehaviour
 {
     [Header("PRIMARY SKILL")]
@@ -20,7 +21,7 @@ public class CharacterSkillSet : MonoBehaviour
     public float primaryCooldown;
     [HideInInspector] public float primaryExecTime;
     [HideInInspector] public bool primaryHasExecuted;
-    public Action primaryExecute;
+    public Action<PlayerSkillManager> primaryExecute;
     
     [Space(20), Header("SECONDARY SKILL")]   
     public SkillType secondarySkillType;
@@ -37,7 +38,7 @@ public class CharacterSkillSet : MonoBehaviour
     [HideInInspector] public float secondaryExecTime;
     [HideInInspector] public bool secondaryHasExecuted;
     // Action<GameObject> o lo que haga falta
-    public Action secondaryExecute;
+    public Action<PlayerSkillManager> secondaryExecute;
 
     // En estos structs se guarda el set de habilidades para que el jugador pueda acceder
     // a ellas facilmente.

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// CADA HABILIDAD SE REPRESENTA EN UNA DE ESTAS CLASES
 public class SkillList
 {
     //public string classType;
@@ -16,7 +17,7 @@ public class SkillList
     public float nextFireTime;
     public bool executed;
 
-    public Action Execute;
+    public Action<PlayerSkillManager> Execute;
     public int input;
 
     // Construimos la nueva habilidad en base al struct que le pasemos

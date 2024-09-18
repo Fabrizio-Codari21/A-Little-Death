@@ -3420,6 +3420,9 @@ MonoBehaviour:
   habilityUI: {fileID: 1960680418}
   dashManager: {fileID: 1059228618}
   attackManager: {fileID: 1059228621}
+  defaultSkills: {fileID: 1059228630}
+  defaultSkillSet: {fileID: 1059228631}
+  skillManager: {fileID: 1059228628}
   thaniaSprite: {fileID: 525929219}
   deerSprite: {fileID: 633625602}
   timerBar: {fileID: 1304566084}

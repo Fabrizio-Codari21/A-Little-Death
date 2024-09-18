@@ -14,6 +14,9 @@ public class USPMANAGER : MonoBehaviour
     public HabilityUI habilityUI;
     public DashManager dashManager;
     public AttackManager attackManager;
+    public ThaniaSkills defaultSkills;
+    public CharacterSkillSet defaultSkillSet;
+    public PlayerSkillManager skillManager;
 
     public GameObject thaniaSprite;
     public GameObject deerSprite;
@@ -61,11 +64,16 @@ public class USPMANAGER : MonoBehaviour
     IEnumerator timer()
     {
         yield return new WaitForSeconds(10);
+
         habilityUI.Default();
         dashManager.dashID = "base";
         attackManager.primaryFire = "base";
         Debug.Log("base");
+
         thaniaSprite.SetActive(true);
         deerSprite.SetActive(false);
+
+        defaultSkills.DefineSkills(defaultSkillSet);
+        skillManager.BuildSkillSet(defaultSkillSet.primarySkill, defaultSkillSet.secondarySkill);
     }
 }

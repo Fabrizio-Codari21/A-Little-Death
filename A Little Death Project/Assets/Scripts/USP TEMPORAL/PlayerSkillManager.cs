@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Maneja el cambio de skills al poseer y desposeer
+// (ESTE LO TIENE QUE TENER EL PLAYER Y NADIE MAS)
 public class PlayerSkillManager : MonoBehaviour
 {
     public PlayerSkills sk;
@@ -67,10 +69,10 @@ public class PlayerSkillManager : MonoBehaviour
 
             // ...chequeamos si tenemos la habilidad necesaria y de ser asi la ejecutamos.
             if (sk.mySkills.ContainsKey(sk.skills[skillId].skillType))
-                sk.mySkills[sk.skills[skillId].skillType].Execute();
+                sk.mySkills[sk.skills[skillId].skillType].Execute(this);
 
             // Si no, se realiza la habilidad por defecto
-            else { sk.mySkills[SkillType.Default].Execute(); print("default"); }
+            else { sk.mySkills[SkillType.Default].Execute(this); print("default"); }
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+// Hay que hacer una de estas por cada tipo de criatura con habilidades (todas heredando de ISkillDefiner)
+// y asignarle el primaryExecute y secondaryExecute de cada una para saber que hace la habilidad.
 public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 {
     public PlayerSkillManager skillManager;
@@ -55,19 +57,19 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
     public void DefineSkills(CharacterSkillSet mySkills)
     {
-        mySkills.primaryExecute = () =>
+        mySkills.primaryExecute = (avatar) =>
         {
             if (Time.time > mySkills.primaryExecTime && mySkills.primaryHasExecuted == false)
             {
                 mySkills.primaryHasExecuted = true;
                 Debug.Log("Attacked");
                 movement.anim.attacked = true;
-                StartCoroutine(AttackEnemy());
+                avatar.StartCoroutine(AttackEnemy());
                 mySkills.primaryExecTime = Time.time + mySkills.primaryCooldown;
             }
         };
 
-        mySkills.secondaryExecute = () =>
+        mySkills.secondaryExecute = (avatar) =>
         {
 
         };

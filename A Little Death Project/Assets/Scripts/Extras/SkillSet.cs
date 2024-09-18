@@ -16,5 +16,5 @@ public struct SkillSet
     public float nextFireTime;
     public bool hasExecuted;
 
-    public Action Execute;
+    public Action<PlayerSkillManager> Execute;
 }

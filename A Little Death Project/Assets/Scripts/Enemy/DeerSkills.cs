@@ -11,16 +11,16 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
     public void DefineSkills(CharacterSkillSet mySkills)
     {
         Debug.Log("Define " + gameObject.name);
-        mySkills.primaryExecute = () =>
+        mySkills.primaryExecute = (avatar) =>
         {
 
         };
 
         // Probar de hacer que las acciones reciban el GameObject del jugador como parametro
-        mySkills.secondaryExecute = () =>
+        mySkills.secondaryExecute = (avatar) =>
         {
             Debug.Log("Define secondary: " + mySkills.secondarySkillType);
-            if (mySkills != null && !mySkills.secondaryHasExecuted)
+            if (avatar != null && !mySkills.secondaryHasExecuted)
             {
                 IEnumerator Dash()
                 {
@@ -47,7 +47,7 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
 
                 if (VFX) VFX.Play();
                 if (SFX) SFX.Play();
-                StartCoroutine(Dash());
+                avatar.StartCoroutine(Dash());
             }
         };
     }
