@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Player\VFXs &amp; Animations\AnimationManager.cs" />
     <Compile Include="Assets\Scripts\Player\BaseHability.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\BaseTimelineState.cs" />
+    <Compile Include="Assets\Scripts\PossessableHealth.cs" />
     <Compile Include="Assets\Scripts\Player\VFXs &amp; Animations\MovementParticleController.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\PolygonBoundingBoxData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\Matrix.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\DragonBones\Scripts\model\DragonBonesData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\IAnimatable.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Constraint.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Player\ThaniaMovement.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityTextureAtlasData.cs" />
     <Compile Include="Assets\Scripts\USP TEMPORAL\SkillList.cs" />

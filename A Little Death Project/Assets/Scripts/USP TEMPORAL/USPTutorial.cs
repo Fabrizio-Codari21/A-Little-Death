@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class USPTutorial : Health
+public class USPTutorial : PossessableHealth
 {
     //public GameObject manager;
     //SkillSelector skillSelector;

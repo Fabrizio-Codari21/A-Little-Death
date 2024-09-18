@@ -2075,6 +2075,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  stunTime: 5
   damage: 1
   particleSystems: []
 --- !u!114 &453437980
@@ -4978,6 +4979,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sk: {fileID: 11400000, guid: 98264923dbd3ad64b971cd6d6a5d2d8c, type: 2}
   defaultSkills: {fileID: 1059228630}
+  possessingRange: 9
   skillUI: {fileID: 1960680418}
   timerUI: {fileID: 1304566084}
   possessionUI: {fileID: 1746422389}
@@ -19626,7 +19628,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.8, y: 0.000022888184}
+  m_AnchoredPosition: {x: 0.20000076, y: 0.000022888184}
   m_SizeDelta: {x: 357.08, y: 71.068}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424778361
@@ -19649,9 +19651,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SHIFT
-
-'
+  m_text: Right Click
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0c346c300eb7d643a2588883514fe68, type: 2}
   m_sharedMaterial: {fileID: 909784272787448381, guid: f0c346c300eb7d643a2588883514fe68, type: 2}
@@ -20586,7 +20586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ESPACIO
+  m_text: Left Click
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0c346c300eb7d643a2588883514fe68, type: 2}
   m_sharedMaterial: {fileID: 909784272787448381, guid: f0c346c300eb7d643a2588883514fe68, type: 2}

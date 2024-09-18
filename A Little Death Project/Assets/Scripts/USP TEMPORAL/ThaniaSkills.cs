@@ -32,16 +32,16 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
             {
                 Debug.Log("Dealt Damage");
 
-                IDamageable damageable = hits.collider.gameObject.GetComponent<IDamageable>();
+                PossessableHealth damageable = hits.collider.gameObject.GetComponent<PossessableHealth>();
 
                 if (damageable != null)
                 {
-                    var dead = damageable.Damage((int)mySkills.primaryEffectAmount);
+                    var victim = hits.collider.gameObject.GetComponent<CharacterSkillSet>();
+                    var dead = damageable.DamagePossessable((int)mySkills.primaryEffectAmount, victim, skillManager);
                     if (dead)
                     {
-                        Debug.Log("Aca");
-                        var victim = hits.collider.gameObject.GetComponent<CharacterSkillSet>();
-                        skillManager.Possess(victim, victim.creatureAppearance);
+                        Debug.Log("Aca");                       
+                        //skillManager.Possess(victim, victim.creatureAppearance);
                     }
                     else print("no murio");
                 }
@@ -49,7 +49,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
         }
 
         //transform.GetChild(2).gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         mySkills.primaryHasExecuted = false;
         movement.anim.attacked = false;
         //transform.GetChild(2).gameObject.SetActive(false);
@@ -57,19 +57,19 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
     public void DefineSkills(CharacterSkillSet mySkills)
     {
-        mySkills.primaryExecute = (avatar) =>
+        mySkills.primaryExecute = (manager) =>
         {
             if (Time.time > mySkills.primaryExecTime && mySkills.primaryHasExecuted == false)
             {
                 mySkills.primaryHasExecuted = true;
                 Debug.Log("Attacked");
                 movement.anim.attacked = true;
-                avatar.StartCoroutine(AttackEnemy());
+                manager.StartCoroutine(AttackEnemy());
                 mySkills.primaryExecTime = Time.time + mySkills.primaryCooldown;
             }
         };
 
-        mySkills.secondaryExecute = (avatar) =>
+        mySkills.secondaryExecute = (manager) =>
         {
 
         };

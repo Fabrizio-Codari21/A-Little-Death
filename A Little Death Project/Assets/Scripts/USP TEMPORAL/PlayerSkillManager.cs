@@ -9,6 +9,7 @@ public class PlayerSkillManager : MonoBehaviour
     [Header("SKILLS INFO")]
     public PlayerSkills sk;
     public ThaniaSkills defaultSkills;
+    public float possessingRange;
 
     [Header("UI")]
     public HabilityUI skillUI;
@@ -35,7 +36,7 @@ public class PlayerSkillManager : MonoBehaviour
            || sk.baseSkills.secondarySkill.Equals(default)) print("no encuentro los structs");
 
         var readyUpSkills = BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
-        if (!readyUpSkills) Debug.Log("No se pudieron crear las habilidades"); else print(sk.baseSkills.secondarySkill.skillType);
+        if (!readyUpSkills) Debug.Log("No hubo cambio en las habilidades"); else print(sk.baseSkills.secondarySkill.skillType);
     }
 
 
@@ -130,4 +131,12 @@ public class PlayerSkillManager : MonoBehaviour
         defaultSkills.DefineSkills(sk.baseSkills);
         BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, possessingRange);
+    }
 }
+
+

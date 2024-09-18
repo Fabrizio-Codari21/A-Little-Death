@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreeRoamMovement : MonoBehaviour
+public class FreeRoamMovement : EnemyMovement
 {
     [SerializeField] float speed;
     float moveDirection = -1;
@@ -32,7 +32,7 @@ public class FreeRoamMovement : MonoBehaviour
         {
             Flip();
         }
-        rb.velocity = new Vector2(speed*moveDirection, rb.velocity.y);
+        if (canMove) rb.velocity = new Vector2(speed * moveDirection, rb.velocity.y); else rb.velocity = Vector2.zero;
     }
 
     public void Flip()
