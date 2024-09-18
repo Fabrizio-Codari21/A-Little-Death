@@ -7,6 +7,10 @@ using UnityEngine;
 // (ESTE ES EL SCRIPT QUE HAY QUE ARRASTRAR PARA EL PLAYER Y CADA ENEMIGO POSEIBLE)
 public class CharacterSkillSet : MonoBehaviour
 {
+    [Header("CHARACTER INFO")]
+    [Tooltip("What does this creature look like? (and what should the player look like when possessing them)")]
+    public PlayerAppearance creatureAppearance;
+
     [Header("PRIMARY SKILL")]
     public SkillType primarySkillType;
     [Tooltip("Represents distance values of your current action, such as range, radius, etc.")]

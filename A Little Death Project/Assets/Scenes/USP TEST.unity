@@ -2104,6 +2104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fb6a5150729264b90c69aca97a941d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureAppearance: 1
   primarySkillType: 0
   primaryDistance: 0
   primaryEffectAmount: 0
@@ -2239,6 +2240,7 @@ GameObject:
   - component: {fileID: 525929223}
   - component: {fileID: 525929222}
   - component: {fileID: 525929221}
+  - component: {fileID: 525929225}
   m_Layer: 8
   m_Name: Thania Sprites
   m_TagString: Player
@@ -2397,6 +2399,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &525929225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525929219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74aacf2bcde4584fb9a58a3b275443a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatSpriteIsThis: 0
 --- !u!1 &548321025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2570,6 +2585,7 @@ GameObject:
   - component: {fileID: 633625606}
   - component: {fileID: 633625605}
   - component: {fileID: 633625604}
+  - component: {fileID: 633625609}
   m_Layer: 6
   m_Name: Deer Sprites
   m_TagString: Player
@@ -2805,6 +2821,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &633625609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633625602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74aacf2bcde4584fb9a58a3b275443a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatSpriteIsThis: 1
 --- !u!1 &677738431
 GameObject:
   m_ObjectHideFlags: 0
@@ -3409,7 +3438,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 740753020}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f45269dbc979bf940a0f35af7ea5aa8d, type: 3}
   m_Name: 
@@ -4948,6 +4977,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sk: {fileID: 11400000, guid: 98264923dbd3ad64b971cd6d6a5d2d8c, type: 2}
+  defaultSkills: {fileID: 1059228630}
+  skillUI: {fileID: 1960680418}
+  timerUI: {fileID: 1304566084}
+  possessionUI: {fileID: 1746422389}
+  mySprites:
+  - {fileID: 525929225}
+  - {fileID: 633625609}
 --- !u!114 &1059228630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4975,6 +5011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fb6a5150729264b90c69aca97a941d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  creatureAppearance: 0
   primarySkillType: 1
   primaryDistance: 1.8
   primaryEffectAmount: 1
@@ -13730,6 +13767,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde46431661a51344ba056444608bf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxTime: 10
+  timeLeft: 0
   timerActive: 0
   UI: {fileID: 1746422389}
 --- !u!1 &1365969794

@@ -21,3 +21,9 @@ public enum SkillType
     DeerSecondary,
 
 }
+
+public enum PlayerAppearance
+{
+    Thania,
+    Deer,
+}

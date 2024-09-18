@@ -40,8 +40,8 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                     if (dead)
                     {
                         Debug.Log("Aca");
-                        var newSkills = hits.collider.gameObject.GetComponent<CharacterSkillSet>();
-                        print(skillManager.BuildSkillSet(newSkills.primarySkill, newSkills.secondarySkill));
+                        var victim = hits.collider.gameObject.GetComponent<CharacterSkillSet>();
+                        skillManager.Possess(victim, victim.creatureAppearance);
                     }
                     else print("no murio");
                 }

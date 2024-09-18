@@ -125,6 +125,7 @@
     <Compile Include="Assets\Scripts\Extras\SkillSet.cs" />
     <Compile Include="Assets\Scripts\Hearts.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Armature.cs" />
+    <Compile Include="Assets\Scripts\Extras\PlayerSprite.cs" />
     <Compile Include="Assets\Scripts\Interfaces\DashList.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityFactory.cs" />
     <Compile Include="Assets\Scripts\Extras\ENUMS.cs" />

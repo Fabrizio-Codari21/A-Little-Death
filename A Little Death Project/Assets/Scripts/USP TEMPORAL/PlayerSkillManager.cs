@@ -6,11 +6,29 @@ using UnityEngine;
 // (ESTE LO TIENE QUE TENER EL PLAYER Y NADIE MAS)
 public class PlayerSkillManager : MonoBehaviour
 {
+    [Header("SKILLS INFO")]
     public PlayerSkills sk;
+    public ThaniaSkills defaultSkills;
+
+    [Header("UI")]
+    public HabilityUI skillUI;
+    public TimerBar timerUI;
+    public GameObject possessionUI;
+
+    [Header("POSSESSABLE CREATURE SPRITES")]
+    public List<PlayerSprite> mySprites;
+    public Dictionary<PlayerAppearance, PlayerSprite> sprites = new();
+
 
     private void Start()
     {
         sk.baseSkills = GetComponent<CharacterSkillSet>();
+
+        foreach (var sprite in mySprites)
+        {
+            if (sprites.ContainsKey(sprite.whatSpriteIsThis)) sprites[sprite.whatSpriteIsThis] = sprite; 
+            else sprites.Add(sprite.whatSpriteIsThis, sprite);
+        }
 
         if (sk.baseSkills == null) print("no encuentro el script");
         if (sk.baseSkills.primarySkill.Equals(default)
@@ -20,6 +38,33 @@ public class PlayerSkillManager : MonoBehaviour
         if (!readyUpSkills) Debug.Log("No se pudieron crear las habilidades"); else print(sk.baseSkills.secondarySkill.skillType);
     }
 
+
+
+    private void Update()
+    {
+        CheckSkillInput(0);
+        CheckSkillInput(1);
+    }
+
+
+    // Para revisar los inputs de las habilidades activas y ejecutarlas en base a ellos.
+    public void CheckSkillInput(int skillId)
+    {
+        // AL apretar el boton del mouse correspondiente al tipo de habilidad...
+        if (Input.GetMouseButtonDown(sk.skills[skillId].input))
+        {
+            print("usando habilidad");
+
+            // ...chequeamos si tenemos la habilidad necesaria y de ser asi la ejecutamos.
+            if (sk.mySkills.ContainsKey(sk.skills[skillId].skillType))
+                sk.mySkills[sk.skills[skillId].skillType].Execute(this);
+
+            // Si no, se realiza la habilidad por defecto
+            else { sk.mySkills[SkillType.Default].Execute(this); print("default"); }
+        }
+    }
+
+    // Para reconstruir el set de habilidades a la hora de poseer
     public bool BuildSkillSet(SkillSet primary, SkillSet secondary)
     {
         // Borramos las habilidades previas si es que existen
@@ -54,25 +99,35 @@ public class PlayerSkillManager : MonoBehaviour
         //return sk.mySkills != default;
     }
 
-    private void Update()
+    // Se llama al momento de la posesion: recibe el skill set de la victima y su "identidad" (para decidir apariencia).
+    public void Possess(CharacterSkillSet victim, PlayerAppearance newAppearance, float possessTime = 10f)
     {
-        CheckSkillInput(0);
-        CheckSkillInput(1);
+        print($"Obtencion de habilidades: {BuildSkillSet(victim.primarySkill, victim.secondarySkill)}");
+
+        skillUI.FuerzaDash();
+
+        sprites[PlayerAppearance.Thania].gameObject.SetActive(false);
+        sprites[newAppearance].gameObject.SetActive(true);
+
+        StartCoroutine(WhilePossessing(newAppearance, possessTime));
+        possessionUI.gameObject.SetActive(true);
+        timerUI.maxTime = timerUI.timeLeft = possessTime;
+        timerUI.timerActive = true;
     }
 
-    public void CheckSkillInput(int skillId)
+    IEnumerator WhilePossessing(PlayerAppearance newAppearance, float possessTime)
     {
-        // AL apretar el boton del mouse correspondiente al tipo de habilidad...
-        if (Input.GetMouseButtonDown(sk.skills[skillId].input))
-        {
-            print("usando habilidad");
+        yield return new WaitForSeconds(possessTime);
 
-            // ...chequeamos si tenemos la habilidad necesaria y de ser asi la ejecutamos.
-            if (sk.mySkills.ContainsKey(sk.skills[skillId].skillType))
-                sk.mySkills[sk.skills[skillId].skillType].Execute(this);
+        skillUI.Default();
+        //dashManager.dashID = "base";
+        //attackManager.primaryFire = "base";
+        //Debug.Log("base");
 
-            // Si no, se realiza la habilidad por defecto
-            else { sk.mySkills[SkillType.Default].Execute(this); print("default"); }
-        }
+        sprites[newAppearance].gameObject.SetActive(false);
+        sprites[PlayerAppearance.Thania].gameObject.SetActive(true);
+
+        defaultSkills.DefineSkills(sk.baseSkills);
+        BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
     }
 }

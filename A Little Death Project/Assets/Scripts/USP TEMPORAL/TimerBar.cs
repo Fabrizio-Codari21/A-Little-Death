@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class TimerBar : MonoBehaviour
 {
     Image timer;
-    float maxTime = 10;
-    float timeLeft;
+    [HideInInspector] public float maxTime = 10;
+    [HideInInspector] public float timeLeft;
     public bool timerActive;
     public GameObject UI;
 
