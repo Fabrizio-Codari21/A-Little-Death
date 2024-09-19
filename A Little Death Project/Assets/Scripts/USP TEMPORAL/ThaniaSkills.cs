@@ -11,6 +11,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
     public CharacterSkillSet mySkills;
     public ThaniaMovement movement;
     [SerializeField] GameObject cartelTutorial;
+    public GameObject hitbox;
 
     void Awake()
     {
@@ -23,11 +24,13 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
     {
         if (mySkills.primaryHasExecuted)
         {
-            var hits = Physics2D.CircleCast(mySkills.primaryOrigin.position, 
-                                            mySkills.primaryDistance, 
-                                            transform.right, 
-                                            0f, 
+
+            var hits = Physics2D.CircleCast(mySkills.primaryOrigin.position,
+                                            mySkills.primaryDistance,
+                                            transform.right,
+                                            0f,
                                             mySkills.primaryValidLayer);
+            hitbox.SetActive(true);
 
             if (hits != false)
             {
@@ -41,7 +44,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                     var dead = damageable.DamagePossessable((int)mySkills.primaryEffectAmount, victim, skillManager, cartelTutorial);
                     if (dead)
                     {
-                        Debug.Log("Aca");                       
+                        Debug.Log("Aca");
                         //skillManager.Possess(victim, victim.creatureAppearance);
                     }
                     else print("no murio");
@@ -49,17 +52,19 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
             }
         }
 
-        //transform.GetChild(2).gameObject.SetActive(true);
         yield return new WaitForSeconds(0.2f);
-        mySkills.primaryHasExecuted = false;
         movement.anim.attacked = false;
-        //transform.GetChild(2).gameObject.SetActive(false);
+        yield return new WaitForSeconds(mySkills.primaryCooldown - 0.2f);
+        hitbox.SetActive(false);
+        mySkills.primaryHasExecuted = false;
     }
 
     public void DefineSkills(CharacterSkillSet mySkills)
     {
         mySkills.primaryExecute = (manager) =>
         {
+            movement.anim.attacked2 = false;
+
             if (Time.time > mySkills.primaryExecTime && mySkills.primaryHasExecuted == false)
             {
                 mySkills.primaryHasExecuted = true;
@@ -68,11 +73,20 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                 manager.StartCoroutine(AttackEnemy());
                 mySkills.primaryExecTime = Time.time + mySkills.primaryCooldown;
             }
+            else if (mySkills.primaryHasExecuted == true)
+            {
+                Debug.Log("Attacked2");
+                movement.anim.attacked2 = true;
+                manager.StartCoroutine(AttackEnemy());
+                mySkills.primaryHasExecuted = false;
+                movement.anim.attacked = false;
+            };
         };
 
         mySkills.secondaryExecute = (manager) =>
         {
 
         };
+
     }
 }

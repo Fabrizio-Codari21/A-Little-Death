@@ -25,6 +25,7 @@ public class CharacterSkillSet : MonoBehaviour
     public float primaryCooldown;
     [HideInInspector] public float primaryExecTime;
     [HideInInspector] public bool primaryHasExecuted;
+    [HideInInspector] public bool primary2HasExecuted;
     public Action<PlayerSkillManager> primaryExecute;
     
     [Space(20), Header("SECONDARY SKILL")]   
