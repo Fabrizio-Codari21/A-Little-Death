@@ -3449,7 +3449,7 @@ MonoBehaviour:
   TMPTutorial: {fileID: 178860813}
   habilityUI: {fileID: 1960680418}
   dashManager: {fileID: 1059228618}
-  attackManager: {fileID: 1059228621}
+  attackManager: {fileID: 0}
   defaultSkills: {fileID: 1059228630}
   defaultSkillSet: {fileID: 1059228631}
   skillManager: {fileID: 1059228628}
@@ -4662,7 +4662,6 @@ GameObject:
   - component: {fileID: 1059228624}
   - component: {fileID: 1059228623}
   - component: {fileID: 1059228622}
-  - component: {fileID: 1059228621}
   - component: {fileID: 1059228620}
   - component: {fileID: 1059228618}
   - component: {fileID: 1059228617}
@@ -4825,25 +4824,6 @@ MonoBehaviour:
     m_Bits: 64
   damage: 1
   anim: {fileID: 525929222}
---- !u!114 &1059228621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1059228611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d758044a0bfef2b4f8fc988c935e2988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackTypes:
-  - {fileID: 1059228620}
-  - {fileID: 1059228627}
-  habilityTypes:
-  - {fileID: 1059228626}
-  primaryFire: 
-  secondaryFire: 
 --- !u!114 &1059228622
 MonoBehaviour:
   m_ObjectHideFlags: 0

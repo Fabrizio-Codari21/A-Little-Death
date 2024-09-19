@@ -26,7 +26,7 @@ public class AttackManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             if (attackType.ContainsKey(primaryFire))
             {
@@ -47,6 +47,6 @@ public class AttackManager : MonoBehaviour
             {
                 habilityType["base"].Attack();
             }
-        }
+        }*/
     }
 }
