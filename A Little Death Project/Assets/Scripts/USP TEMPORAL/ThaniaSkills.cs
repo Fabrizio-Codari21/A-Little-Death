@@ -11,7 +11,8 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
     public CharacterSkillSet mySkills;
     public ThaniaMovement movement;
     [SerializeField] GameObject cartelTutorial;
-    public GameObject hitbox;
+    //public GameObject hitbox;
+    //public GameObject hitbox2;
 
     void Awake()
     {
@@ -22,8 +23,6 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
     private IEnumerator AttackEnemy()
     {
-        hitbox.SetActive(true);
-
         if (mySkills.primaryHasExecuted)
         {
 
@@ -57,7 +56,8 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
         yield return new WaitForSeconds(0.2f);
         movement.anim.attacked = false;
         yield return new WaitForSeconds(mySkills.primaryCooldown - 0.2f);
-        hitbox.SetActive(false);
+        //hitbox.SetActive(false);
+        //hitbox2.SetActive(false);
         mySkills.primaryHasExecuted = false;
     }
 
@@ -72,6 +72,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                 mySkills.primaryHasExecuted = true;
                 Debug.Log("Attacked");
                 movement.anim.attacked = true;
+                //hitbox.SetActive(true);
                 manager.StartCoroutine(AttackEnemy());
                 mySkills.primaryExecTime = Time.time + mySkills.primaryCooldown;
             }
@@ -79,7 +80,9 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
             {
                 Debug.Log("Attacked2");
                 movement.anim.attacked2 = true;
-                hitbox.SetActive(false);
+                //hitbox2.SetActive(true);
+                //hitbox.SetActive(false);
+                manager.StopCoroutine(AttackEnemy());
                 manager.StartCoroutine(AttackEnemy());
                 mySkills.primaryHasExecuted = false;
                 movement.anim.attacked = false;
