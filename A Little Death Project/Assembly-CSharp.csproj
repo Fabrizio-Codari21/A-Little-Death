@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\Player\VFXs &amp; Animations\MovementParticleController.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\PolygonBoundingBoxData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\Matrix.cs" />
+    <Compile Include="Assets\Scripts\TutorialFollower.cs" />
     <Compile Include="Assets\Scripts\Opciones.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\ColorTransform.cs" />
     <Compile Include="Assets\DragonBones\Scripts\animation\Animation.cs" />

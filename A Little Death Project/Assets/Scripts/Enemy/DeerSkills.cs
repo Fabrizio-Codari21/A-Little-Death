@@ -28,6 +28,7 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
                     var rb = mySkills.secondaryOrigin.GetComponent<Rigidbody2D>();
                     var move = rb.gameObject.GetComponent<ThaniaMovement>();
 
+                    move.anim.attacked = true;
                     mySkills.secondaryHasExecuted = true;
                     move.isDashing = true;
 
@@ -42,7 +43,9 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
 
                     yield return new WaitForSeconds(mySkills.secondaryCooldown);
 
+                    move.anim.attacked = false;
                     mySkills.secondaryHasExecuted = false;
+                    Debug.Log("Termino Dash");
                 }
 
                 if (VFX) VFX.Play();

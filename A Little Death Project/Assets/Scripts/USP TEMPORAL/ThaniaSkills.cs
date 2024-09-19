@@ -10,6 +10,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
     public PlayerSkillManager skillManager;
     public CharacterSkillSet mySkills;
     public ThaniaMovement movement;
+    [SerializeField] GameObject cartelTutorial;
 
     void Awake()
     {
@@ -37,7 +38,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                 if (damageable != null)
                 {
                     var victim = hits.collider.gameObject.GetComponent<CharacterSkillSet>();
-                    var dead = damageable.DamagePossessable((int)mySkills.primaryEffectAmount, victim, skillManager);
+                    var dead = damageable.DamagePossessable((int)mySkills.primaryEffectAmount, victim, skillManager, cartelTutorial);
                     if (dead)
                     {
                         Debug.Log("Aca");                       
