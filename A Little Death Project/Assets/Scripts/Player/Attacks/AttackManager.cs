@@ -23,30 +23,4 @@ public class AttackManager : MonoBehaviour
             habilityType.Add(i.classType, i);
         }
     }
-
-    void Update()
-    {
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (attackType.ContainsKey(primaryFire))
-            {
-                attackType[primaryFire].Attack();
-            }
-            else
-            {
-                attackType["base"].Attack();
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.Q))
-        {
-            if (attackType.ContainsKey(secondaryFire))
-            {
-                habilityType[secondaryFire].Attack();
-            }
-            else
-            {
-                habilityType["base"].Attack();
-            }
-        }*/
-    }
 }

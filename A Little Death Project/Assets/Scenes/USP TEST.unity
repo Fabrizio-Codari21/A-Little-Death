@@ -1981,6 +1981,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Deer Tutorial
       objectReference: {fileID: 0}
+    - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_Size.x
+      value: 5.22725
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_Size.y
+      value: 5.4692254
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.6006303
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_Offset.y
+      value: -3.2095616
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 12.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 13.67
+      objectReference: {fileID: 0}
     - target: {fileID: 5127866004850375660, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2035,12 +2059,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6798088688928900711, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Size.x
-      value: 2.3983955
+      value: 1.8506985
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798088688928900711, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_Size.y
+      value: 3.7544942
       objectReference: {fileID: 0}
     - target: {fileID: 6798088688928900711, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Offset.x
-      value: -1.6821046
+      value: -1.408256
       objectReference: {fileID: 0}
+    - target: {fileID: 6798088688928900711, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.426441
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798088688928900711, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 12.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798088688928900711, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 13.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829392026291116011, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d2a3463bd53c3049b5c6d7d9003b46d, type: 3}
     m_RemovedComponents:
     - {fileID: 210716095454238266, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
     m_RemovedGameObjects: []
@@ -2419,6 +2463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whatSpriteIsThis: 0
+  animator: {fileID: 525929222}
 --- !u!1 &548321025
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,6 +2638,7 @@ GameObject:
   - component: {fileID: 633625605}
   - component: {fileID: 633625604}
   - component: {fileID: 633625609}
+  - component: {fileID: 633625610}
   m_Layer: 6
   m_Name: Deer Sprites
   m_TagString: Player
@@ -2609,7 +2655,7 @@ Transform:
   m_GameObject: {fileID: 633625602}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.98, y: 1.13, z: 0}
+  m_LocalPosition: {x: 2.98, y: 2.38, z: 0}
   m_LocalScale: {x: 1.6057715, y: 1.3238429, z: 2.8248935}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2718,18 +2764,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0443517, y: -2.3165054}
+  m_Offset: {x: 1.333022, y: 1.1450183}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.88, y: 10.72}
-    newSize: {x: 7.12, y: 10.79}
+    oldSize: {x: 12.81, y: 13.67}
+    newSize: {x: 6.88, y: 10.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.150028, y: 5.2778435}
+  m_Size: {x: 2.7381804, y: 4.2028346}
   m_EdgeRadius: 0
 --- !u!61 &633625607
 BoxCollider2D:
@@ -2763,18 +2809,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.9087126, y: -0.32527804}
+  m_Offset: {x: -0.61839676, y: -3.4443164}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.88, y: 10.72}
-    newSize: {x: 7.12, y: 10.79}
+    oldSize: {x: 12.81, y: 13.67}
+    newSize: {x: 6.88, y: 10.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.7563844, y: 9.251789}
+  m_Size: {x: 6.6500425, y: 5.0407934}
   m_EdgeRadius: 0
 --- !u!212 &633625608
 SpriteRenderer:
@@ -2817,12 +2863,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: b2e0ab25bba67264d9f2919d7116f708, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f93c6ecaea3fd424e9f857dbe3507c1f, type: 3}
   m_Color: {r: 1, g: 0.7932729, b: 0.6084906, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 7.12, y: 10.79}
+  m_Size: {x: 6.88, y: 10.72}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2841,6 +2887,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whatSpriteIsThis: 1
+  animator: {fileID: 633625610}
+--- !u!114 &633625610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633625602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee55c1f097287df4199643621c6097a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumped: 0
+  attacked: 0
+  thania: {fileID: 1059228622}
+  thaniaJ: {fileID: 1059228614}
+  animator: {fileID: 633625604}
+  attackEnded: 1
 --- !u!1 &677738431
 GameObject:
   m_ObjectHideFlags: 0
@@ -4965,6 +5030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sk: {fileID: 11400000, guid: 98264923dbd3ad64b971cd6d6a5d2d8c, type: 2}
   defaultSkills: {fileID: 1059228630}
+  jumpManager: {fileID: 1059228614}
   possessingRange: 9
   skillUI: {fileID: 1960680418}
   timerUI: {fileID: 1304566084}

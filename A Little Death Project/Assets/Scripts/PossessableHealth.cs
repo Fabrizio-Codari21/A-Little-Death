@@ -35,7 +35,6 @@ public class PossessableHealth : Health
     {
         GetComponent<EnemyMovement>().canMove = false;
         _animator.SetTrigger("Stunned");
-        // Aca cambiaria la animacion y todo eso
         canBePossessed = true;
         yield return new WaitForSeconds(stunTime);
         Die();

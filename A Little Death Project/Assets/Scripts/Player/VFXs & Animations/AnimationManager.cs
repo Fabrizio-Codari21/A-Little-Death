@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AnimationManager : MonoBehaviour
@@ -15,6 +16,13 @@ public class AnimationManager : MonoBehaviour
     {
         thania = GetComponentInParent<ThaniaMovement>();
         thaniaJ = GetComponentInParent<JumpManager>();
+    }
+
+    void OnEnable()
+    {
+        jumped = false;
+        attacked = false;
+        attackEnded = true;
     }
 
     private void Update()

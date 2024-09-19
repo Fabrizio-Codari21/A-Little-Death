@@ -9,6 +9,7 @@ public class PlayerSkillManager : MonoBehaviour
     [Header("SKILLS INFO")]
     public PlayerSkills sk;
     public ThaniaSkills defaultSkills;
+    public JumpManager jumpManager;
     public float possessingRange;
 
     [Header("UI")]
@@ -19,7 +20,6 @@ public class PlayerSkillManager : MonoBehaviour
     [Header("POSSESSABLE CREATURE SPRITES")]
     public List<PlayerSprite> mySprites;
     public Dictionary<PlayerAppearance, PlayerSprite> sprites = new();
-
 
     private void Start()
     {
@@ -109,6 +109,8 @@ public class PlayerSkillManager : MonoBehaviour
 
         sprites[PlayerAppearance.Thania].gameObject.SetActive(false);
         sprites[newAppearance].gameObject.SetActive(true);
+        defaultSkills.movement.anim = sprites[newAppearance].animator;
+        jumpManager.anim = sprites[newAppearance].animator;
 
         StartCoroutine(WhilePossessing(newAppearance, possessTime));
         possessionUI.gameObject.SetActive(true);
@@ -127,6 +129,8 @@ public class PlayerSkillManager : MonoBehaviour
 
         sprites[newAppearance].gameObject.SetActive(false);
         sprites[PlayerAppearance.Thania].gameObject.SetActive(true);
+        defaultSkills.movement.anim = sprites[PlayerAppearance.Thania].animator;
+        jumpManager.anim = sprites[PlayerAppearance.Thania].animator;
 
         defaultSkills.DefineSkills(sk.baseSkills);
         BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
