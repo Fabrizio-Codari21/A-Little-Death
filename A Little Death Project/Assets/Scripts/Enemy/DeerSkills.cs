@@ -52,7 +52,6 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
         };
     }
 
-    // Start is called before the first frame update
     void Awake()
     {
         DefineSkills(mySkills);

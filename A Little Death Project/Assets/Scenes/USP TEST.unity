@@ -2061,6 +2061,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4067276452488846464, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
   m_PrefabInstance: {fileID: 453437960}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &453437962 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5582059401838038680, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+  m_PrefabInstance: {fileID: 453437960}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &453437971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2075,6 +2080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  _animator: {fileID: 453437962}
   stunTime: 5
   damage: 1
   particleSystems: []
@@ -4857,7 +4863,7 @@ MonoBehaviour:
   currentHealth: 0
   invulnerable: 0
   damageCooldown: 1
-  sRenderer: {fileID: 0}
+  sRenderer: {fileID: 525929224}
   rb: {fileID: 0}
   knockDur: 10
   knockbackPow: 10

@@ -7,6 +7,7 @@ public class PossessableHealth : Health
     bool canBePossessed = false;
     CharacterSkillSet _victim;
     PlayerSkillManager _skillManager;
+    [SerializeField] Animator _animator;
 
     public float stunTime;
     
@@ -33,6 +34,7 @@ public class PossessableHealth : Health
     IEnumerator Possessable()
     {
         GetComponent<EnemyMovement>().canMove = false;
+        _animator.SetTrigger("Stunned");
         // Aca cambiaria la animacion y todo eso
         canBePossessed = true;
         yield return new WaitForSeconds(stunTime);
