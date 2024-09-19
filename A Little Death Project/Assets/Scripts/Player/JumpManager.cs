@@ -40,7 +40,7 @@ public class JumpManager : MonoBehaviour
 
             if (dJump == false)
             {
-                if (coyoteCounter > 0f && Input.GetKeyDown(KeyCode.Space))
+                if (coyoteCounter > 0f && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
                 {
                     anim.jumped = true;
                     jumpSound.Play();

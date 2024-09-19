@@ -22,6 +22,8 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
     private IEnumerator AttackEnemy()
     {
+        hitbox.SetActive(true);
+
         if (mySkills.primaryHasExecuted)
         {
 
@@ -30,7 +32,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                                             transform.right,
                                             0f,
                                             mySkills.primaryValidLayer);
-            hitbox.SetActive(true);
+            
 
             if (hits != false)
             {
@@ -77,6 +79,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
             {
                 Debug.Log("Attacked2");
                 movement.anim.attacked2 = true;
+                hitbox.SetActive(false);
                 manager.StartCoroutine(AttackEnemy());
                 mySkills.primaryHasExecuted = false;
                 movement.anim.attacked = false;
