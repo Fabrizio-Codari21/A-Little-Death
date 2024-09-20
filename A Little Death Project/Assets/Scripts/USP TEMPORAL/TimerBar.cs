@@ -18,6 +18,11 @@ public class TimerBar : MonoBehaviour
         UI.gameObject.SetActive(false);
     }
 
+    //private void OnEnable()
+    //{
+    //    timeLeft = maxTime;
+    //}
+
     void Update()
     {
         if (timerActive == true)

@@ -2344,7 +2344,7 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 0
   _animator: {fileID: 357338417}
-  possesionTime: 10
+  possesionTime: 12
   stunTime: 5
   damage: 1
   particleSystems: []
@@ -2683,7 +2683,7 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 0
   _animator: {fileID: 453437962}
-  possesionTime: 10
+  possesionTime: 12
   stunTime: 5
   damage: 1
   particleSystems: []
@@ -14679,8 +14679,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: 0.039049983, y: -0.4102, z: 0}
-    m_Extent: {x: 1.29475, y: 1.5342, z: 0}
+    m_Center: {x: 0.042299986, y: -0.41465002, z: 0}
+    m_Extent: {x: 1.2955, y: 1.5339501, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

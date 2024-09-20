@@ -21,6 +21,8 @@ public class PlayerSkillManager : MonoBehaviour
     [Header("POSSESSABLE CREATURE SPRITES")]
     public List<PlayerSprite> mySprites;
     public Dictionary<PlayerAppearance, PlayerSprite> sprites = new();
+    PlayerAppearance _currentSprite;
+    float _possessingTime;
 
     private void Start()
     {
@@ -46,6 +48,12 @@ public class PlayerSkillManager : MonoBehaviour
     {
         CheckSkillInput(0);
         CheckSkillInput(1);
+
+        if (_isPossessing && Input.GetKeyDown(KeyCode.E)) 
+        {
+            StopCoroutine(WhilePossessing());
+            EndPossession();
+        } 
     }
 
 
@@ -107,29 +115,38 @@ public class PlayerSkillManager : MonoBehaviour
         print($"Obtencion de habilidades: {BuildSkillSet(victim.primarySkill, victim.secondarySkill)}");
 
         skillUI.FuerzaDash();
+        _currentSprite = newAppearance;
+        _possessingTime = possessTime;
 
         sprites[PlayerAppearance.Thania].gameObject.SetActive(false);
-        sprites[newAppearance].gameObject.SetActive(true);
-        defaultSkills.movement.anim = sprites[newAppearance].animator;
-        jumpManager.anim = sprites[newAppearance].animator;
+        sprites[_currentSprite].gameObject.SetActive(true);
+        defaultSkills.movement.anim = sprites[_currentSprite].animator;
+        jumpManager.anim = sprites[_currentSprite].animator;
         groundCheck.feet = victim.creatureFeetArea;
 
-        StartCoroutine(WhilePossessing(newAppearance, possessTime));
+        StartCoroutine(WhilePossessing());
         possessionUI.gameObject.SetActive(true);
-        timerUI.maxTime = timerUI.timeLeft = possessTime;
+        timerUI.maxTime = timerUI.timeLeft = _possessingTime;
         timerUI.timerActive = true;
     }
 
-    IEnumerator WhilePossessing(PlayerAppearance newAppearance, float possessTime)
+    bool _isPossessing = false;
+    IEnumerator WhilePossessing()
     {
-        yield return new WaitForSeconds(possessTime);
+        _isPossessing = true;
+        yield return new WaitForSeconds(_possessingTime);
 
+        EndPossession();
+    }
+
+    void EndPossession()
+    {
         skillUI.Default();
-        //dashManager.dashID = "base";
-        //attackManager.primaryFire = "base";
-        //Debug.Log("base");
+        timerUI.timeLeft = 0;
+        timerUI.timerActive = false;
+        timerUI.UI.gameObject.SetActive(false);
 
-        sprites[newAppearance].gameObject.SetActive(false);
+        sprites[_currentSprite].gameObject.SetActive(false);
         sprites[PlayerAppearance.Thania].gameObject.SetActive(true);
         defaultSkills.movement.anim = sprites[PlayerAppearance.Thania].animator;
         jumpManager.anim = sprites[PlayerAppearance.Thania].animator;
