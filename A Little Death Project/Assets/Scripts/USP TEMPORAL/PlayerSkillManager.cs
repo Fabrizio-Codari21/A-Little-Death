@@ -49,11 +49,11 @@ public class PlayerSkillManager : MonoBehaviour
         CheckSkillInput(0);
         CheckSkillInput(1);
 
-        if (_isPossessing && Input.GetKeyDown(KeyCode.E)) 
-        {
-            StopCoroutine(WhilePossessing());
-            EndPossession();
-        } 
+        //if (_isPossessing && Input.GetKeyDown(KeyCode.E)) 
+        //{
+        //    StopCoroutine(WhilePossessing());
+        //    EndPossession();
+        //} 
     }
 
 
@@ -145,6 +145,7 @@ public class PlayerSkillManager : MonoBehaviour
         timerUI.timeLeft = 0;
         timerUI.timerActive = false;
         timerUI.UI.gameObject.SetActive(false);
+        //timerUI.gameObject.SetActive(false);
 
         sprites[_currentSprite].gameObject.SetActive(false);
         sprites[PlayerAppearance.Thania].gameObject.SetActive(true);
@@ -154,6 +155,8 @@ public class PlayerSkillManager : MonoBehaviour
 
         defaultSkills.DefineSkills(sk.baseSkills);
         BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
+
+        _isPossessing = false;
     }
 
     private void OnDrawGizmos()
