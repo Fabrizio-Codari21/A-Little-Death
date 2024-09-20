@@ -12,7 +12,7 @@ public class TutorialColliders : MonoBehaviour
     public int tutorialValue;
     public float time;
 
-    private void Start()
+    private void Update()
     {
         if (tutorialValue == 1)
         {
@@ -20,11 +20,11 @@ public class TutorialColliders : MonoBehaviour
         }
         else if (tutorialValue == 2)
         {
-            textToPrint = "Adelante vas a ver un alma perdida. Tu tarea es cazarlas usando la guadaña, solo tenes que apretar <b>'ESPACIO'</b>.";
+            textToPrint = "Adelante vas a ver un alma perdida. Puedes usar tu habilidad principal, la guadaña, con <b>Click Izquierdo</b>, para segarla.";
         }
         else if (tutorialValue == 3)
         {
-            textToPrint = "Con <b>'SHIFT'</b> vas a poder usar el poder brindado por tu enemigo para saltar grandes distancias.";
+            textToPrint = "Con <b>'Click Derecho'</b> vas a poder usar la habilidad secundaria brindada por tu enemigo para desplazarte.";
         }
     }
 
@@ -32,8 +32,7 @@ public class TutorialColliders : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            tutorialBox.SetActive(true);
-            TMPTutorial.text = textToPrint;
+            ActivateTutorial(true);
         }
     }
 
@@ -41,8 +40,23 @@ public class TutorialColliders : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            ActivateTutorial(false);
+        }
+    }
+
+    public void ActivateTutorial(bool active)
+    {
+        if (active)
+        {
+            tutorialBox.SetActive(true);
+            TMPTutorial.text = textToPrint;
+            
+        }
+        else
+        {
             tutorialBox.SetActive(false);
             TMPTutorial.text = "";
+            tutorialValue++;
         }
     }
 }
