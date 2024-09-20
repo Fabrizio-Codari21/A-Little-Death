@@ -5,18 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class End : MonoBehaviour
 {
-    GameObject thania;
+    [SerializeField] GameObject thania;
 
     private void Start()
     {
         thania = GameObject.FindWithTag("Player");
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Nos re vimos");
-        if (collision.gameObject == thania) 
+        if (other.gameObject == thania) 
         {
+            Debug.Log("Nos re vimos");
             Checkpoints.savedPos = default;
             SceneManager.LoadScene("Victory");
         }

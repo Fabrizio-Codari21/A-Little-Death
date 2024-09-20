@@ -22,10 +22,13 @@ public class USPTutorial : PossessableHealth
         {
             Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
         }
-        tutorial.ActivateTutorial(true);
+        if(tutorial != null) { tutorial.ActivateTutorial(true); }
         gameObject.SetActive(false);
         Destroy(gameObject, 5f);
-        Destroy(tutorial.gameObject, 5f);
+        if (tutorial != null)
+        {
+            Destroy(tutorial.gameObject, 5f);
+        }
 
     }
 
@@ -40,6 +43,9 @@ public class USPTutorial : PossessableHealth
 
     private void OnDestroy()
     {
-        tutorial.ActivateTutorial(false);
+        if (tutorial != null)
+        {
+            tutorial.ActivateTutorial(false);
+        }
     }
 }

@@ -12,17 +12,9 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            StartCoroutine(waitForTransition("USP TEST"));
-        }
-    }
-
     public void Play()
     {
-        StartCoroutine(waitForTransition("Tutorial"));
+        StartCoroutine(waitForTransition("USP TEST"));
     }    
     
     public void Restart()
