@@ -10,6 +10,9 @@ public class CharacterSkillSet : MonoBehaviour
     [Header("CHARACTER INFO")]
     [Tooltip("What does this creature look like? (and what should the player look like when possessing them)")]
     public PlayerAppearance creatureAppearance;
+    public bool previewFeetAreaSize;
+    [Tooltip("The size of the hitbox this character uses when checking whether it's on the ground.")]
+    public Vector2 creatureFeetArea;
 
     [Header("PRIMARY SKILL")]
     public SkillType primarySkillType;
@@ -79,5 +82,11 @@ public class CharacterSkillSet : MonoBehaviour
             hasExecuted = secondaryHasExecuted,
             Execute = secondaryExecute,
         };
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        if(previewFeetAreaSize) Gizmos.DrawWireCube(transform.position, new Vector3(creatureFeetArea.x, creatureFeetArea.y, 0));
     }
 }

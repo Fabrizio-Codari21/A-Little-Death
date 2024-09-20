@@ -48,7 +48,7 @@ public class JumpManager : MonoBehaviour
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 }
 
-                if (Input.GetKeyUp(KeyCode.Space) && rb.velocity.y > 0f)
+                if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)) && rb.velocity.y > 0f)
                 {
                     rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
                 }

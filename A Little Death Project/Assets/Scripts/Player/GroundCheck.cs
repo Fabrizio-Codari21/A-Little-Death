@@ -7,7 +7,7 @@ public class GroundCheck : MonoBehaviour
 {
     [SerializeField] 
     JumpManager manager;
-    [SerializeField] Vector2 feet;
+    public Vector2 feet;
     [SerializeField] ParticleSystem landedVFX;
 
     private void Start()
