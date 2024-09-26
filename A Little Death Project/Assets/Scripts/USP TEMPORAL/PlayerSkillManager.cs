@@ -24,6 +24,8 @@ public class PlayerSkillManager : MonoBehaviour
     PlayerAppearance _currentSprite;
     float _possessingTime;
 
+    IEnumerator _whilePossessing;
+
     private void Start()
     {
         sk.baseSkills = GetComponent<CharacterSkillSet>();
@@ -51,7 +53,11 @@ public class PlayerSkillManager : MonoBehaviour
 
         if (_isPossessing && Input.GetKeyDown(KeyCode.E))
         {
-            StopCoroutine(WhilePossessing());
+            if(_whilePossessing != null)
+            { 
+                StopCoroutine(_whilePossessing);
+                print("end possession");
+            }
             EndPossession();
         }
     }
@@ -124,18 +130,19 @@ public class PlayerSkillManager : MonoBehaviour
         jumpManager.anim = sprites[_currentSprite].animator;
         groundCheck.feet = victim.creatureFeetArea;
 
-        StartCoroutine(WhilePossessing());
+        _whilePossessing = WhilePossessing();
+        StartCoroutine(_whilePossessing);
         possessionUI.gameObject.SetActive(true);
         timerUI.maxTime = timerUI.timeLeft = _possessingTime;
         timerUI.timerActive = true;
     }
 
     bool _isPossessing = false;
-    IEnumerator WhilePossessing()
+    public IEnumerator WhilePossessing()
     {
         _isPossessing = true;
         yield return new WaitForSeconds(_possessingTime);
-
+       
         EndPossession();
     }
 
