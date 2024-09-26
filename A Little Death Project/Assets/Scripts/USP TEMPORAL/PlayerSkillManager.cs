@@ -120,7 +120,10 @@ public class PlayerSkillManager : MonoBehaviour
     {
         print($"Obtencion de habilidades: {BuildSkillSet(victim.primarySkill, victim.secondarySkill)}");
 
-        skillUI.FuerzaDash();
+        // Esto tambien habria que mejorarlo
+        if (victim.secondarySkillType == SkillType.DeerSecondary) skillUI.FuerzaDash();
+        if (victim.secondarySkillType == SkillType.HarpySecondary) skillUI.AlasDash();
+
         _currentSprite = newAppearance;
         _possessingTime = possessTime;
 
@@ -159,6 +162,9 @@ public class PlayerSkillManager : MonoBehaviour
         defaultSkills.movement.anim = sprites[PlayerAppearance.Thania].animator;
         jumpManager.anim = sprites[PlayerAppearance.Thania].animator;
         groundCheck.feet = sk.baseSkills.creatureFeetArea;
+
+        // Despues habria que mejorar esto
+        jumpManager.dJump = false;
 
         defaultSkills.DefineSkills(sk.baseSkills);
         BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);

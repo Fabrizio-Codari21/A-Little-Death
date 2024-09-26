@@ -38,53 +38,64 @@ public class JumpManager : MonoBehaviour
                 coyoteCounter -= Time.deltaTime;
             }
 
-            if (dJump == false)
+            DoubleJump();
+            
+        }
+    }
+
+    public float doubleJumpForce;
+    public void DoubleJump()
+    {
+        if (dJump == false)
+        {
+            if (coyoteCounter > 0f && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
             {
-                if (coyoteCounter > 0f && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
-                {
-                    anim.jumped = true;
-                    jumpSound.Play();
-                    CreateDust();
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                }
-
-                if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)) && rb.velocity.y > 0f)
-                {
-                    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
-                }
+                anim.jumped = true;
+                jumpSound.Play();
+                CreateDust();
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             }
-            else
+
+            if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)) && rb.velocity.y > 0f)
             {
-                if (dJumped == true && grounded)
-                {
-                    dJumped = false;
-                    currentJump = 0;
-                }
-
-                if (coyoteCounter > 0f && dJumped == false && Input.GetKeyDown(KeyCode.W))
-                {
-                    anim.jumped = true;
-                    jumpSound.Play();
-                    CreateDust();
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    currentJump++;
-                }
-                else if (!grounded && dJumped == false && Input.GetKeyDown(KeyCode.W))
-                {
-                    anim.jumped = true;
-                    jumpSound.Play();
-                    CreateDust();
-                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                    currentJump++;
-                    dJumped = true;
-                }
-
-                if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.W))
-                {
-                    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
-                    coyoteCounter = 0;
-                }
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
             }
+        }
+        else
+        {
+            if (dJumped == true && grounded)
+            {
+                print("DOBLE SALTO");
+                dJumped = false;
+                currentJump = 0;
+                coyoteCounter = 0;
+            }
+
+            if (coyoteCounter > 0f && dJumped == false && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)))
+            {
+                anim.jumped = true;
+                jumpSound.Play();
+                CreateDust();
+                rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
+                currentJump++;
+            }
+            else if (!grounded && dJumped == false && Input.GetMouseButtonDown(1))
+            {
+                anim.jumped = true;
+                jumpSound.Play();
+                CreateDust();
+                rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
+                currentJump++;
+                dJumped = true;
+            }
+
+        }
+
+
+        if (rb.velocity.y > 0f && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
+            coyoteCounter = 0;
         }
     }
 

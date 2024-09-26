@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WingsHealth : Health
+public class WingsHealth : PossessableHealth
 {
     public GameObject manager;
     SkillSelector skillSelector;
@@ -16,18 +16,18 @@ public class WingsHealth : Health
         skillSelector = manager.GetComponent<SkillSelector>();
     }
 
-    public override void Die()
-    {
-        skillSelector.selecting = true;
-        skillSelector.timeCooldown = 0f;
+    //public override void Die()
+    //{
+    //    skillSelector.selecting = true;
+    //    skillSelector.timeCooldown = 0f;
 
-        skillSelector.enemyID = "alas";
-        foreach (var p in particleSystems)
-        {
-            Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
-        }
-        Destroy(gameObject);
-    }
+    //    skillSelector.enemyID = "alas";
+    //    foreach (var p in particleSystems)
+    //    {
+    //        Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
+    //    }
+    //    Destroy(gameObject);
+    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

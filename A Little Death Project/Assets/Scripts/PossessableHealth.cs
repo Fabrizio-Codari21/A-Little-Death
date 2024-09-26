@@ -38,11 +38,12 @@ public class PossessableHealth : Health
     IEnumerator Possessable()
     {
         GetComponent<EnemyMovement>().canMove = false;
-        _animator.SetTrigger("Stunned");
+        if(_animator) _animator.SetTrigger("Stunned");
         if(_cartelTutorial != default) { _cartelTutorial.SetActive(true); }
         canBePossessed = true;
         yield return new WaitForSeconds(stunTime);
         if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
+        print("murio");
         Die();
     }
 

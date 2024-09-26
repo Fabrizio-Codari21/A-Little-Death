@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class RoamingMovement : MonoBehaviour
+public class RoamingMovement : EnemyMovement
 {
     public List<GameObject> Waypoints;
     public float Speed = 5f;
@@ -14,7 +14,7 @@ public class RoamingMovement : MonoBehaviour
 
     public virtual void Update()
     {
-        Roaming();
+        if(canMove) Roaming();
     }
 
     public void Roaming()

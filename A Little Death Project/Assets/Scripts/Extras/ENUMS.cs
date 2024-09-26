@@ -20,12 +20,16 @@ public enum SkillType
     DeerPrimary,
     DeerSecondary,
 
+    HarpyPrimary,
+    HarpySecondary,
+
 }
 
 public enum PlayerAppearance
 {
     Thania,
     Deer,
+    Harpy,
 }
 
 public enum ColliderAction
