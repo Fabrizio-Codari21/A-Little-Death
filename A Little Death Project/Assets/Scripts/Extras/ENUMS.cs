@@ -27,3 +27,11 @@ public enum PlayerAppearance
     Thania,
     Deer,
 }
+
+public enum ColliderAction
+{
+    None,
+    Damage,
+    Break,
+
+}

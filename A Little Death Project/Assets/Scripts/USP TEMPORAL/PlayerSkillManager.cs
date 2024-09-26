@@ -159,6 +159,24 @@ public class PlayerSkillManager : MonoBehaviour
         _isPossessing = false;
     }
 
+    // Cambia la accion de la colision cuando la habilidad se activa y la hace desaparecer cuando se desactiva.
+    public void SetColliderAction(CharacterSkillSet mySkills, bool isSkillActive, SkillSlot type = default)
+    {
+        if (isSkillActive) 
+        {
+            sprites[_currentSprite].actionWhenColliding =
+                (type == SkillSlot.primary)
+                ? mySkills.primaryColliderAction
+                : mySkills.secondaryColliderAction;
+
+            print($"On collision this skill should: {sprites[_currentSprite].actionWhenColliding}");
+        }           
+        else sprites[_currentSprite].actionWhenColliding = ColliderAction.None;
+    }
+
+    public ColliderAction GetColliderAction() => sprites[_currentSprite].actionWhenColliding;
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

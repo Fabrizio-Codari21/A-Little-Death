@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ISkillDefiner
 {
     public void DefineSkills(CharacterSkillSet mySkills);
+
 }

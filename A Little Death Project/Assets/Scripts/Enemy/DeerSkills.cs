@@ -10,7 +10,7 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
 
     public void DefineSkills(CharacterSkillSet mySkills)
     {
-        Debug.Log("Define " + gameObject.name);
+        Debug.Log("Define secondary: " + mySkills.secondarySkillType);
         mySkills.primaryExecute = (manager) =>
         {
 
@@ -19,9 +19,11 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
         // Probar de hacer que las acciones reciban el GameObject del jugador como parametro
         mySkills.secondaryExecute = (manager) =>
         {
-            Debug.Log("Define secondary: " + mySkills.secondarySkillType);
+
             if (manager != null && !mySkills.secondaryHasExecuted)
             {
+                manager.SetColliderAction(mySkills, true, SkillSlot.secondary);
+
                 IEnumerator Dash()
                 {
                     print("Dash");
@@ -39,13 +41,14 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
                     yield return new WaitForSeconds(0.3f);
 
                     rb.gravityScale = originalGravity;
+                    manager.SetColliderAction(mySkills, false);
                     move.isDashing = false;
 
                     yield return new WaitForSeconds(mySkills.secondaryCooldown);
 
                     move.anim.attacked = false;
                     mySkills.secondaryHasExecuted = false;
-                    Debug.Log("Termino Dash");
+                    // Debug.Log("Termino Dash");
                 }
 
                 if (VFX) VFX.Play();

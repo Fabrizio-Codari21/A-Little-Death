@@ -22,10 +22,13 @@ public class CharacterSkillSet : MonoBehaviour
     public float primaryEffectAmount;
     [Tooltip("Represents the layer that your action may affect.")]
     public LayerMask primaryValidLayer;
+    [Tooltip("Represents the type of action that will be performed upon colliding with certain objects.")]
+    public ColliderAction primaryColliderAction;
     [Tooltip("Represents the origin point of your action.")]
     public Transform primaryOrigin;
     [Tooltip("Represents the time it takes before your action can be executed again.")]
     public float primaryCooldown;
+    
     [HideInInspector] public float primaryExecTime;
     [HideInInspector] public bool primaryHasExecuted;
     [HideInInspector] public bool primary2HasExecuted;
@@ -39,10 +42,13 @@ public class CharacterSkillSet : MonoBehaviour
     public float secondaryEffectAmount;
     [Tooltip("Represents the layer that your action may affect.")]
     public LayerMask secondaryValidLayer;
+    [Tooltip("Represents the type of action that will be performed upon colliding with certain objects.")]
+    public ColliderAction secondaryColliderAction;
     [Tooltip("Represents the origin point of your action.")]
     public Transform secondaryOrigin;
     [Tooltip("Represents the time it takes before your action can be executed again.")]
     public float secondaryCooldown;
+
     [HideInInspector] public float secondaryExecTime;
     [HideInInspector] public bool secondaryHasExecuted;
     // Action<GameObject> o lo que haga falta
@@ -62,6 +68,7 @@ public class CharacterSkillSet : MonoBehaviour
             distance = primaryDistance,
             effectAmount = primaryEffectAmount,
             validLayer = primaryValidLayer,
+            colliderAction = primaryColliderAction,
             origin = primaryOrigin,
             cooldown = primaryCooldown,
             nextFireTime = primaryExecTime,
@@ -76,6 +83,7 @@ public class CharacterSkillSet : MonoBehaviour
             distance = secondaryDistance,
             effectAmount = secondaryEffectAmount,
             validLayer = secondaryValidLayer,
+            colliderAction = secondaryColliderAction,
             origin = secondaryOrigin,
             cooldown = secondaryCooldown,
             nextFireTime = secondaryExecTime,

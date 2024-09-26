@@ -9,4 +9,6 @@ public class PlayerSprite : MonoBehaviour
     [Header("Please specify which entity")]
     public PlayerAppearance whatSpriteIsThis;
     public AnimationManager animator;
+
+    [HideInInspector] public ColliderAction actionWhenColliding;
 }

@@ -21,7 +21,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
         DefineSkills(mySkills);
     }
 
-    private IEnumerator AttackEnemy()
+    private IEnumerator AttackEnemy(PlayerSkillManager manager)
     {
         if (mySkills.primaryHasExecuted)
         {
@@ -33,9 +33,9 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                                             mySkills.primaryValidLayer);
             
 
-            if (hits != false)
+            if (hits != false && manager.GetColliderAction() == ColliderAction.Damage)
             {
-                Debug.Log("Dealt Damage");
+                Debug.Log( $"{mySkills.primarySkillType} dealt {mySkills.primaryEffectAmount} damage");
 
                 PossessableHealth damageable = hits.collider.gameObject.GetComponent<PossessableHealth>();
 
@@ -45,10 +45,10 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                     var dead = damageable.DamagePossessable((int)mySkills.primaryEffectAmount, victim, skillManager, cartelTutorial);
                     if (dead)
                     {
-                        Debug.Log("Aca");
+                        Debug.Log(mySkills.primarySkillType + " successfully defeated " + victim.gameObject.name);
                         //skillManager.Possess(victim, victim.creatureAppearance);
                     }
-                    else print("no murio");
+                    //else print("no murio");
                 }
             }
         }
@@ -58,6 +58,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
         yield return new WaitForSeconds(mySkills.primaryCooldown - 0.2f);
         //hitbox.SetActive(false);
         //hitbox2.SetActive(false);
+        manager.SetColliderAction(mySkills, false);
         mySkills.primaryHasExecuted = false;
     }
 
@@ -67,23 +68,27 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
         {
             movement.anim.attacked2 = false;
 
+            // Agregar esta linea a cualquier acción que realice algo al colisionar (seteando primary o secondary)
+            // y despues agregarla con el bool en false cuando la habilidad termine
+            manager.SetColliderAction(mySkills, true, SkillSlot.primary);
+
             if (Time.time > mySkills.primaryExecTime && mySkills.primaryHasExecuted == false)
             {
                 mySkills.primaryHasExecuted = true;
-                Debug.Log("Attacked");
+                //Debug.Log("Attacked");
                 movement.anim.attacked = true;
                 //hitbox.SetActive(true);
-                manager.StartCoroutine(AttackEnemy());
+                manager.StartCoroutine(AttackEnemy(manager));
                 mySkills.primaryExecTime = Time.time + mySkills.primaryCooldown;
             }
             else if (mySkills.primaryHasExecuted == true)
             {
-                Debug.Log("Attacked2");
+                //Debug.Log("Attacked2");
                 movement.anim.attacked2 = true;
                 //hitbox2.SetActive(true);
                 //hitbox.SetActive(false);
-                manager.StopCoroutine(AttackEnemy());
-                manager.StartCoroutine(AttackEnemy());
+                manager.StopCoroutine(AttackEnemy(manager));
+                manager.StartCoroutine(AttackEnemy(manager));
                 mySkills.primaryHasExecuted = false;
                 movement.anim.attacked = false;
             };

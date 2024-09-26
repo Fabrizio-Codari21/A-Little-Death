@@ -15,6 +15,7 @@ public struct SkillSet
     public float cooldown;
     public float nextFireTime;
     public bool hasExecuted;
+    public ColliderAction colliderAction;
 
     public Action<PlayerSkillManager> Execute;
 }

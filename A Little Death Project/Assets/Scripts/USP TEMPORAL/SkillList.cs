@@ -16,6 +16,7 @@ public class SkillList
     public float cooldown;
     public float nextFireTime;
     public bool executed;
+    public ColliderAction colliderAction;
 
     public Action<PlayerSkillManager> Execute;
     public int input;
@@ -29,6 +30,7 @@ public class SkillList
         distance = skillSet.distance;
         nextFireTime = skillSet.nextFireTime;
         Execute = skillSet.Execute;
+        colliderAction = skillSet.colliderAction;
 
         // El input a usar depende de su valor de skillSlot
         input = (skillSlot == SkillSlot.primary) ? 0 : 1;
