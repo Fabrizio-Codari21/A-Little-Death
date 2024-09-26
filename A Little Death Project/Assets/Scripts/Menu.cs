@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
     
     public void Death()
     {
-        StartCoroutine(waitForTransition("Death"));
+        StartCoroutine(waitForTransition(SceneManager.GetActiveScene().name));
     }
 
     public void Quit()
@@ -40,7 +40,7 @@ public class Menu : MonoBehaviour
     public IEnumerator waitForTransition(string name)
     {
         fadeEfect.SetActive(true);
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(1.5f);
         SceneManager.LoadScene(name);
     }
 
