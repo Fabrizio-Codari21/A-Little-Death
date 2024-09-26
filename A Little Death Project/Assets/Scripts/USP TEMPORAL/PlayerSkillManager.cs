@@ -49,11 +49,11 @@ public class PlayerSkillManager : MonoBehaviour
         CheckSkillInput(0);
         CheckSkillInput(1);
 
-        //if (_isPossessing && Input.GetKeyDown(KeyCode.E)) 
-        //{
-        //    StopCoroutine(WhilePossessing());
-        //    EndPossession();
-        //} 
+        if (_isPossessing && Input.GetKeyDown(KeyCode.E))
+        {
+            StopCoroutine(WhilePossessing());
+            EndPossession();
+        }
     }
 
 
