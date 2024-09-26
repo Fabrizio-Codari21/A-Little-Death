@@ -29,7 +29,6 @@ public class BreakableDoor : MonoBehaviour, IBreakable
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var manager = collision.gameObject.GetComponent<PlayerSkillManager>();
-        
 
         if (manager != null && manager.GetColliderAction() == ColliderAction.Break) 
         {
