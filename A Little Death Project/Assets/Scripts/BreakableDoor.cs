@@ -5,12 +5,15 @@ using UnityEngine;
 public class BreakableDoor : MonoBehaviour, IBreakable
 {
     public Rigidbody2D rb;
+    public Sprite brokenSprite;
 
     public void Break(GameObject breaker)
     {
-        // Aca iria la animcaion de destruccion en vez de esto del rigidbody (o ambas)
+        // Aca iria la animacion de destruccion en vez de esto del rigidbody (o ambas)
+        GetComponent<SpriteRenderer>().sprite = brokenSprite;
+
         rb.mass = 1000;
-        rb.AddTorque(36000000);
+        rb.AddTorque(3600000);
         GetComponent<Collider2D>().isTrigger = true;
         rb.AddForceAtPosition(transform.up * 300000, breaker.transform.position);
         rb.AddForceAtPosition(breaker.transform.right * 1000000, breaker.transform.position);          
