@@ -127,6 +127,7 @@
     <Compile Include="Assets\DragonBones\Scripts\core\BaseObject.cs" />
     <Compile Include="Assets\DragonBones\Scripts\model\ConstraintData.cs" />
     <Compile Include="Assets\DragonBones\Scripts\unity\UnityBone.cs" />
+    <Compile Include="Assets\Scripts\USP TEMPORAL\DoubleJumpActivator.cs" />
     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataWriter.cs" />
     <Compile Include="Assets\Scripts\Extras\SkillSet.cs" />
     <Compile Include="Assets\Scripts\Hearts.cs" />

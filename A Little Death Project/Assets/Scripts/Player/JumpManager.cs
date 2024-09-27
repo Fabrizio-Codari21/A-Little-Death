@@ -39,11 +39,11 @@ public class JumpManager : MonoBehaviour
             }
 
             DoubleJump();
-            
         }
     }
 
     public float doubleJumpForce;
+
     public void DoubleJump()
     {
         if (dJump == false)
@@ -65,13 +65,12 @@ public class JumpManager : MonoBehaviour
         {
             if (dJumped == true && grounded)
             {
-                print("DOBLE SALTO");
                 dJumped = false;
                 currentJump = 0;
                 coyoteCounter = 0;
             }
 
-            if (coyoteCounter > 0f && dJumped == false && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)))
+            if (coyoteCounter > 0f && dJumped == false && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
             {
                 anim.jumped = true;
                 jumpSound.Play();
@@ -79,8 +78,9 @@ public class JumpManager : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
                 currentJump++;
             }
-            else if (!grounded && dJumped == false && Input.GetMouseButtonDown(1))
+            else if (!grounded && dJumped == false && (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.W)))
             {
+                Debug.Log("A");
                 anim.jumped = true;
                 jumpSound.Play();
                 CreateDust();

@@ -45,14 +45,17 @@ public class Harpy : RoamingMovement
 
     public override void Update()
     {
-        if (detected == true)
+        if (canMove)
         {
-            Flip();
-            pathfindingUpdate();
-        }
-        else
-        {
-            base.Update();
+            if (detected == true)
+            {
+                Flip();
+                pathfindingUpdate();
+            }
+            else
+            {
+                base.Update();
+            }
         }
     }
 

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 77d0fc14aa6dd094d9052c975d56cc55
   - enabled: 1
-    path: Assets/Scenes/USP TEST.unity
+    path: Assets/Scenes/Level 1.unity
     guid: 9c817988a234d3344a8e0b311f0f2ee2
   - enabled: 1
     path: Assets/Scenes/Death.unity
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Victory.unity
     guid: 97bf86235865081448d88d18798cb650
+  - enabled: 1
+    path: Assets/Scenes/USP TEST 1.unity
+    guid: 5267220f97427f6478e144a075554f4f
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 08e757e34eb9aff4897ce4c4eaab8303

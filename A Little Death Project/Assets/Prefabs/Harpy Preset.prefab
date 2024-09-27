@@ -470,7 +470,7 @@ MonoBehaviour:
   damage: 1
   anim: {fileID: 6852644306105563988}
   nextFireTime: 0
-  cooldown: 1
+  cooldown: 3
 --- !u!1 &5846639739174284961
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +484,9 @@ GameObject:
   - component: {fileID: 6260604099389725509}
   - component: {fileID: 4760317470821347911}
   - component: {fileID: 6397945254562055918}
+  - component: {fileID: 2482202297623956356}
   - component: {fileID: 137109699163104425}
+  - component: {fileID: 7361797157718919134}
   m_Layer: 6
   m_Name: Harpy
   m_TagString: Untagged
@@ -550,6 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef9a966832ef7bf4eb33e6e54a8e56d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMove: 1
   Waypoints:
   - {fileID: 3527550949414860610}
   - {fileID: 1236359585036526852}
@@ -558,7 +561,7 @@ MonoBehaviour:
   rb: {fileID: 1127095682269720728}
   speedHunt: 800
   nextWaypointDistance: 3
-  seeker: {fileID: 0}
+  seeker: {fileID: 6397945254562055918}
 --- !u!114 &4760317470821347911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +576,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  _animator: {fileID: 6429558052257034647}
+  possesionTime: 25
+  stunTime: 10
   manager: {fileID: 0}
   damage: 1
   particleSystems:
@@ -606,6 +612,22 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &2482202297623956356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846639739174284961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cedc8b8d2e2ff0449f4fc70e85682c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpManager: {fileID: 0}
+  mySkills: {fileID: 7361797157718919134}
+  movement: {fileID: 0}
+  attack: {fileID: 0}
 --- !u!58 &137109699163104425
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -641,6 +663,44 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.39327562}
   serializedVersion: 2
   m_Radius: 4.8624296
+--- !u!114 &7361797157718919134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846639739174284961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15fb6a5150729264b90c69aca97a941d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creatureAppearance: 2
+  previewFeetAreaSize: 1
+  creatureFeetArea: {x: 1, y: 0.3}
+  primarySkillType: 1
+  primaryDistance: 2.5
+  primaryEffectAmount: 1
+  primaryValidLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  primaryColliderAction: 1
+  primaryOrigin: {fileID: 0}
+  primaryCooldown: 0.8
+  primaryExecTime: 0
+  primaryHasExecuted: 0
+  primary2HasExecuted: 0
+  secondarySkillType: 6
+  secondaryDistance: 10
+  secondaryEffectAmount: 0
+  secondaryValidLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  secondaryColliderAction: 0
+  secondaryOrigin: {fileID: 0}
+  secondaryCooldown: 0
+  secondaryExecTime: 0
+  secondaryHasExecuted: 0
 --- !u!1 &6015189309144489342
 GameObject:
   m_ObjectHideFlags: 0

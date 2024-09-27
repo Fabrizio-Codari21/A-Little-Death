@@ -22,7 +22,7 @@ public class WingsAttackDetection : MonoBehaviour
 
     private void Update()
     {
-        if (attacking)
+        if (attacking && harpy.canMove)
         {
             if (Time.time > nextFireTime && attacked == false)
             {

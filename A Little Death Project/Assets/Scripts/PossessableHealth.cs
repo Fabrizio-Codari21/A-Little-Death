@@ -11,6 +11,7 @@ public class PossessableHealth : Health
     [SerializeField] Animator _animator;
     [SerializeField] float possesionTime;
     GameObject _cartelTutorial;
+    [SerializeField] GameObject estoEsTemporalHayQueBorrarlo;
 
     public float stunTime;
     
@@ -21,6 +22,7 @@ public class PossessableHealth : Health
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            if(estoEsTemporalHayQueBorrarlo != null) { estoEsTemporalHayQueBorrarlo.SetActive(true); }
             StartCoroutine(Possessable());
             return true;
         }

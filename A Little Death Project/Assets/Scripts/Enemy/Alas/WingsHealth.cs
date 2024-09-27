@@ -16,19 +16,6 @@ public class WingsHealth : PossessableHealth
         skillSelector = manager.GetComponent<SkillSelector>();
     }
 
-    //public override void Die()
-    //{
-    //    skillSelector.selecting = true;
-    //    skillSelector.timeCooldown = 0f;
-
-    //    skillSelector.enemyID = "alas";
-    //    foreach (var p in particleSystems)
-    //    {
-    //        Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
-    //    }
-    //    Destroy(gameObject);
-    //}
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player")
