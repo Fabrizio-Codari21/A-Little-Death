@@ -6,18 +6,20 @@ using UnityEngine.SceneManagement;
 public class End : MonoBehaviour
 {
     [SerializeField] GameObject thania;
+    public string level;
 
     private void Start()
     {
         thania = GameObject.FindWithTag("Player");
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject == thania) 
+        if (other.gameObject.tag == "Player") 
         {
             Debug.Log("Nos re vimos");
             Checkpoints.savedPos = default;
-            SceneManager.LoadScene("Victory");
+            SceneManager.LoadScene(level);
         }
     }
 }

@@ -7404,8 +7404,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: 0.03640002, y: -0.4117, z: 0}
-    m_Extent: {x: 1.2960999, y: 1.5317, z: 0}
+    m_Center: {x: 0.043200016, y: -0.4069, z: 0}
+    m_Extent: {x: 1.3019, y: 1.5332999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -72853,7 +72853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3724f6bcc551d384c930dd5f5c54c556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objective: {fileID: 1455527674}
+  objective: {fileID: 1806823420}
   offset: {x: 0, y: 2.6, z: 0}
 --- !u!212 &1260384536
 SpriteRenderer:
