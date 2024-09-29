@@ -19,7 +19,6 @@ public class ThaniaHealth : Health
     public override void Start()
     {
         base.Start();
-        //sRenderer = transform.GetChild(5).gameObject.GetComponent<SpriteRenderer>();
         rb = gameObject.GetComponent<Rigidbody2D>();
 
         if (Checkpoints.savedPos != default)

@@ -8,6 +8,7 @@ public class WingsHealth : PossessableHealth
     SkillSelector skillSelector;
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem[] particleSystems;
+    [SerializeField] FreeRoamMovement movementManager;
 
     public override void Start()
     {
@@ -18,7 +19,7 @@ public class WingsHealth : PossessableHealth
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player" && movementManager == true)
         {
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
             damageableObject.Damage(damage);

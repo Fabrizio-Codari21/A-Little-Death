@@ -16061,7 +16061,7 @@ MonoBehaviour:
   stunTime: 100
   damage: 1
   particleSystems: []
-  tutorial: {fileID: 1336170453}
+  tutorial: {fileID: 0}
 --- !u!114 &453437980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16581,6 +16581,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {x: 571.5, y: -94.6}
   speed: 1000
+  moving: 0
+  movingBack: 0
+  textToPrint: 
+  TMPTutorial: {fileID: 178860813}
 --- !u!1 &506312393
 GameObject:
   m_ObjectHideFlags: 0
@@ -48234,8 +48238,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: 0.04824996, y: -0.41205, z: 0}
-    m_Extent: {x: 1.29985, y: 1.53885, z: 0}
+    m_Center: {x: 0.051450014, y: -0.41995, z: 0}
+    m_Extent: {x: 1.29685, y: 1.53345, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -48491,9 +48495,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50a16261f63561349a1cb5b1b9fd9d34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialBox: {fileID: 477439313}
-  TMPTutorial: {fileID: 178860813}
-  tutorialValue: 2
+  tutorialBox: {fileID: 477439318}
+  tutorialBoxObj: {fileID: 0}
+  wantToPrint: 
   time: 5
 --- !u!61 &1336170454
 BoxCollider2D:

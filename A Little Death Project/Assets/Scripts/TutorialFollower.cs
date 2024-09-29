@@ -9,7 +9,6 @@ public class TutorialFollower : MonoBehaviour
    
     void Update()
     {
-        Debug.Log("A");
         transform.position = objective.transform.position + offset;
     }
 }

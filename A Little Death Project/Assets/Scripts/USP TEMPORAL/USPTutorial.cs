@@ -8,10 +8,12 @@ public class USPTutorial : PossessableHealth
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem[] particleSystems;
     public TutorialBox tutorial;
+    [SerializeField] FreeRoamMovement movementManager;
 
     public override void Start()
     {
         base.Start();
+        movementManager = GetComponent<FreeRoamMovement>();
     }
 
     public override void Die()
@@ -36,8 +38,10 @@ public class USPTutorial : PossessableHealth
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player" && movementManager.canMove == true)
         {
+            Debug.Log("BOOM");
+            Debug.Log(movementManager.canMove);
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
             damageableObject.Damage(damage);
         }
