@@ -62,7 +62,4 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
     {
         DefineSkills(mySkills);
     }
-
-
-
 }

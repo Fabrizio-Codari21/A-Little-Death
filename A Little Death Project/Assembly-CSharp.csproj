@@ -152,6 +152,7 @@
     <Compile Include="Assets\DragonBones\Scripts\parser\DataParser.cs" />
     <Compile Include="Assets\Scripts\TutorialColliders.cs" />
     <Compile Include="Assets\DragonBones\Scripts\geom\Point.cs" />
+    <Compile Include="Assets\Scripts\TutorialBox.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\StrengthDash.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceDisplayTextureTest.cs" />
     <Compile Include="Assets\Scripts\USP TEMPORAL\ThaniaSkills.cs" />

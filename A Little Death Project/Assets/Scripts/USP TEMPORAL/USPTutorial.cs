@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class USPTutorial : PossessableHealth
 {
-    //public GameObject manager;
-    //SkillSelector skillSelector;
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem[] particleSystems;
-    public TutorialColliders tutorial;
+    public TutorialBox tutorial;
 
     public override void Start()
     {
@@ -22,14 +20,18 @@ public class USPTutorial : PossessableHealth
         {
             Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
         }
-        if(tutorial != null) { tutorial.ActivateTutorial(true); }
+        if(tutorial != null) 
+        {
+            tutorial.textToPrint = "Con <b>'Click Derecho'</b> vas a poder usar la habilidad secundaria brindada por tu enemigo para desplazarte.";
+            tutorial.gameObject.SetActive(true);
+        }
         gameObject.SetActive(false);
         Destroy(gameObject, 5f);
-        if (tutorial != null)
-        {
-            Destroy(tutorial.gameObject, 5f);
-        }
+    }
 
+    private void OnDestroy()
+    {
+        tutorial.movingBack = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -38,14 +40,6 @@ public class USPTutorial : PossessableHealth
         {
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
             damageableObject.Damage(damage);
-        }
-    }
-
-    private void OnDestroy()
-    {
-        if (tutorial != null)
-        {
-            tutorial.ActivateTutorial(false);
         }
     }
 }

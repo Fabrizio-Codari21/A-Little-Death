@@ -16476,6 +16476,7 @@ GameObject:
   - component: {fileID: 477439317}
   - component: {fileID: 477439316}
   - component: {fileID: 477439315}
+  - component: {fileID: 477439318}
   m_Layer: 5
   m_Name: Tutorial Box (1)
   m_TagString: Untagged
@@ -16502,7 +16503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 310.49, y: 93.005}
+  m_AnchoredPosition: {x: 255, y: -80}
   m_SizeDelta: {x: 897.2423, y: 452.2618}
   m_Pivot: {x: 0, y: 0}
 --- !u!223 &477439315
@@ -16566,6 +16567,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477439313}
   m_CullTransparentMesh: 1
+--- !u!114 &477439318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477439313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb1861891581ab548b2b61fc888eaf5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {x: 571.5, y: -94.6}
+  speed: 1000
 --- !u!1 &506312393
 GameObject:
   m_ObjectHideFlags: 0
@@ -48219,8 +48234,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: 0.038450003, y: -0.41995, z: 0}
-    m_Extent: {x: 1.29715, y: 1.53395, z: 0}
+    m_Center: {x: 0.04824996, y: -0.41205, z: 0}
+    m_Extent: {x: 1.29985, y: 1.53885, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

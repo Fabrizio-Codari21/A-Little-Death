@@ -6,27 +6,10 @@ using UnityEngine;
 
 public class TutorialColliders : MonoBehaviour
 {
-    public GameObject tutorialBox;
-    public TextMeshProUGUI TMPTutorial;
-    string textToPrint;
-    public int tutorialValue;
+    public TutorialBox tutorialBox;
+    public GameObject tutorialBoxObj;
+    public string wantToPrint;
     public float time;
-
-    private void Update()
-    {
-        if (tutorialValue == 1)
-        {
-            textToPrint = "Bien Thania, presiona <b>'A'</b> y <b>'D'</b> para moverte y  <b>'W'</b> para saltar.";
-        }
-        else if (tutorialValue == 2)
-        {
-            textToPrint = "Adelante vas a ver un alma perdida. Puedes usar tu habilidad principal, la guadaña, con <b>Click Izquierdo</b>, para segarla.";
-        }
-        else if (tutorialValue == 3)
-        {
-            textToPrint = "Con <b>'Click Derecho'</b> vas a poder usar la habilidad secundaria brindada por tu enemigo para desplazarte.";
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -48,15 +31,17 @@ public class TutorialColliders : MonoBehaviour
     {
         if (active)
         {
-            tutorialBox.SetActive(true);
-            TMPTutorial.text = textToPrint;
-            
+            tutorialBoxObj.SetActive(true);
+            tutorialBox.textToPrint = wantToPrint;
         }
         else
         {
-            tutorialBox.SetActive(false);
-            TMPTutorial.text = "";
-            tutorialValue++;
+            tutorialBox.movingBack = true;
         }
     }
+
+    //BACKLOG DEL TEXTO POR LAS DUDAS DE QUE SE BORRE
+    //Adelante vas a ver un alma perdida. Puedes usar tu habilidad principal, la guadaña, con <b>Click Izquierdo</b>, para segarla.
+    //Con <b>'Click Derecho'</b> vas a poder usar la habilidad secundaria brindada por tu enemigo para desplazarte.
+
 }
