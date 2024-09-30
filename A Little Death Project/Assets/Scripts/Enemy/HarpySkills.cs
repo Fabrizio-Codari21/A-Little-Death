@@ -95,18 +95,4 @@ public class HarpySkills : MonoBehaviour, ISkillDefiner
             if (Time.timeScale > 0) jumpManager.DoubleJump();
         };
     }
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
