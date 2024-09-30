@@ -33,7 +33,7 @@ public class USPTutorial : PossessableHealth
 
     private void OnDestroy()
     {
-        tutorial.movingBack = true;
+        if (tutorial != null) { tutorial.movingBack = true; }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
