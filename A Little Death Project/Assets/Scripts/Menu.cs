@@ -17,7 +17,7 @@ public class Menu : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.F1))
         {
-            StartCoroutine(waitForTransition("USP TEST 1"));
+            StartCoroutine(waitForTransition("Level 2"));
         }
     }
 

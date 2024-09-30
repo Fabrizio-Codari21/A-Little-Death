@@ -6,19 +6,25 @@ public class BreakableDoor : MonoBehaviour, IBreakable
 {
     public Rigidbody2D rb;
     public Sprite brokenSprite;
+    [SerializeField] ParticleSystem particleSystems;
 
     public void Break(GameObject breaker)
     {
         // Aca iria la animacion de destruccion en vez de esto del rigidbody (o ambas)
-        GetComponent<SpriteRenderer>().sprite = brokenSprite;
-
+        Destroy(gameObject);
+        /*
         rb.mass = 1000;
         rb.AddTorque(3600000);
         GetComponent<Collider2D>().isTrigger = true;
         rb.AddForceAtPosition(transform.up * 300000, breaker.transform.position);
         rb.AddForceAtPosition(breaker.transform.right * 1000000, breaker.transform.position);          
         Destroy(gameObject, 0.5f);
-        
+        */
+    }
+
+    private void OnDestroy()
+    {
+        Instantiate(particleSystems, transform.position, Quaternion.Euler(270, 0, 0));
     }
 
     public void Start()
