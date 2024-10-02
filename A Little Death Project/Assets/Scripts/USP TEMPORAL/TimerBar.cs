@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TimerBar : MonoBehaviour
 {
     Image timer;
+    Image otherTimer;
     [HideInInspector] public float maxTime = 10;
     [HideInInspector] public float timeLeft;
     public bool timerActive;
@@ -31,6 +32,8 @@ public class TimerBar : MonoBehaviour
             {
                 timeLeft -= Time.deltaTime;
                 timer.fillAmount = timeLeft/maxTime;
+                otherTimer.color = new Color(timer.color.r, timer.color.g, timer.color.b, timeLeft / maxTime);
+
             }
             else
             {
