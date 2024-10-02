@@ -13,6 +13,7 @@ public class ThaniaHealth : Health
     [SerializeField] float knockDur;
     [SerializeField] float knockbackPow;
     [SerializeField] AudioSource damageSound;
+    [SerializeField] ThaniaMovement movementManager;
 
     [SerializeField] Menu menu;
 
@@ -49,7 +50,9 @@ public class ThaniaHealth : Health
     public override void Die()
     {
         menu.Death();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        movementManager.isDashing = true;
+        movementManager.anim.animator.SetTrigger("Death");
     }
 
     IEnumerator takeDamage()

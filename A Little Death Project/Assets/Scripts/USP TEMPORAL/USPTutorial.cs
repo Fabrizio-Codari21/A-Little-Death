@@ -40,7 +40,6 @@ public class USPTutorial : PossessableHealth
     {
         if (collision.transform.tag == "Player" && movementManager.canMove == true)
         {
-            Debug.Log("BOOM");
             Debug.Log(movementManager.canMove);
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
             damageableObject.Damage(damage);

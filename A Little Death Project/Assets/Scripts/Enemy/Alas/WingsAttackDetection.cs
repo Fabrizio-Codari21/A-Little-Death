@@ -54,7 +54,7 @@ public class WingsAttackDetection : MonoBehaviour
     public void Attack(Collider2D collision)
     {
         StartCoroutine(ShowHitbox());
-        var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
+        var damageableObject = collision.gameObject.GetComponentInParent<ThaniaHealth>();
         damageableObject.Damage(damage);
         nextFireTime = Time.time + cooldown;
     }
