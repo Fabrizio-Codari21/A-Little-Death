@@ -42,6 +42,7 @@ public class PlayerSkillManager : MonoBehaviour
 
         var readyUpSkills = BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
         if (!readyUpSkills) Debug.Log("No hubo cambio en las habilidades"); else print(sk.baseSkills.secondarySkill.skillType);
+
     }
 
 
@@ -138,6 +139,7 @@ public class PlayerSkillManager : MonoBehaviour
         possessionUI.gameObject.SetActive(true);
         timerUI.maxTime = timerUI.timeLeft = _possessingTime;
         timerUI.ActivateTimer(true);
+
     }
 
     bool _isPossessing = false;
