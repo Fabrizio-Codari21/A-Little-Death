@@ -10,6 +10,7 @@ public class Hearts : MonoBehaviour
     public int numOfHearts;
 
     public Image[] hearts;
+    public GameObject[] heartPosition;
 
     public Sprite fullHeart;
     public Sprite emptyHeart;
@@ -38,7 +39,7 @@ public class Hearts : MonoBehaviour
                 if(hearts[i].gameObject.activeInHierarchy)
                 {
                     //Instantiate(particleSystems, hearts[i].transform.position, Quaternion.Euler(270, 0, 0));
-                    particleSystems.transform.position = hearts[i].transform.position;
+                    particleSystems.transform.position = heartPosition[i].transform.position;
                     particleSystems.Play();
                 }
                 hearts[i].gameObject.SetActive(false); 
