@@ -40,7 +40,7 @@ public class TimerBar : MonoBehaviour
             {
                 timeLeft -= Time.deltaTime;
                 timer.fillAmount = timeLeft/maxTime;
-                BorderEffect(borderEffectSpeed * timeLeft);
+                BorderEffect(borderEffectSpeed / timeLeft);
             }
             else
             {
@@ -52,8 +52,8 @@ public class TimerBar : MonoBehaviour
 
     void BorderEffect(float speed)
     {
-        if (_fadingIn) border.color = Color.Lerp(border.color, _original, ((timeLeft / speed) / maxTime));
-        else border.color = Color.Lerp(border.color, _invisible, ((timeLeft / speed) / maxTime));
+        if (_fadingIn) border.color = Color.Lerp(border.color, _original, ((speed / timeLeft) / maxTime));
+        else border.color = Color.Lerp(border.color, _invisible, ((speed / timeLeft) / maxTime));
 
         print(border.color.a);
 
