@@ -10,12 +10,14 @@ public class Hearts : MonoBehaviour
     public int numOfHearts;
 
     public Image[] hearts;
+    public GameObject[] heartPosition;
 
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
     public GameObject thania;
     ThaniaHealth thaniaHealth;
+    [SerializeField] ParticleSystem particleSystems;
 
     private void Start()
     {
@@ -34,8 +36,14 @@ public class Hearts : MonoBehaviour
             }
             else
             {
-                //hearts[i].sprite = emptyHeart;
+                if (hearts[i].gameObject.activeInHierarchy)
+                {
+                    //Instantiate(particleSystems, hearts[i].transform.position, Quaternion.Euler(270, 0, 0));
+                    particleSystems.transform.position = heartPosition[i].transform.position;
+                    particleSystems.Play();
+                }
                 hearts[i].gameObject.SetActive(false);
+
             }
 
             if (i < numOfHearts)
