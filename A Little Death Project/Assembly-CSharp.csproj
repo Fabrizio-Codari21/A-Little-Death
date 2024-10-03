@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\Enemy\Alas\Harpy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Fuerza\OlmecaAnimManager.cs" />
     <Compile Include="Assets\DragonBones\Scripts\event\IEventDispatcher.cs" />
+    <Compile Include="Assets\Scripts\Extras\Extensions.cs" />
     <Compile Include="Assets\DragonBones\Demos\Scripts\LightTest.cs" />
     <Compile Include="Assets\DragonBones\Scripts\armature\Bone.cs" />
     <Compile Include="Assets\Scripts\HabilityUI.cs" />
