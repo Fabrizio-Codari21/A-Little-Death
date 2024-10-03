@@ -52,6 +52,11 @@ public class Health : MonoBehaviour, IDamageable
                     forceX /= 10;
                     forceY /= 2;                 
                 }
+                if (move is Harpy)
+                {
+                    forceX /= 20;
+                    forceY /= 5;
+                }
 
                 if (damager.transform.position.x > transform.position.x)
                 {
