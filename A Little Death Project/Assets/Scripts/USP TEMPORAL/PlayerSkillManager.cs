@@ -137,7 +137,7 @@ public class PlayerSkillManager : MonoBehaviour
         StartCoroutine(_whilePossessing);
         possessionUI.gameObject.SetActive(true);
         timerUI.maxTime = timerUI.timeLeft = _possessingTime;
-        timerUI.timerActive = true;
+        timerUI.ActivateTimer(true);
     }
 
     bool _isPossessing = false;
@@ -153,7 +153,7 @@ public class PlayerSkillManager : MonoBehaviour
     {
         skillUI.Default();
         timerUI.timeLeft = 0;
-        timerUI.timerActive = false;
+        timerUI.ActivateTimer(false);
         timerUI.UI.gameObject.SetActive(false);
         //timerUI.gameObject.SetActive(false);
 
