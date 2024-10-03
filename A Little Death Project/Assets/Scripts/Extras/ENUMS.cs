@@ -30,6 +30,7 @@ public enum PlayerAppearance
     Thania,
     Deer,
     Harpy,
+    Soul,
 }
 
 public enum ColliderAction

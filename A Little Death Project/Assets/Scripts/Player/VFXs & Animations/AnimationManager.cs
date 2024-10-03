@@ -12,7 +12,6 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] JumpManager thaniaJ;
     public Animator animator;
     public bool attackEnded = true;
-    public GameObject hitbox;
 
     private void Start()
     {

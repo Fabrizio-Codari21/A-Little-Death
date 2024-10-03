@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Networking.PlayerConnection;
 
 // Maneja el cambio de skills al poseer y desposeer
 // (ESTE LO TIENE QUE TENER EL PLAYER Y NADIE MAS)
@@ -10,6 +12,7 @@ public class PlayerSkillManager : MonoBehaviour
     public PlayerSkills sk;
     public ThaniaSkills defaultSkills;
     public JumpManager jumpManager;
+    [SerializeField] ThaniaMovement thaniaMovement;
     public GroundCheck groundCheck;
     public float possessingRange;
 
@@ -25,14 +28,19 @@ public class PlayerSkillManager : MonoBehaviour
     float _possessingTime;
 
     IEnumerator _whilePossessing;
+    [SerializeField] GameObject cadaver;
+    CharacterSkillSet _victim;
+    [SerializeField] float posesionSpeed;
+    float posesionSpeedBase;
 
     private void Start()
     {
         sk.baseSkills = GetComponent<CharacterSkillSet>();
+        posesionSpeedBase = posesionSpeed;
 
         foreach (var sprite in mySprites)
         {
-            if (sprites.ContainsKey(sprite.whatSpriteIsThis)) sprites[sprite.whatSpriteIsThis] = sprite; 
+            if (sprites.ContainsKey(sprite.whatSpriteIsThis)) sprites[sprite.whatSpriteIsThis] = sprite;
             else sprites.Add(sprite.whatSpriteIsThis, sprite);
         }
 
@@ -54,12 +62,44 @@ public class PlayerSkillManager : MonoBehaviour
 
         if (_isPossessing && Input.GetKeyDown(KeyCode.E))
         {
-            if(_whilePossessing != null)
-            { 
+            if (_whilePossessing != null)
+            {
                 StopCoroutine(_whilePossessing);
                 print("end possession");
             }
             EndPossession();
+        }
+
+        if (onTarget == false && _isPossessing)
+        {
+            Debug.Log("While");
+            if (Vector2.Distance(transform.position, _victim.transform.position) >= 1)
+            {
+                transform.position += (_victim.transform.position - transform.position) * posesionSpeed * Time.deltaTime; 
+                Debug.Log("victim " + _victim.transform.position);
+                Debug.Log("player " + transform.position);
+                posesionSpeed += 0.01f;
+            }
+            else
+            {
+                onTarget = true;
+                thaniaMovement.rb.isKinematic = false;
+                sprites[PlayerAppearance.Soul].gameObject.SetActive(false);
+                sprites[_currentSprite].gameObject.SetActive(true);
+                defaultSkills.movement.anim = sprites[_currentSprite].animator;
+                jumpManager.anim = sprites[_currentSprite].animator;
+                groundCheck.feet = _victim.creatureFeetArea;
+
+                _whilePossessing = WhilePossessing();
+                StartCoroutine(_whilePossessing);
+                possessionUI.gameObject.SetActive(true);
+                timerUI.maxTime = timerUI.timeLeft = _possessingTime;
+                timerUI.ActivateTimer(true);
+                Destroy(_victim.gameObject);
+                thaniaMovement.canMove = true;
+                jumpManager.canMove = true;
+                posesionSpeed = posesionSpeedBase;
+            }
         }
     }
 
@@ -129,25 +169,23 @@ public class PlayerSkillManager : MonoBehaviour
         _possessingTime = possessTime;
 
         sprites[PlayerAppearance.Thania].gameObject.SetActive(false);
-        sprites[_currentSprite].gameObject.SetActive(true);
-        defaultSkills.movement.anim = sprites[_currentSprite].animator;
-        jumpManager.anim = sprites[_currentSprite].animator;
-        groundCheck.feet = victim.creatureFeetArea;
-
-        _whilePossessing = WhilePossessing();
-        StartCoroutine(_whilePossessing);
-        possessionUI.gameObject.SetActive(true);
-        timerUI.maxTime = timerUI.timeLeft = _possessingTime;
-        timerUI.ActivateTimer(true);
-
+        Instantiate(cadaver, transform.position + new Vector3(1.66f, -1.2f, 0), Quaternion.identity);
+        sprites[PlayerAppearance.Soul].gameObject.SetActive(true);
+        thaniaMovement.canMove = false;
+        jumpManager.canMove = false;
+        thaniaMovement.rb.velocity = Vector2.zero;
+        thaniaMovement.rb.isKinematic = true;
+        _isPossessing = true;
+        _victim = victim;
     }
 
     bool _isPossessing = false;
+    private bool onTarget;
+
     public IEnumerator WhilePossessing()
     {
-        _isPossessing = true;
         yield return new WaitForSeconds(_possessingTime);
-       
+
         EndPossession();
     }
 
@@ -172,12 +210,13 @@ public class PlayerSkillManager : MonoBehaviour
         BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
 
         _isPossessing = false;
+        onTarget = false;
     }
 
     // Cambia la accion de la colision cuando la habilidad se activa y la hace desaparecer cuando se desactiva.
     public void SetColliderAction(CharacterSkillSet mySkills, bool isSkillActive, SkillSlot type = default)
     {
-        if (isSkillActive) 
+        if (isSkillActive)
         {
             sprites[_currentSprite].actionWhenColliding =
                 (type == SkillSlot.primary)
@@ -185,7 +224,7 @@ public class PlayerSkillManager : MonoBehaviour
                 : mySkills.secondaryColliderAction;
 
             print($"On collision this skill should: {sprites[_currentSprite].actionWhenColliding}");
-        }           
+        }
         else sprites[_currentSprite].actionWhenColliding = ColliderAction.None;
     }
 
@@ -198,5 +237,3 @@ public class PlayerSkillManager : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, possessingRange);
     }
 }
-
-

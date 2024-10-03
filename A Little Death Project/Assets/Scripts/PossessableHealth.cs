@@ -42,6 +42,7 @@ public class PossessableHealth : Health
     IEnumerator Possessable()
     {
         GetComponent<EntityMovement>().canMove = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
         if(_animator) _animator.SetTrigger("Stunned");
         if(_cartelTutorial != default) { _cartelTutorial.SetActive(true); }
         canBePossessed = true;
@@ -62,7 +63,7 @@ public class PossessableHealth : Health
             {
                 _skillManager.Possess(_victim, _victim.creatureAppearance, this.possesionTime);
                 if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
-                Die();
+                //Die();
             }
 
         }
