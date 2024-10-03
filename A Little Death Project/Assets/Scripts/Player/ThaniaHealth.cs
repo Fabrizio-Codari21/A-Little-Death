@@ -29,13 +29,14 @@ public class ThaniaHealth : Health
         else Checkpoints.savedPos = transform.position;
     }
 
-    public override bool Damage(int damage)
+    public override bool Damage(GameObject damager, int damage)
     {
         if (Time.time > invulnerable)
         {
             invulnerable = Time.time + damageCooldown;
             StartCoroutine(takeDamage());
             currentHealth -= damage;
+            KnockBack(damager, damage);
             if (currentHealth <= 0)
             {
                 Die();

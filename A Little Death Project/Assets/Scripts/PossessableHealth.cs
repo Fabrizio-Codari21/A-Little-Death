@@ -16,10 +16,12 @@ public class PossessableHealth : Health
     public float stunTime;
     
 
-    public override bool Damage(int damage)
+    public override bool Damage(GameObject damager, int damage)
     {
         Debug.Log(this + "took damage");
         currentHealth -= damage;
+        KnockBack(damager, damage, currentHealth <= 0 ? false : true); 
+
         if (currentHealth <= 0)
         {
             if(estoEsTemporalHayQueBorrarlo != null) { estoEsTemporalHayQueBorrarlo.SetActive(true); }
@@ -34,12 +36,12 @@ public class PossessableHealth : Health
         _victim = victim;
         _skillManager = skillManager;
         _cartelTutorial = cartelTutorial;
-        return Damage(damage);
+        return Damage(skillManager.gameObject, damage);
     }
 
     IEnumerator Possessable()
     {
-        GetComponent<EnemyMovement>().canMove = false;
+        GetComponent<EntityMovement>().canMove = false;
         if(_animator) _animator.SetTrigger("Stunned");
         if(_cartelTutorial != default) { _cartelTutorial.SetActive(true); }
         canBePossessed = true;

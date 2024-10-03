@@ -26,11 +26,11 @@ public class WingsAttack : AttackList
 
             if (hits != false)
             {
-                IDamageable damageable = hits.collider.gameObject.GetComponent<IDamageable>();
+                Health damageable = hits.collider.gameObject.GetComponent<Health>();
 
                 if (damageable != null)
                 {
-                    damageable.Damage(damage);
+                    damageable.Damage(gameObject, damage);
                 }
             }
         }

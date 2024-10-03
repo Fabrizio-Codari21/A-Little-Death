@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FreeRoamMovement : EnemyMovement
+public class FreeRoamMovement : EntityMovement
 {
     [SerializeField] float speed;
     float moveDirection = -1;

@@ -78,8 +78,12 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                 //Debug.Log("Attacked");
                 movement.anim.attacked = true;
                 //hitbox.SetActive(true);
-                manager.StartCoroutine(AttackEnemy(manager));
-                mySkills.primaryExecTime = Time.time + mySkills.primaryCooldown;
+                this.WaitAndThen(0.1f, () =>
+                {
+                    manager.StartCoroutine(AttackEnemy(manager));
+                    mySkills.primaryExecTime = Time.time + mySkills.primaryCooldown;
+                });              
+                
             }
             else if (mySkills.primaryHasExecuted == true)
             {
@@ -88,9 +92,13 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                 //hitbox2.SetActive(true);
                 //hitbox.SetActive(false);
                 manager.StopCoroutine(AttackEnemy(manager));
-                manager.StartCoroutine(AttackEnemy(manager));
-                mySkills.primaryHasExecuted = false;
-                movement.anim.attacked = false;
+                this.WaitAndThen(0.1f, () =>
+                {
+                    manager.StartCoroutine(AttackEnemy(manager));
+                    mySkills.primaryHasExecuted = false;
+                    movement.anim.attacked = false;
+                });
+                
             };
         };
 
@@ -100,4 +108,11 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
         };
 
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(mySkills.primaryOrigin.position, mySkills.primaryDistance);
+    }
 }
+

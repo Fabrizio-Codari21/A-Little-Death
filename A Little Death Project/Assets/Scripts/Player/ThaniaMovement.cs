@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThaniaMovement : MonoBehaviour
+public class ThaniaMovement : EntityMovement
 {
     public Rigidbody2D rb;
     private float direction;
@@ -19,7 +19,7 @@ public class ThaniaMovement : MonoBehaviour
 
     void Update()
     {
-        if (isDashing == false)
+        if (isDashing == false && canMove)
         {
             rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
             direction = Input.GetAxisRaw("Horizontal");

@@ -62,7 +62,7 @@ public class WingsAttackDetection : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         transform.GetChild(0).gameObject.SetActive(true);
         var damageableObject = collision.gameObject.GetComponentInParent<ThaniaHealth>();
-        damageableObject.Damage(damage);
+        damageableObject.Damage(damageableObject.gameObject, damage);
         nextFireTime = Time.time + cooldown; yield return new WaitForSeconds(0.25f);
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(true);

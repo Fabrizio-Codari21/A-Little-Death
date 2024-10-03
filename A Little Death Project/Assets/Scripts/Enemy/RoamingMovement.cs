@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
-public class RoamingMovement : EnemyMovement
+public class RoamingMovement : EntityMovement
 {
     public List<GameObject> Waypoints;
     public float Speed = 5f;

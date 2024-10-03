@@ -26,13 +26,13 @@ public static class Extensions
             if (watchdog <= 0) break;
 
             if (stepLength != 0) { stepList.Add(new WaitForSeconds(remaining > stepLength ? stepLength : remaining)); remaining -= stepLength; }
-            else { stepList.Add(null); remaining -= Time.deltaTime; }
+            else { stepList.Add(null); remaining -= Time.fixedUnscaledDeltaTime;}
 
             //Debug.Log(remaining);
             watchdog--;
         }
 
-        Debug.Log(stepList.Count);
+        //Debug.Log(stepList.Count);
         return stepList;
     }
 
@@ -81,9 +81,9 @@ public static class Extensions
     }
 
     // Ejecuta una accion hasta que pase X tiempo.
-    public static void ExecuteUntil(this MonoBehaviour starter, float timeToWait, Action Exec)
+    public static void ExecuteUntil(this MonoBehaviour starter, float timeLimit, Action Exec)
     {
-        starter.StartCoroutine(SteppedExecution(timeToWait, 0, Exec));
+        starter.StartCoroutine(SteppedExecution(timeLimit * 4, 0, Exec));
     }
 
     public static IEnumerator ExecuteUntil(float duration, float stepLength, Action ExecuteOnEachStep)
@@ -97,34 +97,5 @@ public static class Extensions
         }
     }
 
-    #region SIN USAR
-    //// Devuelve verdadero tras pasar X tiempo.
-    //// Deberia permitir esperar cierto tiempo por fuera de una corrutina.
-    //public static bool Wait(float timeToWait, bool useFixed = false)
-    //{
-    //    int watchdog = 100000;
-    //    var delta = useFixed ? Time.fixedDeltaTime : Time.deltaTime;
-    //    var t = timeToWait;
 
-    //    var shouldItRecur = t >= 0 ? t > 0 : t < 0;
-
-    //    if (watchdog <= 0) { Debug.LogWarning("There was an error while waiting."); return false; }
-    //    watchdog--;
-
-    //    return shouldItRecur ? Wait(t -= delta, useFixed) : true;
-    //}
-
-
-    //// Devuelve verdadero hasta que pase X tiempo.
-    //public static bool Until(float timeToWait, bool useFixed = false) 
-    //{
-    //    return !Wait(timeToWait, useFixed); 
-    //}
-
-    //// Realiza una accion cuando la condicion de espera previa se cumple.
-    //public static Action Then(this bool wait, Action exec)
-    //{
-    //    if (wait) return exec; else return null;
-    //}
-    #endregion
 }

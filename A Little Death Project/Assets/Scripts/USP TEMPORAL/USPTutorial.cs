@@ -42,7 +42,7 @@ public class USPTutorial : PossessableHealth
         {
             Debug.Log(movementManager.canMove);
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
-            damageableObject.Damage(damage);
+            damageableObject.Damage(gameObject, damage);
         }
     }
 }

@@ -27,11 +27,11 @@ public class BaseAttack : AttackList
             {
                 Debug.Log("Dealt Damage");
 
-                IDamageable damageable = hits.collider.gameObject.GetComponent<IDamageable>();
+                Health damageable = hits.collider.gameObject.GetComponent<Health>();
 
                 if (damageable != null)
                 {
-                    damageable.Damage(damage);
+                    damageable.Damage(damageable.gameObject, damage);
                 }
             }
         }

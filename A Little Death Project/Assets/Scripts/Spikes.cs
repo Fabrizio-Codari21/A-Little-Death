@@ -10,7 +10,7 @@ public class Spikes : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            player.Damage(1);
+            player.Damage(player.gameObject, 1);
             StartCoroutine(player.Knockback(transform.position));
         }
     }

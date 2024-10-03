@@ -32,7 +32,7 @@ public class VenadoTutorial : Health
         if (collision.transform.tag == "Player")
         {
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
-            damageableObject.Damage(damage);
+            damageableObject.Damage(damageableObject.gameObject, damage);
         }
     }
 }
