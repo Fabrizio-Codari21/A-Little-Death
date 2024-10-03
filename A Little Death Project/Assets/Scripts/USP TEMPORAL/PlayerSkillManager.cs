@@ -171,10 +171,17 @@ public class PlayerSkillManager : MonoBehaviour
         sprites[PlayerAppearance.Thania].gameObject.SetActive(false);
         Instantiate(cadaver, transform.position + new Vector3(1.66f, -1.2f, 0), Quaternion.identity);
         sprites[PlayerAppearance.Soul].gameObject.SetActive(true);
+        if(victim.transform.position.x < transform.position.x)
+        {
+            sprites[PlayerAppearance.Soul].gameObject.transform.Rotate(0, 180, 0);
+        }
+
         thaniaMovement.canMove = false;
         jumpManager.canMove = false;
         thaniaMovement.rb.velocity = Vector2.zero;
         thaniaMovement.rb.isKinematic = true;
+
+
         _isPossessing = true;
         _victim = victim;
     }
