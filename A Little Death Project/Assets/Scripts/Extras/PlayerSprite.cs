@@ -9,6 +9,7 @@ public class PlayerSprite : MonoBehaviour
     [Header("Please specify which entity")]
     public PlayerAppearance whatSpriteIsThis;
     public AnimationManager animator;
+    public ParticleSystem soul;
 
     [HideInInspector] public ColliderAction actionWhenColliding;
 }

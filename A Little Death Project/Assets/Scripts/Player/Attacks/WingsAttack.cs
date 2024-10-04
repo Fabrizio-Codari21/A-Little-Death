@@ -30,7 +30,7 @@ public class WingsAttack : AttackList
 
                 if (damageable != null)
                 {
-                    damageable.Damage(gameObject, damage);
+                    damageable.Damage(GetComponentInParent<GameObject>(), damage);
                 }
             }
         }

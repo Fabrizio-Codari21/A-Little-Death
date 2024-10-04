@@ -206,6 +206,7 @@ public class PlayerSkillManager : MonoBehaviour
         skillUI.Default();
         timerUI.timeLeft = 0;
         timerUI.ActivateTimer(false);
+        Instantiate(sprites[_currentSprite].soul, transform.position, Quaternion.Euler(270, 180, 0));
         transitionParticle.startColor = Color.cyan;
         transitionParticle.Play();
         timerUI.UI.gameObject.SetActive(false);
@@ -213,7 +214,8 @@ public class PlayerSkillManager : MonoBehaviour
 
         this.WaitAndThen(0.2f, () =>
         {
-            sprites[PlayerAppearance.Soul].gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            sprites[PlayerAppearance.Soul].gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);           
+
             sprites[_currentSprite].gameObject.SetActive(false);
             sprites[PlayerAppearance.Thania].gameObject.SetActive(true);
             defaultSkills.movement.anim = sprites[PlayerAppearance.Thania].animator;
