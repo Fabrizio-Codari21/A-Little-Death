@@ -9,7 +9,7 @@ public class DoubleJumpActivator : MonoBehaviour
 
     private void OnEnable()
     {
-        if(harpy) { jMan.dJump = true; }
+        if(harpy) { jMan.dJump = true;}
         else { jMan.dJump = false; }
     }
 }

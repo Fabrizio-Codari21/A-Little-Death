@@ -84,7 +84,8 @@ public class JumpManager : EntityMovement
                 else if (!grounded && dJumped == false && (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.W)))
                 {
                     Debug.Log("A");
-                    anim.jumped = true;
+                    //anim.jumped = true;
+                    anim.attackEnded = true;
                     jumpSound.Play();
                     CreateDust();
                     rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
