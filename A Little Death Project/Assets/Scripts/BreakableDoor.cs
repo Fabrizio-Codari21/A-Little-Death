@@ -11,6 +11,7 @@ public class BreakableDoor : MonoBehaviour, IBreakable
     public void Break(GameObject breaker)
     {
         // Aca iria la animacion de destruccion en vez de esto del rigidbody (o ambas)
+        Instantiate(particleSystems, transform.position, Quaternion.Euler(270, 0, 0));
         Destroy(gameObject);
         /*
         rb.mass = 1000;
@@ -24,7 +25,7 @@ public class BreakableDoor : MonoBehaviour, IBreakable
 
     private void OnDestroy()
     {
-        Instantiate(particleSystems, transform.position, Quaternion.Euler(270, 0, 0));
+
     }
 
     public void Start()
@@ -32,7 +33,7 @@ public class BreakableDoor : MonoBehaviour, IBreakable
         rb.mass = 10000000000;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         var manager = collision.gameObject.GetComponent<PlayerSkillManager>();
 
