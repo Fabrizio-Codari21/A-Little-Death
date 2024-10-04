@@ -7,7 +7,7 @@ public class ThaniaMovement : EntityMovement
     public Rigidbody2D rb;
     private float direction;
     public float moveSpeed = 7f;
-    bool isFacingRight = true;
+    public bool isFacingRight = true;
     public bool isDashing;
     public AnimationManager anim;
     public Transform checkpointOne;

@@ -174,9 +174,14 @@ public class PlayerSkillManager : MonoBehaviour
         _possessingTime = possessTime;
 
         sprites[PlayerAppearance.Thania].gameObject.SetActive(false);
-        Instantiate(cadaver, transform.position + new Vector3(1.66f, -1.2f, 0), Quaternion.identity);
+        var cuerpo = Instantiate(cadaver, transform.position + new Vector3(1.66f, -1.2f, 0), Quaternion.identity);
+        cuerpo.transform.localScale = transform.localScale;
         sprites[PlayerAppearance.Soul].gameObject.SetActive(true);
-        if(victim.transform.position.x < transform.position.x)
+        if(victim.transform.position.x < transform.position.x && thaniaMovement.isFacingRight)
+        {
+            sprites[PlayerAppearance.Soul].gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        if(victim.transform.position.x > transform.position.x && !thaniaMovement.isFacingRight)
         {
             sprites[PlayerAppearance.Soul].gameObject.transform.rotation = Quaternion.Euler(0, 180, 0);
         }

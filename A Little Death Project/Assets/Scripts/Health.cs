@@ -56,6 +56,7 @@ public class Health : MonoBehaviour, IDamageable
                 {
                     forceX /= 20;
                     forceY /= 5;
+                    rb.gravityScale = 20;
                 }
 
                 if (damager.transform.position.x > transform.position.x)

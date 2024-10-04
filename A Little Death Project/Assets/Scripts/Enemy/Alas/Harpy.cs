@@ -57,7 +57,7 @@ public class Harpy : RoamingMovement
                 base.Update();
             }
         }
-        else if(rb.velocity != Vector2.zero) rb.velocity = Vector2.zero;
+        //else if(rb.velocity != Vector2.zero) rb.velocity = Vector2.zero;
     }
 
 
