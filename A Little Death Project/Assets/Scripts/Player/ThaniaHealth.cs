@@ -36,16 +36,18 @@ public class ThaniaHealth : Health
             invulnerable = Time.time + damageCooldown;
             StartCoroutine(takeDamage());
             currentHealth -= damage;
-            KnockBack(damager, damage);
+            if(damager.tag != "Manager")
+            {
+                Debug.Log(damager);
+                KnockBack(damager, damage);
+            }
             if (currentHealth <= 0)
             {
                 Die();
                 return true;
             }
-            
         }
         return false;
-
     }
 
     public override void Die()

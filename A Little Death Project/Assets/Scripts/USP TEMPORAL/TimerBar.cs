@@ -7,8 +7,9 @@ public class TimerBar : MonoBehaviour
 {
     Image timer;
     public Image border;
-    [HideInInspector] public float maxTime = 10;
-    [HideInInspector] public float timeLeft;
+    public Image border2;
+    public float maxTime = 10;
+    public float timeLeft;
     public bool timerActive;
     public GameObject UI;
     public float borderEffectSpeed;
@@ -39,7 +40,7 @@ public class TimerBar : MonoBehaviour
     {
         if (timerActive == true)
         {
-            if(timeLeft > 0)
+            /*if(timeLeft > 0)
             {
                 timeLeft -= Time.deltaTime;
                 timer.fillAmount = timeLeft/maxTime;
@@ -51,7 +52,11 @@ public class TimerBar : MonoBehaviour
                 timeLeft = maxTime;
                 UI.gameObject.SetActive(false);
                 slowdown = borderEffectSpeed / (maxTime / 2);
-            }
+            }*/
+
+            timeLeft -= Time.deltaTime;
+            border.fillAmount = timeLeft / maxTime;
+            border2.fillAmount = timeLeft / maxTime;
         }
     }
 
@@ -79,9 +84,10 @@ public class TimerBar : MonoBehaviour
     public void ActivateTimer(bool active)
     {
         timerActive = active;
-        border.color = _original;
+        timeLeft = maxTime;
+        /*border.color = _original;
         _fadingIn = false;
-        slowdown = borderEffectSpeed / (maxTime / 2);
+        slowdown = borderEffectSpeed / (maxTime / 2);*/
     }
 
 }

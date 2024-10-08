@@ -10,7 +10,7 @@ public class DeathBarrier : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             var damageableObject = other.gameObject.GetComponent<ThaniaHealth>();
-            damageableObject.Damage(damageableObject.gameObject, 100);
+            damageableObject.Damage(this.gameObject, 100);
         }
         else
         {

@@ -172,6 +172,7 @@ public class PlayerSkillManager : MonoBehaviour
 
         _currentSprite = newAppearance;
         _possessingTime = possessTime;
+        //timerUI.maxTime = possessTime;
 
         sprites[PlayerAppearance.Thania].gameObject.SetActive(false);
         var cuerpo = Instantiate(cadaver, transform.position + new Vector3(1.66f, -1.2f, 0), Quaternion.identity);
@@ -215,7 +216,6 @@ public class PlayerSkillManager : MonoBehaviour
         transitionParticle.startColor = Color.cyan;
         transitionParticle.Play();
         timerUI.UI.gameObject.SetActive(false);
-        //timerUI.gameObject.SetActive(false);
 
         this.WaitAndThen(0.2f, () =>
         {
