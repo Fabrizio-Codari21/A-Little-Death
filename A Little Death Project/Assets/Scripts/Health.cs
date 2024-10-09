@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
@@ -35,6 +36,7 @@ public class Health : MonoBehaviour, IDamageable
     {
         Debug.Log(this + " was knocked back.");
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Rigidbody2D damagerRb = damager.GetComponent<Rigidbody2D>();
 
         if (rb != null)
         {
@@ -44,6 +46,7 @@ public class Health : MonoBehaviour, IDamageable
             rb.velocity = Vector2.zero;
 
             var move = GetComponent<EntityMovement>();
+            var damagerMove = damager.GetComponent<EntityMovement>();
             if (move != null) 
             {
                 move.canMove = false;
@@ -74,9 +77,26 @@ public class Health : MonoBehaviour, IDamageable
             this.ExecuteUntil(0.25f, () =>
             {
                 rb.AddForce(new Vector3(power * forceX, power * forceY, 0));
+                damagerRb.AddForce(new Vector3(-(power * forceX / 2), -(power * forceY / 2), 0));
                 forceX *= 0.99f;
                 forceY *= 0.93f;
             });
+
+            if(damagerRb) this.ExecuteUntil(0.15f, () =>
+            {
+                damagerRb.AddForce(new Vector3(-(power * forceX / 4), -(power * forceY / 4), 0));
+                forceX *= 0.99f;
+                forceY *= 0.9f;
+            });
+
+            if (damagerMove)
+            {
+                damagerMove.canMove = false;
+                this.WaitAndThen(0.15f, () =>
+                {
+                    damagerMove.canMove = true;
+                });
+            }
 
             this.WaitAndThen(0.4f, () =>
             {

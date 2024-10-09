@@ -40,6 +40,7 @@ public class ThaniaHealth : Health
             {
                 Debug.Log(damager);
                 KnockBack(damager, damage);
+                //KnockBack(gameObject, damage);
             }
             if (currentHealth <= 0)
             {
@@ -66,19 +67,19 @@ public class ThaniaHealth : Health
         sRenderer.color = Color.white;
     }
 
-    public IEnumerator Knockback(Vector3 knockbackDir)
-    {
-        float timer = 0;
+    //public IEnumerator Knockback(Vector3 knockbackDir)
+    //{
+    //    float timer = 0;
 
-        while(knockDur > timer)
-        {
-            timer += Time.deltaTime;
+    //    while(knockDur > timer)
+    //    {
+    //        timer += Time.deltaTime;
 
-            rb.velocity = new Vector2(knockbackPow, knockbackPow);
-        }
+    //        rb.velocity = new Vector2(knockbackPow, knockbackPow);
+    //    }
 
-        yield return 0;
-    }
+    //    yield return 0;
+    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
