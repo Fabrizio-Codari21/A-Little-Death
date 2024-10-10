@@ -37,8 +37,9 @@ public class BreakableDoor : MonoBehaviour, IBreakable
     {
         var manager = collision.gameObject.GetComponent<PlayerSkillManager>();
 
-        if (manager != null && manager.GetColliderAction() == ColliderAction.Break) 
+        if (manager != null && manager.GetColliderAction() == ColliderAction.Break)
         {
+            manager.jumpManager.anim.animator.SetTrigger("Stun");
             Break(manager.gameObject);
             Debug.Log($"{gameObject.name} was broken by {manager.sk.skills[1].skillType}");
         }

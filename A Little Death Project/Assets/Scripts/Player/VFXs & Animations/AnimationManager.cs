@@ -50,4 +50,9 @@ public class AnimationManager : MonoBehaviour
     {
         attacked2 = false;
     }
+
+    public void AttackEnd()
+    {
+        attacked = false;
+    }
 }

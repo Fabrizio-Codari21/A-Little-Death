@@ -255,7 +255,6 @@ public class PlayerSkillManager : MonoBehaviour
 
     public ColliderAction GetColliderAction() => sprites[_currentSprite].actionWhenColliding;
 
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
