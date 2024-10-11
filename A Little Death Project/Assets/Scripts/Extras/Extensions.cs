@@ -80,56 +80,95 @@ public static class Extensions
     }
  
     // Ejecuta una accion despues de X tiempo.
-    public static void WaitAndThen(this MonoBehaviour starter, float timeToWait, Action ExecuteAfterwards)
+    public static void WaitAndThen(this MonoBehaviour starter, float timeToWait, Action ExecuteAfterwards, Func<bool> cancelCondition = default)
     {
-        starter.StartCoroutine(WaitAndThen(timeToWait, ExecuteAfterwards));
+        starter.StartCoroutine(ExecuteAfter(starter, timeToWait, ExecuteAfterwards, false, cancelCondition));
 
     }
 
-    public static IEnumerator WaitAndThen(float timeToWait, Action ExecuteAfterwards)
+    // Ejecuta una accion cada X segundos (puede cancelarse si se le da una condicion).
+    public static void ExecuteLooping(this MonoBehaviour starter, float timeUntilLoop, Action Exec, Func<bool> cancelCondition = default)
     {
+        Exec();
+        if(cancelCondition == default) starter.StartCoroutine(ExecuteAfter(starter, timeUntilLoop, Exec, true));
+        else starter.StartCoroutine(ExecuteAfter(starter, timeUntilLoop, Exec, true, cancelCondition));
+    }
+
+    public static IEnumerator ExecuteAfter(MonoBehaviour starter, float timeToWait, Action ExecuteAfterwards, bool loop = false, Func<bool> cancelCondition = default)
+    {
+        if (cancelCondition == default) cancelCondition = () => false;
+        
         yield return new WaitForSeconds(timeToWait);
-        ExecuteAfterwards();
+
+        if (!cancelCondition())
+        {
+            if (loop) ExecuteLooping(starter, timeToWait, ExecuteAfterwards, cancelCondition);
+            else ExecuteAfterwards();
+        }
     }
 
     // Ejecuta hasta que una condicion se cumpla.
     public static void ExecuteUntilTrue(this MonoBehaviour starter, Func<bool> condition, Action Exec)
-        => starter.StartCoroutine(ExecuteByCondition(condition, Exec, false));
+        => starter.StartCoroutine(ExecuteByCondition(starter, condition, Exec, false));
 
     // Ejecuta despues de que una condicion se haya cumplido.
     public static void ExecuteAfterTrue(this MonoBehaviour starter, Func<bool> condition, Action Exec)
-        => starter.StartCoroutine(ExecuteByCondition(condition, Exec, true));
+        => starter.StartCoroutine(ExecuteByCondition(starter, condition, Exec, true));
 
     // Si la condicion se cumple dentro del tiempo estipulado, se realiza la accion.
     public static void QuickTimeEvent(this MonoBehaviour starter, float timeLimit, Func<bool> doneWithinTime, Action Exec)
-        => starter.StartCoroutine(ExecuteByCondition(doneWithinTime, Exec, true, timeLimit));
+        => starter.StartCoroutine(ExecuteByCondition(starter, doneWithinTime, Exec, true, timeLimit));
 
-    public static IEnumerator ExecuteByCondition(Func<bool> condition, Action Exec, bool requireCondition = true, float span = 999)
+    // Ejecuta cada vez que la condicion se cumpla
+    public static void ExecuteWhenever(this MonoBehaviour starter, Func<bool> condition, Action Exec, Func<bool> cancelCondition = default)
     {
-        var timeSpan = BuildTimeSpan(span);
-
-        if (requireCondition) foreach (var frame in timeSpan)
-            {
-                if (!condition()) yield return frame;
-                else
-                {
-                    Exec();
-                    break;
-                }
-
-            }
-        else foreach (var frame in timeSpan)
-            {
-                if (condition()) break;
-                else
-                {
-                    Exec();
-                    yield return frame;
-
-                }
-            }
+        starter.StartCoroutine(ExecuteByCondition(starter,condition,Exec,true,999,true,cancelCondition));
     }
 
+    public static IEnumerator ExecuteByCondition(MonoBehaviour starter, Func<bool> condition, Action Exec, bool requireCondition = true, float span = 999, bool repeat = false, Func<bool> cancelCondition = default)
+    {
+        if (cancelCondition == default) cancelCondition = () => false;
+        var timeSpan = BuildTimeSpan(span);
+
+        if (requireCondition) 
+        foreach (var frame in timeSpan)
+        {
+            if (!condition())
+            {
+                if (cancelCondition()) break;
+                else yield return frame;
+            }
+            else if (!cancelCondition())
+            {
+                Exec();
+
+                if (repeat)
+                { 
+                    starter.StartCoroutine(ExecuteByCondition(starter, 
+                                                            condition, 
+                                                            Exec, 
+                                                            requireCondition, 
+                                                            span, 
+                                                            repeat, 
+                                                            cancelCondition));
+                }
+
+                break;
+            }
+
+        }
+        else 
+        foreach (var frame in timeSpan)
+        {
+            if (condition()) break;
+            else
+            {
+                Exec();
+                yield return frame;
+
+            }
+        }
+    }
 
     #endregion
 }
