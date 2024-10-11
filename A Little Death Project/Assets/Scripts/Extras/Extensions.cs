@@ -20,22 +20,27 @@ public static class Extensions
     {
         var remaining = seconds;
 
-
         List<WaitForSeconds> stepList = new();
 
-        int watchdog = 100000;
+        int watchdog = 1000000;
         while (remaining > 0)
         {
             if (watchdog <= 0) break;
 
-            if (stepLength != 0) { stepList.Add(new WaitForSeconds(remaining > stepLength ? stepLength : remaining)); remaining -= stepLength; }
-            else { stepList.Add(null); remaining -= Time.fixedUnscaledDeltaTime;}
+            if (stepLength != 0) 
+            { 
+                stepList.Add(new WaitForSeconds(remaining > stepLength ? stepLength : remaining)); 
+                remaining -= stepLength; 
+            }
+            else 
+            { 
+                stepList.Add(null); 
+                remaining -= Time.fixedUnscaledDeltaTime;
+            }
 
-            //Debug.Log(remaining);
             watchdog--;
         }
 
-        //Debug.Log(stepList.Count);
         return stepList;
     }
 
@@ -43,7 +48,11 @@ public static class Extensions
     // Se llama cuando queremos realizar una accion repetida cada X tiempo.
     public static void SteppedExecution(this MonoBehaviour starter, float duration, float stepLength, Action ExecuteOnEachStep) 
         => starter.StartCoroutine(SteppedExecution(duration, stepLength, ExecuteOnEachStep));
-    
+
+    // Ejecuta una accion hasta que pase X tiempo.
+    public static void ExecuteUntil(this MonoBehaviour starter, float timeLimit, Action Exec)
+        => starter.StartCoroutine(SteppedExecution(timeLimit * 4, 0, Exec));
+
     public static IEnumerator SteppedExecution(float duration, float stepLength, Action ExecuteOnEachStep)
     {
         var stepList = BuildTimeSpan(duration, stepLength);
@@ -53,12 +62,6 @@ public static class Extensions
             ExecuteOnEachStep();
             yield return step;
         }
-    }
-
-    // Ejecuta una accion hasta que pase X tiempo.
-    public static void ExecuteUntil(this MonoBehaviour starter, float timeLimit, Action Exec)
-    {
-        starter.StartCoroutine(SteppedExecution(timeLimit * 4, 0, Exec));
     }
 
     // Se llama cuando queremos realizar una serie de acciones separadas por un intervalo de X tiempo.
