@@ -40,3 +40,21 @@ public enum ColliderAction
     Break,
 
 }
+
+public enum MyInputs 
+{ 
+    Up,
+    Down,
+    Left,
+    Right,
+    MoveSkill,
+    PrimarySkill,
+    SecondarySkill,
+    Possess,
+    UnPossess,
+    Pause,
+    Secret1,
+    Secret2,
+    Secret3,
+    Secret4,
+}
