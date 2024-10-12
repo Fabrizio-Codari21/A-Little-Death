@@ -171,5 +171,49 @@ public static class Extensions
     }
 
     #endregion
+
+    // Devuelve los inputs que tengamos asignados para cada accion (esto se podria mejorar
+    // con otro ScriptableObject por si despues queremos que el jugador pueda cambiarlos).
+    public static bool Inputs(this MonoBehaviour x, MyInputs input) 
+    {
+        switch (input) 
+        {
+            case MyInputs.Up:
+                return Input.GetKey(KeyCode.W);
+            case MyInputs.Down:
+                return Input.GetKey(KeyCode.S);
+            case MyInputs.Left:
+                return Input.GetKey(KeyCode.A);
+            case MyInputs.Right:
+                return Input.GetKey(KeyCode.D);
+
+            case MyInputs.MoveSkill:
+                return Input.GetKeyDown(KeyCode.Space);
+            case MyInputs.PrimarySkill:
+                return Input.GetMouseButtonDown(0);
+            case MyInputs.SecondarySkill:
+                return Input.GetMouseButtonDown(1);
+
+            case MyInputs.Possess:
+                return Input.GetKeyDown(KeyCode.Q);
+            case MyInputs.UnPossess:
+                return Input.GetKeyDown(KeyCode.E);
+
+            case MyInputs.Pause:
+                return Input.GetKeyDown(KeyCode.Escape);
+
+            case MyInputs.Secret1:
+                return Input.GetKeyDown(KeyCode.F1);
+            case MyInputs.Secret2:
+                return Input.GetKeyDown(KeyCode.F2);
+            case MyInputs.Secret3:
+                return Input.GetKeyDown(KeyCode.F3);
+            case MyInputs.Secret4:
+                return Input.GetKeyDown(KeyCode.F4);
+
+            default: return false;
+        }
+
+    }
 }
 

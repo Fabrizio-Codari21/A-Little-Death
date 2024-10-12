@@ -9,13 +9,13 @@ public class Pause : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !paused)
+        if (this.Inputs(MyInputs.Pause) && !paused)
         {
             menu.SetActive(true);
             paused = true;
             Time.timeScale = 0;
-        } 
-        else if (Input.GetKeyDown(KeyCode.Escape) && paused)
+        }
+        else if (this.Inputs(MyInputs.Pause) && paused)
         {
             menu.SetActive(false);
             paused = false;

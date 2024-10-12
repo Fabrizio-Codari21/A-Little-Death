@@ -15,7 +15,7 @@ public class Menu : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F1))
+        if (this.Inputs(MyInputs.Secret1))
         {
             StartCoroutine(waitForTransition("Level 2"));
         }

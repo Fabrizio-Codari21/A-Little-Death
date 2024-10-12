@@ -19,7 +19,7 @@ public class DashManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (this.Inputs(MyInputs.MoveSkill))
         {
             if (dashType.ContainsKey(dashID))
             {

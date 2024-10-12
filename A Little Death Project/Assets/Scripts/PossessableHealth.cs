@@ -60,7 +60,7 @@ public class PossessableHealth : Health
 
     public virtual void Update()
     {
-        if(canBePossessed && Input.GetKeyDown(KeyCode.Q))
+        if (canBePossessed && this.Inputs(MyInputs.Possess))
         {
             if(Vector2.Distance
               (a: new Vector2(transform.position.x, transform.position.y), 

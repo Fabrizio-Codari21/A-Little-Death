@@ -51,7 +51,7 @@ public class JumpManager : EntityMovement
         {
             if (dJump == false)
             {
-                if (coyoteCounter > 0f && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
+                if (coyoteCounter > 0f && this.Inputs(MyInputs.MoveSkill))
                 {
                     anim.jumped = true;
                     jumpSound.Play();
@@ -59,7 +59,7 @@ public class JumpManager : EntityMovement
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 }
 
-                if ((Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)) && rb.velocity.y > 0f)
+                if (this.Inputs(MyInputs.MoveSkill) && rb.velocity.y > 0f)
                 {
                     rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
                 }
@@ -73,7 +73,7 @@ public class JumpManager : EntityMovement
                     coyoteCounter = 0;
                 }
 
-                if (coyoteCounter > 0f && dJumped == false && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)))
+                if (coyoteCounter > 0f && dJumped == false && this.Inputs(MyInputs.MoveSkill))
                 {
                     anim.jumped = true;
                     jumpSound.Play();
@@ -81,7 +81,7 @@ public class JumpManager : EntityMovement
                     rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
                     currentJump++;
                 }
-                else if (!grounded && dJumped == false && (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.W)))
+                else if (!grounded && dJumped == false && this.Inputs(MyInputs.SecondarySkill))
                 {
                     Debug.Log("A");
                     //anim.jumped = true;
@@ -96,7 +96,7 @@ public class JumpManager : EntityMovement
             }
 
 
-            if (rb.velocity.y > 0f && (Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.W)))
+            if (rb.velocity.y > 0f && this.Inputs(MyInputs.MoveSkill))
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
                 coyoteCounter = 0;

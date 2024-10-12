@@ -43,6 +43,7 @@ public enum ColliderAction
 
 public enum MyInputs 
 { 
+    None,
     Up,
     Down,
     Left,

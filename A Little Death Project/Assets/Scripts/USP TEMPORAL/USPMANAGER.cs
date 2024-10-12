@@ -35,7 +35,7 @@ public class USPMANAGER : MonoBehaviour
 
         if (paused)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (this.Inputs(MyInputs.Possess))
             {
                 habilityUI.FuerzaDash();
                 dashManager.dashID = "fuerza";

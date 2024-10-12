@@ -26,8 +26,8 @@ public class ThaniaMovement : EntityMovement
             Flip();
         }
 
-        if(Input.GetKeyDown(KeyCode.F2)) transform.position = checkpointOne.position;
-        if (Input.GetKeyDown(KeyCode.F1)) Checkpoints.savedPos = default;
+        if (this.Inputs(MyInputs.Secret2)) transform.position = checkpointOne.position;
+        if (this.Inputs(MyInputs.Secret1)) Checkpoints.savedPos = default;
     }
 
     private void Flip()

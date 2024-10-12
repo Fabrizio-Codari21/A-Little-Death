@@ -61,7 +61,7 @@ public class PlayerSkillManager : MonoBehaviour
         CheckSkillInput(0);
         CheckSkillInput(1);
 
-        if (_isPossessing && Input.GetKeyDown(KeyCode.E))
+        if (_isPossessing && this.Inputs(MyInputs.UnPossess))
         {
             if (_whilePossessing != null)
             {
