@@ -10,6 +10,7 @@ public class AnimationManager : MonoBehaviour
     public bool attacked2 = false;
     [SerializeField] ThaniaMovement thania;
     [SerializeField] JumpManager thaniaJ;
+    [SerializeField] ThaniaSkills thaniaSkills;
     public Animator animator;
     public bool attackEnded = true;
 
@@ -54,5 +55,10 @@ public class AnimationManager : MonoBehaviour
     public void AttackEnd()
     {
         attacked = false;
+    }
+
+    public void SetAttackTrigger()
+    {
+        //Aca deberia llamarse la accion de prender el colider de ataque
     }
 }
