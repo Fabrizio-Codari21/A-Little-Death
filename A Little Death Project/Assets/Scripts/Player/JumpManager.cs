@@ -59,7 +59,8 @@ public class JumpManager : EntityMovement
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 }
 
-                if (this.Inputs(MyInputs.MoveSkill) && rb.velocity.y > 0f)
+                //if (this.Inputs(MyInputs.MoveSkill) && rb.velocity.y > 0f)
+                if (Input.GetKeyUp(KeyCode.Space) && rb.velocity.y > 0f)
                 {
                     rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
                 }
@@ -96,7 +97,8 @@ public class JumpManager : EntityMovement
             }
 
 
-            if (rb.velocity.y > 0f && this.Inputs(MyInputs.MoveSkill))
+            //if (rb.velocity.y > 0f && this.Inputs(MyInputs.MoveSkill))
+            if (rb.velocity.y > 0f && Input.GetKeyUp(KeyCode.Space))
             {
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.75f);
                 coyoteCounter = 0;
