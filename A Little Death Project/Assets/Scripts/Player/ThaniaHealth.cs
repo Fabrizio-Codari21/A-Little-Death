@@ -74,7 +74,7 @@ public class ThaniaHealth : Health
         {
             timer += Time.deltaTime;
 
-            rb.velocity = new Vector2(knockbackPow, knockbackPow);
+            rb.velocity = new Vector2(0, knockbackPow*3);
         }
 
         yield return 0;

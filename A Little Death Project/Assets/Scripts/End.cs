@@ -17,6 +17,7 @@ public class End : MonoBehaviour
     {
         if (other.gameObject.tag == "Player") 
         {
+            Checkpoints.active = false;
             Debug.Log("Nos re vimos");
             Checkpoints.savedPos = default;
             SceneManager.LoadScene(level);
