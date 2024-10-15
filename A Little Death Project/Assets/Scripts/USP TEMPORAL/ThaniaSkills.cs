@@ -23,6 +23,12 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
     private IEnumerator AttackEnemy(PlayerSkillManager manager)
     {
+        manager.jumpManager.anim.animator.SetTrigger("AttackTrigger");
+        yield return null;
+    }
+
+    public void Attack(PlayerSkillManager manager)
+    {
         if (mySkills.primaryHasExecuted)
         {
 
@@ -31,11 +37,11 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
                                             transform.right,
                                             0f,
                                             mySkills.primaryValidLayer);
-            
+
 
             if (hits != false && manager.GetColliderAction() == ColliderAction.Damage)
             {
-                Debug.Log( $"{mySkills.primarySkillType} dealt {mySkills.primaryEffectAmount} damage");
+                Debug.Log($"{mySkills.primarySkillType} dealt {mySkills.primaryEffectAmount} damage");
 
                 PossessableHealth damageable = hits.collider.gameObject.GetComponent<PossessableHealth>();
 
@@ -53,13 +59,23 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
             }
         }
 
-        yield return new WaitForSeconds(0.2f);
-        movement.anim.attacked = false;
-        yield return new WaitForSeconds(mySkills.primaryCooldown - 0.2f);
-        //hitbox.SetActive(false);
-        //hitbox2.SetActive(false);
-        manager.SetColliderAction(mySkills, false);
-        mySkills.primaryHasExecuted = false;
+        Debug.Log("attacked");
+
+        this.WaitAndThen(timeToWait: 0.2f, () =>
+        {
+            movement.anim.attacked = false;
+        },
+        cancelCondition: () => false);
+
+
+        this.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
+        {
+            //hitbox.SetActive(false);
+            //hitbox2.SetActive(false);
+            manager.SetColliderAction(mySkills, false);
+            mySkills.primaryHasExecuted = false;
+        },
+        cancelCondition: () => false);;
     }
 
     public void DefineSkills(CharacterSkillSet mySkills)

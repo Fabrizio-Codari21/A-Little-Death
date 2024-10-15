@@ -11,6 +11,7 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] ThaniaMovement thania;
     [SerializeField] JumpManager thaniaJ;
     [SerializeField] ThaniaSkills thaniaSkills;
+    [SerializeField] PlayerSkillManager manager;
     public Animator animator;
     public bool attackEnded = true;
 
@@ -18,6 +19,8 @@ public class AnimationManager : MonoBehaviour
     {
         thania = GetComponentInParent<ThaniaMovement>();
         thaniaJ = GetComponentInParent<JumpManager>();
+        manager = GetComponentInParent<PlayerSkillManager>();
+        thaniaSkills = GetComponentInParent<ThaniaSkills>();
     }
 
     void OnEnable()
@@ -59,6 +62,6 @@ public class AnimationManager : MonoBehaviour
 
     public void SetAttackTrigger()
     {
-        //Aca deberia llamarse la accion de prender el colider de ataque
+        thaniaSkills.Attack(manager);
     }
 }
