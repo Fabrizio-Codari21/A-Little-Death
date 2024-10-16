@@ -49,15 +49,16 @@ public class Menu : MonoBehaviour
     public IEnumerator waitForTransition(string name)
     {
         fadeEfect.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(name);
+        yield return new WaitForSeconds(1f);
+        this.AsyncLoader(name);
     }
 
     IEnumerator waitForTransitionRestart()
     {
         fadeEfect.SetActive(true);
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        //SceneManager.LoadScene();
+        this.AsyncLoader(SceneManager.GetActiveScene().name);
     }
     
     IEnumerator waitForTransitionMenu()
@@ -65,6 +66,7 @@ public class Menu : MonoBehaviour
         fadeEfect.SetActive(true);
         Time.timeScale = 1;
         yield return new WaitForSeconds(1);
-        SceneManager.LoadScene("MainMenu");
+        this.AsyncLoader("MainMenu");
+
     }
 }

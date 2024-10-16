@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class Extensions
 {
@@ -108,8 +109,13 @@ public static class Extensions
     }
 
     // Ejecuta hasta que una condicion se cumpla.
-    public static void ExecuteUntilTrue(this MonoBehaviour starter, Func<bool> condition, Action Exec)
-        => starter.StartCoroutine(ExecuteByCondition(starter, condition, Exec, false));
+    public static IEnumerator ExecuteUntilTrue(this MonoBehaviour starter, Func<bool> condition, Action Exec)
+    {
+        IEnumerator exec = ExecuteByCondition(starter, condition, Exec, false);
+        starter.StartCoroutine(exec);
+        return exec;
+    }
+        
 
     // Ejecuta despues de que una condicion se haya cumplido.
     public static void ExecuteAfterTrue(this MonoBehaviour starter, Func<bool> condition, Action Exec)
@@ -214,6 +220,18 @@ public static class Extensions
             default: return false;
         }
 
+    }
+
+    public static IEnumerator AsyncLoader(this MonoBehaviour x, string sceneName)
+    {
+        AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
+
+        IEnumerator load = x.ExecuteUntilTrue(() => op.isDone, () =>
+        {
+            Debug.Log($"Loading {sceneName}: {Mathf.Clamp01(op.progress) * 100}%");
+        });
+
+        return load;
     }
 }
 
