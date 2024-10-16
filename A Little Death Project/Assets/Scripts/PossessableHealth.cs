@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PossessableHealth : Health
 {
-    bool canBePossessed = false;
+    [HideInInspector] public bool canBePossessed = false;
     CharacterSkillSet _victim;
     PlayerSkillManager _skillManager;
     [SerializeField] Animator _animator;
@@ -69,7 +69,6 @@ public class PossessableHealth : Health
             {
                 _skillManager.Possess(_victim, _victim.creatureAppearance, this.possesionTime);
                 if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
-                //Die();
             }
 
         }

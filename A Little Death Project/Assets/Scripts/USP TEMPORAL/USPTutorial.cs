@@ -7,7 +7,8 @@ public class USPTutorial : PossessableHealth
 {
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem[] particleSystems;
-    public TutorialBox tutorial;
+    public TutorialColliders tutorial;
+    public TutorialColliders tutorialVenado;
     [SerializeField] FreeRoamMovement movementManager;
 
     public override void Start()
@@ -22,18 +23,18 @@ public class USPTutorial : PossessableHealth
         {
             Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
         }
-        if(tutorial != null) 
-        {
-            tutorial.textToPrint = "Con <b>'Click Derecho'</b> vas a poder usar la habilidad secundaria brindada por tu enemigo para desplazarte.";
-            tutorial.gameObject.SetActive(true);
-        }
         gameObject.SetActive(false);
         Destroy(gameObject, 5f);
     }
 
-    private void OnDestroy()
+    private void OnPossess()
     {
-        if (tutorial != null) { tutorial.movingBack = true; }
+        if (tutorial != null)
+        {
+            tutorial.ActivateTutorial(false);
+        }
+        tutorialVenado.wantToPrint = "Con <b>'Click Derecho'</b> vas a poder usar la habilidad secundaria brindada por tu enemigo para desplazarte.";
+        tutorialVenado.ActivateTutorial(true);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -43,6 +44,15 @@ public class USPTutorial : PossessableHealth
             Debug.Log(movementManager.canMove);
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
             damageableObject.Damage(gameObject, damage);
+        }
+    }
+
+    public override void Update()
+    {
+        if (canBePossessed && this.Inputs(MyInputs.Possess))
+        {
+            base.Update();
+            OnPossess();
         }
     }
 }
