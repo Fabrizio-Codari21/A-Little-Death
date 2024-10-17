@@ -8,8 +8,8 @@ using UnityEngine;
 
 public class TutorialColliders : MonoBehaviour
 {
-    public TutorialBox tutorialBox;
-    public TutorialBox tutorialBoxVenado;
+    //public TutorialBox tutorialBox;
+    //public TutorialBox tutorialBoxVenado;
     public GameObject tutorialBoxObj;
     public string wantToPrint;
     public float time;
@@ -26,13 +26,15 @@ public class TutorialColliders : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Player")
+        if (collision.transform.tag == "Player" && activated == false)
         {
+            activated = true;
+            Debug.Log("Calling Tutorial");
             TutorialManager.instance.ChangeTutorial();
         }
     }
 
-    public void ActivateTutorial(bool active)
+    /*public void ActivateTutorial(bool active)
     {
         if (active)
         {
@@ -49,7 +51,7 @@ public class TutorialColliders : MonoBehaviour
             tutorialBox.movingBack = true;
             Destroy(gameObject, 0.01f);
         }
-    }
+    }*/
 
 /*BACKLOG DEL TEXTO POR LAS DUDAS DE QUE SE BORRE
 Utiliza tu guadaña con <b>Click Izquierdo</b> para derrotar a las almas.

@@ -8,6 +8,7 @@ public class HarpySkills : MonoBehaviour, ISkillDefiner
     public CharacterSkillSet mySkills;
     public ThaniaMovement movement;
     public GameObject attack;
+    public GameObject thania;
 
     private void Awake()
     {
@@ -16,10 +17,10 @@ public class HarpySkills : MonoBehaviour, ISkillDefiner
 
     public void DefineSkills(CharacterSkillSet mySkills)
     {
-        var thania = GameObject.FindGameObjectWithTag("Player");
+        thania = GameObject.FindGameObjectWithTag("Player");
 
-        jumpManager = thania.GetComponent<JumpManager>();
-        movement = thania.GetComponent<ThaniaMovement>();
+        jumpManager = thania.GetComponentInParent<JumpManager>();
+        movement = thania.GetComponentInParent<ThaniaMovement>();
         
         mySkills.primaryExecute = (manager) =>
         {

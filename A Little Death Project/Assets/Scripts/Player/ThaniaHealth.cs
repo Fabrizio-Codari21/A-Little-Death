@@ -36,7 +36,7 @@ public class ThaniaHealth : Health
             invulnerable = Time.time + damageCooldown;
             StartCoroutine(takeDamage());
             currentHealth -= damage;
-            if(damager.tag != "Manager")
+            if(damager.tag != "Spikes")
             {
                 Debug.Log(damager);
                 KnockBack(damager, damage);

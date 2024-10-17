@@ -13,7 +13,7 @@ public class EntityMovement : Spawnable
         Rigidbody2D body = GetComponent<Rigidbody2D>();
         body.velocity = Vector2.zero;
     }
-
+    
     private void OnDestroy()
     {
         OnDespawn();

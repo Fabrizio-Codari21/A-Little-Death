@@ -54,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6440137594868799034, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.57
+      value: 72.66
       objectReference: {fileID: 0}
     - target: {fileID: 6440137594868799034, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.43
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 6440137594868799034, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -161,8 +161,7 @@ MonoBehaviour:
   stunTime: 1000
   damage: 1
   particleSystems: []
-  tutorial: {fileID: 0}
-  tutorialVenado: {fileID: 0}
+  isTutorial: 1
   movementManager: {fileID: 0}
 --- !u!114 &8972954546405837100
 MonoBehaviour:
