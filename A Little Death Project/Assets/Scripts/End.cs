@@ -5,22 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class End : MonoBehaviour
 {
-    [SerializeField] GameObject thania;
+    [SerializeField] GameObject fade;
     public string level;
 
     private void Start()
     {
-        thania = GameObject.FindWithTag("Player");
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player") 
         {
+            other.GetComponentInParent<ThaniaMovement>().stop();
             Checkpoints.active = false;
-            Debug.Log("Nos re vimos");
             Checkpoints.savedPos = default;
-            SceneManager.LoadScene(level);
+            fade.SetActive(true);
+            Debug.Log("Nos re vimos");
+            this.WaitAndThen(1.5f, () => { this.AsyncLoader(level); });   
         }
     }
 }

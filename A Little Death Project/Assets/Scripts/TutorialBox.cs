@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TutorialBox : MonoBehaviour
 {
-    [SerializeField] Vector2 target;
+    [SerializeField] GameObject target;
     Vector2 startPos;
     [SerializeField] float speed;
     public bool moving;
@@ -28,14 +28,14 @@ public class TutorialBox : MonoBehaviour
     {
         if(moving)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
         else if(movingBack) 
         {
             transform.position = Vector2.MoveTowards(transform.position, startPos, speed * Time.deltaTime);
         }
 
-        if (transform.position.y >= target.y)
+        if (transform.position.y >= target.transform.position.y)
         {
              moving = false;
         }
