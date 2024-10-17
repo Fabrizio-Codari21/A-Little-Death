@@ -39,7 +39,7 @@ public class TutorialBox : MonoBehaviour
         {
              moving = false;
         }
-        else if(transform.position.y <= startPos.y && moving == false)
+        else if(transform.position.y <= startPos.y + 100 && moving == false)
         {
             movingBack = false;
             gameObject.SetActive(false);

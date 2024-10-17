@@ -49,7 +49,7 @@ public class Menu : MonoBehaviour
     public IEnumerator waitForTransition(string name)
     {
         fadeEfect.SetActive(true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         this.AsyncLoader(name);
     }
 

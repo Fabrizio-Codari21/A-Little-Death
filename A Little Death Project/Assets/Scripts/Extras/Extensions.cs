@@ -217,6 +217,9 @@ public static class Extensions
             case MyInputs.Secret4:
                 return Input.GetKeyDown(KeyCode.F4);
 
+            case MyInputs.Skip:
+                return Input.GetKeyDown(KeyCode.F);
+
             default: return false;
         }
 

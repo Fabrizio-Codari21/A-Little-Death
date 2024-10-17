@@ -17,8 +17,8 @@ public class TutorialColliders : MonoBehaviour
     [SerializeField] bool activated = false;
 
     private void Update()
-    { 
-        if (Input.GetKeyDown(KeyCode.F) && activated)
+    {
+        if (this.Inputs(MyInputs.Skip) && activated)
         {
             ActivateTutorial(false);
         }
@@ -47,7 +47,7 @@ public class TutorialColliders : MonoBehaviour
         else
         {
             tutorialBox.movingBack = true;
-            Destroy(gameObject);
+            Destroy(gameObject, 0.01f);
         }
     }
 

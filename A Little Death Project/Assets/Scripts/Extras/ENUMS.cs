@@ -58,4 +58,5 @@ public enum MyInputs
     Secret2,
     Secret3,
     Secret4,
+    Skip,
 }
