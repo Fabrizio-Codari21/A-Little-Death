@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public static class Extensions
 {
@@ -236,5 +238,59 @@ public static class Extensions
 
         return load;
     }
+
+    // Spawnea una entidad en el punto indicado (o, si este no existe, el mas cercano a el), le asigna una
+    // referencia al objeto que lo spawneo y lo devuelve.
+    public static List<SpawnPoint> SpawnPoints = new();
+    public static Spawnable SpawnAt(this Spawnable x, SpawnPoint spawnPoint, float spawnDelay = 0f)
+    {
+        Spawnable spawnedObject = default;
+
+        //if (spawnPoint == default && x is SpawnPoint) spawnPoint = x as SpawnPoint; 
+
+        x.WaitAndThen(timeToWait: spawnDelay, () =>
+        {
+            if (SpawnPoints.Contains(spawnPoint))
+            {
+                spawnedObject = GameObject.Instantiate(x.gameObject, 
+                                                  spawnPoint.transform.position + new Vector3(spawnPoint.spawnOffset.x, spawnPoint.spawnOffset.y, 0), 
+                                                  Quaternion.identity).GetComponent<Spawnable>();
+            }
+            else
+            {       
+                spawnedObject = GameObject.Instantiate(x.gameObject,
+                                                  x.GetNearest(spawnPoint.gameObject, SpawnPoints).transform.position,
+                                                  Quaternion.identity).GetComponent<Spawnable>();
+            }
+
+            spawnedObject.parentSpawner = spawnPoint;
+            spawnedObject.OnSpawn();
+            if(spawnPoint.spawnSound) spawnPoint.spawnSound.Play();
+        },
+        cancelCondition: () => false);
+
+        return spawnedObject;
+    }
+
+    // Devuelve el objeto mas cercano a la referencia de entre una lista de objetos
+    public static T GetNearest<T>(this MonoBehaviour x, GameObject nearestTo = default, List<T> among = default)
+    {
+        GameObject result = default;
+
+        if (nearestTo == default) nearestTo = x.gameObject;
+        //if (among == default) among = GameObject.FindObjectsOfType<T>().Select(x => x as GameObject);
+
+        foreach (var item in among.Select(x => x as GameObject))
+        {
+            if (Vector3.Distance(nearestTo.transform.position, item.transform.position)
+            <= Vector3.Distance(nearestTo.transform.position, result.transform.position))
+            {
+                result = item;
+            }
+        }
+
+        return result.GetComponent<T>();
+    }
+
 }
 

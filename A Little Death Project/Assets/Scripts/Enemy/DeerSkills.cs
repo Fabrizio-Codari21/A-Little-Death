@@ -10,6 +10,9 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
 
     public void DefineSkills(CharacterSkillSet mySkills)
     {
+        if(!mySkills.secondaryOrigin) 
+            mySkills.secondaryOrigin = GameObject.FindGameObjectWithTag("Player").transform;
+        
         Debug.Log("Define secondary: " + mySkills.secondarySkillType);
         mySkills.primaryExecute = (manager) =>
         {

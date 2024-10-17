@@ -18,9 +18,9 @@ public class TutorialColliders : MonoBehaviour
 
     private void Update()
     {
-        if (this.Inputs(MyInputs.Skip) && activated)
+        if (this.Inputs(MyInputs.Skip) && TutorialManager.instance.tutorialIsActive)
         {
-            ActivateTutorial(false);
+            TutorialManager.instance.SkipTutorial();
         }
     }
 
@@ -28,7 +28,7 @@ public class TutorialColliders : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
-            ActivateTutorial(true);
+            TutorialManager.instance.ChangeTutorial();
         }
     }
 

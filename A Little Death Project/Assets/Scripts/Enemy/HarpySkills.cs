@@ -16,6 +16,11 @@ public class HarpySkills : MonoBehaviour, ISkillDefiner
 
     public void DefineSkills(CharacterSkillSet mySkills)
     {
+        var thania = GameObject.FindGameObjectWithTag("Player");
+
+        jumpManager = thania.GetComponent<JumpManager>();
+        movement = thania.GetComponent<ThaniaMovement>();
+        
         mySkills.primaryExecute = (manager) =>
         {
             //movement.anim.attacked2 = false;

@@ -117,6 +117,14 @@ public class PlayerSkillManager : MonoBehaviour
         {
             print("usando habilidad");
 
+            if (sk.mySkills == null) print("no tenemos sk.Myskills");
+            if (sk.skills == null) print("no tenemos sk.Skills");
+            if (sk.skills[skillId] == null) print("no tenemos sk.skills[skillId]");
+            if (sk.skills[skillId].skillType == SkillType.Default) print("no tenemos skillType");
+            if (sk.mySkills[sk.skills[skillId].skillType].Execute == null) print("no tenemos Execute");
+
+
+            
             // ...chequeamos si tenemos la habilidad necesaria y de ser asi la ejecutamos.
             if (sk.mySkills.ContainsKey(sk.skills[skillId].skillType))
                 sk.mySkills[sk.skills[skillId].skillType].Execute(this);

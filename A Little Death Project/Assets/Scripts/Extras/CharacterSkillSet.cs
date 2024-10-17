@@ -60,7 +60,7 @@ public class CharacterSkillSet : MonoBehaviour
     public SkillSet secondarySkill = new();
 
     private void Awake()
-    {
+    {     
         primarySkill = new SkillSet
         {
             skillType = primarySkillType,
@@ -90,6 +90,8 @@ public class CharacterSkillSet : MonoBehaviour
             hasExecuted = secondaryHasExecuted,
             Execute = secondaryExecute,
         };
+
+        Debug.Log($"{gameObject.name} has spawned.");
     }
 
     private void OnDrawGizmos()

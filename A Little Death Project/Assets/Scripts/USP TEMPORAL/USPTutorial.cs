@@ -7,8 +7,9 @@ public class USPTutorial : PossessableHealth
 {
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem[] particleSystems;
-    public TutorialColliders tutorial;
-    public TutorialColliders tutorialVenado;
+    //public TutorialColliders tutorial;
+    //public TutorialColliders tutorialVenado;
+    public bool isTutorial;
     [SerializeField] FreeRoamMovement movementManager;
 
     public override void Start()
@@ -29,12 +30,7 @@ public class USPTutorial : PossessableHealth
 
     private void OnPossess()
     {
-        if (tutorial != null)
-        {
-            tutorial.ActivateTutorial(false);
-        }
-        tutorialVenado.wantToPrint = "Con <b>'Click Derecho'</b> vas a poder usar la habilidad secundaria brindada por tu enemigo para desplazarte.";
-        tutorialVenado.ActivateTutorial(true);
+        if(isTutorial) TutorialManager.instance.ChangeTutorial();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
