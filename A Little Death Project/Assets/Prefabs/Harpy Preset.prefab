@@ -588,6 +588,7 @@ MonoBehaviour:
   - {fileID: 439357138386912805, guid: 2a14c1698634837469b9aa321edb2016, type: 3}
   - {fileID: 2268716391601558820, guid: 227cfe0675dfd054c9e3057af9d678da, type: 3}
   movementManager: {fileID: 0}
+  isTutorial: 0
 --- !u!114 &6397945254562055918
 MonoBehaviour:
   m_ObjectHideFlags: 0

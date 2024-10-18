@@ -6,7 +6,7 @@ public class SpawnPoint : MonoBehaviour
 {
     //public GameObject spawnPoint;
     [HideInInspector] public bool hasAlreadySpawned;
-    public Spawnable entityToSpawn;
+    public GameObject entityToSpawn;
     public Vector2 spawnOffset;
     public AudioSource spawnSound;
 

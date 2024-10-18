@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasAlreadySpawned: 0
   entityToSpawn: {fileID: 0}
-  spawnOffset: {x: 0, y: 5}
+  spawnOffset: {x: 0, y: 0}
   spawnSound: {fileID: 0}
   player: {fileID: 0}
   requiredPlayerDistance: 35

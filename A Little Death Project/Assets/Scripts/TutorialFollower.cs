@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TutorialFollower : MonoBehaviour
 {
-    [SerializeField] GameObject objective;
+    public GameObject objective;
     [SerializeField] Vector3 offset;
    
     void Update()

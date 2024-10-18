@@ -1112,7 +1112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &95249419
 Rigidbody2D:
   serializedVersion: 4
@@ -1504,7 +1504,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &108583288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2521,7 +2521,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &177725431
 Rigidbody2D:
   serializedVersion: 4
@@ -3677,7 +3677,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!198 &256557783
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -9151,7 +9151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &321704636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9671,7 +9671,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!198 &349877911
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -14498,6 +14498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Deer Tutorial (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4107914226031369051, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Size.x
       value: 5.22725
@@ -14915,7 +14919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &381284061
 Rigidbody2D:
   serializedVersion: 4
@@ -16158,7 +16162,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!198 &522842790
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -22068,7 +22072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &640703677
 Transform:
   m_ObjectHideFlags: 0
@@ -23470,7 +23474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &740753021
 Rigidbody2D:
   serializedVersion: 4
@@ -24732,6 +24736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ParticleCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5200129691801168611, guid: b2ae12edbf3cec146ac10f88aa0244cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6994953632950589899, guid: b2ae12edbf3cec146ac10f88aa0244cb, type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -24844,7 +24852,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &807659421
 Rigidbody2D:
   serializedVersion: 4
@@ -25064,7 +25072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &814142365
 Transform:
   m_ObjectHideFlags: 0
@@ -27866,7 +27874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1059228612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28408,7 +28416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1126817886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29884,7 +29892,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!156049354 &1159349223
 Grid:
   m_ObjectHideFlags: 0
@@ -35238,7 +35246,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &1177346021
 Animator:
   serializedVersion: 5
@@ -41023,7 +41031,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1238116900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41856,7 +41864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2254751462378978122, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2482202297623956356, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: attack
@@ -41961,6 +41969,10 @@ PrefabInstance:
     - target: {fileID: 4107914226031369051, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Name
       value: Deer Tutorial (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107914226031369051, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Size.x
@@ -42219,6 +42231,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 4915386225653905708, guid: 626d89037bf7b7f4ea44ba8890ecd300, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42374,6 +42390,10 @@ PrefabInstance:
     - target: {fileID: 4107914226031369051, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Name
       value: Deer Tutorial (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4107914226031369051, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Size.x
@@ -42672,7 +42692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!198 &1304198159
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -47612,8 +47632,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: 0.04484999, y: -0.41385, z: 0}
-    m_Extent: {x: 1.28915, y: 1.53585, z: 0}
+    m_Center: {x: 0.047399998, y: -0.41764998, z: 0}
+    m_Extent: {x: 1.2923, y: 1.53275, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -47770,7 +47790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1336507045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95248,7 +95268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1404947123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97598,7 +97618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1557460154
 Rigidbody2D:
   serializedVersion: 4
@@ -105354,7 +105374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2254751462378978122, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2482202297623956356, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: attack
@@ -105370,11 +105390,11 @@ PrefabInstance:
       objectReference: {fileID: 1059228614}
     - target: {fileID: 3059947801594506112, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 96
+      value: 92.2
       objectReference: {fileID: 0}
     - target: {fileID: 3059947801594506112, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.4
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 3059947801594506112, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -107526,6 +107546,10 @@ PrefabInstance:
     - target: {fileID: 2618148049482479455, guid: 57ab7be90006b3941bc34f7ad2635f36, type: 3}
       propertyPath: m_Name
       value: Main Camera (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618148049482479455, guid: 57ab7be90006b3941bc34f7ad2635f36, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3441138264618991659, guid: 57ab7be90006b3941bc34f7ad2635f36, type: 3}
       propertyPath: orthographic size
@@ -115203,7 +115227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2254751462378978122, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2482202297623956356, guid: 70a69f3da7783434e90ac70b2c6afe7a, type: 3}
       propertyPath: attack

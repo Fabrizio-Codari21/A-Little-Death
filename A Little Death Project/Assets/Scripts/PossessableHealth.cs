@@ -24,7 +24,12 @@ public class PossessableHealth : Health
 
         if (currentHealth <= 0)
         {
-            if(estoEsTemporalHayQueBorrarlo != null) { estoEsTemporalHayQueBorrarlo.SetActive(true); }
+            if(estoEsTemporalHayQueBorrarlo != null) 
+            {
+                var follower = estoEsTemporalHayQueBorrarlo.GetComponent<TutorialFollower>();
+                if(follower != null) { follower.objective = this.gameObject; }
+                estoEsTemporalHayQueBorrarlo.SetActive(true); 
+            }
             StartCoroutine(Possessable());
             return true;
         }

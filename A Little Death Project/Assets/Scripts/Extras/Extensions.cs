@@ -242,29 +242,31 @@ public static class Extensions
     // Spawnea una entidad en el punto indicado (o, si este no existe, el mas cercano a el), le asigna una
     // referencia al objeto que lo spawneo y lo devuelve.
     public static List<SpawnPoint> SpawnPoints = new();
-    public static Spawnable SpawnAt(this Spawnable x, SpawnPoint spawnPoint, float spawnDelay = 0f)
+    public static GameObject SpawnAt(this GameObject x, SpawnPoint spawnPoint, float spawnDelay = 0f)
     {
-        Spawnable spawnedObject = default;
+        GameObject spawnedObject = default;
 
         //if (spawnPoint == default && x is SpawnPoint) spawnPoint = x as SpawnPoint; 
 
-        x.WaitAndThen(timeToWait: spawnDelay, () =>
+        spawnPoint.WaitAndThen(timeToWait: spawnDelay, () =>
         {
             if (SpawnPoints.Contains(spawnPoint))
             {
                 spawnedObject = GameObject.Instantiate(x.gameObject, 
                                                   spawnPoint.transform.position + new Vector3(spawnPoint.spawnOffset.x, spawnPoint.spawnOffset.y, 0), 
-                                                  Quaternion.identity).GetComponent<Spawnable>();
+                                                  Quaternion.identity);
             }
             else
             {       
                 spawnedObject = GameObject.Instantiate(x.gameObject,
-                                                  x.GetNearest(spawnPoint.gameObject, SpawnPoints).transform.position,
-                                                  Quaternion.identity).GetComponent<Spawnable>();
+                                                  spawnPoint.GetNearest(spawnPoint.gameObject, SpawnPoints).transform.position,
+                                                  Quaternion.identity);
             }
 
-            spawnedObject.parentSpawner = spawnPoint;
-            spawnedObject.OnSpawn();
+            var spawnable = spawnedObject.GetComponentInChildren<Spawnable>();
+
+            spawnable.parentSpawner = spawnPoint;
+            spawnable.OnSpawn();
             if(spawnPoint.spawnSound) spawnPoint.spawnSound.Play();
         },
         cancelCondition: () => false);
