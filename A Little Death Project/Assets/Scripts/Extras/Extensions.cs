@@ -254,13 +254,13 @@ public static class Extensions
             {
                 spawnedObject = GameObject.Instantiate(x.gameObject, 
                                                   spawnPoint.transform.position + new Vector3(spawnPoint.spawnOffset.x, spawnPoint.spawnOffset.y, 0), 
-                                                  Quaternion.identity);
+                                                  x.transform.rotation);
             }
             else
             {       
                 spawnedObject = GameObject.Instantiate(x.gameObject,
                                                   spawnPoint.GetNearest(spawnPoint.gameObject, SpawnPoints).transform.position,
-                                                  Quaternion.identity);
+                                                  x.transform.rotation);
             }
 
             var spawnable = spawnedObject.GetComponentInChildren<Spawnable>();
