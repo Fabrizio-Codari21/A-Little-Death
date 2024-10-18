@@ -9,6 +9,7 @@ public class WingsHealth : PossessableHealth
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem[] particleSystems;
     [SerializeField] FreeRoamMovement movementManager;
+    public bool isTutorial;
 
     public override void Start()
     {
@@ -23,6 +24,20 @@ public class WingsHealth : PossessableHealth
         {
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
             damageableObject.Damage(damageableObject.gameObject, damage);
+        }
+    }
+
+    public void OnPossess()
+    {
+        if (isTutorial) TutorialManager.instance.ChangeTutorial(3);
+    }
+
+    public override void Update()
+    {
+        if (canBePossessed && this.Inputs(MyInputs.Possess))
+        {
+            base.Update();
+            OnPossess();
         }
     }
 }

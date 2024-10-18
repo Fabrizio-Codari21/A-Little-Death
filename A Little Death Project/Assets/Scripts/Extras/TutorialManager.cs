@@ -28,7 +28,7 @@ public class TutorialManager : MonoBehaviour
 
     [HideInInspector] public bool tutorialIsActive;
 
-    public void ChangeTutorial(int index = 0)
+    public void ChangeTutorial(int index = -1)
     {
         print("cambiamos tutorial");
 
@@ -38,9 +38,9 @@ public class TutorialManager : MonoBehaviour
         currentBox.movingBack = true;
         newBox.gameObject.SetActive(true);
         newBox.moving = true;
-        newBox.textToPrint = tutorialBoxes[index != 0 ? index : tutorialCount];
+        newBox.textToPrint = tutorialBoxes[index != -1 ? index : tutorialCount];
         tutorialIsActive = true;
-        tutorialCount++;         
+        tutorialCount = index != -1 ? index + 1 : tutorialCount + 1;         
     }
 
     public void SkipTutorial()

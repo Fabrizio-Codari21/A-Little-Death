@@ -14,6 +14,6 @@ public class Spawnable : MonoBehaviour
 
     public void OnDespawn()
     {
-        parentSpawner.hasAlreadySpawned = false;
+        if(parentSpawner) parentSpawner.hasAlreadySpawned = false;
     }
 }
