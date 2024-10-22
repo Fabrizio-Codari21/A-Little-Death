@@ -39919,7 +39919,7 @@ PrefabInstance:
       objectReference: {fileID: 1601208190}
     - target: {fileID: 7588376315776481841, guid: 05db6f89f44a58b4699b5bf4f4776663, type: 3}
       propertyPath: requiredPlayerDistance
-      value: 20
+      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -58188,8 +58188,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 1
   m_LocalBounds:
-    m_Center: {x: 0.046300054, y: -0.41644996, z: 0}
-    m_Extent: {x: 1.2996, y: 1.53175, z: 0}
+    m_Center: {x: 0.052249968, y: -0.41165, z: 0}
+    m_Extent: {x: 1.2953501, y: 1.53895, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -64595,7 +64595,7 @@ PrefabInstance:
       objectReference: {fileID: 1185042792}
     - target: {fileID: 7588376315776481841, guid: 05db6f89f44a58b4699b5bf4f4776663, type: 3}
       propertyPath: requiredPlayerDistance
-      value: 20
+      value: 27.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
