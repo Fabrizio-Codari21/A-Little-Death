@@ -14,6 +14,7 @@ public class JumpManager : EntityMovement
     public AnimationManager anim;
     public bool grounded = true;
     public ParticleSystem dust;
+    public ParticleSystem dJumpVFX;
 
     private float coyoteTime = 0.2f;
     private float coyoteCounter;
@@ -88,7 +89,7 @@ public class JumpManager : EntityMovement
                     //anim.jumped = true;
                     anim.attackEnded = true;
                     jumpSound.Play();
-                    CreateDust();
+                    CreateLines();
                     rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
                     currentJump++;
                     dJumped = true;
@@ -109,6 +110,10 @@ public class JumpManager : EntityMovement
     void CreateDust()
     {
         dust.Play();
+    }
+    void CreateLines()
+    {
+        dJumpVFX.Play();
     }
 }
 
