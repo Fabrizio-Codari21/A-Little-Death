@@ -11,7 +11,7 @@ public class PossessableHealth : Health
     [SerializeField] Animator _animator;
     [SerializeField] float possesionTime;
     GameObject _cartelTutorial;
-    [SerializeField] GameObject estoEsTemporalHayQueBorrarlo;
+    public Collider2D arpiaGroundCheck;
 
     public float stunTime;
     
@@ -24,12 +24,6 @@ public class PossessableHealth : Health
 
         if (currentHealth <= 0)
         {
-            if(estoEsTemporalHayQueBorrarlo != null) 
-            {
-                var follower = estoEsTemporalHayQueBorrarlo.GetComponent<TutorialFollower>();
-                if(follower != null) { follower.objective = this.gameObject; }
-                estoEsTemporalHayQueBorrarlo.SetActive(true); 
-            }
             StartCoroutine(Possessable());
             return true;
         }
@@ -53,7 +47,13 @@ public class PossessableHealth : Health
         canBePossessed = true;
         this.WaitAndThen(0.25f, () =>
         {
-            GetComponent<Rigidbody2D>().isKinematic = true;
+            //GetComponent<Rigidbody2D>().isKinematic = true;
+            GetComponent<Rigidbody2D>().gravityScale = 3;
+            if(arpiaGroundCheck != null)
+            {
+                this.GetComponent<Collider2D>().enabled = false;
+                Debug.Log("Se desactivo");
+            }
         });
 
         yield return new WaitForSeconds(stunTime);

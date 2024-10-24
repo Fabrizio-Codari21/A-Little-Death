@@ -26841,7 +26841,7 @@ GameObject:
   - component: {fileID: 689294197}
   - component: {fileID: 689294196}
   - component: {fileID: 689294195}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Soul Sprites
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -147535,7 +147535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441138264618991659, guid: 57ab7be90006b3941bc34f7ad2635f36, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 4033
+      value: 12225
       objectReference: {fileID: 0}
     - target: {fileID: 3661286185572776617, guid: 57ab7be90006b3941bc34f7ad2635f36, type: 3}
       propertyPath: m_IsActive
