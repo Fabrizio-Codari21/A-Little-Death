@@ -12,6 +12,7 @@ public class PossessableHealth : Health
     [SerializeField] float possesionTime;
     GameObject _cartelTutorial;
     public Collider2D arpiaGroundCheck;
+    bool startedPossession = false;
 
     public float stunTime;
     
@@ -65,7 +66,7 @@ public class PossessableHealth : Health
 
     public virtual void Update()
     {
-        if (canBePossessed && this.Inputs(MyInputs.Possess))
+        if (canBePossessed && this.Inputs(MyInputs.Possess) && startedPossession == false)
         {
             if(Vector2.Distance
               (a: new Vector2(transform.position.x, transform.position.y), 
@@ -74,6 +75,7 @@ public class PossessableHealth : Health
             {
                 _skillManager.Possess(_victim, _victim.creatureAppearance, this.possesionTime);
                 if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
+                startedPossession = true;
             }
 
         }

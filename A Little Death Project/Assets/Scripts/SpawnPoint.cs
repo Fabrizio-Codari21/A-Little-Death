@@ -9,6 +9,7 @@ public class SpawnPoint : MonoBehaviour
     public GameObject entityToSpawn;
     public Vector2 spawnOffset;
     public AudioSource spawnSound;
+    int spawnAmount;
 
     public PlayerSkillManager player;
     public float requiredPlayerDistance;
@@ -27,7 +28,13 @@ public class SpawnPoint : MonoBehaviour
 
     private void Update()
     {
-        if (!hasAlreadySpawned && Vector3.Distance(player.transform.position, transform.position) >= requiredPlayerDistance)
+        if (spawnAmount < 1)
+        {
+            entityToSpawn.SpawnAt(this);
+            hasAlreadySpawned = true;
+            spawnAmount++;
+        }
+        else if (!hasAlreadySpawned && Vector3.Distance(player.transform.position, transform.position) >= requiredPlayerDistance)
         {
             entityToSpawn.SpawnAt(this);
             hasAlreadySpawned = true;

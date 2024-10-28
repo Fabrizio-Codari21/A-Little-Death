@@ -7,9 +7,8 @@ public class AnimationManager : MonoBehaviour
 {
     public bool jumped = false;
     public bool attacked = false;
-    public bool attacked2 = false;
     [SerializeField] ThaniaMovement thania;
-    [SerializeField] JumpManager thaniaJ;
+    [SerializeField] ThaniaHealth thaniaH;
     [SerializeField] ThaniaSkills thaniaSkills;
     [SerializeField] PlayerSkillManager manager;
     public Animator animator;
@@ -18,17 +17,22 @@ public class AnimationManager : MonoBehaviour
     private void Start()
     {
         thania = GetComponentInParent<ThaniaMovement>();
-        thaniaJ = GetComponentInParent<JumpManager>();
         manager = GetComponentInParent<PlayerSkillManager>();
         thaniaSkills = GetComponentInParent<ThaniaSkills>();
+        thaniaH = GetComponentInParent<ThaniaHealth>();
     }
 
     void OnEnable()
     {
+        if(thania == null) thania = GetComponentInParent<ThaniaMovement>();
+        if (manager == null) manager = GetComponentInParent<PlayerSkillManager>();
+        if (thaniaSkills == null) thaniaSkills = GetComponentInParent<ThaniaSkills>();
+        if (thaniaH == null) thaniaH = GetComponentInParent<ThaniaHealth>();
+
         jumped = false;
         attacked = false;
-        attacked2 = false;
-        attackEnded = true;
+        //attackEnded = true;
+        thaniaH.sRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -36,7 +40,6 @@ public class AnimationManager : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(thania.rb.velocity.x));
         animator.SetBool("Jump", jumped);
         animator.SetBool("Attack", attacked);
-        animator.SetBool("Attack2", attacked2);
         animator.SetBool("AttackAnimEnded", attackEnded);
     }
 
@@ -48,11 +51,6 @@ public class AnimationManager : MonoBehaviour
     public void AttackAnimStart()
     {
         attackEnded = false;
-    }
-    
-    public void Attack2AnimEnd()
-    {
-        attacked2 = false;
     }
 
     public void AttackEnd()

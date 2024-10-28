@@ -86,8 +86,8 @@ public class JumpManager : EntityMovement
                 else if (!grounded && dJumped == false && this.Inputs(MyInputs.SecondarySkill))
                 {
                     Debug.Log("A");
-                    //anim.jumped = true;
                     anim.attackEnded = true;
+                    anim.jumped = true;
                     jumpSound.Play();
                     CreateLines();
                     rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);

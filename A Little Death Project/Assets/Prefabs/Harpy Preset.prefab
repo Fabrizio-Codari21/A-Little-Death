@@ -470,7 +470,7 @@ MonoBehaviour:
   damage: 1
   anim: {fileID: 6852644306105563988}
   nextFireTime: 0
-  cooldown: 3
+  cooldown: 2
 --- !u!1 &5846639739174284961
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +582,7 @@ MonoBehaviour:
   _animator: {fileID: 6429558052257034647}
   possesionTime: 25
   arpiaGroundCheck: {fileID: 502392016675600772}
-  stunTime: 10000
+  stunTime: 15
   manager: {fileID: 0}
   damage: 1
   particleSystems:
