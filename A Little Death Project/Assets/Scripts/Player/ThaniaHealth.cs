@@ -16,11 +16,13 @@ public class ThaniaHealth : Health
     [SerializeField] ThaniaMovement movementManager;
 
     [SerializeField] Menu menu;
+    public Color og;
 
     public override void Start()
     {
         base.Start();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        og = Color.white;
 
         if (Checkpoints.savedPos != default)
         { 
@@ -63,7 +65,7 @@ public class ThaniaHealth : Health
         sRenderer.color = Color.red;
         damageSound.Play();
         yield return new WaitForSeconds(0.3f);
-        sRenderer.color = Color.white;
+        sRenderer.color = og;
     }
 
     public IEnumerator Knockback(Vector3 knockbackDir)

@@ -13,6 +13,12 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] PlayerSkillManager manager;
     public Animator animator;
     public bool attackEnded = true;
+    public Color OriginalColor;
+
+    private void Awake()
+    {
+        OriginalColor = this.GetComponent<SpriteRenderer>().color;
+    }
 
     private void Start()
     {
@@ -29,9 +35,12 @@ public class AnimationManager : MonoBehaviour
         if (thaniaSkills == null) thaniaSkills = GetComponentInParent<ThaniaSkills>();
         if (thaniaH == null) thaniaH = GetComponentInParent<ThaniaHealth>();
 
+        thaniaH.og = OriginalColor;
+
         jumped = false;
         attacked = false;
         thaniaH.sRenderer = GetComponent<SpriteRenderer>();
+        thaniaH.sRenderer.color = thaniaH.og;
     }
 
     private void Update()
