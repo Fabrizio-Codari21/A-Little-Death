@@ -9,7 +9,7 @@ public class JumpManager : EntityMovement
     private Rigidbody2D rb;
     public float jumpForce = 14f;
     public bool dJump;
-    [SerializeField] private int currentJump = 1;
+    public int currentJump = 1;
     private bool dJumped;
     public AnimationManager anim;
     public bool grounded = true;
@@ -28,7 +28,6 @@ public class JumpManager : EntityMovement
 
     void Update()
     {
-        
         if (Time.timeScale > 0)
         {
             if (grounded)
@@ -111,6 +110,7 @@ public class JumpManager : EntityMovement
     {
         dust.Play();
     }
+
     void CreateLines()
     {
         dJumpVFX.Play();

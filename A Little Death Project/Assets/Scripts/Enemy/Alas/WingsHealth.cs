@@ -36,7 +36,8 @@ public class WingsHealth : PossessableHealth
     {
         if (canBePossessed && this.Inputs(MyInputs.Possess))
         {
-            base.Update();
+              base.Update();
+            _skillManager.jumpManager.dJump = true;
             OnPossess();
         }
     }

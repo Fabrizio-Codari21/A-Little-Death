@@ -31,7 +31,6 @@ public class AnimationManager : MonoBehaviour
 
         jumped = false;
         attacked = false;
-        //attackEnded = true;
         thaniaH.sRenderer = GetComponent<SpriteRenderer>();
     }
 

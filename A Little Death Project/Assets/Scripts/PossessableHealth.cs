@@ -7,7 +7,7 @@ public class PossessableHealth : Health
 {
     [HideInInspector] public bool canBePossessed = false;
     CharacterSkillSet _victim;
-    PlayerSkillManager _skillManager;
+    public PlayerSkillManager _skillManager;
     [SerializeField] Animator _animator;
     [SerializeField] float possesionTime;
     GameObject _cartelTutorial;
