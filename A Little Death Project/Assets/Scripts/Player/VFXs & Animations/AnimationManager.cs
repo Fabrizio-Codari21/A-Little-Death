@@ -25,10 +25,21 @@ public class AnimationManager : MonoBehaviour
 
     void OnEnable()
     {
+<<<<<<< HEAD
         jumped = false;
         attacked = false;
         attacked2 = false;
         attackEnded = true;
+=======
+        if(thania == null) thania = GetComponentInParent<ThaniaMovement>();
+        if (manager == null) manager = GetComponentInParent<PlayerSkillManager>();
+        if (thaniaSkills == null) thaniaSkills = GetComponentInParent<ThaniaSkills>();
+        if (thaniaH == null) thaniaH = GetComponentInParent<ThaniaHealth>();
+
+        jumped = false;
+        attacked = false;
+        thaniaH.sRenderer = GetComponent<SpriteRenderer>();
+>>>>>>> parent of 72cd24f (Fixeos Colores)
     }
 
     private void Update()
