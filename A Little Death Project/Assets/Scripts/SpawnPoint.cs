@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
+    public EnemyManager enemyManager;
+    
     //public GameObject spawnPoint;
     [HideInInspector] public bool hasAlreadySpawned;
     public GameObject entityToSpawn;
@@ -22,7 +24,8 @@ public class SpawnPoint : MonoBehaviour
 
     private void Awake()
     {
-        if(!player) player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkillManager>();
+        if (!enemyManager) GameObject.FindAnyObjectByType<EnemyManager>();
+        if (!player) player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkillManager>();
         Extensions.SpawnPoints.Add(this);
     }
 

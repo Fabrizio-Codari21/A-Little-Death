@@ -11,13 +11,13 @@ public class EnemyPool : MonoBehaviour
     
     public PlayerAppearance enemyType;
     public List<Spawnable> allEnemies;
-    public Dictionary<ISkillDefiner, Spawnable> enemySpawning;
+    public List<Tuple<Type, Spawnable>> enemySpawning;
     Type _type;
 
     void Awake()
     {
         enemySpawning = FilterByClass(allEnemies, enemyType, out _type);
-        enemyManager.enemyPools.Add(enemyType, enemySpawning);
+        enemyManager.enemyPools.Add(enemyType, this);
     }
 
     // Update is called once per frame
@@ -26,11 +26,11 @@ public class EnemyPool : MonoBehaviour
         
     }
 
-    public static Dictionary<ISkillDefiner, Spawnable> FilterByClass(List<Spawnable> enemies, PlayerAppearance enemyClass, out Type enemyType)
+    public List<Tuple<Type, Spawnable>> FilterByClass(List<Spawnable> enemies, PlayerAppearance enemyClass, out Type enemyType)
     {
-        Type type = GetEnemyType(enemyClass);        
+        Type type = enemyManager.GetEnemyType(enemyClass);
 
-        Dictionary<ISkillDefiner, Spawnable> enemySpawning = new();
+        List<Tuple<Type, Spawnable>> enemySpawning = new();
 
         foreach (var enemy in enemies)
         {
@@ -43,7 +43,7 @@ public class EnemyPool : MonoBehaviour
             }
             else
             {
-                enemySpawning.Add(skill, enemy);
+                enemySpawning.Add(new Tuple<Type, Spawnable>(t, enemy));
             }
         }
 
@@ -51,18 +51,4 @@ public class EnemyPool : MonoBehaviour
         return enemySpawning;
     }
 
-    public static Type GetEnemyType(PlayerAppearance enemyClass)
-    {
-        Type type = default;
-
-        switch (enemyClass)
-        {
-            case PlayerAppearance.Deer: type = typeof(DeerSkills); break;
-            case PlayerAppearance.Harpy: type = typeof(HarpySkills); break;
-
-            default: Debug.Log($"The entity you are referencing isn't an enemy: " + type); break;
-        }
-
-        return type;
-    }
 }
