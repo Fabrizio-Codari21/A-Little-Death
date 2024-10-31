@@ -24,13 +24,13 @@ public class USPTutorial : PossessableHealth
         {
             Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
         }
-        gameObject.SetActive(false);
-        Destroy(gameObject, 5f);
+
+        base.Die();
     }
 
     private void OnPossess()
     {
-        if(isTutorial) TutorialManager.instance.ChangeTutorial();
+        if(isTutorial) TutorialManager.instance.ChangeTutorial(1);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

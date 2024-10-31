@@ -34,11 +34,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 12.81
+      value: 12.815624
       objectReference: {fileID: 0}
     - target: {fileID: 4676855259763034339, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 13.67
+      value: 13.669999
       objectReference: {fileID: 0}
     - target: {fileID: 5127866004850375660, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Enabled
@@ -110,11 +110,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6798088688928900711, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 12.81
+      value: 12.815624
       objectReference: {fileID: 0}
     - target: {fileID: 6798088688928900711, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 13.67
+      value: 13.669999
       objectReference: {fileID: 0}
     - target: {fileID: 6829392026291116011, guid: 50e4dd4ecd5be4542b65b0d5e613cc1d, type: 3}
       propertyPath: m_Sprite
@@ -156,9 +156,9 @@ MonoBehaviour:
   currentHealth: 0
   canBePossessed: 0
   _animator: {fileID: 6383464666917174937}
-  possesionTime: 25
-  estoEsTemporalHayQueBorrarlo: {fileID: 0}
-  stunTime: 1000
+  possesionTime: 15
+  arpiaGroundCheck: {fileID: 0}
+  stunTime: 15
   damage: 1
   particleSystems: []
   isTutorial: 1

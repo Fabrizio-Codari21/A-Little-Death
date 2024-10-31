@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\CheckpointTexture.cs" />
     <Compile Include="Assets\Scripts\CreepersMenu.cs" />
     <Compile Include="Assets\Scripts\Enemy\Fuerza\OlmecaAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Alas\Harpy.cs" />
     <Compile Include="Assets\Scripts\Enemy\Fuerza\OlmecaAnimManager.cs" />
     <Compile Include="Assets\Scripts\Extras\Extensions.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Assets\Scripts\Player\Attacks\BaseAttack.cs" />
     <Compile Include="Assets\Scripts\Player\ThaniaHealth.cs" />
     <Compile Include="Assets\Scripts\Enemy\Alas\WingsHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyPool.cs" />
     <Compile Include="Assets\Scripts\Interfaces\AttackList.cs" />
     <Compile Include="Assets\GDT-Fade-Effect\FadeControl.cs" />
     <Compile Include="Assets\Scripts\USP TEMPORAL\PlayerSkillManager.cs" />

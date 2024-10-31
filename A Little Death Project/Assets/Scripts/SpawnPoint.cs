@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
+    public EnemyManager enemyManager;
+    
     //public GameObject spawnPoint;
-    [HideInInspector] public bool hasAlreadySpawned;
-    public Spawnable entityToSpawn;
+    [HideInInspector] public bool hasAlreadySpawned = false;
+    public GameObject entityToSpawn;
     public Vector2 spawnOffset;
     public AudioSource spawnSound;
+    int spawnAmount;
 
     public PlayerSkillManager player;
     public float requiredPlayerDistance;
@@ -21,13 +24,22 @@ public class SpawnPoint : MonoBehaviour
 
     private void Awake()
     {
-        if(!player) player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkillManager>();
+        entityToSpawn.GetComponentInChildren<Spawnable>().parentSpawner = this;
+        
+        if (!enemyManager) GameObject.FindAnyObjectByType<EnemyManager>();
+        if (!player) player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkillManager>();
         Extensions.SpawnPoints.Add(this);
     }
 
     private void Update()
     {
-        if (!hasAlreadySpawned && Vector3.Distance(player.transform.position, transform.position) >= requiredPlayerDistance)
+        if (spawnAmount < 1)
+        {
+            entityToSpawn.SpawnAt(this);
+            hasAlreadySpawned = true;
+            spawnAmount++;
+        }
+        else if (!hasAlreadySpawned && Vector3.Distance(player.transform.position, transform.position) >= requiredPlayerDistance)
         {
             entityToSpawn.SpawnAt(this);
             hasAlreadySpawned = true;

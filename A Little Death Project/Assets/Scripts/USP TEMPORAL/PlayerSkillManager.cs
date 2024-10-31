@@ -99,7 +99,7 @@ public class PlayerSkillManager : MonoBehaviour
                     possessionUI.gameObject.SetActive(true);
                     timerUI.maxTime = timerUI.timeLeft = _possessingTime;
                     timerUI.ActivateTimer(true);
-                    Destroy(_victim.gameObject);
+                    _victim.GetComponent<PossessableHealth>().Die();
                     thaniaMovement.canMove = true;
                     jumpManager.canMove = true;
                     posesionSpeed = posesionSpeedBase;

@@ -82,8 +82,6 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
     {
         mySkills.primaryExecute = (manager) =>
         {
-            movement.anim.attacked2 = false;
-
             // Agregar esta linea a cualquier acción que realice algo al colisionar (seteando primary o secondary)
             // y despues agregarla con el bool en false cuando la habilidad termine
             manager.SetColliderAction(mySkills, true, SkillSlot.primary);
@@ -103,8 +101,6 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
             }
             else if (mySkills.primaryHasExecuted == true)
             {
-                //Debug.Log("Attacked2");
-                movement.anim.attacked2 = true;
                 //hitbox2.SetActive(true);
                 //hitbox.SetActive(false);
                 manager.StopCoroutine(AttackEnemy(manager));

@@ -17,7 +17,11 @@ public class Menu : MonoBehaviour
     {
         if (this.Inputs(MyInputs.Secret1))
         {
-            StartCoroutine(waitForTransition("Level 2"));
+            var next = SceneManager.GetActiveScene().buildIndex + 1;
+            if (next is 1 or 2 or 3)
+            {
+                StartCoroutine(waitForTransition("Level " + next.ToString()));
+            }
         }
     }
 

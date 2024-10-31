@@ -9,11 +9,12 @@ public class JumpManager : EntityMovement
     private Rigidbody2D rb;
     public float jumpForce = 14f;
     public bool dJump;
-    [SerializeField] private int currentJump = 1;
+    public int currentJump = 1;
     private bool dJumped;
     public AnimationManager anim;
     public bool grounded = true;
     public ParticleSystem dust;
+    public ParticleSystem dJumpVFX;
 
     private float coyoteTime = 0.2f;
     private float coyoteCounter;
@@ -27,7 +28,6 @@ public class JumpManager : EntityMovement
 
     void Update()
     {
-        
         if (Time.timeScale > 0)
         {
             if (grounded)
@@ -85,10 +85,10 @@ public class JumpManager : EntityMovement
                 else if (!grounded && dJumped == false && this.Inputs(MyInputs.SecondarySkill))
                 {
                     Debug.Log("A");
-                    //anim.jumped = true;
                     anim.attackEnded = true;
+                    anim.jumped = true;
                     jumpSound.Play();
-                    CreateDust();
+                    CreateLines();
                     rb.velocity = new Vector2(rb.velocity.x, doubleJumpForce);
                     currentJump++;
                     dJumped = true;
@@ -109,6 +109,11 @@ public class JumpManager : EntityMovement
     void CreateDust()
     {
         dust.Play();
+    }
+
+    void CreateLines()
+    {
+        dJumpVFX.Play();
     }
 }
 

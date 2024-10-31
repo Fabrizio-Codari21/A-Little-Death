@@ -7,14 +7,14 @@ public class PossessableHealth : Health
 {
     [HideInInspector] public bool canBePossessed = false;
     CharacterSkillSet _victim;
-    PlayerSkillManager _skillManager;
+    public PlayerSkillManager _skillManager;
     [SerializeField] Animator _animator;
     [SerializeField] float possesionTime;
     GameObject _cartelTutorial;
-    [SerializeField] GameObject estoEsTemporalHayQueBorrarlo;
+    public Collider2D arpiaGroundCheck;
+    [HideInInspector] public bool startedPossession = false;
 
     public float stunTime;
-    
 
     public override bool Damage(GameObject damager, int damage)
     {
@@ -24,12 +24,13 @@ public class PossessableHealth : Health
 
         if (currentHealth <= 0)
         {
-            if(estoEsTemporalHayQueBorrarlo != null) { estoEsTemporalHayQueBorrarlo.SetActive(true); }
             StartCoroutine(Possessable());
             return true;
         }
         else return false;
     }
+
+    public void ResetHealth() => currentHealth = maxHealth;
 
     public bool DamagePossessable(int damage, CharacterSkillSet victim, PlayerSkillManager skillManager, GameObject cartelTutorial = default)
     {
@@ -48,7 +49,13 @@ public class PossessableHealth : Health
         canBePossessed = true;
         this.WaitAndThen(0.25f, () =>
         {
-            GetComponent<Rigidbody2D>().isKinematic = true;
+            //GetComponent<Rigidbody2D>().isKinematic = true;
+            GetComponent<Rigidbody2D>().gravityScale = 3;
+            if(arpiaGroundCheck != null)
+            {
+                this.GetComponent<Collider2D>().enabled = false;
+                Debug.Log("Se desactivo");
+            }
         });
 
         yield return new WaitForSeconds(stunTime);
@@ -58,9 +65,30 @@ public class PossessableHealth : Health
         Die();
     }
 
+    public override void Die()
+    {
+        var manager = GetComponent<Spawnable>().parentSpawner.enemyManager;
+        var enemy = GetComponent<CharacterSkillSet>();
+
+        manager.GetFromPool(enemy,
+                            manager.enemyPools[enemy.creatureAppearance].transform.position,
+                            Quaternion.identity,
+                            isSpawning: false);
+
+        canBePossessed = false;
+        _animator.SetTrigger("Reset");
+        GetComponent<Spawnable>().OnDespawn();
+
+        this.GetComponent<Collider2D>().enabled = true;
+
+        currentHealth = maxHealth;
+        GetComponent<EntityMovement>().canMove = true;
+
+    }
+
     public virtual void Update()
     {
-        if (canBePossessed && this.Inputs(MyInputs.Possess))
+        if (canBePossessed && this.Inputs(MyInputs.Possess) && startedPossession == false)
         {
             if(Vector2.Distance
               (a: new Vector2(transform.position.x, transform.position.y), 
@@ -69,6 +97,7 @@ public class PossessableHealth : Health
             {
                 _skillManager.Possess(_victim, _victim.creatureAppearance, this.possesionTime);
                 if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
+                startedPossession = true;
             }
 
         }

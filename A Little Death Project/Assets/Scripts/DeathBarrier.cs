@@ -14,7 +14,7 @@ public class DeathBarrier : MonoBehaviour
         }
         else
         {
-            Debug.Log("UwU");
+            Debug.Log(other.gameObject.name);
             Destroy(other.gameObject);
         }
     }
