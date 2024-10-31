@@ -24,8 +24,8 @@ public class USPTutorial : PossessableHealth
         {
             Instantiate(p, transform.position, Quaternion.Euler(270, 180, 0));
         }
-        gameObject.SetActive(false);
-        Destroy(gameObject, 5f);
+
+        base.Die();
     }
 
     private void OnPossess()

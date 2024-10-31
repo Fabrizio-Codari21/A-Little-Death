@@ -7,7 +7,7 @@ public class SpawnPoint : MonoBehaviour
     public EnemyManager enemyManager;
     
     //public GameObject spawnPoint;
-    [HideInInspector] public bool hasAlreadySpawned;
+    [HideInInspector] public bool hasAlreadySpawned = false;
     public GameObject entityToSpawn;
     public Vector2 spawnOffset;
     public AudioSource spawnSound;
@@ -24,6 +24,8 @@ public class SpawnPoint : MonoBehaviour
 
     private void Awake()
     {
+        entityToSpawn.GetComponentInChildren<Spawnable>().parentSpawner = this;
+        
         if (!enemyManager) GameObject.FindAnyObjectByType<EnemyManager>();
         if (!player) player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerSkillManager>();
         Extensions.SpawnPoints.Add(this);

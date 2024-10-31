@@ -10,6 +10,16 @@ public class Spawnable : MonoBehaviour
     {
         if(!parentSpawner) parentSpawner = this.GetNearest(gameObject, Extensions.SpawnPoints);
         parentSpawner.hasAlreadySpawned = true;
+
+        var health = GetComponent<PossessableHealth>();
+
+        health.startedPossession = false;
+
+        health.canBePossessed = true;
+
+        health.ResetHealth();
+
+        GetComponent<EntityMovement>().canMove = true;
     }
 
     public void OnDespawn()

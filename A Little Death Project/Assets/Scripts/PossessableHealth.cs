@@ -12,10 +12,9 @@ public class PossessableHealth : Health
     [SerializeField] float possesionTime;
     GameObject _cartelTutorial;
     public Collider2D arpiaGroundCheck;
-    bool startedPossession = false;
+    [HideInInspector] public bool startedPossession = false;
 
     public float stunTime;
-    
 
     public override bool Damage(GameObject damager, int damage)
     {
@@ -30,6 +29,8 @@ public class PossessableHealth : Health
         }
         else return false;
     }
+
+    public void ResetHealth() => currentHealth = maxHealth;
 
     public bool DamagePossessable(int damage, CharacterSkillSet victim, PlayerSkillManager skillManager, GameObject cartelTutorial = default)
     {
@@ -62,6 +63,27 @@ public class PossessableHealth : Health
         if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
         print("murio");
         Die();
+    }
+
+    public override void Die()
+    {
+        var manager = GetComponent<Spawnable>().parentSpawner.enemyManager;
+        var enemy = GetComponent<CharacterSkillSet>();
+
+        manager.GetFromPool(enemy,
+                            manager.enemyPools[enemy.creatureAppearance].transform.position,
+                            Quaternion.identity,
+                            isSpawning: false);
+
+        canBePossessed = false;
+        _animator.SetTrigger("Reset");
+        GetComponent<Spawnable>().OnDespawn();
+
+        this.GetComponent<Collider2D>().enabled = true;
+
+        currentHealth = maxHealth;
+        GetComponent<EntityMovement>().canMove = true;
+
     }
 
     public virtual void Update()

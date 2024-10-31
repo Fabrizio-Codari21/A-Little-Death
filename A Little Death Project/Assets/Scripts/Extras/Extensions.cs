@@ -252,15 +252,25 @@ public static class Extensions
         {
             if (SpawnPoints.Contains(spawnPoint))
             {
-                spawnedObject = GameObject.Instantiate(x.gameObject, 
-                                                  spawnPoint.transform.position + new Vector3(spawnPoint.spawnOffset.x, spawnPoint.spawnOffset.y, 0), 
-                                                  x.transform.rotation);
+                spawnedObject = spawnPoint.enemyManager.GetFromPool
+                                                        (spawnPoint.entityToSpawn.GetComponentInChildren<CharacterSkillSet>(),
+                                                        spawnPoint.transform.position + new Vector3(spawnPoint.spawnOffset.x, spawnPoint.spawnOffset.y, 0),
+                                                        x.transform.rotation);
+
+                //spawnedObject = GameObject.Instantiate(x.gameObject, 
+                //                                  spawnPoint.transform.position + new Vector3(spawnPoint.spawnOffset.x, spawnPoint.spawnOffset.y, 0), 
+                //                                  x.transform.rotation);
             }
             else
-            {       
-                spawnedObject = GameObject.Instantiate(x.gameObject,
-                                                  spawnPoint.GetNearest(spawnPoint.gameObject, SpawnPoints).transform.position,
-                                                  x.transform.rotation);
+            {
+                spawnedObject = spawnPoint.enemyManager.GetFromPool
+                                                        (spawnPoint.entityToSpawn.GetComponentInChildren<CharacterSkillSet>(),
+                                                        spawnPoint.GetNearest(spawnPoint.gameObject, SpawnPoints).transform.position,
+                                                        x.transform.rotation);
+
+                //spawnedObject = GameObject.Instantiate(x.gameObject,
+                //                                  spawnPoint.GetNearest(spawnPoint.gameObject, SpawnPoints).transform.position,
+                //                                  x.transform.rotation);
             }
 
             var spawnable = spawnedObject.GetComponentInChildren<Spawnable>();

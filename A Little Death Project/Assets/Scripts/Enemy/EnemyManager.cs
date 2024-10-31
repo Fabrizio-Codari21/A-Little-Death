@@ -3,25 +3,40 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 
 [CreateAssetMenu(fileName = "EnemyManager", menuName = "ScriptableObjects/EnemyManager")]
 public class EnemyManager : ScriptableObject
 {
-    public Dictionary<PlayerAppearance, EnemyPool> enemyPools;
+    public Dictionary<PlayerAppearance, EnemyPool> enemyPools = new();
 
-    public GameObject GetFromPool(PlayerAppearance enemyType, Vector3 position)
+    public GameObject GetFromPool(CharacterSkillSet enemyType, Vector3 position, Quaternion rotation, bool isSpawning = true)
     {
-        var pool = enemyPools[enemyType].enemySpawning;
+        var pool = enemyPools[enemyType.creatureAppearance].enemySpawnables;
+        List<Tuple<Type, Spawnable>> newPool = new();
 
         foreach (var p in pool)
         {
-            if (p.Item2.parentSpawner.hasAlreadySpawned) pool.Remove(p);
+            if (p.Item2.parentSpawner.hasAlreadySpawned) newPool.Add(p);
         }
 
-        var spawned = pool.FirstOrDefault();
+        var spawned = newPool.Where(x => x.Item2.gameObject == enemyType.gameObject).FirstOrDefault();
 
-        spawned.Item2.transform.position = position;
+        if (spawned == default) Debug.Log("There are no enemies left to spawn.");
 
+        
+
+        if (isSpawning)
+        {
+            spawned.Item2.gameObject.transform.parent.position = position;
+            spawned.Item2.transform.parent.rotation = rotation;
+        }
+        else
+        {
+            spawned.Item2.transform.parent.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0,20,0);
+        }
+
+        
         return spawned.Item2.gameObject;
     }
 

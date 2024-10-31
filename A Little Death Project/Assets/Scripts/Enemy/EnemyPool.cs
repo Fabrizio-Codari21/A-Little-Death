@@ -10,13 +10,17 @@ public class EnemyPool : MonoBehaviour
     public EnemyManager enemyManager;
     
     public PlayerAppearance enemyType;
-    public List<Spawnable> allEnemies;
-    public List<Tuple<Type, Spawnable>> enemySpawning;
+    public List<GameObject> allEnemies;
+    public List<Tuple<Type, Spawnable>> enemySpawnables;
     Type _type;
 
     void Awake()
     {
-        enemySpawning = FilterByClass(allEnemies, enemyType, out _type);
+        List<Spawnable> allSpawnable = allEnemies.Select(x => x.GetComponentInChildren<Spawnable>()).ToList();
+
+        if (allSpawnable.Count <= 0 ) Debug.Log($"The {enemyType} pool does not contain spawnable enemies.");
+        else enemySpawnables = FilterByClass(allSpawnable, enemyType, out _type);
+
         enemyManager.enemyPools.Add(enemyType, this);
     }
 
