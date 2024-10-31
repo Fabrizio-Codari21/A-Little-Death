@@ -274,6 +274,7 @@ public static class Extensions
         return spawnedObject;
     }
 
+
     // Devuelve el objeto mas cercano a la referencia de entre una lista de objetos
     public static T GetNearest<T>(this MonoBehaviour x, GameObject nearestTo = default, List<T> among = default)
     {
@@ -293,6 +294,8 @@ public static class Extensions
 
         return result.GetComponent<T>();
     }
+
+
 
 }
 
