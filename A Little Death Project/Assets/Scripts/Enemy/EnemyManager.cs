@@ -33,7 +33,8 @@ public class EnemyManager : ScriptableObject
         }
         else
         {
-            spawned.Item2.transform.parent.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0,20,0);
+            spawned.Item2.transform.parent.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0,5,0);
+            spawned.Item2.transform.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0,5,0);
         }
 
         
