@@ -15,6 +15,7 @@ public class PossessableHealth : Health
     [HideInInspector] public bool startedPossession = false;
 
     public float stunTime;
+    IEnumerator _possessable;
 
     public override bool Damage(GameObject damager, int damage)
     {
@@ -24,7 +25,8 @@ public class PossessableHealth : Health
 
         if (currentHealth <= 0)
         {
-            StartCoroutine(Possessable());
+            _possessable = Possessable();
+            StartCoroutine(_possessable);
             return true;
         }
         else return false;
@@ -76,6 +78,7 @@ public class PossessableHealth : Health
                             isSpawning: false);
 
         canBePossessed = false;
+        StopCoroutine(_possessable);
         _animator.SetTrigger("Reset");
         GetComponent<Spawnable>().OnDespawn();
 
