@@ -269,6 +269,7 @@ MonoBehaviour:
   attacked: 0
   harpy: {fileID: 1507937835944336884}
   animator: {fileID: 6429558052257034647}
+  REFERENCIATEMPORAL: {fileID: 502392016675600772}
 --- !u!1 &3527550949414860610
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +470,7 @@ MonoBehaviour:
   harpy: {fileID: 6260604099389725509}
   damage: 1
   anim: {fileID: 6852644306105563988}
+  attacking: 0
   nextFireTime: 0
   cooldown: 2
 --- !u!1 &5846639739174284961
@@ -579,17 +581,19 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 0
   canBePossessed: 0
+  _skillManager: {fileID: 0}
   _animator: {fileID: 6429558052257034647}
   possesionTime: 25
   arpiaGroundCheck: {fileID: 502392016675600772}
+  startedPossession: 0
   stunTime: 15
+  isTutorial: 0
   manager: {fileID: 0}
   damage: 1
   particleSystems:
   - {fileID: 439357138386912805, guid: 2a14c1698634837469b9aa321edb2016, type: 3}
   - {fileID: 2268716391601558820, guid: 227cfe0675dfd054c9e3057af9d678da, type: 3}
   movementManager: {fileID: 0}
-  isTutorial: 0
 --- !u!114 &6397945254562055918
 MonoBehaviour:
   m_ObjectHideFlags: 0

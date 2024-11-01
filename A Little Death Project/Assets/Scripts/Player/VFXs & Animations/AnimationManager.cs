@@ -51,6 +51,11 @@ public class AnimationManager : MonoBehaviour
         animator.SetBool("AttackAnimEnded", attackEnded);
     }
 
+    void TEMPORAL()
+    {
+        GetComponent<Collider2D>().offset += new Vector2(0f, -5f);
+    }
+
     public  void AttackAnimEnd()
     {
         attackEnded = true;
@@ -59,6 +64,7 @@ public class AnimationManager : MonoBehaviour
     void ActivateMovement()
     {
         manager.CanMove();
+        GetComponent<Collider2D>().offset += new Vector2(0f, 5f); //ESTA LINEA ES TEMPORAL
     }
 
     public void AttackAnimStart()
