@@ -16,6 +16,7 @@ public class PossessableHealth : Health
 
     public float stunTime;
     IEnumerator _possessable;
+    public bool isTutorial;
 
     public override bool Damage(GameObject damager, int damage)
     {
@@ -89,6 +90,11 @@ public class PossessableHealth : Health
 
     }
 
+    public void OnPossess(int x)
+    {
+        if (isTutorial) TutorialManager.instance.ChangeTutorial(x);
+    }
+
     public virtual void Update()
     {
         if (canBePossessed && this.Inputs(MyInputs.Possess) && startedPossession == false)
@@ -101,6 +107,8 @@ public class PossessableHealth : Health
                 _skillManager.Possess(_victim, _victim.creatureAppearance, this.possesionTime);
                 if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
                 startedPossession = true;
+                if (GetComponent<Harpy>()) { OnPossess(3); }
+                else if (GetComponent<USPTutorial>()) { OnPossess(1); }
             }
 
         }

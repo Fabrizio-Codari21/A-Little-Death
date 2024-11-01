@@ -9,7 +9,6 @@ public class USPTutorial : PossessableHealth
     [SerializeField] ParticleSystem[] particleSystems;
     //public TutorialColliders tutorial;
     //public TutorialColliders tutorialVenado;
-    public bool isTutorial;
     [SerializeField] FreeRoamMovement movementManager;
 
     public override void Start()
@@ -28,11 +27,6 @@ public class USPTutorial : PossessableHealth
         base.Die();
     }
 
-    private void OnPossess()
-    {
-        if(isTutorial) TutorialManager.instance.ChangeTutorial(1);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.tag == "Player" && movementManager.canMove == true)
@@ -40,15 +34,6 @@ public class USPTutorial : PossessableHealth
             Debug.Log(movementManager.canMove);
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
             damageableObject.Damage(gameObject, damage);
-        }
-    }
-
-    public override void Update()
-    {
-        if (canBePossessed && this.Inputs(MyInputs.Possess))
-        {
-            base.Update();
-            OnPossess();
         }
     }
 }

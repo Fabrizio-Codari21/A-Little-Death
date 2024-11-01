@@ -19,7 +19,7 @@ public class Spawnable : MonoBehaviour
 
         health.ResetHealth();
 
-        GetComponent<Rigidbody2D>().gravityScale = 0;
+        if (GetComponent<Harpy>()) { GetComponent<Rigidbody2D>().gravityScale = 0; }
 
         GetComponent<EntityMovement>().canMove = true;
     }

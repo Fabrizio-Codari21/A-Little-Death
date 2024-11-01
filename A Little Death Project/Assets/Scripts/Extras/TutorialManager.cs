@@ -5,10 +5,12 @@ using UnityEngine;
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager instance;
+    public EnemyManager enemyManager;
 
     private void Awake()
     {
         instance = this;
+        enemyManager.enemyPools.Clear();
     }
     
     List<string> tutorialBoxes = new List<string>()

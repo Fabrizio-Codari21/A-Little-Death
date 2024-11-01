@@ -9,7 +9,6 @@ public class WingsHealth : PossessableHealth
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem[] particleSystems;
     [SerializeField] FreeRoamMovement movementManager;
-    public bool isTutorial;
 
     public override void Start()
     {
@@ -27,18 +26,12 @@ public class WingsHealth : PossessableHealth
         }
     }
 
-    public void OnPossess()
-    {
-        if (isTutorial) TutorialManager.instance.ChangeTutorial(3);
-    }
-
     public override void Update()
     {
         if (canBePossessed && this.Inputs(MyInputs.Possess))
         {
-              base.Update();
+            base.Update();
             _skillManager.jumpManager.dJump = true;
-            OnPossess();
         }
     }
 }
