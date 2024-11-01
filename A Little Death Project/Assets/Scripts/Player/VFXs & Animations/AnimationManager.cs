@@ -64,6 +64,10 @@ public class AnimationManager : MonoBehaviour
     void ActivateMovement()
     {
         manager.CanMove();
+    }
+
+    void TEMPORAL2()
+    {
         GetComponent<Collider2D>().offset += new Vector2(0f, 5f); //ESTA LINEA ES TEMPORAL
     }
 

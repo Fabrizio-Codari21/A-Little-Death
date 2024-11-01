@@ -18,6 +18,7 @@ public class End : MonoBehaviour
         if (other.gameObject.tag == "Player") 
         {
             other.GetComponentInParent<ThaniaMovement>().StopMoving();
+            other.GetComponentInParent<JumpManager>().StopMoving();
             Checkpoints.active = false;
             Checkpoints.savedPos = default;
             fade.SetActive(true);
