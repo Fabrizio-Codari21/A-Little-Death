@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Spawnable : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Spawnable : MonoBehaviour
         if (GetComponent<Harpy>()) { GetComponent<Rigidbody2D>().gravityScale = 0; }
 
         GetComponent<EntityMovement>().canMove = true;
+        if (GetComponent<Light2D>()) { GetComponent<Light2D>().enabled = true; }
     }
 
     public void OnDespawn()

@@ -83,10 +83,10 @@ public class PlayerSkillManager : MonoBehaviour
             {
                 onTarget = true;
                 thaniaMovement.rb.isKinematic = false;
-                transitionParticle.startColor = new Color(1, 0.5f, 0.25f);
-                transitionParticle.Play();
+                //transitionParticle.startColor = new Color(1, 0.5f, 0.25f);
+                //transitionParticle.Play();
 
-                this.WaitAndThen(0.2f, () =>
+                this.WaitAndThen(1f, () =>
                 {
                     sprites[PlayerAppearance.Soul].gameObject.SetActive(false);
                     sprites[_currentSprite].gameObject.SetActive(true);
@@ -100,14 +100,19 @@ public class PlayerSkillManager : MonoBehaviour
                     timerUI.maxTime = timerUI.timeLeft = _possessingTime;
                     timerUI.ActivateTimer(true);
                     _victim.GetComponent<PossessableHealth>().Die();
-                    thaniaMovement.canMove = true;
-                    jumpManager.canMove = true;
+                    //thaniaMovement.canMove = true;
+                    //jumpManager.canMove = true;
                     posesionSpeed = posesionSpeedBase;
                 });
             }
         }
     }
 
+    public void CanMove()
+    {
+        thaniaMovement.canMove = true;
+        jumpManager.canMove = true;
+    }
 
     // Para revisar los inputs de las habilidades activas y ejecutarlas en base a ellos.
     public void CheckSkillInput(int skillId)

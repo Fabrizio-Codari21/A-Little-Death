@@ -56,6 +56,11 @@ public class AnimationManager : MonoBehaviour
         attackEnded = true;
     }
 
+    void ActivateMovement()
+    {
+        manager.CanMove();
+    }
+
     public void AttackAnimStart()
     {
         attackEnded = false;

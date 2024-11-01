@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class PossessableHealth : Health
 {
@@ -104,13 +105,17 @@ public class PossessableHealth : Health
               b: new Vector2(_skillManager.transform.position.x, _skillManager.transform.position.y)) 
               <= _skillManager.possessingRange)
             {
+                _animator.SetTrigger("Possessed");
                 _skillManager.Possess(_victim, _victim.creatureAppearance, this.possesionTime);
                 if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
                 startedPossession = true;
                 if (GetComponent<Harpy>()) { OnPossess(3); }
-                else if (GetComponent<USPTutorial>()) { OnPossess(1); }
+                else if (GetComponent<USPTutorial>()) 
+                {
+                    OnPossess(1);
+                    GetComponent<Light2D>().enabled = false;
+                }
             }
-
         }
     }
 }
