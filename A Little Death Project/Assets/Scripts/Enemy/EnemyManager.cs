@@ -35,6 +35,7 @@ public class EnemyManager : ScriptableObject
         {
             spawned.Item2.transform.parent.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0,5,0);
             spawned.Item2.transform.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0,5,0);
+            if (spawned.Item1 == typeof(HarpySkills)) spawned.Item2.GetComponentInChildren<WingsAttackDetection>().attacking = false;
         }
 
         

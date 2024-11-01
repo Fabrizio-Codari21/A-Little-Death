@@ -9,7 +9,7 @@ public class WingsAttackDetection : MonoBehaviour
     private RaycastHit2D hits;
     [SerializeField] int damage = 2;
     public HarpyAnimController anim;
-    private bool attacking;
+    [HideInInspector] public bool attacking;
     [SerializeField] private float nextFireTime;
     private bool attacked;
     Collider2D target;
