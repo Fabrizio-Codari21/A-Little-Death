@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        SaveManager.GetSavedGames();
         Time.timeScale = 1;
     }
 
