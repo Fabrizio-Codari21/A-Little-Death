@@ -160,7 +160,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.12, y: 10.79}
+    oldSize: {x: 7.123086, y: 10.79}
     newSize: {x: 7.12, y: 10.79}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -232,7 +232,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.12, y: 10.79}
+    oldSize: {x: 7.123086, y: 10.79}
     newSize: {x: 7.12, y: 10.79}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -272,13 +272,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5b80303d707984d91bd5960bdade9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentSpawner: {fileID: 0}
+  canMove: 1
   speed: 4
   facingRight: 0
   groundCheck: {fileID: 7541336060568915786}
   wallCheck: {fileID: 636802330329035941}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 1216
+    m_Bits: 17600
   touchingGround: 0
   touchingWall: 0
   rb: {fileID: 0}
