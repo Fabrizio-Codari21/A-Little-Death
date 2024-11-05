@@ -24,7 +24,7 @@ public class EnemyManager : ScriptableObject
 
         if (spawned == default) Debug.Log("There are no enemies left to spawn.");
 
-        
+
 
         if (isSpawning)
         {
@@ -33,9 +33,19 @@ public class EnemyManager : ScriptableObject
         }
         else
         {
-            spawned.Item2.transform.parent.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0,5,0);
-            spawned.Item2.transform.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0,5,0);
-            if (spawned.Item1 == typeof(HarpySkills)) spawned.Item2.GetComponentInChildren<WingsAttackDetection>().attacking = false;
+            if (spawned.Item1 == typeof(HarpySkills))
+            {
+                spawned.Item2.GetComponentInChildren<WingsAttackDetection>().attacking = false;
+                spawned.Item2.transform.parent.position = enemyPools[enemyType.creatureAppearance].transform.position;
+                // spawned.Item2.transform.position = enemyPools[enemyType.creatureAppearance].transform.position;
+                spawned.Item2.transform.localPosition = Vector3.zero;
+            }
+            else
+            {
+
+                spawned.Item2.transform.parent.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0, 5, 0);
+                spawned.Item2.transform.position = enemyPools[enemyType.creatureAppearance].transform.position + new Vector3(0, 5, 0);
+            }
         }
 
         

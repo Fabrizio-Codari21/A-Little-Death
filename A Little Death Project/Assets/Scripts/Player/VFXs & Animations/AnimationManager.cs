@@ -63,6 +63,7 @@ public class AnimationManager : MonoBehaviour
 
     void ActivateMovement()
     {
+        Debug.Log("Here");
         manager.CanMove();
     }
 

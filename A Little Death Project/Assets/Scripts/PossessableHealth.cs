@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PossessableHealth : Health
 {
-    [HideInInspector] public bool canBePossessed = false;
+     public bool canBePossessed = false;
     CharacterSkillSet _victim;
     public PlayerSkillManager _skillManager;
     [SerializeField] Animator _animator;
@@ -100,6 +100,8 @@ public class PossessableHealth : Health
     {
         if (canBePossessed && this.Inputs(MyInputs.Possess) && startedPossession == false)
         {
+            if (_skillManager == null) return;
+
             if(Vector2.Distance
               (a: new Vector2(transform.position.x, transform.position.y), 
               b: new Vector2(_skillManager.transform.position.x, _skillManager.transform.position.y)) 

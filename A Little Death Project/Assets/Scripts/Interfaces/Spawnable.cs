@@ -16,7 +16,7 @@ public class Spawnable : MonoBehaviour
 
         health.startedPossession = false;
 
-        health.canBePossessed = true;
+        //health.canBePossessed = true;
 
         health.ResetHealth();
 
