@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject fadeEfect;
     public Opciones settings;
+    //[SerializeField] int levelToLoad;
 
     private void Start()
     {
@@ -26,9 +27,12 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void Play()
+    public void Play(int levelToLoad)
     {
-        StartCoroutine(waitForTransition("Level 1"));
+        if (levelToLoad is 1 or 2 or 3 or 4)
+        {
+            StartCoroutine(waitForTransition("Level " + levelToLoad.ToString()));
+        }
     }    
     
     public void Restart()
@@ -72,6 +76,10 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1;
         yield return new WaitForSeconds(1);
         this.AsyncLoader("MainMenu");
+    }
 
+    public void LoadGameFromMenu(int x)
+    {
+        this.LoadGame(x);
     }
 }
