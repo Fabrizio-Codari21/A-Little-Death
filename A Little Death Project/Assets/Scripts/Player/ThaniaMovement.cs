@@ -28,6 +28,21 @@ public class ThaniaMovement : EntityMovement
 
         if (this.Inputs(MyInputs.Secret2)) transform.position = checkpointOne.position;
         if (this.Inputs(MyInputs.Secret1)) Checkpoints.savedPos = default;
+
+        if (this.Inputs(MyInputs.Secret3)) 
+        {
+            var saveInfo = new SaveInfo(1, 
+                                        Checkpoints.savedPos, 
+                                        GetComponent<ThaniaHealth>().currentHealth);
+
+            this.SaveGame(saveInfo, 1);
+        }
+
+        if (this.Inputs(MyInputs.Secret4))
+        {
+            this.LoadGame(1);
+        }
+
     }
 
     private void Flip()

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.RuleTile.TilingRuleOutput;
@@ -227,7 +228,7 @@ public static class Extensions
 
     }
 
-    public static IEnumerator AsyncLoader(this MonoBehaviour x, string sceneName)
+    public static bool AsyncLoader(this MonoBehaviour x, string sceneName)
     {
         AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
 
@@ -236,7 +237,7 @@ public static class Extensions
             Debug.Log($"Loading {sceneName}: {Mathf.Clamp01(op.progress) * 100}%");
         });
 
-        return load;
+        return op.isDone;
     }
 
     // Spawnea una entidad en el punto indicado (o, si este no existe, el mas cercano a el), le asigna una

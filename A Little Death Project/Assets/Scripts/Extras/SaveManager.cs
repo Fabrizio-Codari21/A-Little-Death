@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class SaveManager
 {
-    public static List<SaveInfo> allSaves;
+    public static List<SaveInfo> allSaves = new();
 
-    public static void SaveGame(SaveInfo saveInfo, int indexOfSave)
+    public static void SaveGame(this MonoBehaviour x, SaveInfo saveInfo, int indexOfSave)
     {
         var save = JsonUtility.ToJson(saveInfo);
         var filePath = Application.persistentDataPath + $"/SavedGame{indexOfSave}.json";
@@ -14,13 +16,20 @@ public static class SaveManager
         System.IO.File.WriteAllText(filePath, save);
         Debug.Log($"Saved game in slot {indexOfSave}: {saveInfo}");
 
-        if (allSaves[indexOfSave - 1] != default) allSaves[indexOfSave - 1] = saveInfo;
+        if (allSaves[indexOfSave] != default) allSaves[indexOfSave] = saveInfo;
+       
     }
 
-    public static void LoadGame(int indexOfSave)
+    public static void LoadGame(this MonoBehaviour x, int indexOfSave)
     {
         var filePath = Application.persistentDataPath + $"/SavedGame{indexOfSave}.json";
         var data = JsonUtility.FromJson<SaveInfo>(System.IO.File.ReadAllText(filePath));
+
+        var done = x.AsyncLoader(data.sceneToKeep);
+        x.ExecuteAfterTrue(() => done, () =>
+        {
+            GameObject.FindObjectOfType<ThaniaHealth>().transform.position = data.spawnPosition;
+        });   
     }
 
     public static void GetSavedGames()
@@ -71,4 +80,35 @@ public class SaveInfo
 {
     public int savingSpot;
     public int playerHealth;
+
+    public string sceneToKeep;
+    public Vector2 spawnPosition;
+
+    public SaveInfo(int saveSpot, Vector2 spawnPos,  int health)
+    {
+        playerHealth = health;
+        spawnPosition = spawnPos;
+
+        switch (saveSpot)
+        {
+            case 0:
+                sceneToKeep = SceneManager.GetSceneByName("Level 1").name; break;
+            case 1:
+                sceneToKeep = SceneManager.GetSceneByName("Level 1").name; break;
+            case 2:
+                sceneToKeep = SceneManager.GetSceneByName("Level 2").name; break;
+            case 3:
+                sceneToKeep = SceneManager.GetSceneByName("Level 2").name; break;
+            case 4:
+                sceneToKeep = SceneManager.GetSceneByName("Level 3").name; break;
+            case 5:
+                sceneToKeep = SceneManager.GetSceneByName("Level 3").name; break;
+            case 6:
+                sceneToKeep = SceneManager.GetSceneByName("Level 4").name; break;
+            case 7:
+                sceneToKeep = SceneManager.GetSceneByName("Level 4").name; break;
+            default: break;
+
+        }
+    }
 }
