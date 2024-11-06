@@ -228,7 +228,7 @@ public static class Extensions
 
     }
 
-    public static bool AsyncLoader(this MonoBehaviour x, string sceneName)
+    public static Func<bool> AsyncLoader(this MonoBehaviour x, string sceneName)
     {
         AsyncOperation op = SceneManager.LoadSceneAsync(sceneName);
 
@@ -237,7 +237,7 @@ public static class Extensions
             Debug.Log($"Loading {sceneName}: {Mathf.Clamp01(op.progress) * 100}%");
         });
 
-        return op.isDone;
+        return () => op.isDone;
     }
 
     // Spawnea una entidad en el punto indicado (o, si este no existe, el mas cercano a el), le asigna una

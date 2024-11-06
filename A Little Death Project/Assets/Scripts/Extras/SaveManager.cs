@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class SaveManager
 {
-    public static List<SaveInfo> allSaves = new();
+    public static SaveInfo[] allSaves = new SaveInfo[3];
 
     public static void SaveGame(this MonoBehaviour x, SaveInfo saveInfo, int indexOfSave)
     {
@@ -25,26 +26,29 @@ public static class SaveManager
         var filePath = Application.persistentDataPath + $"/SavedGame{indexOfSave}.json";
         var data = JsonUtility.FromJson<SaveInfo>(System.IO.File.ReadAllText(filePath));
 
+        if(data.sceneToKeep == string.Empty) { Debug.Log("There is no data"); return; }
+
         var done = x.AsyncLoader(data.sceneToKeep);
-        x.ExecuteAfterTrue(() => done, () =>
+        x.ExecuteAfterTrue(done, () =>
         {
             GameObject.FindObjectOfType<ThaniaHealth>().transform.position = data.spawnPosition;
+            Debug.Log("ahora arranco el nivel");
         });   
     }
 
     public static void GetSavedGames()
     {
-        allSaves[0] = JsonUtility.FromJson<SaveInfo>
-                      (System.IO.File.ReadAllText
-                      (Application.persistentDataPath + $"/SavedGame1.json"));
+        for (int i = 0; i < allSaves.Length; i++)
+        {
+            var save = JsonUtility.FromJson<SaveInfo>
+                       (System.IO.File.ReadAllText
+                       (Application.persistentDataPath + $"/SavedGame{i + 1}.json"));
 
-        allSaves[1] = JsonUtility.FromJson<SaveInfo>
-                      (System.IO.File.ReadAllText
-                      (Application.persistentDataPath + $"/SavedGame2.json"));
-
-        allSaves[2] = JsonUtility.FromJson<SaveInfo>
-                      (System.IO.File.ReadAllText
-                      (Application.persistentDataPath + $"/SavedGame3.json"));
+            if (save != null) allSaves[i] = save; 
+            else System.IO.File.WriteAllText
+                 (Application.persistentDataPath + $"/SavedGame{i + 1}.json", 
+                 default);
+        }
     }
 
     public static bool HasSavedGame(SaveInfo savedInfo)
@@ -60,19 +64,19 @@ public static class SaveManager
         return false;
     }
 
-    public static int GetSavedGameIndex(SaveInfo savedInfo)
-    {
-        foreach (var save in allSaves)
-        {
-            if (save == savedInfo)
-            {
-                return allSaves.IndexOf(save) + 1;
-            }
-        }
+    //public static int GetSavedGameIndex(SaveInfo savedInfo)
+    //{
+    //    foreach (var save in allSaves)
+    //    {
+    //        if (save == savedInfo)
+    //        {
+    //            return allSaves. + 1;
+    //        }
+    //    }
 
-        Debug.Log("The requested save index does not exist");
-        return -1;
-    }
+    //    Debug.Log("The requested save index does not exist");
+    //    return -1;
+    //}
 }
 
 [System.Serializable]
@@ -92,21 +96,21 @@ public class SaveInfo
         switch (saveSpot)
         {
             case 0:
-                sceneToKeep = SceneManager.GetSceneByName("Level 1").name; break;
+                sceneToKeep = SceneManager.GetSceneByBuildIndex(1).name; Debug.Log("0"); break;
             case 1:
-                sceneToKeep = SceneManager.GetSceneByName("Level 1").name; break;
+                sceneToKeep = SceneManager.GetSceneByBuildIndex(1).name; Debug.Log("1"); break;
             case 2:
-                sceneToKeep = SceneManager.GetSceneByName("Level 2").name; break;
+                sceneToKeep = SceneManager.GetSceneByBuildIndex(2).name; Debug.Log("2"); break;
             case 3:
-                sceneToKeep = SceneManager.GetSceneByName("Level 2").name; break;
+                sceneToKeep = SceneManager.GetSceneByBuildIndex(2).name; Debug.Log("3"); break;
             case 4:
-                sceneToKeep = SceneManager.GetSceneByName("Level 3").name; break;
+                sceneToKeep = SceneManager.GetSceneByBuildIndex(3).name; Debug.Log("4"); break;
             case 5:
-                sceneToKeep = SceneManager.GetSceneByName("Level 3").name; break;
+                sceneToKeep = SceneManager.GetSceneByBuildIndex(3).name; Debug.Log("5"); break;
             case 6:
-                sceneToKeep = SceneManager.GetSceneByName("Level 4").name; break;
+                sceneToKeep = SceneManager.GetSceneByBuildIndex(4).name; Debug.Log("6"); break;
             case 7:
-                sceneToKeep = SceneManager.GetSceneByName("Level 4").name; break;
+                sceneToKeep = SceneManager.GetSceneByBuildIndex(4).name; Debug.Log("7"); break;
             default: break;
 
         }

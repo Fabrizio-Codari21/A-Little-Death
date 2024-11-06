@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ThaniaMovement : EntityMovement
 {
@@ -31,9 +32,17 @@ public class ThaniaMovement : EntityMovement
 
         if (this.Inputs(MyInputs.Secret3)) 
         {
-            var saveInfo = new SaveInfo(1, 
+            var health = GetComponent<ThaniaHealth>();
+
+            var save = (Checkpoints.savedPos != health.startPos) 
+                       ? (SceneManager.GetActiveScene().buildIndex * 2) - 1 
+                       : (SceneManager.GetActiveScene().buildIndex * 2) - 2;
+
+            var saveInfo = new SaveInfo(save, 
                                         Checkpoints.savedPos, 
-                                        GetComponent<ThaniaHealth>().currentHealth);
+                                        health.currentHealth);
+
+            if(saveInfo.sceneToKeep == string.Empty) { print("hubo un problema"); }
 
             this.SaveGame(saveInfo, 1);
         }

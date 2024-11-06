@@ -18,6 +18,7 @@ public class ThaniaHealth : Health
     [SerializeField] Menu menu;
     public Color og;
 
+    [HideInInspector] public Vector2 startPos;
     public override void Start()
     {
         base.Start();
@@ -28,7 +29,11 @@ public class ThaniaHealth : Health
         { 
             transform.position = Checkpoints.savedPos; 
         }
-        else Checkpoints.savedPos = transform.position;
+        else 
+        {
+            Checkpoints.savedPos = transform.position; 
+            startPos = transform.position;
+        }
     }
 
     public override bool Damage(GameObject damager, int damage)
