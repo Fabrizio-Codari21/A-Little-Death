@@ -27688,7 +27688,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689294193}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
   m_Name: 
@@ -30863,6 +30863,7 @@ MonoBehaviour:
   movementManager: {fileID: 1059228622}
   menu: {fileID: 2126238064}
   og: {r: 0, g: 0, b: 0, a: 0}
+  startPos: {x: 0, y: 0}
 --- !u!50 &1059228624
 Rigidbody2D:
   serializedVersion: 4
@@ -95625,6 +95626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeEfect: {fileID: 1419943797}
   settings: {fileID: 2126238065}
+  saveWarningText: {fileID: 0}
 --- !u!114 &2126238065
 MonoBehaviour:
   m_ObjectHideFlags: 0
