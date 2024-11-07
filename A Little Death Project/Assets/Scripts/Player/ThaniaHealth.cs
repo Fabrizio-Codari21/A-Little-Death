@@ -27,8 +27,6 @@ public class ThaniaHealth : Health
         base.Start();
         rb = gameObject.GetComponent<Rigidbody2D>();
         og = Color.white;
-
-        Debug.Log(Checkpoints.checkPoint);
         
         if(Checkpoints.checkPoint != transform.position && Checkpoints.checkPoint != default)
         {
@@ -100,6 +98,24 @@ public class ThaniaHealth : Health
         {
             Checkpoints.savedPos = collision.gameObject.transform.position - Vector3.one;
             Checkpoints.active = true;
+
+            var save = (SceneManager.GetActiveScene().buildIndex * 2) - 1;
+
+            var saveInfo = new SaveInfo(save,
+                                        Checkpoints.savedPos,
+                                        currentHealth);
+
+            if (saveInfo.sceneToKeep == string.Empty) { print("hubo un problema"); }
+
+            if(SaveManager.allSaves[SaveManager.currentSave] == default)
+            {
+                this.SaveGame(saveInfo, SaveManager.currentSave);
+            }
+            else if (SaveManager.allSaves[SaveManager.currentSave].savingSpot != saveInfo.savingSpot)
+            {
+                this.SaveGame(saveInfo, SaveManager.currentSave);
+            }
+
         }
     }
 }
