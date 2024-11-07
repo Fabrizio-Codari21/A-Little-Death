@@ -84,6 +84,7 @@ public class AnimationManager : MonoBehaviour
 
     public void SetAttackTrigger()
     {
+        animator.SetInteger("NextAttack", Random.Range(0, 2)); 
         thaniaSkills.Attack(manager);
     }
 }
