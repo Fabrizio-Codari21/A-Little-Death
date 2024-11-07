@@ -49,7 +49,7 @@ public class ThaniaMovement : EntityMovement
 
             if(saveInfo.sceneToKeep == string.Empty) { print("hubo un problema"); }
 
-            this.SaveGame(saveInfo, 1);
+            this.SaveGame(saveInfo, SaveManager.currentSave);
         }
 
         if (this.Inputs(MyInputs.Secret4))

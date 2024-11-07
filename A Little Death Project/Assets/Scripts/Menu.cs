@@ -47,7 +47,7 @@ public class Menu : MonoBehaviour
     
     public void Death()
     {
-        StartCoroutine(waitForTransition(SceneManager.GetActiveScene().name));
+        StartCoroutine(waitForTransitionRestart());
     }
 
     public void Quit()
@@ -59,6 +59,8 @@ public class Menu : MonoBehaviour
     {
         fadeEfect.SetActive(true);
         yield return new WaitForSeconds(1.5f);
+        Checkpoints.active = false;
+        Checkpoints.checkPoint = default;
         this.AsyncLoader(name);
     }
 
@@ -80,8 +82,13 @@ public class Menu : MonoBehaviour
         this.AsyncLoader("MainMenu");
     }
 
-    public void LoadGameFromMenu(int x)
+    public void LoadGameFromMenu(int x) => StartCoroutine(LoadFromMenu(x));
+
+
+    IEnumerator LoadFromMenu(int x)
     {
+        fadeEfect.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         this.LoadGame(x);
     }
 }

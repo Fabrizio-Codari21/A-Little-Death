@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public static class SaveManager
 {
     public static SaveInfo[] allSaves = new SaveInfo[3];
+    public static int currentSave;
 
     public static void SaveGame(this MonoBehaviour x, SaveInfo saveInfo, int indexOfSave)
     {
@@ -31,6 +32,7 @@ public static class SaveManager
 
         var done = x.AsyncLoader(data.sceneToKeep);
 
+        currentSave = indexOfSave;
         Checkpoints.checkPoint = data.spawnPosition;
 
         x.ExecuteUntilTrue(done, () =>

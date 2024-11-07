@@ -28,9 +28,12 @@ public class ThaniaHealth : Health
         rb = gameObject.GetComponent<Rigidbody2D>();
         og = Color.white;
 
-        if(Checkpoints.checkPoint != transform.position && Checkpoints.checkPoint != Vector3.zero)
+        Debug.Log(Checkpoints.checkPoint);
+        
+        if(Checkpoints.checkPoint != transform.position && Checkpoints.checkPoint != default)
         {
             transform.position = Checkpoints.checkPoint;
+
         }
         else
         {
