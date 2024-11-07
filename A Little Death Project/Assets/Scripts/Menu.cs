@@ -69,21 +69,20 @@ public class Menu : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Checkpoints.active = false;
         Checkpoints.checkPoint = default;
-        this.AsyncLoader(name);
 
-        var save = (SceneManager.GetActiveScene().buildIndex * 2) - 2;
+        var save = (SceneManager.GetSceneByName(name).buildIndex * 2) - 2;
 
         var saveInfo = new SaveInfo(save,
                                     Checkpoints.savedPos,
                                     5);
 
+        saveInfo.sceneToKeep = name;
+
         if (saveInfo.sceneToKeep == string.Empty) { print("hubo un problema"); }
 
-        this.WaitAndThen(timeToWait: 1f, () =>
-        {
-            this.SaveGame(saveInfo, SaveManager.currentSave);
-        },
-        cancelCondition: () => false);
+        this.AsyncLoader(name);
+
+        this.SaveGame(saveInfo, SaveManager.currentSave);
         
     }
 
