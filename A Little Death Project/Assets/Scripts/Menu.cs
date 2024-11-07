@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +34,10 @@ public class Menu : MonoBehaviour
     {
         if (levelToLoad is 1 or 2 or 3 or 4)
         {
+            for (int i = 0; i < SaveManager.allSaves.Length; i++)
+            {
+                if (SaveManager.allSaves[i] == default) { SaveManager.currentSave = i; break; }
+            }
             StartCoroutine(waitForTransition("Level " + levelToLoad.ToString()));
         }
     }    
@@ -82,13 +89,35 @@ public class Menu : MonoBehaviour
         this.AsyncLoader("MainMenu");
     }
 
-    public void LoadGameFromMenu(int x) => StartCoroutine(LoadFromMenu(x));
-
-
-    IEnumerator LoadFromMenu(int x)
+    public TextMeshProUGUI saveWarningText;
+    public void LoadGameFromMenu(int x)
     {
+        if (SaveManager.allSaves[x - 1] == default)
+        {
+            if(saveWarningText.gameObject.activeInHierarchy) saveWarningText.gameObject.SetActive(false);
+
+            saveWarningText.gameObject.SetActive(true);
+
+            this.WaitAndThen(timeToWait: 1f, () =>
+            {
+                saveWarningText.gameObject.SetActive(false);
+            },
+            cancelCondition: () => !saveWarningText.gameObject.activeInHierarchy);
+
+            return; 
+        }
+
         fadeEfect.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
-        this.LoadGame(x);
+        this.WaitAndThen(timeToWait: 1.5f, () =>
+        {
+            this.LoadGame(x);
+        },
+        cancelCondition: () => false);
+    }
+
+
+    public void DeleteGameFromMenu(int x)
+    {
+        SaveManager.DeleteGame(x);
     }
 }

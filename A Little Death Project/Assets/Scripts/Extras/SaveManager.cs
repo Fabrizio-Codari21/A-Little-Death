@@ -8,15 +8,15 @@ using UnityEngine.SceneManagement;
 public static class SaveManager
 {
     public static SaveInfo[] allSaves = new SaveInfo[3];
-    public static int currentSave;
+    public static int currentSave = 1;
 
     public static void SaveGame(this MonoBehaviour x, SaveInfo saveInfo, int indexOfSave)
     {
         var save = JsonUtility.ToJson(saveInfo);
-        var filePath = Application.persistentDataPath + $"/SavedGame{indexOfSave}.json";
+        var filePath = Application.persistentDataPath + $"/SavedGame{indexOfSave + 1}.json";
 
         System.IO.File.WriteAllText(filePath, save);
-        Debug.Log($"Saved game in slot {indexOfSave}: {saveInfo}");
+        Debug.Log($"Saved game in slot {indexOfSave + 1}: {saveInfo}");
 
         if (allSaves[indexOfSave] != default) allSaves[indexOfSave] = saveInfo;
        
@@ -26,13 +26,13 @@ public static class SaveManager
     {
         var filePath = Application.persistentDataPath + $"/SavedGame{indexOfSave}.json";
         var data = JsonUtility.FromJson<SaveInfo>(System.IO.File.ReadAllText(filePath));
-        allSaves[indexOfSave - 1] = data;
+        allSaves[indexOfSave] = data;
 
         if(data.sceneToKeep == string.Empty) { Debug.Log("There is no data"); return; }
 
         var done = x.AsyncLoader(data.sceneToKeep);
 
-        currentSave = indexOfSave;
+        currentSave = indexOfSave + 1;
         Checkpoints.checkPoint = data.spawnPosition;
 
         x.ExecuteUntilTrue(done, () =>
@@ -53,10 +53,11 @@ public static class SaveManager
                        (System.IO.File.ReadAllText
                        (Application.persistentDataPath + $"/SavedGame{i + 1}.json"));
 
-            if (save != null) allSaves[i] = save; 
-            else System.IO.File.WriteAllText
-                 (Application.persistentDataPath + $"/SavedGame{i + 1}.json", 
-                 default);
+            if (save == default) System.IO.File.WriteAllText
+                                 (Application.persistentDataPath + $"/SavedGame{i + 1}.json", 
+                                 default);
+
+            allSaves[i] = save;
         }
     }
 
@@ -71,6 +72,15 @@ public static class SaveManager
         }
 
         return false;
+    }
+
+    public static void DeleteGame(int indexOfGame)
+    {
+        System.IO.File.WriteAllText
+                 (Application.persistentDataPath + $"/SavedGame{indexOfGame}.json",
+                 default);
+
+        allSaves[indexOfGame - 1] = default;
     }
 
     //public static int GetSavedGameIndex(SaveInfo savedInfo)

@@ -33,13 +33,13 @@ public class ThaniaMovement : EntityMovement
         }
 
         if (this.Inputs(MyInputs.Secret2)) transform.position = checkpointOne.position;
-        if (this.Inputs(MyInputs.Secret1)) Checkpoints.savedPos = default;
+        if (this.Inputs(MyInputs.Secret1)) Checkpoints.checkPoint = default;
 
         if (this.Inputs(MyInputs.Secret3)) 
         {
             var health = GetComponent<ThaniaHealth>();
 
-            var save = (Checkpoints.savedPos != health.startPos) 
+            var save = (Checkpoints.checkPoint != new Vector3(health.startPos.x, health.startPos.y)) 
                        ? (SceneManager.GetActiveScene().buildIndex * 2) - 1 
                        : (SceneManager.GetActiveScene().buildIndex * 2) - 2;
 
