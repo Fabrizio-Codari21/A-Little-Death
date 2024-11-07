@@ -98,7 +98,7 @@ public class Menu : MonoBehaviour
 
             saveWarningText.gameObject.SetActive(true);
 
-            this.WaitAndThen(timeToWait: 1f, () =>
+            this.WaitAndThen(timeToWait: 2f, () =>
             {
                 saveWarningText.gameObject.SetActive(false);
             },
