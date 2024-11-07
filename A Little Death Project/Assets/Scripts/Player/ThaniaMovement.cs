@@ -13,6 +13,11 @@ public class ThaniaMovement : EntityMovement
     public AnimationManager anim;
     public Transform checkpointOne;
 
+    private void Awake()
+    {
+
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

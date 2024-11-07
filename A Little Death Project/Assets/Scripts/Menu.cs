@@ -75,6 +75,8 @@ public class Menu : MonoBehaviour
         fadeEfect.SetActive(true);
         Time.timeScale = 1;
         yield return new WaitForSeconds(1);
+        Checkpoints.active = false;
+        Checkpoints.checkPoint = default;
         this.AsyncLoader("MainMenu");
     }
 

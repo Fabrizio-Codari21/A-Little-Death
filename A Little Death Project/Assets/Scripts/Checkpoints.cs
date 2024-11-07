@@ -6,4 +6,6 @@ public static class Checkpoints
 {
     public static Vector2 savedPos;
     public static bool active;
+
+    public static Vector3 checkPoint;
 }

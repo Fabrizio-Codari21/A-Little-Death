@@ -25,15 +25,22 @@ public static class SaveManager
     {
         var filePath = Application.persistentDataPath + $"/SavedGame{indexOfSave}.json";
         var data = JsonUtility.FromJson<SaveInfo>(System.IO.File.ReadAllText(filePath));
+        allSaves[indexOfSave - 1] = data;
 
         if(data.sceneToKeep == string.Empty) { Debug.Log("There is no data"); return; }
 
         var done = x.AsyncLoader(data.sceneToKeep);
+
+        Checkpoints.checkPoint = data.spawnPosition;
+
+        x.ExecuteUntilTrue(done, () =>
+        {
+            Debug.Log("todavia no arranco el nivel");
+        });
         x.ExecuteAfterTrue(done, () =>
         {
-            GameObject.FindObjectOfType<ThaniaHealth>().transform.position = data.spawnPosition;
             Debug.Log("ahora arranco el nivel");
-        });   
+        });
     }
 
     public static void GetSavedGames()

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,21 +21,23 @@ public class ThaniaHealth : Health
     public Color og;
 
     [HideInInspector] public Vector2 startPos;
+    
     public override void Start()
     {
         base.Start();
         rb = gameObject.GetComponent<Rigidbody2D>();
         og = Color.white;
 
-        if (Checkpoints.savedPos != default)
-        { 
-            transform.position = Checkpoints.savedPos; 
-        }
-        else 
+        if(Checkpoints.checkPoint != transform.position && Checkpoints.checkPoint != Vector3.zero)
         {
-            Checkpoints.savedPos = transform.position; 
+            transform.position = Checkpoints.checkPoint;
+        }
+        else
+        {
+            Checkpoints.checkPoint = transform.position;
             startPos = transform.position;
         }
+
     }
 
     public override bool Damage(GameObject damager, int damage)
