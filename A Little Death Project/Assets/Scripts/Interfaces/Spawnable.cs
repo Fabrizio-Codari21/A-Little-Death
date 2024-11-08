@@ -23,7 +23,7 @@ public class Spawnable : MonoBehaviour
         if (GetComponent<Harpy>()) { GetComponent<Rigidbody2D>().gravityScale = 0; }
 
         GetComponent<EntityMovement>().canMove = true;
-        if (GetComponent<Light2D>()) { GetComponent<Light2D>().enabled = true; }
+        if (GetComponentInChildren<Light2D>()) { GetComponentInChildren<Light2D>().enabled = true; }
     }
 
     public void OnDespawn()

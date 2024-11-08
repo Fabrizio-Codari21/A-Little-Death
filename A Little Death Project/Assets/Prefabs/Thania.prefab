@@ -6500,7 +6500,7 @@ MonoBehaviour:
   - {fileID: 386130079766746599}
   - {fileID: 4383624844470303454}
   - {fileID: 2472308862404200831}
-  transitionParticle: {fileID: 880277522483267600}
+  transitionParticle: {fileID: 1489329540237079759, guid: 4a3310058580f3a43b4c821219a5798d, type: 3}
   cadaver: {fileID: 1939694570552678800, guid: 4118d2944fab58447896f7039d45c632, type: 3}
   posesionSpeed: 1.33
 --- !u!114 &7252664548962173693
@@ -26592,11 +26592,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 227cfe0675dfd054c9e3057af9d678da, type: 3}
---- !u!198 &880277522483267600 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2268716391601558820, guid: 227cfe0675dfd054c9e3057af9d678da, type: 3}
-  m_PrefabInstance: {fileID: 1390282114676825396}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3972248807185843949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2624196744508611545, guid: 227cfe0675dfd054c9e3057af9d678da, type: 3}

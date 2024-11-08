@@ -28,7 +28,8 @@ public class PlayerSkillManager : MonoBehaviour
     float _possessingTime;
 
     IEnumerator _whilePossessing;
-    public ParticleSystem transitionParticle;
+    //public ParticleSystem transitionParticle;
+    public GameObject transitionParticle;
     [SerializeField] GameObject cadaver;
     CharacterSkillSet _victim;
     [SerializeField] float posesionSpeed;
@@ -226,12 +227,13 @@ public class PlayerSkillManager : MonoBehaviour
         timerUI.timeLeft = 0;
         timerUI.ActivateTimer(false);
         Instantiate(sprites[_currentSprite].soul, transform.position, Quaternion.Euler(270, 180, 0));
-        transitionParticle.startColor = Color.cyan;
-        transitionParticle.Play();
+        //transitionParticle.startColor = Color.cyan;
+        //transitionParticle.Play();
+        Instantiate(transitionParticle, new Vector2(transform.position.x, transform.position.y + 1), transform.rotation);
         timerUI.UI.gameObject.SetActive(false);
 
-        this.WaitAndThen(0.2f, () =>
-        {
+        //this.WaitAndThen(0.2f, () =>
+        //{
             sprites[PlayerAppearance.Soul].gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);           
 
             sprites[_currentSprite].gameObject.SetActive(false);
@@ -248,7 +250,7 @@ public class PlayerSkillManager : MonoBehaviour
 
             _isPossessing = false;
             onTarget = false;
-        });
+        //});
     }
 
     // Cambia la accion de la colision cuando la habilidad se activa y la hace desaparecer cuando se desactiva.
