@@ -63,9 +63,9 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
-    public IEnumerator waitForTransition(string name)
+    public virtual IEnumerator waitForTransition(string name)
     {
-        fadeEfect.SetActive(true);
+        if(fadeEfect) fadeEfect.SetActive(true);
         yield return new WaitForSeconds(1.5f);
         Checkpoints.active = false;
         Checkpoints.checkPoint = default;

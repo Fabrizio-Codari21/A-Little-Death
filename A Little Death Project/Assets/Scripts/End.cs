@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class End : MonoBehaviour
+public class End : Menu
 {
-    [SerializeField] GameObject fade;
+    //[SerializeField] GameObject fade;
     public string level;
 
     private void Start()
@@ -19,11 +19,12 @@ public class End : MonoBehaviour
         {
             other.GetComponentInParent<ThaniaMovement>().StopMoving();
             other.GetComponentInParent<JumpManager>().StopMoving();
-            Checkpoints.active = false;
+
             Checkpoints.savedPos = default;
-            fade.SetActive(true);
-            Debug.Log("Nos re vimos");
-            this.WaitAndThen(1.5f, () => { this.AsyncLoader(level); });   
+
+            StartCoroutine(waitForTransition(level));
+
         }
     }
+
 }
