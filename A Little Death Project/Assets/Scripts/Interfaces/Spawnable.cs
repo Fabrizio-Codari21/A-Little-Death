@@ -12,7 +12,7 @@ public class Spawnable : MonoBehaviour
         if(!parentSpawner) parentSpawner = this.GetNearest(gameObject, Extensions.SpawnPoints);
         parentSpawner.hasAlreadySpawned = true;
 
-        var health = GetComponent<PossessableHealth>();
+        var health = GetComponentInChildren<PossessableHealth>();
 
         health.startedPossession = false;
 

@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 526035265126666612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.794266, y: -6.9909105, z: 0}
+  m_LocalPosition: {x: -8.34, y: -6.9909105, z: 0}
   m_LocalScale: {x: 2.6579201, y: 3.0527995, z: 1.9605954}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64,7 +64,7 @@ Transform:
   m_GameObject: {fileID: 4067276452488846464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00000023842, y: 0, z: 0}
+  m_LocalPosition: {x: 1.69, y: -0.37, z: 0}
   m_LocalScale: {x: 0.37623402, y: 0.3275682, z: 0.51004916}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: f62630839d811de4c8a29d2254d08189, type: 3}
+  m_Sprite: {fileID: 21300000, guid: afbdb10f5586ee74ebbc73016df40e0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,11 +156,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.1412088, y: -2.4603188}
+  m_Offset: {x: -3.95, y: -2.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.123086, y: 10.79}
+    oldSize: {x: 21.699999, y: 16.105469}
     newSize: {x: 7.12, y: 10.79}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -228,11 +228,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.5511363, y: -0.4505868}
+  m_Offset: {x: -5.83, y: 2.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.123086, y: 10.79}
+    oldSize: {x: 21.699999, y: 16.105469}
     newSize: {x: 7.12, y: 10.79}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_LightType: 3
+  m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.734
   m_Color: {r: 0, g: 1, b: 0.9284022, a: 1}
@@ -318,8 +318,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+    m_Center: {x: -3.5949001, y: 0.14674997, z: 0}
+    m_Extent: {x: 6.8780003, y: 8.79705, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -330,10 +330,10 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 4.2
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
+  - {x: -6.272832, y: -4.378229, z: 0}
+  - {x: -1.297262, y: -4.440812, z: 0}
+  - {x: -0.9160295, y: -0.0004040637, z: 0}
+  - {x: -6.272832, y: 4.7535477, z: 0}
 --- !u!95 &5582059401838038680
 Animator:
   serializedVersion: 5
@@ -412,7 +412,7 @@ Transform:
   m_GameObject: {fileID: 8493005170050583709}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.714532, y: -0.42739224, z: 0}
+  m_LocalPosition: {x: -8.260231, y: -0.42739224, z: 0}
   m_LocalScale: {x: 2.6579201, y: 3.0527995, z: 1.9605954}
   m_ConstrainProportionsScale: 0
   m_Children: []

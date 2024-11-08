@@ -115,7 +115,7 @@ public class PossessableHealth : Health
                 else if (GetComponent<USPTutorial>()) 
                 {
                     OnPossess(1);
-                    GetComponent<Light2D>().enabled = false;
+                    GetComponentInChildren<Light2D>().enabled = false;
                 }
             }
         }

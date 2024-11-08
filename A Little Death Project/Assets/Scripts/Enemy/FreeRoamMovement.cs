@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class FreeRoamMovement : EntityMovement
 {
@@ -25,7 +26,7 @@ public class FreeRoamMovement : EntityMovement
         touchingWall = Physics2D.OverlapCircle(wallCheck.position,0.2f,groundLayer);
         Patrol();
     }
-
+    
     public void Patrol()
     {
         if(!touchingGround || touchingWall)
