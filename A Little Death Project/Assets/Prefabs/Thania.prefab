@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 2182889139555630011}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.54, y: -1.77, z: 0}
+  m_LocalPosition: {x: -4.89, y: -3.14, z: 0}
   m_LocalScale: {x: 0.95, y: 0.91618013, z: 1.6210766}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -353,7 +353,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 39aa80f05df20a3459bbc92f0182ecf4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 08fefebfdd2f66240b4000970c9e4869, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -433,11 +433,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.638886}
+  m_Offset: {x: 7.86, y: 2.14}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.11, y: 15.121631}
+    oldSize: {x: 35.89, y: 21.51998}
     newSize: {x: 17.11, y: 15.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ComponentVersion: 1
-  m_LightType: 3
+  m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.734
   m_Color: {r: 0.509434, g: 0.29614076, b: 0.040850844, a: 1}
@@ -501,8 +501,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: -0.00000011920929, z: 0}
-    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+    m_Center: {x: 7.79775, y: 1.8708, z: 0}
+    m_Extent: {x: 6.74425, y: 9.1343, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -513,10 +513,10 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 4.2
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: -0.5, z: 0}
-  - {x: 0.5, y: 0.5, z: 0}
-  - {x: -0.5, y: 0.5, z: 0}
+  - {x: 5.2469754, y: -3.0648475, z: 0}
+  - {x: 10.35195, y: -3.0282063, z: 0}
+  - {x: 10.277295, y: 6.50907, z: 0}
+  - {x: 5.657471, y: 6.8021975, z: 0}
 --- !u!1 &2378944453502927384
 GameObject:
   m_ObjectHideFlags: 0
