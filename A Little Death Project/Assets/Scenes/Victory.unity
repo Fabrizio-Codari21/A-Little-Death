@@ -494,6 +494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeEfect: {fileID: 1069720343}
   settings: {fileID: 0}
+  saveWarningText: {fileID: 0}
 --- !u!1 &303483083
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,7 +1848,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 169198175}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: Play
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
