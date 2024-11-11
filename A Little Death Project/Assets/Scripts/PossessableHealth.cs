@@ -88,7 +88,6 @@ public class PossessableHealth : Health
 
         currentHealth = maxHealth;
         GetComponent<EntityMovement>().canMove = true;
-
     }
 
     public void OnPossess(int x)
@@ -112,7 +111,7 @@ public class PossessableHealth : Health
                 if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
                 startedPossession = true;
                 if (GetComponent<Harpy>()) { OnPossess(3); }
-                else if (GetComponent<USPTutorial>()) 
+                else if (GetComponent<DeerHealth>()) 
                 {
                     OnPossess(1);
                     GetComponentInChildren<Light2D>().enabled = false;

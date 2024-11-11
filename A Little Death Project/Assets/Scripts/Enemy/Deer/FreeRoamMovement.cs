@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class FreeRoamMovement : EntityMovement
 {
     [SerializeField] float speed;
-    float moveDirection = -1;
+    protected float moveDirection = -1;
     public bool facingRight = false;
     public Transform groundCheck;
     public Transform wallCheck;

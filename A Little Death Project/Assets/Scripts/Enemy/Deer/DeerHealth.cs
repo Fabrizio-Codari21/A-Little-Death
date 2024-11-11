@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class USPTutorial : PossessableHealth
+public class DeerHealth : PossessableHealth
 {
     [SerializeField] int damage = 1;
     [SerializeField] ParticleSystem[] particleSystems;

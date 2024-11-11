@@ -6,7 +6,7 @@ using UnityEngine;
 public class USPMANAGER : MonoBehaviour
 {
     private bool paused;
-    public USPTutorial health;
+    public DeerHealth health;
     private bool alreadyPaused;
     public GameObject tutorialBox;
     public TextMeshProUGUI TMPTutorial;
