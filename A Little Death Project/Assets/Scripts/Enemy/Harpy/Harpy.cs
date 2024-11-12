@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Harpy : RoamingMovement
 {
-    private GameObject thania;
+    [SerializeField] private GameObject thania;
     public bool detected = false;
     [SerializeField] Rigidbody2D rb;
 
@@ -19,7 +19,7 @@ public class Harpy : RoamingMovement
 
     private void Start()
     {
-        thania = GameObject.FindWithTag("Player");
+        thania = FindAnyObjectByType<ThaniaHealth>().gameObject;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
