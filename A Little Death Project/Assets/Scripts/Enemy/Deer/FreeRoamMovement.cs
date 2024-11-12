@@ -29,9 +29,11 @@ public class FreeRoamMovement : EntityMovement
     
     public void Patrol()
     {
+        Debug.Log("PATROLLING");
         if(!touchingGround || touchingWall)
         {
             Flip();
+            Debug.Log("DO A FLIP");
         }
         if (canMove) rb.velocity = new Vector2(speed * moveDirection, rb.velocity.y); else rb.velocity = Vector2.zero;
     }

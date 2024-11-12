@@ -80445,7 +80445,7 @@ MonoBehaviour:
   rolling: 0
   cooldown: 2.5
   player: {fileID: 914536165}
-  rollSpeed: 8
+  rollSpeed: 10
 --- !u!1 &8455086612622565421
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,9 +30,9 @@ public class BustoMovement : FreeRoamMovement
         grounded = Physics2D.OverlapBox(groundDetect.position, boxSize, 0, groundedLayer);
         canSeePlayer = Physics2D.OverlapBox(transform.position, LOS, 0, playerLayer);
 
-        if (!canSeePlayer && grounded)
+        if (!canSeePlayer)
         {
-            Patrol();
+            base.Patrol();
             rolling = false;
         }
         else if (canSeePlayer && grounded)
@@ -40,6 +40,7 @@ public class BustoMovement : FreeRoamMovement
             if (!rolling)
             {
                 FlipToPlayer();
+                rolling = true;
             }
             RollAttack();
         }
