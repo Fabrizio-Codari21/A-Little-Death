@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEditor.PlayerSettings;
 
 public class BustoMovement : FreeRoamMovement
 {
@@ -13,11 +12,11 @@ public class BustoMovement : FreeRoamMovement
     [SerializeField] Vector2 boxSize; 
     [SerializeField] public LayerMask groundedLayer;
 
-    bool canSeePlayer = false;
+    [SerializeField] bool canSeePlayer = false;
     [SerializeField] Vector2 LOS;
     [SerializeField] public LayerMask playerLayer;
 
-    bool rolling;
+    [SerializeField] bool rolling;
     public float cooldown;
     public ThaniaHealth player;
 
@@ -34,13 +33,13 @@ public class BustoMovement : FreeRoamMovement
         if (!canSeePlayer && grounded)
         {
             Patrol();
+            rolling = false;
         }
         else if (canSeePlayer && grounded)
         {
             if (!rolling)
             {
                 FlipToPlayer();
-                rolling = true;
             }
             RollAttack();
         }
