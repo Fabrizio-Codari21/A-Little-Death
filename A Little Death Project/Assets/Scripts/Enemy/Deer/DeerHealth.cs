@@ -14,6 +14,7 @@ public class DeerHealth : PossessableHealth
     public override void Start()
     {
         base.Start();
+
         movementManager = GetComponent<FreeRoamMovement>();
     }
 

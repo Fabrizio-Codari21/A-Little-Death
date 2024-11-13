@@ -27,6 +27,7 @@ public class PossessableHealth : Health
 
         if (currentHealth <= 0)
         {
+            if(audioManager) audioManager.stunned.Play();
             _possessable = Possessable();
             StartCoroutine(_possessable);
             return true;

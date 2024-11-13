@@ -121,6 +121,7 @@
     <Compile Include="Assets\Scripts\Enemy\RoamingMovement.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\BaseDash.cs" />
     <Compile Include="Assets\Scripts\TutorialColliders.cs" />
+    <Compile Include="Assets\Scripts\Extras\AudioManager.cs" />
     <Compile Include="Assets\Scripts\TutorialBox.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\StrengthDash.cs" />
     <Compile Include="Assets\Scripts\Enemy\Olmeca\OlmecaAnimManager.cs" />

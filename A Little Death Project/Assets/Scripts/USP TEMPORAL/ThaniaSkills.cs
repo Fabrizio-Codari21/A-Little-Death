@@ -10,6 +10,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
     public PlayerSkillManager skillManager;
     public CharacterSkillSet mySkills;
     public ThaniaMovement movement;
+    public AudioManager audioManager;
     [SerializeField] GameObject cartelTutorial;
     //public GameObject hitbox;
     //public GameObject hitbox2;
@@ -29,6 +30,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
     public void Attack(PlayerSkillManager manager)
     {
+        audioManager.Attacks[Random.Range(0, audioManager.Attacks.Count - 1)].Play();
         if (mySkills.primaryHasExecuted)
         {
 

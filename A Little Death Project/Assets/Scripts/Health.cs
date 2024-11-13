@@ -7,6 +7,7 @@ public class Health : MonoBehaviour, IDamageable
     [SerializeField] protected int maxHealth = 1;
 
     public int currentHealth;
+    public AudioManager audioManager;
 
     public virtual bool Damage(GameObject damager, int damage)
     {
@@ -24,6 +25,7 @@ public class Health : MonoBehaviour, IDamageable
     public virtual void Start()
     {
         currentHealth = maxHealth;
+        if (!audioManager) audioManager = GameObject.FindObjectOfType<AudioManager>();
     }
 
     public virtual void Die()
