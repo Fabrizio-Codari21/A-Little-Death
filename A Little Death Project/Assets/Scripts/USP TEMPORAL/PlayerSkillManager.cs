@@ -12,7 +12,7 @@ public class PlayerSkillManager : MonoBehaviour
     public PlayerSkills sk;
     public ThaniaSkills defaultSkills;
     public JumpManager jumpManager;
-    [SerializeField] ThaniaMovement thaniaMovement;
+    public ThaniaMovement thaniaMovement;
     public GroundCheck groundCheck;
     public float possessingRange;
 

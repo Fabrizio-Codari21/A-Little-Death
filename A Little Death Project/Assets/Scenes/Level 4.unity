@@ -78436,21 +78436,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1707459938581190570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063675560273177933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ea865512ae5bd4680541e58ead70c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mySkills: {fileID: 5599600756951746784}
-  VFX: {fileID: 1861253457}
-  SFX: {fileID: 159925135}
 --- !u!1 &1793974495265665484
 GameObject:
   m_ObjectHideFlags: 0
@@ -78560,7 +78545,7 @@ GameObject:
   - component: {fileID: 8443279289337517589}
   - component: {fileID: 8443279289337517587}
   - component: {fileID: 5599600756951746784}
-  - component: {fileID: 1707459938581190570}
+  - component: {fileID: 8443279289337517590}
   m_Layer: 6
   m_Name: Busto
   m_TagString: Untagged
@@ -79627,22 +79612,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fb6a5150729264b90c69aca97a941d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creatureAppearance: 1
+  creatureAppearance: 4
   previewFeetAreaSize: 0
-  creatureFeetArea: {x: 2, y: 0.3}
-  primarySkillType: 0
-  primaryDistance: 0
+  creatureFeetArea: {x: 1.5, y: 0.3}
+  primarySkillType: 7
+  primaryDistance: 5
   primaryEffectAmount: 0
   primaryValidLayer:
     serializedVersion: 2
-    m_Bits: 0
-  primaryColliderAction: 0
+    m_Bits: 16384
+  primaryColliderAction: 2
   primaryOrigin: {fileID: 0}
-  primaryCooldown: 0
+  primaryCooldown: 2
   primaryExecTime: 0
   primaryHasExecuted: 0
   primary2HasExecuted: 0
-  secondarySkillType: 4
+  secondarySkillType: 8
   secondaryDistance: 100
   secondaryEffectAmount: 0
   secondaryValidLayer:
@@ -80361,6 +80346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  audioManager: {fileID: 0}
   canBePossessed: 0
   _skillManager: {fileID: 651881019}
   _animator: {fileID: 2385572231077811191}
@@ -80446,6 +80432,19 @@ MonoBehaviour:
   cooldown: 2.5
   player: {fileID: 914536165}
   rollSpeed: 10
+--- !u!114 &8443279289337517590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063675560273177933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba318a9a52d61374b977ceffefe14f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mySkills: {fileID: 5599600756951746784}
 --- !u!1 &8455086612622565421
 GameObject:
   m_ObjectHideFlags: 0
@@ -80529,6 +80528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  audioManager: {fileID: 0}
   canBePossessed: 0
   _skillManager: {fileID: 651881019}
   _animator: {fileID: 7286569615199778733}

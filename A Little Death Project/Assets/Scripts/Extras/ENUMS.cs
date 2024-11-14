@@ -23,6 +23,9 @@ public enum SkillType
     HarpyPrimary,
     HarpySecondary,
 
+    BustPrimary,
+    BustSecondary,
+
 }
 
 public enum PlayerAppearance
@@ -31,6 +34,7 @@ public enum PlayerAppearance
     Deer,
     Harpy,
     Soul,
+    Bust,
 }
 
 public enum ColliderAction
