@@ -30,12 +30,15 @@ public class EnemyPool : MonoBehaviour
         
     }
 
+    // Convierte una lista de spawnables en una lista de tuplas donde se guarda tambien el tipo del
+    // spawnable guardado.
     public List<Tuple<Type, Spawnable>> FilterByClass(List<Spawnable> enemies, PlayerAppearance enemyClass, out Type enemyType)
     {
         Type type = enemyManager.GetEnemyType(enemyClass);
 
         List<Tuple<Type, Spawnable>> enemySpawning = new();
 
+        print("filtrando");
         foreach (var enemy in enemies)
         {
             var skill = enemy.gameObject.GetComponent<ISkillDefiner>();

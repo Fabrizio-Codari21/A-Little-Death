@@ -115,7 +115,8 @@ public class PossessableHealth : Health
                 else if (GetComponent<DeerHealth>()) 
                 {
                     OnPossess(1);
-                    GetComponentInChildren<Light2D>().enabled = false;
+                    var light = GetComponentInChildren<Light2D>();
+                    if(light) { light.enabled = false; }
                 }
             }
         }
