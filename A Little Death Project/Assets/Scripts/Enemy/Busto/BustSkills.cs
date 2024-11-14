@@ -39,6 +39,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 {
                     // desactivar la habilidad
                     Debug.Log("se desactivo");
+                    manager.thaniaMovement.rb.gravityScale = 2;
                 },
                 cancelCondition: () => false);
 
@@ -51,15 +52,8 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
         };
     }
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        DefineSkills(mySkills);
     }
 }

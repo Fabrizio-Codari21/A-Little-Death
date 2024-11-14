@@ -26865,6 +26865,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 567820306958812638, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2749319050118520076, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -61.658764
@@ -26965,6 +26969,10 @@ PrefabInstance:
       propertyPath: checkpointOne
       value: 
       objectReference: {fileID: 1439470031}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Size.x
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Size.y
       value: 5.5
