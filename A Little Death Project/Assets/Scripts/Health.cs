@@ -7,6 +7,7 @@ public class Health : MonoBehaviour, IDamageable
     [SerializeField] protected int maxHealth = 1;
 
     public int currentHealth;
+    [HideInInspector] public bool immune;
     public AudioManager audioManager;
 
     public virtual bool Damage(GameObject damager, int damage)

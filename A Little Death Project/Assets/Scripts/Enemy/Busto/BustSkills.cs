@@ -12,6 +12,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
         {
             manager.thaniaMovement.rb.gravityScale = 20;
             manager.SetColliderAction(mySkills, true);
+            manager.thaniaHealth.immune = true;
 
             manager.ExecuteUntilTrue(() => manager.jumpManager.grounded, () =>
             {
@@ -40,6 +41,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                     // desactivar la habilidad
                     Debug.Log("se desactivo");
                     manager.thaniaMovement.rb.gravityScale = 2;
+                    manager.thaniaHealth.immune = false;
                 },
                 cancelCondition: () => false);
 

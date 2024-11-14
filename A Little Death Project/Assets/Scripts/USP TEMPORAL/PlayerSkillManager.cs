@@ -13,6 +13,7 @@ public class PlayerSkillManager : MonoBehaviour
     public ThaniaSkills defaultSkills;
     public JumpManager jumpManager;
     public ThaniaMovement thaniaMovement;
+    [HideInInspector] public ThaniaHealth thaniaHealth;
     public GroundCheck groundCheck;
     public float possessingRange;
 
@@ -38,6 +39,7 @@ public class PlayerSkillManager : MonoBehaviour
     private void Start()
     {
         sk.baseSkills = GetComponent<CharacterSkillSet>();
+        thaniaHealth = GetComponent<ThaniaHealth>();
         posesionSpeedBase = posesionSpeed;
 
         foreach (var sprite in mySprites)

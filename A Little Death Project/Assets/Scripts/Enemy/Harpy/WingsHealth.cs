@@ -22,7 +22,7 @@ public class WingsHealth : PossessableHealth
         if (collision.transform.tag == "Player" && movementManager == true)
         {
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
-            damageableObject.Damage(damageableObject.gameObject, damage);
+            if (!damageableObject.immune) damageableObject.Damage(damageableObject.gameObject, damage);
         }
     }
 

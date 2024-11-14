@@ -18,7 +18,6 @@ public class PossessableHealth : Health
     public float stunTime;
     IEnumerator _possessable;
     public bool isTutorial;
-    [HideInInspector] public bool immune;
 
     public override bool Damage(GameObject damager, int damage)
     {

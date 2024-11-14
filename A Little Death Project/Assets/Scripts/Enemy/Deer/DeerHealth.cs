@@ -34,7 +34,7 @@ public class DeerHealth : PossessableHealth
         {
             Debug.Log(movementManager.canMove);
             var damageableObject = collision.gameObject.GetComponent<ThaniaHealth>();
-            damageableObject.Damage(gameObject, damage);
+            if (!damageableObject.immune) damageableObject.Damage(gameObject, damage);
         }
     }
 }
