@@ -19,7 +19,9 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                                                mySkills.primaryDistance,
                                                mySkills.primaryOrigin.position);
 
-                if(hit.collider.gameObject.layer == mySkills.primaryValidLayer)
+                Debug.Log("activa habilidad");
+
+                if (hit.collider.gameObject.layer == mySkills.primaryValidLayer)
                 {
                     hit.collider.GetComponent<BreakableDoor>().Break(manager.gameObject);
 
@@ -31,6 +33,15 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             manager.ExecuteAfterTrue(() => manager.jumpManager.grounded, () =>
             {
                 //Lo que sea que haga el bicho cuando es de piedra
+                Debug.Log("esta en el piso");
+
+                this.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
+                {
+                    // desactivar la habilidad
+                    Debug.Log("se desactivo");
+                },
+                cancelCondition: () => false);
+
             });
         };
 

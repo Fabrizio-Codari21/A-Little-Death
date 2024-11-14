@@ -30,7 +30,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
     public void Attack(PlayerSkillManager manager)
     {
-        audioManager.Attacks[Random.Range(0, audioManager.Attacks.Count - 1)].Play();
+        if(audioManager) audioManager.Attacks[Random.Range(0, audioManager.Attacks.Count - 1)].Play();
         if (mySkills.primaryHasExecuted)
         {
 

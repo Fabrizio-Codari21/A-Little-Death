@@ -26905,6 +26905,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3143748275603996762, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3453184503941243488, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: menu
       value: 
@@ -26925,10 +26929,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thania
       objectReference: {fileID: 0}
+    - target: {fileID: 4057571631420109083, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalBounds.m_Center.x
+      value: -0.24539995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057571631420109083, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalBounds.m_Center.y
+      value: -0.29435015
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057571631420109083, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.x
+      value: 7.2329
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057571631420109083, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalBounds.m_Extent.y
+      value: 8.027451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057571631420109083, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].x
+      value: 2.1617289
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057571631420109083, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_ShapePath.Array.data[2].y
+      value: 2.1582174
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057571631420109083, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_ShapePath.Array.data[3].x
+      value: -2.3639946
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057571631420109083, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_ShapePath.Array.data[3].y
+      value: 2.2388563
+      objectReference: {fileID: 0}
     - target: {fileID: 4683047887223476869, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: checkpointOne
       value: 
       objectReference: {fileID: 1439470031}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Size.y
+      value: 5.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -79622,7 +79662,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   primaryColliderAction: 2
-  primaryOrigin: {fileID: 0}
+  primaryOrigin: {fileID: 914536158}
   primaryCooldown: 2
   primaryExecTime: 0
   primaryHasExecuted: 0
