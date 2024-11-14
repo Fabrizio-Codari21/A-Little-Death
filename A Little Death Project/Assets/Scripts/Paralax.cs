@@ -7,12 +7,13 @@ public class Paralax : MonoBehaviour
     private float lenght, startPos, startPosY;
     public GameObject cam;
     public float parallaxEffect;
+    public float offset;
 
     private void Start()
     {
         startPos = transform.position.x;
         startPosY = transform.position.y;
-        lenght = GetComponent<SpriteRenderer>().bounds.size.x;
+        lenght = GetComponent<SpriteRenderer>().bounds.size.x - offset;
     }
 
     private void Update()
