@@ -28173,6 +28173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2618148051369565435}
   parallaxEffect: 0.6
+  offset: 0
 --- !u!212 &792093413
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29044,6 +29045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2618148051369565435}
   parallaxEffect: 0.7
+  offset: 0
 --- !u!212 &909508185
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -78107,6 +78109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2618148051369565435}
   parallaxEffect: 0.8
+  offset: 0
 --- !u!1 &240306574636374371
 GameObject:
   m_ObjectHideFlags: 0
@@ -78279,6 +78282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2618148051369565435}
   parallaxEffect: 0
+  offset: 0
 --- !u!4 &1663831761638220235
 Transform:
   m_ObjectHideFlags: 0
@@ -78438,9 +78442,9 @@ GameObject:
   - component: {fileID: 8443279289337517588}
   - component: {fileID: 5195904429403714560}
   - component: {fileID: 8443279289337517589}
-  - component: {fileID: 8443279289337517587}
   - component: {fileID: 5599600756951746784}
   - component: {fileID: 8443279289337517590}
+  - component: {fileID: 8443279289337517591}
   m_Layer: 6
   m_Name: Busto
   m_TagString: Untagged
@@ -78713,6 +78717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2618148051369565435}
   parallaxEffect: 1
+  offset: 0
 --- !u!4 &3171690578403607912
 Transform:
   m_ObjectHideFlags: 0
@@ -78878,6 +78883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 2618148051369565435}
   parallaxEffect: 0
+  offset: 0
 --- !u!212 &4101926560705839076
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79332,7 +79338,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1.5
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -80227,32 +80233,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8443279289337517587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063675560273177933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b65eb36b885a40941a98b3b281f1cd2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1
-  currentHealth: 0
-  audioManager: {fileID: 0}
-  canBePossessed: 0
-  _skillManager: {fileID: 651881019}
-  _animator: {fileID: 2385572231077811191}
-  possesionTime: 15
-  arpiaGroundCheck: {fileID: 0}
-  startedPossession: 0
-  stunTime: 50
-  isTutorial: 0
-  damage: 1
-  particleSystems: []
-  movementManager: {fileID: 8443279289337517589}
 --- !u!70 &8443279289337517588
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -80326,6 +80306,7 @@ MonoBehaviour:
   rolling: 0
   cooldown: 2.5
   player: {fileID: 914536165}
+  bustHealth: {fileID: 8443279289337517591}
   rollSpeed: 10
 --- !u!114 &8443279289337517590
 MonoBehaviour:
@@ -80340,6 +80321,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mySkills: {fileID: 5599600756951746784}
+--- !u!114 &8443279289337517591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063675560273177933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c359dac6559ada248aef6968f0cff5b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  currentHealth: 0
+  audioManager: {fileID: 0}
+  canBePossessed: 0
+  _skillManager: {fileID: 651881019}
+  _animator: {fileID: 2385572231077811191}
+  possesionTime: 15
+  arpiaGroundCheck: {fileID: 0}
+  startedPossession: 0
+  stunTime: 10
+  isTutorial: 0
+  immune: 0
+  damage: 1
+  particleSystems: []
+  movementManager: {fileID: 0}
 --- !u!1 &8455086612622565421
 GameObject:
   m_ObjectHideFlags: 0
@@ -80432,11 +80440,10 @@ MonoBehaviour:
   startedPossession: 0
   stunTime: 10
   isTutorial: 0
+  immune: 0
   damage: 1
-  particleSystems:
-  - {fileID: 2268716391601558820, guid: 227cfe0675dfd054c9e3057af9d678da, type: 3}
-  - {fileID: 8267520824928947579, guid: b400676cae710024da5e7acb056bf4ae, type: 3}
-  movementManager: {fileID: 8737154330998972111}
+  particleSystems: []
+  movementManager: {fileID: 0}
 --- !u!1001 &8740934746906997011
 PrefabInstance:
   m_ObjectHideFlags: 0

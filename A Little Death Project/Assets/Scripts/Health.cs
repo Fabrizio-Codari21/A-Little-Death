@@ -60,6 +60,11 @@ public class Health : MonoBehaviour, IDamageable
                     forceY /= 5;
                     rb.gravityScale = 20;
                 }
+                if (move is BustoMovement)
+                {
+                    forceX /= 20;
+                    forceY /= 5;
+                }
 
                 if (damager.transform.position.x > transform.position.x)
                 {

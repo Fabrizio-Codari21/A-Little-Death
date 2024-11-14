@@ -47,8 +47,9 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
                 PossessableHealth damageable = hits.collider.gameObject.GetComponent<PossessableHealth>();
 
-                if (damageable != null)
+                if (damageable != null && damageable.immune == false)
                 {
+                    print("pego");
                     var victim = hits.collider.gameObject.GetComponent<CharacterSkillSet>();
                     var dead = damageable.DamagePossessable((int)mySkills.primaryEffectAmount, victim, skillManager, cartelTutorial);
                     if (dead)

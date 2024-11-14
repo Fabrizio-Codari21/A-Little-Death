@@ -19,6 +19,7 @@ public class BustoMovement : FreeRoamMovement
     [SerializeField] bool rolling;
     public float cooldown;
     public ThaniaHealth player;
+    public BustHealth bustHealth;
 
     [SerializeField] float rollSpeed;
 
@@ -31,22 +32,26 @@ public class BustoMovement : FreeRoamMovement
         
         cooldown -= Time.deltaTime;
 
-        if ((!canSeePlayer && !rolling) || cooldown > 0)
+        if (canMove)
         {
-            Patrol();
-        }
-        else if ((canSeePlayer || rolling) && grounded && cooldown < 0)
-        {
-            if (!rolling)
+            if ((!canSeePlayer && !rolling) /*|| cooldown > 0*/)
             {
-                FlipToPlayer();
-                rolling = true;
+                Patrol();
             }
-            RollAttack();
-        }
-        else
-        {
-            rolling = false;
+            else if ((canSeePlayer || rolling) && grounded && cooldown < 0)
+            {
+                if (!rolling)
+                {
+                    FlipToPlayer();
+                    rolling = true;
+                    bustHealth.immune = true;
+                }
+                RollAttack();
+            }
+            else
+            {
+                rolling = false;
+            }
         }
     }
 
@@ -62,12 +67,12 @@ public class BustoMovement : FreeRoamMovement
         if (!touchingGround || touchingWall)
         {
             Debug.Log("ATACK2");
-            
+
             //Animacion del final
-            
+
             //Esto en animacion
-            //StopRoll();
-            //Flip();
+            StopRoll();
+
         }
         
         rb.velocity = new Vector2(rollSpeed * moveDirection, rb.velocity.y); //else rb.velocity = Vector2.zero;
@@ -77,9 +82,16 @@ public class BustoMovement : FreeRoamMovement
     {
         cooldown = 2.5f;
         canSeePlayer = false;
+        canMove = false;
         rolling = false;
-        
-        
+        bustHealth.immune = false;
+        Flip();
+
+        this.WaitAndThen(timeToWait: 1f, () =>
+        {
+            canMove = true;
+        },
+        cancelCondition: () => false);
     }
 
     void FlipToPlayer()
