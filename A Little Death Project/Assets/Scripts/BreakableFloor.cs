@@ -14,5 +14,18 @@ public class BreakableFloor : MonoBehaviour, IBreakable
         Destroy(gameObject);
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        var manager = collision.gameObject.GetComponent<PlayerSkillManager>();
+
+        if (manager != null && manager.GetColliderAction() == ColliderAction.Break && !manager.jumpManager.grounded)
+        {
+            manager.jumpManager.anim.animator.SetTrigger("Stun");
+            Break(manager.gameObject);
+            Debug.Log($"{gameObject.name} was broken by {manager.sk.skills[1].skillType}");
+        }
+
+    }
+
 
 }

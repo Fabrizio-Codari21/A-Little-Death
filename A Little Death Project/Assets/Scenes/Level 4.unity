@@ -26977,6 +26977,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 5.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7607196330332648063, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 16512
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -78866,7 +78870,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 12225
+    m_Bits: 28609
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -78893,7 +78897,7 @@ GameObject:
   - component: {fileID: 7981802522814684353}
   m_Layer: 14
   m_Name: Breakable Floor
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

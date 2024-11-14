@@ -24,7 +24,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
 
                 if (hit.collider.gameObject.layer == mySkills.primaryValidLayer)
                 {
-                    hit.collider.GetComponent<BreakableDoor>().Break(manager.gameObject);
+                    hit.collider.GetComponent<BreakableFloor>().Break(manager.gameObject);
 
                     manager.jumpManager.anim.animator.SetTrigger("Stun");
                     Debug.Log($"{hit.collider.gameObject.name} was broken by {manager.sk.skills[1].skillType}");
