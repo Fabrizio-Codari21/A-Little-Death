@@ -22,20 +22,20 @@ public class BustoMovement : FreeRoamMovement
 
     [SerializeField] float rollSpeed;
 
-
-    public override void FixedUpdate()
+    private void Update()
     {
         touchingGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         touchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
-        grounded = Physics2D.OverlapBox(groundDetect.position, boxSize, 0, groundedLayer);
+        grounded = Physics2D.OverlapBox(transform.position, boxSize, 0, groundedLayer);
         canSeePlayer = Physics2D.OverlapBox(transform.position, LOS, 0, playerLayer);
+        
+        cooldown -= Time.deltaTime;
 
-        if (!canSeePlayer)
+        if ((!canSeePlayer && !rolling) || cooldown > 0)
         {
-            base.Patrol();
-            rolling = false;
+            Patrol();
         }
-        else if (canSeePlayer && grounded)
+        else if ((canSeePlayer || rolling) && grounded && cooldown < 0)
         {
             if (!rolling)
             {
@@ -44,6 +44,15 @@ public class BustoMovement : FreeRoamMovement
             }
             RollAttack();
         }
+        else
+        {
+            rolling = false;
+        }
+    }
+
+    public override void FixedUpdate()
+    {
+        
     }
 
     private void RollAttack()
@@ -52,8 +61,13 @@ public class BustoMovement : FreeRoamMovement
         Debug.Log("ATACK");
         if (!touchingGround || touchingWall)
         {
-            StopRoll();
-            Flip();
+            Debug.Log("ATACK2");
+            
+            //Animacion del final
+            
+            //Esto en animacion
+            //StopRoll();
+            //Flip();
         }
         
         rb.velocity = new Vector2(rollSpeed * moveDirection, rb.velocity.y); //else rb.velocity = Vector2.zero;
@@ -61,8 +75,11 @@ public class BustoMovement : FreeRoamMovement
 
     private void StopRoll()
     {
+        cooldown = 2.5f;
         canSeePlayer = false;
         rolling = false;
+        
+        
     }
 
     void FlipToPlayer()
@@ -77,5 +94,6 @@ public class BustoMovement : FreeRoamMovement
             base.Flip();
         }
     }
+
 }
 
