@@ -11,8 +11,9 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
         mySkills.primaryExecute = (manager) =>
         {
             manager.thaniaMovement.rb.gravityScale = 20;
-            manager.SetColliderAction(mySkills, true);
+            manager.SetColliderAction(mySkills, true, SkillSlot.primary);
             manager.thaniaHealth.immune = true;
+            manager.isBreaking = true;
 
             manager.ExecuteUntilTrue(() => manager.jumpManager.grounded, () =>
             {
@@ -45,6 +46,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                     manager.thaniaMovement.rb.gravityScale = 2;
                     manager.thaniaHealth.immune = false;
                     manager.SetColliderAction(mySkills, false);
+                    manager.isBreaking=false;
 
                     //manager.thaniaMovement.canMove = true;
                     //manager.jumpManager.canMove = true;
@@ -66,7 +68,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime;
                 if (!manager.jumpManager.grounded) manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * 5);
 
-            }, cancelCondition: () => /*si colisiona con una pared*/ false);
+            }, cancelCondition: () => manager.thaniaMovement.touchingWall);
 
             manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
             {
@@ -74,6 +76,13 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 manager.thaniaMovement.rb.gravityScale = 2;
             },
             cancelCondition: () => false);
+
+            manager.ExecuteAfterTrue(() => manager.thaniaMovement.touchingWall, () =>
+            {
+                Debug.Log("se choco");
+                manager.thaniaMovement.canMove = true;
+                manager.thaniaMovement.rb.gravityScale = 2;
+            });
         };
     }
 

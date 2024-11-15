@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +14,14 @@ public class ThaniaMovement : EntityMovement
     public AnimationManager anim;
     public Transform checkpointOne;
 
+    public Transform groundCheck;
+    public Transform wallCheck;
+    public LayerMask groundLayer;
+    public Vector2 wallCheckSize;
+
+    [HideInInspector] public bool touchingGround;
+    [HideInInspector] public bool touchingWall;
+
     private void Awake()
     {
 
@@ -25,6 +34,9 @@ public class ThaniaMovement : EntityMovement
 
     void Update()
     {
+        if(groundCheck) touchingGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        if(wallCheck) touchingWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize, 0, groundLayer);
+         
         if (isDashing == false && canMove)
         {
             rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
@@ -77,5 +89,11 @@ public class ThaniaMovement : EntityMovement
                 transform.GetChild(1).transform.localScale = wheel2;
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(wallCheck.position, wallCheckSize);
     }
 }

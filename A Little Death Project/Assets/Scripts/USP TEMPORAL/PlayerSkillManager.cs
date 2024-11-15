@@ -36,6 +36,8 @@ public class PlayerSkillManager : MonoBehaviour
     [SerializeField] float posesionSpeed;
     float posesionSpeedBase;
 
+    [HideInInspector] public bool isBreaking;
+
     private void Start()
     {
         sk.baseSkills = GetComponent<CharacterSkillSet>();

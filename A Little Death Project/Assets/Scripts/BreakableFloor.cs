@@ -11,14 +11,14 @@ public class BreakableFloor : MonoBehaviour, IBreakable
     public void Break(GameObject breaker)
     {
         if(particleSystems) Instantiate(particleSystems, transform.position, Quaternion.Euler(270, 0, 0));
-        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         var manager = collision.gameObject.GetComponent<PlayerSkillManager>();
 
-        if (manager != null && manager.GetColliderAction() == ColliderAction.Break && !manager.jumpManager.grounded)
+        if (manager != null && manager.GetColliderAction() == ColliderAction.Break && manager.isBreaking)
         {
             manager.jumpManager.anim.animator.SetTrigger("Stun");
             Break(manager.gameObject);

@@ -55,7 +55,7 @@ public static class Extensions
 
     // Ejecuta una accion hasta que pase X tiempo.
     public static void ExecuteUntil(this MonoBehaviour starter, float timeLimit, Action Exec, Func<bool> cancelCondition = default)
-        => starter.StartCoroutine(SteppedExecution(timeLimit * 4, 0, Exec));
+        => starter.StartCoroutine(SteppedExecution(timeLimit * 4, 0, Exec, cancelCondition));
 
     public static IEnumerator SteppedExecution(float duration, float stepLength, Action ExecuteOnEachStep, Func<bool> cancelCondition = default)
     {
@@ -65,6 +65,8 @@ public static class Extensions
 
         foreach (var step in stepList)
         {
+            if (cancelCondition()) break;
+
             ExecuteOnEachStep();
             yield return step;
         }
