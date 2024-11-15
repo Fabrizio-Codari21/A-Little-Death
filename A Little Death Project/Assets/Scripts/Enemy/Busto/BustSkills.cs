@@ -13,7 +13,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             manager.thaniaMovement.rb.gravityScale = 20;
             manager.SetColliderAction(mySkills, true, SkillSlot.primary);
             manager.thaniaHealth.immune = true;
-            manager.isBreaking = true;
+            if (!manager.jumpManager.grounded) { manager.isBreaking = true; }
 
             manager.ExecuteUntilTrue(() => manager.jumpManager.grounded, () =>
             {

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EntityMovement : Spawnable
 {
-    [HideInInspector] public bool canMove = true;
+    public bool canMove = true;
 
     public void StopMoving()
     {

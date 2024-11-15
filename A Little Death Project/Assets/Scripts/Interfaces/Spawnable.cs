@@ -22,7 +22,17 @@ public class Spawnable : MonoBehaviour
 
         if (GetComponent<Harpy>()) { GetComponent<Rigidbody2D>().gravityScale = 0; }
 
-        GetComponent<EntityMovement>().canMove = true;
+        if (GetComponent<BustoMovement>())
+        {
+            GetComponent<BustoMovement>().animator.SetTrigger("Reset");
+            GetComponent<BustoMovement>().canMove = false;
+            GetComponent<BustoMovement>().hasActivated = false;
+        }
+        else
+        {
+            GetComponent<EntityMovement>().canMove = true;
+        }
+
         if (GetComponentInChildren<Light2D>()) { GetComponentInChildren<Light2D>().enabled = true; }
     }
 

@@ -22,6 +22,14 @@ public class BustoMovement : FreeRoamMovement
     public BustHealth bustHealth;
 
     [SerializeField] float rollSpeed;
+    public bool hasActivated = false;
+
+    public Animator animator;
+
+    private void Awake()
+    {
+        canMove = false;
+    }
 
     private void Update()
     {
@@ -36,6 +44,7 @@ public class BustoMovement : FreeRoamMovement
         {
             if ((!canSeePlayer && !rolling) /*|| cooldown > 0*/)
             {
+                Debug.Log("PATROLLING");
                 Patrol();
             }
             else if ((canSeePlayer || rolling) && grounded && cooldown < 0)
@@ -45,6 +54,7 @@ public class BustoMovement : FreeRoamMovement
                     FlipToPlayer();
                     rolling = true;
                     bustHealth.immune = true;
+                    animator.SetTrigger("Attack");
                 }
                 RollAttack();
             }
@@ -52,6 +62,13 @@ public class BustoMovement : FreeRoamMovement
             {
                 rolling = false;
             }
+        }
+        else if(canSeePlayer && hasActivated == false) 
+        {
+            //ANIMACION DE AWAKE
+            animator.SetTrigger("Activated");
+            canMove = true;
+            hasActivated = true;
         }
     }
 
@@ -62,14 +79,15 @@ public class BustoMovement : FreeRoamMovement
 
     private void RollAttack()
     {
+        //ANIMACION DE ROLL
         //Aca pondria el codigo del ataque...
         Debug.Log("ATACK");
         if (!touchingGround || touchingWall)
         {
             Debug.Log("ATACK2");
 
-            //Animacion del final
-
+            //ANIMACION DE LEVANTARSE
+            animator.SetTrigger("Stun");
             //Esto en animacion
             StopRoll();
 
