@@ -12,6 +12,7 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] ThaniaSkills thaniaSkills;
     [SerializeField] PlayerSkillManager manager;
     public Animator animator;
+    public Animator baseFormAnimator;
     public bool attackEnded = true;
     public Color OriginalColor;
 
@@ -51,11 +52,6 @@ public class AnimationManager : MonoBehaviour
         animator.SetBool("AttackAnimEnded", attackEnded);
     }
 
-    void TEMPORAL()
-    {
-        GetComponent<Collider2D>().offset += new Vector2(0f, -5f);
-    }
-
     public  void AttackAnimEnd()
     {
         attackEnded = true;
@@ -65,11 +61,6 @@ public class AnimationManager : MonoBehaviour
     {
         Debug.Log("Here");
         manager.CanMove();
-    }
-
-    void TEMPORAL2()
-    {
-        GetComponent<Collider2D>().offset += new Vector2(0f, 5f); //ESTA LINEA ES TEMPORAL
     }
 
     public void AttackAnimStart()
@@ -86,5 +77,10 @@ public class AnimationManager : MonoBehaviour
     {
         animator.SetInteger("NextAttack", Random.Range(0, 2)); 
         thaniaSkills.Attack(manager);
+    }
+
+    public void EndDesposession()
+    {
+        manager.EndAnimationDesposession();
     }
 }

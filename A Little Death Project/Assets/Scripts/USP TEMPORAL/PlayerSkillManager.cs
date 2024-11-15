@@ -107,8 +107,8 @@ public class PlayerSkillManager : MonoBehaviour
                     timerUI.maxTime = timerUI.timeLeft = _possessingTime;
                     timerUI.ActivateTimer(true);
                     _victim.GetComponent<PossessableHealth>().Die();
-                    thaniaMovement.canMove = true;
-                    jumpManager.canMove = true;
+                    //thaniaMovement.canMove = true;
+                    //jumpManager.canMove = true;
                     posesionSpeed = posesionSpeedBase;
                 });
             }
@@ -235,28 +235,30 @@ public class PlayerSkillManager : MonoBehaviour
         Instantiate(sprites[_currentSprite].soul, transform.position, Quaternion.Euler(270, 180, 0));
         //transitionParticle.startColor = Color.cyan;
         //transitionParticle.Play();
-        Instantiate(transitionParticle, new Vector2(transform.position.x, transform.position.y + 1), transform.rotation);
+        //Instantiate(transitionParticle, new Vector2(transform.position.x, transform.position.y + 1), transform.rotation);
+        thaniaMovement.anim.animator.SetTrigger("DESPOSESS");
         timerUI.UI.gameObject.SetActive(false);
+    }
 
-        //this.WaitAndThen(0.2f, () =>
-        //{
-            sprites[PlayerAppearance.Soul].gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);           
+    public void EndAnimationDesposession()
+    {
+        sprites[PlayerAppearance.Soul].gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-            sprites[_currentSprite].gameObject.SetActive(false);
-            sprites[PlayerAppearance.Thania].gameObject.SetActive(true);
-            defaultSkills.movement.anim = sprites[PlayerAppearance.Thania].animator;
-            jumpManager.anim = sprites[PlayerAppearance.Thania].animator;
-            groundCheck.feet = sk.baseSkills.creatureFeetArea;
+        sprites[_currentSprite].gameObject.SetActive(false);
+        sprites[PlayerAppearance.Thania].gameObject.SetActive(true);
+        thaniaMovement.anim.baseFormAnimator.SetTrigger("DESPOSESS");
+        defaultSkills.movement.anim = sprites[PlayerAppearance.Thania].animator;
+        jumpManager.anim = sprites[PlayerAppearance.Thania].animator;
+        groundCheck.feet = sk.baseSkills.creatureFeetArea;
 
-            // Despues habria que mejorar esto
-            jumpManager.dJump = false;
+        // Despues habria que mejorar esto
+        jumpManager.dJump = false;
 
-            defaultSkills.DefineSkills(sk.baseSkills);
-            BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
+        defaultSkills.DefineSkills(sk.baseSkills);
+        BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);
 
-            _isPossessing = false;
-            onTarget = false;
-        //});
+        _isPossessing = false;
+        onTarget = false;
     }
 
     // Cambia la accion de la colision cuando la habilidad se activa y la hace desaparecer cuando se desactiva.

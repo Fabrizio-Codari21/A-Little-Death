@@ -26786,10 +26786,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 554202763667422260, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: baseFormAnimator
+      value: 
+      objectReference: {fileID: 651881021}
     - target: {fileID: 567820306958812638, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 790900935538197085, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: baseFormAnimator
+      value: 
+      objectReference: {fileID: 651881021}
+    - target: {fileID: 840260765095483329, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: baseFormAnimator
+      value: 
+      objectReference: {fileID: 651881021}
+    - target: {fileID: 1624110268073517172, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6c04715246fb557419a1bf9f70765927, type: 3}
     - target: {fileID: 1624110268073517172, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -26801,6 +26817,18 @@ PrefabInstance:
     - target: {fileID: 1624110268073517172, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1945778643316789715, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: bcb1c1d722bc4934ca9e5e17686a6fc8, type: 2}
+    - target: {fileID: 1994441770824830281, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994441770824830281, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.44
       objectReference: {fileID: 0}
     - target: {fileID: 2749319050118520076, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26842,6 +26870,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2941039556790352558, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: baseFormAnimator
+      value: 
+      objectReference: {fileID: 651881021}
     - target: {fileID: 3143748275603996762, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -26962,17 +26994,33 @@ PrefabInstance:
       propertyPath: groundLayer.m_Bits
       value: 16512
       objectReference: {fileID: 0}
+    - target: {fileID: 6248010794016393594, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: baseFormAnimator
+      value: 
+      objectReference: {fileID: 651881021}
     - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Size.x
-      value: 3.5
+      value: 3.3442044
       objectReference: {fileID: 0}
     - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Size.y
-      value: 5.313369
+      value: 5.315275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.68157744
       objectReference: {fileID: 0}
     - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Offset.y
-      value: 0.09331548
+      value: 0.6215595
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 7.56
       objectReference: {fileID: 0}
     - target: {fileID: 7607196330332648063, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: groundLayer.m_Bits
@@ -27006,6 +27054,11 @@ MonoBehaviour:
 --- !u!4 &651881020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1994441770824830281, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+  m_PrefabInstance: {fileID: 651881018}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &651881021 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5291872068752775122, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
   m_PrefabInstance: {fileID: 651881018}
   m_PrefabAsset: {fileID: 0}
 --- !u!61 &651881025 stripped
@@ -27045,18 +27098,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -1.4022876}
+  m_Offset: {x: 0.6809639, y: -0.88}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.24, y: 5.95}
+    oldSize: {x: 7.51, y: 7.56}
     newSize: {x: 6.88, y: 10.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 2.3045752}
+  m_Size: {x: 3.3377864, y: 2.3045752}
   m_EdgeRadius: 0
 --- !u!1 &653018508
 GameObject:
@@ -27948,7 +28001,7 @@ Transform:
   m_GameObject: {fileID: 746672816}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.68, z: 0}
+  m_LocalPosition: {x: 0.8, y: -3.68, z: 0}
   m_LocalScale: {x: 2.6579201, y: 3.0527995, z: 1.9605954}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45335,8 +45388,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.023199081, y: -0.15280008, z: 0}
-    m_Extent: {x: 24.3146, y: 9.204901, z: 0}
+    m_Center: {x: 0.0316, y: -0.15794992, z: 0}
+    m_Extent: {x: 24.314201, y: 9.192551, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -46767,7 +46820,7 @@ Transform:
   m_GameObject: {fileID: 1409251124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0.59, z: 0}
+  m_LocalPosition: {x: -2.2, y: 0.59, z: 0}
   m_LocalScale: {x: 2.6579201, y: 3.0527995, z: 1.9605954}
   m_ConstrainProportionsScale: 0
   m_Children: []

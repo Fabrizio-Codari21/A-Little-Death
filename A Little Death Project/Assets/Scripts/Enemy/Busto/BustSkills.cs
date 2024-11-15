@@ -36,7 +36,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             {
                 //Lo que sea que haga el bicho cuando es de piedra
                 Debug.Log("esta en el piso");
-                manager.thaniaMovement.canMove = false;
+                manager.thaniaMovement.StopMoving();
                 manager.jumpManager.canMove = false;
 
                 manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
@@ -58,6 +58,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
 
         mySkills.secondaryExecute = (manager) =>
         {
+            manager.thaniaMovement.anim.animator.SetTrigger("AttackTrigger");
             manager.thaniaMovement.canMove = false;
             manager.thaniaMovement.rb.gravityScale = 5;
             var sprite = manager.sprites[manager._currentSprite];
@@ -79,6 +80,8 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
 
             manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
             {
+                manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
+
                 manager.thaniaMovement.canMove = true;
                 manager.thaniaMovement.rb.gravityScale = 2;
 
