@@ -96,6 +96,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             manager.ExecuteAfterTrue(() => manager.thaniaMovement.touchingWall, () =>
             {
                 Debug.Log("se choco");
+                manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
                 manager.thaniaMovement.canMove = true;
                 manager.thaniaMovement.rb.gravityScale = 2;
 
