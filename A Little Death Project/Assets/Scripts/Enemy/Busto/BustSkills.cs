@@ -35,13 +35,19 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             {
                 //Lo que sea que haga el bicho cuando es de piedra
                 Debug.Log("esta en el piso");
+                //manager.thaniaMovement.canMove = false;
+                //manager.jumpManager.canMove = false;
 
-                this.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
+                manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
                 {
                     // desactivar la habilidad
                     Debug.Log("se desactivo");
                     manager.thaniaMovement.rb.gravityScale = 2;
                     manager.thaniaHealth.immune = false;
+                    manager.SetColliderAction(mySkills, false);
+
+                    //manager.thaniaMovement.canMove = true;
+                    //manager.jumpManager.canMove = true;
                 },
                 cancelCondition: () => false);
 
@@ -50,12 +56,35 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
 
         mySkills.secondaryExecute = (manager) =>
         {
+            manager.thaniaMovement.canMove = false;
+            manager.thaniaMovement.rb.gravityScale = 5;
 
+            manager.ExecuteUntil(timeLimit: mySkills.secondaryCooldown, () =>
+            {              
+                var dir = (manager.thaniaMovement.isFacingRight) ? Vector2.right : Vector2.left;
+
+                manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime;
+                if (!manager.jumpManager.grounded) manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * 5);
+
+            }, cancelCondition: () => /*si colisiona con una pared*/ false);
+
+            manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
+            {
+                manager.thaniaMovement.canMove = true;
+                manager.thaniaMovement.rb.gravityScale = 2;
+            },
+            cancelCondition: () => false);
         };
     }
 
     void Awake()
     {
         DefineSkills(mySkills);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        if(mySkills) Gizmos.DrawWireSphere(mySkills.primaryOrigin.position, mySkills.primaryDistance);
     }
 }

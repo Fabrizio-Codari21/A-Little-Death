@@ -50,15 +50,17 @@ public static class Extensions
 
     
     // Se llama cuando queremos realizar una accion repetida cada X tiempo.
-    public static void SteppedExecution(this MonoBehaviour starter, float duration, float stepLength, Action ExecuteOnEachStep) 
+    public static void SteppedExecution(this MonoBehaviour starter, float duration, float stepLength, Action ExecuteOnEachStep, Func<bool> cancelCondition = default) 
         => starter.StartCoroutine(SteppedExecution(duration, stepLength, ExecuteOnEachStep));
 
     // Ejecuta una accion hasta que pase X tiempo.
-    public static void ExecuteUntil(this MonoBehaviour starter, float timeLimit, Action Exec)
+    public static void ExecuteUntil(this MonoBehaviour starter, float timeLimit, Action Exec, Func<bool> cancelCondition = default)
         => starter.StartCoroutine(SteppedExecution(timeLimit * 4, 0, Exec));
 
-    public static IEnumerator SteppedExecution(float duration, float stepLength, Action ExecuteOnEachStep)
+    public static IEnumerator SteppedExecution(float duration, float stepLength, Action ExecuteOnEachStep, Func<bool> cancelCondition = default)
     {
+        if (cancelCondition == default) cancelCondition = () => false;
+
         var stepList = BuildTimeSpan(duration, stepLength);
 
         foreach (var step in stepList)
@@ -69,15 +71,19 @@ public static class Extensions
     }
 
     // Se llama cuando queremos realizar una serie de acciones separadas por un intervalo de X tiempo.
-    public static void MultiSteppedExecution(this MonoBehaviour starter, float duration, float stepLength, Action[] ListOfSteppedExecutions)
+    public static void MultiSteppedExecution(this MonoBehaviour starter, float duration, float stepLength, Action[] ListOfSteppedExecutions, Func<bool> cancelCondition = default)
         => starter.StartCoroutine(MultiSteppedExecution(duration, stepLength, ListOfSteppedExecutions));
    
-    public static IEnumerator MultiSteppedExecution(float duration, float stepLength, Action[] ListOfSteppedExecutions)
+    public static IEnumerator MultiSteppedExecution(float duration, float stepLength, Action[] ListOfSteppedExecutions, Func<bool> cancelCondition = default)
     {
+        if (cancelCondition == default) cancelCondition = () => false;
+
         var stepList = BuildTimeSpan(duration, stepLength);
 
         foreach (var step in stepList)
         {
+            if (cancelCondition()) break;
+
             ListOfSteppedExecutions[stepList.IndexOf(step)]();
             yield return step;
         }

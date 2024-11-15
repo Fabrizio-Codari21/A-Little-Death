@@ -47308,6 +47308,99 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1430722910}
   m_CullTransparentMesh: 1
+--- !u!1 &1433237578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433237579}
+  - component: {fileID: 1433237580}
+  - component: {fileID: 1433237581}
+  m_Layer: 14
+  m_Name: BreakCollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1433237579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433237578}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.28, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 0.6, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5145307173099710153}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1433237580
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433237578}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!114 &1433237581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433237578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd225869919d18a4fa5a68a3c834300c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7981802522814684352}
+  brokenSprite: {fileID: 0}
+  particleSystems: {fileID: 109738664649000101, guid: aa459f8b6cd562749b112f6b88883703, type: 3}
 --- !u!1 &1439470027
 GameObject:
   m_ObjectHideFlags: 0
@@ -78894,7 +78987,6 @@ GameObject:
   - component: {fileID: 35349875843299558}
   - component: {fileID: 3893095119795040516}
   - component: {fileID: 7981802522814684352}
-  - component: {fileID: 7981802522814684353}
   m_Layer: 14
   m_Name: Breakable Floor
   m_TagString: Platform
@@ -79449,6 +79541,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5251762393257360127}
+  - {fileID: 1433237579}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &5154101036158356792
@@ -79706,14 +79799,14 @@ MonoBehaviour:
   primaryHasExecuted: 0
   primary2HasExecuted: 0
   secondarySkillType: 8
-  secondaryDistance: 100
-  secondaryEffectAmount: 0
+  secondaryDistance: 0
+  secondaryEffectAmount: 10
   secondaryValidLayer:
     serializedVersion: 2
     m_Bits: 0
   secondaryColliderAction: 2
   secondaryOrigin: {fileID: 914536158}
-  secondaryCooldown: 0.5
+  secondaryCooldown: 3
   secondaryExecTime: 0
   secondaryHasExecuted: 0
 --- !u!4 &5800110786913907696
@@ -80462,21 +80555,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &7981802522814684353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3629708031475093302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd225869919d18a4fa5a68a3c834300c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 7981802522814684352}
-  brokenSprite: {fileID: 0}
-  particleSystems: {fileID: 109738664649000101, guid: aa459f8b6cd562749b112f6b88883703, type: 3}
 --- !u!50 &8115592740482563299
 Rigidbody2D:
   serializedVersion: 4

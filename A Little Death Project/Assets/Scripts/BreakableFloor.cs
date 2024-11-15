@@ -11,7 +11,7 @@ public class BreakableFloor : MonoBehaviour, IBreakable
     public void Break(GameObject breaker)
     {
         if(particleSystems) Instantiate(particleSystems, transform.position, Quaternion.Euler(270, 0, 0));
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
