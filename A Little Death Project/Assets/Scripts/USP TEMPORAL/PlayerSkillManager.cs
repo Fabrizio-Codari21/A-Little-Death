@@ -17,6 +17,8 @@ public class PlayerSkillManager : MonoBehaviour
     public GroundCheck groundCheck;
     public float possessingRange;
 
+
+
     [Header("UI")]
     public HabilityUI skillUI;
     public TimerBar timerUI;
@@ -25,7 +27,7 @@ public class PlayerSkillManager : MonoBehaviour
     [Header("POSSESSABLE CREATURE SPRITES")]
     public List<PlayerSprite> mySprites;
     public Dictionary<PlayerAppearance, PlayerSprite> sprites = new();
-    PlayerAppearance _currentSprite;
+    [HideInInspector] public PlayerAppearance _currentSprite;
     float _possessingTime;
 
     IEnumerator _whilePossessing;

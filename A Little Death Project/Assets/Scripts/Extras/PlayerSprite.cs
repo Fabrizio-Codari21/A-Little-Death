@@ -12,4 +12,7 @@ public class PlayerSprite : MonoBehaviour
     public ParticleSystem soul;
 
     [HideInInspector] public ColliderAction actionWhenColliding;
+
+    public Collider2D normalCollider;
+    public Collider2D altCollider;
 }

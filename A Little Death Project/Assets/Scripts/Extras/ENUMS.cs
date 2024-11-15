@@ -42,7 +42,7 @@ public enum ColliderAction
     None,
     Damage,
     Break,
-
+    Crouch,
 }
 
 public enum MyInputs 

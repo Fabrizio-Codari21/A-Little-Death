@@ -36,8 +36,8 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             {
                 //Lo que sea que haga el bicho cuando es de piedra
                 Debug.Log("esta en el piso");
-                //manager.thaniaMovement.canMove = false;
-                //manager.jumpManager.canMove = false;
+                manager.thaniaMovement.canMove = false;
+                manager.jumpManager.canMove = false;
 
                 manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
                 {
@@ -48,8 +48,8 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                     manager.SetColliderAction(mySkills, false);
                     manager.isBreaking=false;
 
-                    //manager.thaniaMovement.canMove = true;
-                    //manager.jumpManager.canMove = true;
+                    manager.thaniaMovement.canMove = true;
+                    manager.jumpManager.canMove = true;
                 },
                 cancelCondition: () => false);
 
@@ -60,6 +60,13 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
         {
             manager.thaniaMovement.canMove = false;
             manager.thaniaMovement.rb.gravityScale = 5;
+            var sprite = manager.sprites[manager._currentSprite];
+
+            if(sprite.normalCollider && sprite.altCollider)
+            {
+                sprite.normalCollider.enabled = false;
+                sprite.altCollider.enabled = true;
+            }
 
             manager.ExecuteUntil(timeLimit: mySkills.secondaryCooldown, () =>
             {              
@@ -74,6 +81,12 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             {
                 manager.thaniaMovement.canMove = true;
                 manager.thaniaMovement.rb.gravityScale = 2;
+
+                if (sprite.normalCollider && sprite.altCollider)
+                {
+                    sprite.normalCollider.enabled = true;
+                    sprite.altCollider.enabled = false;
+                }
             },
             cancelCondition: () => false);
 
@@ -82,6 +95,12 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 Debug.Log("se choco");
                 manager.thaniaMovement.canMove = true;
                 manager.thaniaMovement.rb.gravityScale = 2;
+
+                if (sprite.normalCollider && sprite.altCollider)
+                {
+                    sprite.normalCollider.enabled = true;
+                    sprite.altCollider.enabled = false;
+                }
             });
         };
     }
