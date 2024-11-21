@@ -15,7 +15,7 @@ public static class Extensions
     // Devuelve una lista de WaitForSeconds que deberia permitir realizar acciones a lo largo del tiempo en una corrutina.
     //
     // Su uso seria algo asi como:
-    // foreach (var step in WhileWaiting(2, 0.2f))
+    // foreach (var step in BuildTimeSpan(2, 0.2f))
     // {
     //   // lo que sea que quieras hacer
     //   yield return step;
@@ -185,6 +185,11 @@ public static class Extensions
 
             }
         }
+    }
+
+    public static bool ExecuteIfCancelled(this MonoBehaviour x, bool cancelCondition, Action Exec)
+    {
+        if (cancelCondition) Exec(); return cancelCondition;
     }
 
     #endregion

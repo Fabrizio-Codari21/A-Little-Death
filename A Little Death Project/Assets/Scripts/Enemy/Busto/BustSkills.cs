@@ -76,7 +76,19 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime;
                 if (!manager.jumpManager.grounded) manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * 5);
 
-            }, cancelCondition: () => manager.thaniaMovement.touchingWall);
+            }, cancelCondition: () => manager.ExecuteIfCancelled(manager.thaniaMovement.touchingWall, () =>
+            {
+                Debug.Log("se choco");
+                manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
+                manager.thaniaMovement.canMove = true;
+                manager.thaniaMovement.rb.gravityScale = 2;
+
+                if (sprite.normalCollider && sprite.altCollider)
+                {
+                    sprite.normalCollider.enabled = true;
+                    sprite.altCollider.enabled = false;
+                }
+            }));
 
             manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
             {
@@ -92,20 +104,6 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 }
             },
             cancelCondition: () => false);
-
-            manager.ExecuteAfterTrue(() => manager.thaniaMovement.touchingWall, () =>
-            {
-                Debug.Log("se choco");
-                manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
-                manager.thaniaMovement.canMove = true;
-                manager.thaniaMovement.rb.gravityScale = 2;
-
-                if (sprite.normalCollider && sprite.altCollider)
-                {
-                    sprite.normalCollider.enabled = true;
-                    sprite.altCollider.enabled = false;
-                }
-            });
         };
     }
 
