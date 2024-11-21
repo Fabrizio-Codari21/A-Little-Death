@@ -94,6 +94,6 @@ public class ThaniaMovement : EntityMovement
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireCube(wallCheck.position, wallCheckSize);
+        if(wallCheck) Gizmos.DrawWireCube(wallCheck.position, wallCheckSize);
     }
 }

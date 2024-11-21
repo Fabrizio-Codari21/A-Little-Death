@@ -74,26 +74,24 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 var dir = (manager.thaniaMovement.isFacingRight) ? Vector2.right : Vector2.left;
 
                 manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime;
-                if (!manager.jumpManager.grounded) manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * 5);
+
+                if (!manager.jumpManager.grounded) 
+                    manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * manager.thaniaMovement.rb.gravityScale);
 
             }, cancelCondition: () => manager.ExecuteIfCancelled(manager.thaniaMovement.touchingWall, () =>
             {
-                Debug.Log("se choco");
-                manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
-                manager.thaniaMovement.canMove = true;
-                manager.thaniaMovement.rb.gravityScale = 2;
-
-                if (sprite.normalCollider && sprite.altCollider)
-                {
-                    sprite.normalCollider.enabled = true;
-                    sprite.altCollider.enabled = false;
-                }
+                Debug.Log("se choco"); ReturnToNormal();
             }));
 
             manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
             {
-                manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
+                ReturnToNormal();
+            },
+            cancelCondition: () => false);
 
+            void ReturnToNormal()
+            {
+                manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
                 manager.thaniaMovement.canMove = true;
                 manager.thaniaMovement.rb.gravityScale = 2;
 
@@ -102,8 +100,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                     sprite.normalCollider.enabled = true;
                     sprite.altCollider.enabled = false;
                 }
-            },
-            cancelCondition: () => false);
+            }
         };
     }
 
