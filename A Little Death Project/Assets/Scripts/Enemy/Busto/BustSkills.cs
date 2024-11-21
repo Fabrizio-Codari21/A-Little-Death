@@ -10,7 +10,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
     {
         mySkills.primaryExecute = (manager) =>
         {
-            manager.thaniaMovement.rb.gravityScale = 20;
+            manager.thaniaMovement.rb.gravityScale = 30;
             manager.SetColliderAction(mySkills, true, SkillSlot.primary);
             manager.thaniaHealth.immune = true;
             if (!manager.jumpManager.grounded) { manager.isBreaking = true; }
@@ -59,8 +59,8 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
         mySkills.secondaryExecute = (manager) =>
         {
             manager.thaniaMovement.anim.animator.SetTrigger("AttackTrigger");
-            manager.thaniaMovement.canMove = false;
-            manager.thaniaMovement.rb.gravityScale = 5;
+            manager.thaniaMovement.StopMoving();
+            manager.thaniaMovement.rb.gravityScale = 7;
             var sprite = manager.sprites[manager._currentSprite];
 
             if(sprite.normalCollider && sprite.altCollider)
@@ -72,11 +72,14 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             manager.ExecuteUntil(timeLimit: mySkills.secondaryCooldown, () =>
             {              
                 var dir = (manager.thaniaMovement.isFacingRight) ? Vector2.right : Vector2.left;
+                var jump = (manager.jumpManager.anim.jumped) 
+                            ? new Vector2(0, manager.jumpManager.jumpForce) 
+                            : Vector2.zero;
 
-                manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime;
+                manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime + jump;
 
-                if (!manager.jumpManager.grounded) 
-                    manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * manager.thaniaMovement.rb.gravityScale);
+                manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * manager.thaniaMovement.rb.gravityScale);
+
 
             }, cancelCondition: () => manager.ExecuteIfCancelled(manager.thaniaMovement.touchingWall, () =>
             {

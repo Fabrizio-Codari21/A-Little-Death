@@ -28027,6 +28027,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 7.56
       objectReference: {fileID: 0}
+    - target: {fileID: 7252664548962173693, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: previewFeetAreaSize
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7607196330332648063, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 16512
@@ -30579,7 +30583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7092276762610412401, guid: 57ab7be90006b3941bc34f7ad2635f36, type: 3}
       propertyPath: m_Cameras.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7092276762610412401, guid: 57ab7be90006b3941bc34f7ad2635f36, type: 3}
       propertyPath: m_Cameras.Array.data[0]
@@ -47037,8 +47041,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.024850845, y: -0.15485, z: 0}
-    m_Extent: {x: 24.32065, y: 9.19225, z: 0}
+    m_Center: {x: 0.023449898, y: -0.15385008, z: 0}
+    m_Extent: {x: 24.307652, y: 9.19315, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -82698,8 +82702,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.032299995, y: -0.15215015, z: 0}
-    m_Extent: {x: 24.312302, y: 9.19895, z: 0}
+    m_Center: {x: 0.019899368, y: -0.15339994, z: 0}
+    m_Extent: {x: 24.3174, y: 9.198999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -86128,7 +86132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creatureAppearance: 4
   previewFeetAreaSize: 0
-  creatureFeetArea: {x: 1.5, y: 0.3}
+  creatureFeetArea: {x: 1, y: 0.3}
   primarySkillType: 7
   primaryDistance: 0.5
   primaryEffectAmount: 0
@@ -86901,7 +86905,7 @@ MonoBehaviour:
   maxHealth: 1
   currentHealth: 0
   immune: 0
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 280208435}
   canBePossessed: 0
   _skillManager: {fileID: 651881019}
   _animator: {fileID: 2385572231077811191}
