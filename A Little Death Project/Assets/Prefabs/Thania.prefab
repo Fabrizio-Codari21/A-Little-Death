@@ -128,6 +128,7 @@ MonoBehaviour:
   thaniaSkills: {fileID: 0}
   manager: {fileID: 0}
   animator: {fileID: 5291872068752775122}
+  baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 1
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &8817554516090278058
@@ -191,6 +192,8 @@ MonoBehaviour:
   animator: {fileID: 790900935538197085}
   soul: {fileID: 0}
   actionWhenColliding: 0
+  normalCollider: {fileID: 0}
+  altCollider: {fileID: 0}
 --- !u!1 &2153476477681340137
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +404,8 @@ MonoBehaviour:
   animator: {fileID: 840260765095483329}
   soul: {fileID: 439357138386912805, guid: 2a14c1698634837469b9aa321edb2016, type: 3}
   actionWhenColliding: 0
+  normalCollider: {fileID: 0}
+  altCollider: {fileID: 0}
 --- !u!61 &7369629040790407989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -465,6 +470,7 @@ MonoBehaviour:
   thaniaSkills: {fileID: 0}
   manager: {fileID: 0}
   animator: {fileID: 5879989820984045379}
+  baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 0
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &7312284875807472285
@@ -547,6 +553,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2749319050118520076}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2529280966153892713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8756667167386607845}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8756667167386607845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529280966153892713}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.02, y: 0.59, z: 0}
+  m_LocalScale: {x: 2.6579201, y: 3.0527995, z: 1.9605954}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1994441770824830281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2789320007902290512
 GameObject:
@@ -878,6 +915,7 @@ GameObject:
   - component: {fileID: 1945778643316789715}
   - component: {fileID: 3270545340795847862}
   - component: {fileID: 6248010794016393594}
+  - component: {fileID: 3800721378252679722}
   m_Layer: 8
   m_Name: Bust Sprites
   m_TagString: Player
@@ -894,10 +932,12 @@ Transform:
   m_GameObject: {fileID: 3143748275603996762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 2, y: -2, z: 0}
-  m_LocalScale: {x: 1.6057715, y: 1.3238429, z: 2.8248935}
+  m_LocalPosition: {x: 2.11, y: -2.03, z: 0}
+  m_LocalScale: {x: 0.74557453, y: 0.6146724, z: 1.311624}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7828081552214235728}
+  - {fileID: 8756667167386607845}
   m_Father: {fileID: 2749319050118520076}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &1624110268073517172
@@ -941,9 +981,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 1a0e70fe334b3e841b40c827372b1a19, type: 3}
-  m_Color: {r: 1, g: 0.7932729, b: 0.6084906, a: 1}
-  m_FlipX: 1
+  m_Sprite: {fileID: 21300000, guid: 016132f86d07ab64a91b0f19f7a87f8d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 6.88, y: 10.72}
@@ -984,18 +1024,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.65, y: 0.6215595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.24, y: 5.95}
+    oldSize: {x: 22.620146, y: 15.22}
     newSize: {x: 6.88, y: 10.72}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6, y: 6}
+  m_Size: {x: 7.2, y: 11.42}
   m_EdgeRadius: 0
 --- !u!114 &4057571631420109083
 MonoBehaviour:
@@ -1013,7 +1053,7 @@ MonoBehaviour:
   m_LightType: 1
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.734
-  m_Color: {r: 0.509434, g: 0.29614076, b: 0.040850844, a: 1}
+  m_Color: {r: 1, g: 0.4336272, b: 0.042452812, a: 1}
   m_Intensity: 3.21
   m_LightVolumeIntensity: 0.24
   m_LightVolumeIntensityEnabled: 0
@@ -1031,8 +1071,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.24315, y: -0.2961502, z: 0}
-    m_Extent: {x: 7.2275496, y: 8.02985, z: 0}
+    m_Center: {x: -0.6403501, y: -3.1299999, z: 0}
+    m_Extent: {x: 7.47775, y: 6.6373997, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -1043,10 +1083,16 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 4.2
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -3.2695835, y: -4.107048, z: 0}
-  - {x: 2.782749, y: -4.1203775, z: 0}
-  - {x: 2.2941883, y: 3.5275292, z: 0}
-  - {x: -2.297775, y: 2.8474383, z: 0}
+  - {x: 1.6630871, y: -5.5719376, z: 0}
+  - {x: 2.6315877, y: -3.6486783, z: 0}
+  - {x: 2.3116832, y: -0.7000589, z: 0}
+  - {x: 0.56280345, y: -1.119879, z: 0}
+  - {x: 0.60949665, y: -2.5145984, z: 0}
+  - {x: -2.2395034, y: -2.836457, z: 0}
+  - {x: -2.753251, y: -1.6026669, z: 0}
+  - {x: -3.2670193, y: -0.69073534, z: 0}
+  - {x: -3.9208875, y: -1.6026669, z: 0}
+  - {x: -3.6112003, y: -5.098726, z: 0}
 --- !u!95 &1945778643316789715
 Animator:
   serializedVersion: 5
@@ -1057,7 +1103,7 @@ Animator:
   m_GameObject: {fileID: 3143748275603996762}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c0e1cf1424535514f9a63b5dd419fb6d, type: 2}
+  m_Controller: {fileID: 9100000, guid: bcb1c1d722bc4934ca9e5e17686a6fc8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1084,6 +1130,8 @@ MonoBehaviour:
   animator: {fileID: 6248010794016393594}
   soul: {fileID: 7111772830808259799, guid: b8fd1d2b7835586428880349f823a8f6, type: 3}
   actionWhenColliding: 0
+  normalCollider: {fileID: 7078700638445669618}
+  altCollider: {fileID: 3800721378252679722}
 --- !u!114 &6248010794016393594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,8 +1151,54 @@ MonoBehaviour:
   thaniaSkills: {fileID: 8694603768692714798}
   manager: {fileID: 3830757537684299972}
   animator: {fileID: 1945778643316789715}
+  baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 1
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!61 &3800721378252679722
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3143748275603996762}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.65, y: -0.79}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 22.620146, y: 15.22}
+    newSize: {x: 6.88, y: 10.72}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.2, y: 8.62}
+  m_EdgeRadius: 0
 --- !u!1 &3336500583964393484
 GameObject:
   m_ObjectHideFlags: 0
@@ -1231,6 +1325,8 @@ MonoBehaviour:
   animator: {fileID: 554202763667422260}
   soul: {fileID: 0}
   actionWhenColliding: 0
+  normalCollider: {fileID: 0}
+  altCollider: {fileID: 0}
 --- !u!61 &6110102625730616674
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1295,6 +1391,7 @@ MonoBehaviour:
   thaniaSkills: {fileID: 0}
   manager: {fileID: 0}
   animator: {fileID: 7059183811972870969}
+  baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 1
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &644169883335085290
@@ -6593,6 +6690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+  immune: 0
   audioManager: {fileID: 0}
   invulnerable: 0
   damageCooldown: 1
@@ -6625,6 +6723,14 @@ MonoBehaviour:
   isDashing: 0
   anim: {fileID: 790900935538197085}
   checkpointOne: {fileID: 0}
+  groundCheck: {fileID: 7828081552214235728}
+  wallCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 16512
+  wallCheckSize: {x: 0.4, y: 1}
+  touchingGround: 0
+  touchingWall: 0
 --- !u!114 &7607196330332648063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6642,7 +6748,7 @@ MonoBehaviour:
   groundCheck: {fileID: 4503823438205797208}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 16512
   jumpForce: 14
   dJump: 0
   currentJump: 0
@@ -6735,6 +6841,7 @@ MonoBehaviour:
   defaultSkills: {fileID: 8694603768692714798}
   jumpManager: {fileID: 7607196330332648063}
   thaniaMovement: {fileID: 4683047887223476869}
+  thaniaHealth: {fileID: 0}
   groundCheck: {fileID: 7210142572579693149}
   possessingRange: 9
   skillUI: {fileID: 0}
@@ -6746,9 +6853,11 @@ MonoBehaviour:
   - {fileID: 4383624844470303454}
   - {fileID: 2472308862404200831}
   - {fileID: 3270545340795847862}
+  _currentSprite: 0
   transitionParticle: {fileID: 1489329540237079759, guid: 4a3310058580f3a43b4c821219a5798d, type: 3}
   cadaver: {fileID: 1939694570552678800, guid: 4118d2944fab58447896f7039d45c632, type: 3}
   posesionSpeed: 1.33
+  isBreaking: 0
 --- !u!114 &7252664548962173693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6772,6 +6881,7 @@ MonoBehaviour:
     m_Bits: 64
   primaryColliderAction: 1
   primaryOrigin: {fileID: 4643223729172618066}
+  primarySpawn: {fileID: 0}
   primaryCooldown: 0.8
   primaryExecTime: 0
   primaryHasExecuted: 0
@@ -6784,6 +6894,7 @@ MonoBehaviour:
     m_Bits: 0
   secondaryColliderAction: 0
   secondaryOrigin: {fileID: 0}
+  secondarySpawn: {fileID: 0}
   secondaryCooldown: 0
   secondaryExecTime: 0
   secondaryHasExecuted: 0
@@ -16444,6 +16555,37 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!1 &6094429162553264662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7828081552214235728}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7828081552214235728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094429162553264662}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.72, y: -3.68, z: 0}
+  m_LocalScale: {x: 2.6579201, y: 3.0527995, z: 1.9605954}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1994441770824830281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6265258576514683463
 GameObject:
   m_ObjectHideFlags: 0
@@ -26651,6 +26793,8 @@ MonoBehaviour:
   animator: {fileID: 2941039556790352558}
   soul: {fileID: 7111772830808259799, guid: b8fd1d2b7835586428880349f823a8f6, type: 3}
   actionWhenColliding: 0
+  normalCollider: {fileID: 0}
+  altCollider: {fileID: 0}
 --- !u!114 &2941039556790352558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26670,6 +26814,7 @@ MonoBehaviour:
   thaniaSkills: {fileID: 0}
   manager: {fileID: 0}
   animator: {fileID: 5803760488994215607}
+  baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 1
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1390282114676825396

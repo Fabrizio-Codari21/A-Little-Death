@@ -14,6 +14,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             manager.SetColliderAction(mySkills, true, SkillSlot.primary);
             manager.thaniaHealth.immune = true;
             if (!manager.jumpManager.grounded) { manager.isBreaking = true; }
+            manager.thaniaMovement.anim.animator.SetTrigger("RockStart");
 
             manager.ExecuteUntilTrue(() => manager.jumpManager.grounded, () =>
             {
@@ -42,6 +43,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
                 {
                     // desactivar la habilidad
+                    manager.thaniaMovement.anim.animator.SetTrigger("RockEnd");
                     Debug.Log("se desactivo");
                     manager.thaniaMovement.rb.gravityScale = 2;
                     manager.thaniaHealth.immune = false;
