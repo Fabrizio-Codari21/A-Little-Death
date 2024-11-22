@@ -13,6 +13,12 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
             bool rotDown = false;
             var rot = rotDown ? new Vector3(0, 0, -1f) : new Vector3(0, 0, 1f);
 
+            var dir = manager.thaniaMovement.isFacingRight
+                      ? mySkills.primaryOrigin.right
+                      : mySkills.primaryOrigin.right * -1;
+
+            manager.thaniaMovement.canMove = false;
+
             if (!mySkills.primaryHasExecuted)
             {
                 mySkills.primaryHasExecuted = true;
@@ -31,6 +37,7 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                     mySkills.primaryHasExecuted = false;
                     mySkills.primaryOrigin.gameObject.SetActive(false);
                     mySkills.primaryOrigin.rotation = Quaternion.identity;
+                    manager.thaniaMovement.canMove = true;
                 },
                 cancelCondition: () => !mySkills.primaryHasExecuted);
 
@@ -44,16 +51,15 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                                                             mySkills.primaryOrigin.rotation)
                                                          :  default;
 
-
                 if (projectile != default) projectile.GetComponent<Rigidbody2D>().
-                                                      AddForce(mySkills.primaryOrigin.right 
-                                                              * mySkills.primaryDistance * 100);
+                                                      AddForce(dir * mySkills.primaryDistance * 100);
                 
                 else Debug.Log("There is no projectile.");
 
                 mySkills.primaryHasExecuted = false;
                 mySkills.primaryOrigin.gameObject.SetActive(false);
                 mySkills.primaryOrigin.rotation = Quaternion.identity;
+                manager.CanMove();
             }
 
         };
