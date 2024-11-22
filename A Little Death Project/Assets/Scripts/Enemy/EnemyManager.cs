@@ -61,6 +61,7 @@ public class EnemyManager : ScriptableObject
             case PlayerAppearance.Deer: type = typeof(DeerSkills); break;
             case PlayerAppearance.Harpy: type = typeof(HarpySkills); break;
             case PlayerAppearance.Bust: type = typeof(BustSkills); break;
+            case PlayerAppearance.Gorgon: type = typeof(GorgonSkills); break;
 
             default: Debug.Log($"The entity you are referencing isn't an enemy: " + type); break;
         }
