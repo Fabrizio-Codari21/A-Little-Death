@@ -2302,7 +2302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatSpriteIsThis: 5
   animator: {fileID: 236928059}
-  soul: {fileID: 0}
+  soul: {fileID: 439357138386912805, guid: 2a14c1698634837469b9aa321edb2016, type: 3}
   actionWhenColliding: 0
   normalCollider: {fileID: 0}
   altCollider: {fileID: 0}
@@ -7541,7 +7541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 270170609}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gorgona
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7557,7 +7557,7 @@ Transform:
   m_GameObject: {fileID: 270170608}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -122.55, y: 84.53, z: -17.837154}
+  m_LocalPosition: {x: -122.55, y: 84.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -84649,8 +84649,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.027550697, y: -0.15689993, z: 0}
-    m_Extent: {x: 24.308449, y: 9.1970005, z: 0}
+    m_Center: {x: 0.018950462, y: -0.15385008, z: 0}
+    m_Extent: {x: 24.316849, y: 9.18815, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -85400,7 +85400,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5627502151064296878, guid: 05db6f89f44a58b4699b5bf4f4776663, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.519534
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5627502151064296878, guid: 05db6f89f44a58b4699b5bf4f4776663, type: 3}
       propertyPath: m_LocalRotation.w

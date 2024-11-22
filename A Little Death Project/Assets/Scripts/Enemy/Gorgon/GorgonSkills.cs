@@ -11,7 +11,6 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
         mySkills.primaryExecute = (manager) =>
         {
             bool rotDown = false;
-            var rot = rotDown ? new Vector3(0, 0, 1f) : new Vector3(0, 0, -1f);
 
             if (!mySkills.primaryHasExecuted)
             {
@@ -19,6 +18,8 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                 mySkills.primaryOrigin.gameObject.SetActive(true);
                 manager.ExecuteUntil(timeLimit: mySkills.primaryCooldown, () =>
                 {
+                    var rot = rotDown ? new Vector3(0, 0, 1f) : new Vector3(0, 0, -1f);
+
                     mySkills.primaryOrigin.Rotate(rot);
 
                     if (mySkills.primaryOrigin.rotation.eulerAngles.z >= 60) rotDown = true;
@@ -44,7 +45,7 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                                                          :  default;
 
 
-                if (projectile != default) projectile.GetComponent<Rigidbody>().
+                if (projectile != default) projectile.GetComponent<Rigidbody2D>().
                                                       AddForce(mySkills.primaryOrigin.right 
                                                               * mySkills.primaryDistance);
                 
