@@ -26,6 +26,8 @@ public class CharacterSkillSet : MonoBehaviour
     public ColliderAction primaryColliderAction;
     [Tooltip("Represents the origin point of your action.")]
     public Transform primaryOrigin;
+    [Tooltip("Represents an object that will be spawned when the action is performed.")]
+    public GameObject primarySpawn;
     [Tooltip("Represents the time it takes before your action can be executed again.")]
     public float primaryCooldown;
     
@@ -46,6 +48,8 @@ public class CharacterSkillSet : MonoBehaviour
     public ColliderAction secondaryColliderAction;
     [Tooltip("Represents the origin point of your action.")]
     public Transform secondaryOrigin;
+    [Tooltip("Represents an object that will be spawned when the action is performed.")]
+    public GameObject secondarySpawn;
     [Tooltip("Represents the time it takes before your action can be executed again.")]
     public float secondaryCooldown;
 
@@ -70,6 +74,7 @@ public class CharacterSkillSet : MonoBehaviour
             validLayer = primaryValidLayer,
             colliderAction = primaryColliderAction,
             origin = primaryOrigin,
+            spawn = primarySpawn,
             cooldown = primaryCooldown,
             nextFireTime = primaryExecTime,
             hasExecuted = primaryHasExecuted,
@@ -85,6 +90,7 @@ public class CharacterSkillSet : MonoBehaviour
             validLayer = secondaryValidLayer,
             colliderAction = secondaryColliderAction,
             origin = secondaryOrigin,
+            spawn = secondarySpawn,
             cooldown = secondaryCooldown,
             nextFireTime = secondaryExecTime,
             hasExecuted = secondaryHasExecuted,

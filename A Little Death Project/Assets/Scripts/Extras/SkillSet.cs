@@ -12,6 +12,7 @@ public struct SkillSet
     public float effectAmount;
     public LayerMask validLayer;
     public Transform origin;
+    public GameObject spawn;
     public float cooldown;
     public float nextFireTime;
     public bool hasExecuted;

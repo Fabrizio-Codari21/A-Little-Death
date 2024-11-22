@@ -26,6 +26,8 @@ public enum SkillType
     BustPrimary,
     BustSecondary,
 
+    GorgonPrimary,
+    GorgonSecondary,
 }
 
 public enum PlayerAppearance
@@ -35,6 +37,7 @@ public enum PlayerAppearance
     Harpy,
     Soul,
     Bust,
+    Gorgon,
 }
 
 public enum ColliderAction

@@ -13,6 +13,7 @@ public class SkillList
     public float effectAmount;
     public LayerMask validLayer;
     public Transform origin;
+    public GameObject spawn;
     public float cooldown;
     public float nextFireTime;
     public bool executed;
@@ -28,6 +29,10 @@ public class SkillList
         skillSlot = skillSet.skillSlot;
         cooldown = skillSet.cooldown;
         distance = skillSet.distance;
+        effectAmount = skillSet.effectAmount;
+        validLayer = skillSet.validLayer;
+        origin = skillSet.origin;
+        spawn = skillSet.spawn;
         nextFireTime = skillSet.nextFireTime;
         Execute = skillSet.Execute;
         colliderAction = skillSet.colliderAction;
