@@ -11,6 +11,7 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
         mySkills.primaryExecute = (manager) =>
         {
             bool rotDown = false;
+            var rot = rotDown ? new Vector3(0, 0, -1f) : new Vector3(0, 0, 1f);
 
             if (!mySkills.primaryHasExecuted)
             {
@@ -18,21 +19,20 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                 mySkills.primaryOrigin.gameObject.SetActive(true);
                 manager.ExecuteUntil(timeLimit: mySkills.primaryCooldown, () =>
                 {
-                    var rot = rotDown ? new Vector3(0, 0, 1f) : new Vector3(0, 0, -1f);
+                    if (mySkills.primaryOrigin.rotation.eulerAngles.z >= 60) rot = new Vector3(0, 0, -1f);
+                    else if (mySkills.primaryOrigin.rotation.eulerAngles.z <= 0) rot = new Vector3(0, 0, 1f);
 
                     mySkills.primaryOrigin.Rotate(rot);
 
-                    if (mySkills.primaryOrigin.rotation.eulerAngles.z >= 60) rotDown = true;
-                    else if (mySkills.primaryOrigin.rotation.eulerAngles.z <= 0) rotDown = false;
-
-                });
+                }, cancelCondition: () => !mySkills.primaryHasExecuted);
 
                 manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
                 {
                     mySkills.primaryHasExecuted = false;
                     mySkills.primaryOrigin.gameObject.SetActive(false);
+                    mySkills.primaryOrigin.rotation = Quaternion.identity;
                 },
-                cancelCondition: () => false);
+                cancelCondition: () => !mySkills.primaryHasExecuted);
 
             }
             else
@@ -47,12 +47,13 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
 
                 if (projectile != default) projectile.GetComponent<Rigidbody2D>().
                                                       AddForce(mySkills.primaryOrigin.right 
-                                                              * mySkills.primaryDistance);
+                                                              * mySkills.primaryDistance * 100);
                 
                 else Debug.Log("There is no projectile.");
 
                 mySkills.primaryHasExecuted = false;
                 mySkills.primaryOrigin.gameObject.SetActive(false);
+                mySkills.primaryOrigin.rotation = Quaternion.identity;
             }
 
         };
