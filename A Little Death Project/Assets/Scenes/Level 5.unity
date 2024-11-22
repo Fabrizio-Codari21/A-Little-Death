@@ -72596,6 +72596,7 @@ MonoBehaviour:
   rollSpeed: 10
   hasActivated: 0
   animator: {fileID: 593271923}
+  canRoll: 0
 --- !u!50 &1598087888
 Rigidbody2D:
   serializedVersion: 4
@@ -84649,8 +84650,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.021349907, y: -0.15680027, z: 0}
-    m_Extent: {x: 24.310848, y: 9.1951, z: 0}
+    m_Center: {x: 0.03240013, y: -0.14609957, z: 0}
+    m_Extent: {x: 24.3128, y: 9.1977005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -87723,6 +87724,7 @@ MonoBehaviour:
   rollSpeed: 10
   hasActivated: 0
   animator: {fileID: 2385572231077811191}
+  canRoll: 0
 --- !u!114 &8443279289337517590
 MonoBehaviour:
   m_ObjectHideFlags: 0
