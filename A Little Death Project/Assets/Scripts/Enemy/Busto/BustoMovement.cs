@@ -26,6 +26,8 @@ public class BustoMovement : FreeRoamMovement
 
     public Animator animator;
 
+    public bool canRoll;
+
     private void Awake()
     {
         canMove = false;
@@ -34,7 +36,7 @@ public class BustoMovement : FreeRoamMovement
     private void Update()
     {
         touchingGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-        touchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.2f, groundLayer);
+        touchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.5f, groundLayer);
         grounded = Physics2D.OverlapBox(transform.position, boxSize, 0, groundedLayer);
         canSeePlayer = Physics2D.OverlapBox(transform.position, LOS, 0, playerLayer);
         
@@ -56,7 +58,7 @@ public class BustoMovement : FreeRoamMovement
                     bustHealth.immune = true;
                     animator.SetTrigger("Attack");
                 }
-                RollAttack();
+                if (canRoll) { RollAttack(); }
             }
             else
             {
@@ -98,7 +100,7 @@ public class BustoMovement : FreeRoamMovement
 
     private void StopRoll()
     {
-        cooldown = 2.5f;
+       // cooldown = 2.5f;
         canSeePlayer = false;
         canMove = false;
         rolling = false;
@@ -125,5 +127,9 @@ public class BustoMovement : FreeRoamMovement
         }
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(wallCheck.position, 0.5f);
+    }
 }
 

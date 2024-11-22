@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\Extras\SkillSet.cs" />
     <Compile Include="Assets\Scripts\Hearts.cs" />
     <Compile Include="Assets\Scripts\Interfaces\Spawnable.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Busto\BustoAnim.cs" />
     <Compile Include="Assets\Scripts\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Extras\PlayerSprite.cs" />
     <Compile Include="Assets\Scripts\Enemy\Harpy\WingsAttackDetection.cs" />
