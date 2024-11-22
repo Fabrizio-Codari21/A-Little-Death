@@ -17,6 +17,7 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                       ? mySkills.primaryOrigin.right
                       : mySkills.primaryOrigin.right * -1;
 
+            manager.thaniaMovement.rb.velocity = Vector2.zero;
             manager.thaniaMovement.canMove = false;
 
             if (!mySkills.primaryHasExecuted)

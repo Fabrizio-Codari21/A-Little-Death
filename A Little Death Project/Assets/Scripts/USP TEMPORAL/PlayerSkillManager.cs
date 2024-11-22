@@ -118,7 +118,7 @@ public class PlayerSkillManager : MonoBehaviour
     public void CanMove()
     {
         thaniaMovement.canMove = true;
-        jumpManager.canMove = true;
+        if (_currentSprite != PlayerAppearance.Gorgon) jumpManager.canMove = true;
     }
 
     // Para revisar los inputs de las habilidades activas y ejecutarlas en base a ellos.

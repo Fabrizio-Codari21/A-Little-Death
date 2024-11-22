@@ -11,6 +11,7 @@ public class GorgonMovement : FreeRoamMovement
 
     public float cooldown;
     public ThaniaHealth player;
+    public GameObject projectile;
 
     //public Animator animator;
 
