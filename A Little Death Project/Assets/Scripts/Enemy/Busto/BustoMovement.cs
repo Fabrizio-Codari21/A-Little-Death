@@ -107,7 +107,7 @@ public class BustoMovement : FreeRoamMovement
         bustHealth.immune = false;
         Flip();
 
-        this.WaitAndThen(timeToWait: 1f, () =>
+        this.WaitAndThen(timeToWait: 1.33f, () =>
         {
             canMove = true;
         },

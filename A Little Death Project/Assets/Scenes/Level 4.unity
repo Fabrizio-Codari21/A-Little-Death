@@ -27674,9 +27674,33 @@ PrefabInstance:
       value: Thania
       objectReference: {fileID: 0}
     - target: {fileID: 4683047887223476869, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: wallCheck
+      value: 
+      objectReference: {fileID: 994848443}
+    - target: {fileID: 4683047887223476869, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: checkpointOne
       value: 
       objectReference: {fileID: 1439470031}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Size.y
+      value: 12.534334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.6500001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.1787262
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 22.620146
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 15.22
+      objectReference: {fileID: 0}
     - target: {fileID: 8694603768692714798, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: audioManager
       value: 
@@ -28183,7 +28207,7 @@ PrefabInstance:
       objectReference: {fileID: 1419943797}
     - target: {fileID: 6816422634047436585, guid: b278135e353f9df45a0d1e2909454cbf, type: 3}
       propertyPath: level
-      value: Victory
+      value: Level 5
       objectReference: {fileID: 0}
     - target: {fileID: 6816422634047436585, guid: b278135e353f9df45a0d1e2909454cbf, type: 3}
       propertyPath: fadeEfect
@@ -30421,6 +30445,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959665400}
   m_CullTransparentMesh: 1
+--- !u!4 &994848443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8756667167386607845, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+  m_PrefabInstance: {fileID: 651881018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &999074744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 219759348966310859, guid: b2ae12edbf3cec146ac10f88aa0244cb, type: 3}
@@ -47061,8 +47090,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.026050568, y: -0.15460014, z: 0}
-    m_Extent: {x: 24.30875, y: 9.1987, z: 0}
+    m_Center: {x: 0.02630043, y: -0.15854979, z: 0}
+    m_Extent: {x: 24.3085, y: 9.199551, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -88137,7 +88166,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.86523324, y: -1.3161974}
+  m_Offset: {x: 0.86523324, y: -1.733511}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -88148,7 +88177,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.772566, y: 3.3023224}
+  m_Size: {x: 1.772566, y: 2.4676952}
   m_EdgeRadius: 0
 --- !u!212 &7238498264768633598
 SpriteRenderer:
@@ -88464,8 +88493,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.8071599, y: 1.7498553}
-  m_Size: {x: 2.7371898, y: 2.75534}
+  m_Offset: {x: 0.7493543, y: 0.57376456}
+  m_Size: {x: 2.4319823, y: 2.110414}
   m_Direction: 1
 --- !u!114 &8443279289337517589
 MonoBehaviour:

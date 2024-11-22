@@ -15,6 +15,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             manager.thaniaHealth.immune = true;
             if (!manager.jumpManager.grounded) { manager.isBreaking = true; }
             manager.thaniaMovement.anim.animator.SetTrigger("RockStart");
+            mySkills.primaryHasExecuted = true;
 
             manager.ExecuteUntilTrue(() => manager.jumpManager.grounded, () =>
             {
@@ -45,13 +46,22 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                     // desactivar la habilidad
                     manager.thaniaMovement.anim.animator.SetTrigger("RockEnd");
                     Debug.Log("se desactivo");
-                    manager.thaniaMovement.rb.gravityScale = 2;
-                    manager.thaniaHealth.immune = false;
-                    manager.SetColliderAction(mySkills, false);
-                    manager.isBreaking=false;
 
-                    manager.thaniaMovement.canMove = true;
-                    manager.jumpManager.canMove = true;
+
+                    this.WaitAndThen(timeToWait: 0.25f, () =>
+                    {
+                        manager.thaniaMovement.rb.gravityScale = 2;
+                        manager.thaniaHealth.immune = false;
+                        manager.SetColliderAction(mySkills, false);
+                        manager.isBreaking = false;
+
+                        manager.thaniaMovement.canMove = true;
+                        manager.jumpManager.canMove = true;
+
+                        mySkills.primaryHasExecuted = false;
+                    },
+                    cancelCondition: () => false);
+
                 },
                 cancelCondition: () => false);
 
@@ -60,39 +70,49 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
 
         mySkills.secondaryExecute = (manager) =>
         {
-            manager.thaniaMovement.anim.animator.SetTrigger("AttackTrigger");
-            manager.thaniaMovement.StopMoving();
-            manager.thaniaMovement.rb.gravityScale = 7;
             var sprite = manager.sprites[manager._currentSprite];
 
-            if(sprite.normalCollider && sprite.altCollider)
+            if (!manager.jumpManager.anim.jumped)
             {
-                sprite.normalCollider.enabled = false;
-                sprite.altCollider.enabled = true;
+                manager.thaniaMovement.anim.animator.SetTrigger("AttackTrigger");
+                manager.thaniaMovement.StopMoving();
+                manager.thaniaMovement.rb.gravityScale = 7;
+                mySkills.secondaryHasExecuted = true;
+
+                if (sprite.normalCollider && sprite.altCollider)
+                {
+                    sprite.normalCollider.enabled = false;
+                    sprite.altCollider.enabled = true;
+                }
+
+                manager.SetColliderAction(mySkills, true, SkillSlot.primary);
+
+                manager.ExecuteUntil(timeLimit: mySkills.secondaryCooldown, () =>
+                {
+                    var dir = (manager.thaniaMovement.isFacingRight) ? Vector2.right : Vector2.left;
+                    var jump = (manager.jumpManager.anim.jumped)
+                                ? new Vector2(0, manager.jumpManager.jumpForce)
+                                : Vector2.zero;
+
+                    manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime + jump;
+
+                    manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * manager.thaniaMovement.rb.gravityScale);
+
+
+                }, cancelCondition: 
+                () => manager.ExecuteIfCancelled(manager.thaniaMovement.touchingWall 
+                                                || (mySkills.primaryHasExecuted 
+                                                && manager.jumpManager.grounded), () =>
+                {
+                    Debug.Log("se choco"); ReturnToNormal();
+                }));
+
+                manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
+                {
+                    ReturnToNormal();
+                },
+                cancelCondition: () => false);
             }
-
-            manager.ExecuteUntil(timeLimit: mySkills.secondaryCooldown, () =>
-            {              
-                var dir = (manager.thaniaMovement.isFacingRight) ? Vector2.right : Vector2.left;
-                var jump = (manager.jumpManager.anim.jumped) 
-                            ? new Vector2(0, manager.jumpManager.jumpForce) 
-                            : Vector2.zero;
-
-                manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime + jump;
-
-                manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * manager.thaniaMovement.rb.gravityScale);
-
-
-            }, cancelCondition: () => manager.ExecuteIfCancelled(manager.thaniaMovement.touchingWall, () =>
-            {
-                Debug.Log("se choco"); ReturnToNormal();
-            }));
-
-            manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
-            {
-                ReturnToNormal();
-            },
-            cancelCondition: () => false);
 
             void ReturnToNormal()
             {
@@ -105,6 +125,9 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                     sprite.normalCollider.enabled = true;
                     sprite.altCollider.enabled = false;
                 }
+
+                manager.SetColliderAction(mySkills, false, SkillSlot.primary);
+                mySkills.secondaryHasExecuted = false;
             }
         };
     }
