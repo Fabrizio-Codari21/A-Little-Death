@@ -6,12 +6,12 @@ public class Rope : MonoBehaviour, IInteractable
 {
     public Rigidbody2D counterweight;
 
-    public void PerformInteraction()
+    public void PerformInteraction(bool activate)
     {        
         gameObject.SetActive(false); // esto se reemplaza con animacion de romper la soga
         if (counterweight)
         {
-            counterweight.gameObject.layer = LayerMask.NameToLayer("Interactuable");
+            counterweight.gameObject.tag = "Interactable";
             counterweight.simulated = true;
             Destroy(counterweight.gameObject, 1.5f);
         }

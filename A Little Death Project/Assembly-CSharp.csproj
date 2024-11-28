@@ -130,6 +130,7 @@
     <Compile Include="Assets\Scripts\Enemy\RoamingMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\Busto\BustSkills.cs" />
     <Compile Include="Assets\Scripts\Player\Dashes\BaseDash.cs" />
+    <Compile Include="Assets\Scripts\Button.cs" />
     <Compile Include="Assets\Scripts\TutorialColliders.cs" />
     <Compile Include="Assets\Scripts\Extras\AudioManager.cs" />
     <Compile Include="Assets\Scripts\TutorialBox.cs" />

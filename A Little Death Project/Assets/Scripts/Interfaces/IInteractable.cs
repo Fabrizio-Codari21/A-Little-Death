@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void PerformInteraction();
+    public void PerformInteraction(bool activate);
 }
