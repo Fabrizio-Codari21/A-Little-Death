@@ -18,5 +18,11 @@ public class GorgonProjectile : MonoBehaviour
             interactable.PerformInteraction(true);
             OnImpact();
         }
+
+        if(collision.gameObject.tag == "Player")
+        {
+            collision.GetComponentInParent<ThaniaHealth>().Damage(gameObject, 1);
+            Destroy(gameObject);
+        }
     }
 }

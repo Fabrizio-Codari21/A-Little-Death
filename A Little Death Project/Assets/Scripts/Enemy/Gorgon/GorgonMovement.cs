@@ -11,7 +11,9 @@ public class GorgonMovement : FreeRoamMovement
 
     public float cooldown;
     public ThaniaHealth player;
-    public GameObject projectile;
+    public GameObject aimPivot;
+    public GorgonProjectile projectile;
+    public float shootingPower;
 
     //public Animator animator;
 
@@ -29,9 +31,9 @@ public class GorgonMovement : FreeRoamMovement
             canSeePlayer = Physics2D.OverlapBox(transform.position + new Vector3(LOSOffset.x, LOSOffset.y, 0), LOS, 0, playerLayer);
         }
 
-        cooldown -= Time.deltaTime;
+        if(cooldown > 0 && !spitting) cooldown -= Time.deltaTime;
 
-        if (canMove)
+        if (cooldown <= 0 && canMove)
         {
             if (!canSeePlayer)
             {
@@ -42,9 +44,9 @@ public class GorgonMovement : FreeRoamMovement
                 Rigidbody2D body = GetComponent<Rigidbody2D>();
                 body.velocity = Vector2.zero; 
                 //FlipToPlayer();
-                if (cooldown < 0)
+                if (cooldown <= 0)
                 {
-                    //Spit
+                    Spit();
                 }
             }
         }
@@ -66,6 +68,59 @@ public class GorgonMovement : FreeRoamMovement
         {
             base.Flip();
         }
+    }
+
+    bool spitting = false;
+    public void Spit()
+    {
+        cooldown = 1;
+        spitting = true;
+        print("spitting: " + cooldown);
+
+        var dir = facingRight
+                  ? transform.right
+                  : transform.right * -1;
+
+        aimPivot.SetActive(true);
+
+        this.ExecuteUntil(timeLimit: 1f, () =>
+        {
+            dir = player.transform.position - transform.position;
+            aimPivot.transform.LookAt(player.transform.position);
+            aimPivot.transform.Rotate(new Vector3(0,-90,0));
+        });
+
+
+        this.WaitAndThen(timeToWait: 1.2f, () =>
+        {
+            var proj = Instantiate(projectile.gameObject,
+                                   aimPivot.transform.position,
+                                   Quaternion.identity).
+                                   GetComponent<GorgonProjectile>();
+
+            if (proj != default)
+            {
+                proj.GetComponent<Rigidbody2D>().AddForce(dir * shootingPower * 25);
+                proj.skillManager = player.GetComponent<PlayerSkillManager>();
+                proj.OnImpact = () =>
+                {
+                    proj.skillManager.SetColliderAction(GetComponent<CharacterSkillSet>(), false, SkillSlot.primary);
+                    Destroy(proj.gameObject, 0.02f);
+                };
+            }
+            else Debug.Log("There is no projectile.");
+
+
+            spitting = false;
+            aimPivot.SetActive(false);
+
+            //this.ExecuteUntil(timeLimit: 1f, () =>
+            //{
+            //    cooldown -= Time.fixedDeltaTime;
+            //});
+
+        },
+        cancelCondition: () => false);
     }
 
     private void OnDrawGizmos()
