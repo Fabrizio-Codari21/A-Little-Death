@@ -49,12 +49,20 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
 
                 var projectile = (mySkills.primarySpawn) ? Instantiate(mySkills.primarySpawn,
                                                             mySkills.primaryOrigin.position,
-                                                            mySkills.primaryOrigin.rotation)
+                                                            mySkills.primaryOrigin.rotation).
+                                                            GetComponent<GorgonProjectile>()
                                                          :  default;
 
-                if (projectile != default) projectile.GetComponent<Rigidbody2D>().
-                                                      AddForce(dir * mySkills.primaryDistance * 100);
-                
+                if (projectile != default)
+                { 
+                    projectile.GetComponent<Rigidbody2D>().AddForce(dir * mySkills.primaryDistance * 100);
+                    projectile.skillManager = manager;
+                    projectile.OnImpact = () =>
+                    {
+                        manager.SetColliderAction(mySkills, false, SkillSlot.primary);
+                        Destroy(projectile.gameObject, 0.02f);
+                    };
+                }
                 else Debug.Log("There is no projectile.");
 
                 mySkills.primaryHasExecuted = false;
