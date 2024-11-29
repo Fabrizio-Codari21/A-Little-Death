@@ -76,7 +76,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             {
                 manager.thaniaMovement.anim.animator.SetTrigger("AttackTrigger");
                 manager.thaniaMovement.StopMoving();
-                manager.thaniaMovement.rb.gravityScale = 7;
+                manager.thaniaMovement.rb.gravityScale = 4;
                 mySkills.secondaryHasExecuted = true;
 
                 if (sprite.normalCollider && sprite.altCollider)
@@ -89,14 +89,14 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
 
                 manager.ExecuteUntil(timeLimit: mySkills.secondaryCooldown, () =>
                 {
-                    var dir = (manager.thaniaMovement.isFacingRight) ? Vector2.right : Vector2.left;
-                    var jump = (manager.jumpManager.anim.jumped)
-                                ? new Vector2(0, manager.jumpManager.jumpForce)
-                                : Vector2.zero;
+                    var dir = (manager.thaniaMovement.isFacingRight) ? 1 : -1;
+                    //var jump = (manager.jumpManager.anim.jumped)
+                    //            ? new Vector2(0, manager.jumpManager.jumpForce)
+                    //            : Vector2.zero;
 
-                    manager.thaniaMovement.rb.velocity = dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime + jump;
+                    manager.thaniaMovement.rb.velocity = new Vector2(dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime, manager.thaniaMovement.rb.velocity.y);
 
-                    manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * manager.thaniaMovement.rb.gravityScale);
+                    //manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * manager.thaniaMovement.rb.gravityScale);
 
 
                 }, cancelCondition: 

@@ -55,6 +55,7 @@ public class JumpManager : EntityMovement
                 {
                     anim.jumped = true;
                     jumpSound.Play();
+                    Debug.Log("salto");
                     CreateDust();
                     rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                 }
