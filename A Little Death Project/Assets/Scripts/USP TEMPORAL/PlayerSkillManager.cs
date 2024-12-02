@@ -253,6 +253,7 @@ public class PlayerSkillManager : MonoBehaviour
 
         // Despues habria que mejorar esto
         jumpManager.dJump = false;
+        jumpManager.canMove = true;
 
         defaultSkills.DefineSkills(sk.baseSkills);
         BuildSkillSet(sk.baseSkills.primarySkill, sk.baseSkills.secondarySkill);

@@ -17,11 +17,9 @@ public class Button : MonoBehaviour, IInteractable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if((collision.gameObject.tag == "Interactable" || collision.gameObject.tag == "Player"))
+        if (collision.gameObject.tag == "Interactable")//|| collision.gameObject.tag == "Player"))
         {
             PerformInteraction(!activated);
         }
-
     }
-
 }
