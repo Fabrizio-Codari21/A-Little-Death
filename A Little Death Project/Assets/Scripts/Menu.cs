@@ -23,7 +23,7 @@ public class Menu : MonoBehaviour
         if (this.Inputs(MyInputs.Secret1))
         {
             var next = SceneManager.GetActiveScene().buildIndex + 1;
-            if (next is 1 or 2 or 3 or 4)
+            if (next is 1 or 2 or 3 or 4 or 5)
             {
                 StartCoroutine(waitForTransition("Level " + next.ToString()));
             }
@@ -32,7 +32,7 @@ public class Menu : MonoBehaviour
 
     public void Play(int levelToLoad)
     {
-        if (levelToLoad is 1 or 2 or 3 or 4)
+        if (levelToLoad is 1 or 2 or 3 or 4 or 5)
         {
             for (int i = 0; i < SaveManager.allSaves.Length; i++)
             {

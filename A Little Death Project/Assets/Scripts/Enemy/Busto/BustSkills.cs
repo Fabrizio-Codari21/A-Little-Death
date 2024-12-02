@@ -94,7 +94,8 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                     //            ? new Vector2(0, manager.jumpManager.jumpForce)
                     //            : Vector2.zero;
 
-                    manager.thaniaMovement.rb.velocity = new Vector2(dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime, manager.thaniaMovement.rb.velocity.y);
+                    manager.thaniaMovement.rb.velocity = new Vector2(dir * (mySkills.secondaryEffectAmount * 100) * Time.fixedDeltaTime, 
+                                                                     manager.thaniaMovement.rb.velocity.y);
 
                     //manager.thaniaMovement.rb.velocity += (Vector2.down * 0.98f * manager.thaniaMovement.rb.gravityScale);
 
