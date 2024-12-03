@@ -83,4 +83,10 @@ public class AnimationManager : MonoBehaviour
     {
         manager.EndAnimationDesposession();
     }
+
+    public void DontRoll()
+    {
+        animator.ResetTrigger("RockStart");
+        animator.ResetTrigger("RockEnd");
+    }
 }

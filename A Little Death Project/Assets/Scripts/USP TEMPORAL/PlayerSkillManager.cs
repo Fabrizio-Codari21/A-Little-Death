@@ -189,6 +189,7 @@ public class PlayerSkillManager : MonoBehaviour
         // Esto tambien habria que mejorarlo
         if (victim.secondarySkillType == SkillType.DeerSecondary) skillUI.FuerzaDash();
         if (victim.secondarySkillType == SkillType.HarpySecondary) skillUI.AlasDash();
+        if (victim.secondarySkillType == SkillType.BustSecondary) skillUI.Busto();
 
         _currentSprite = newAppearance;
         _possessingTime = possessTime;

@@ -7,6 +7,7 @@ public class HabilityUI : MonoBehaviour
     public void AlasDash()
     {
         //Debug.Log("Alas en Dash");
+        transform.GetChild(5).gameObject.SetActive(false);
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(true);
     }
@@ -14,6 +15,7 @@ public class HabilityUI : MonoBehaviour
     public void FuerzaDash()
     {
         //Debug.Log("Fuerza en Dash");
+        transform.GetChild(5).gameObject.SetActive(false);
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(false);
     }
@@ -21,6 +23,7 @@ public class HabilityUI : MonoBehaviour
     public void AlasAtaque()
     {
         //Debug.Log("Alas en Ataque");
+        transform.GetChild(5).gameObject.SetActive(false);
         transform.GetChild(2).gameObject.SetActive(true);
     }
 
@@ -29,5 +32,17 @@ public class HabilityUI : MonoBehaviour
         //Debug.Log("Nada en Dash");
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(false);
+        transform.GetChild(4).gameObject.SetActive(false);
+        transform.GetChild(5).gameObject.SetActive(true);
+    }
+    
+    public void Busto()
+    {
+        //Debug.Log("Nada en Dash");
+        transform.GetChild(5).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(true);
+        transform.GetChild(4).gameObject.SetActive(true);
     }
 }
