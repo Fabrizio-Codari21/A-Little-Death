@@ -24,14 +24,16 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
             {
                 mySkills.primaryHasExecuted = true;
                 mySkills.primaryOrigin.gameObject.SetActive(true);
-                manager.ExecuteUntil(timeLimit: mySkills.primaryCooldown, () =>
-                {
-                    if (mySkills.primaryOrigin.rotation.eulerAngles.z >= 60) rot = new Vector3(0, 0, -1f);
-                    else if (mySkills.primaryOrigin.rotation.eulerAngles.z <= 0) rot = new Vector3(0, 0, 1f);
 
-                    mySkills.primaryOrigin.Rotate(rot);
 
-                }, cancelCondition: () => !mySkills.primaryHasExecuted);
+                //manager.ExecuteUntil(timeLimit: mySkills.primaryCooldown, () =>
+                //{
+                //    if (mySkills.primaryOrigin.rotation.eulerAngles.z >= 60) rot = new Vector3(0, 0, -1f);
+                //    else if (mySkills.primaryOrigin.rotation.eulerAngles.z <= 0) rot = new Vector3(0, 0, 1f);
+
+                //    mySkills.primaryOrigin.Rotate(rot);
+
+                //}, cancelCondition: () => !mySkills.primaryHasExecuted);
 
                 manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
                 {
