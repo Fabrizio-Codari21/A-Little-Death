@@ -28085,7 +28085,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567820306958812638, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624110268073517172, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0aa81ccd48956a8489b17d9ed4c1de18, type: 3}
+    - target: {fileID: 1994441770824830281, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994441770824830281, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2749319050118520076, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28127,6 +28139,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2806336620953865065, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Size.x
+      value: 5.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806336620953865065, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Size.y
+      value: 7.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806336620953865065, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806336620953865065, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.y
+      value: -3.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806336620953865065, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 20.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806336620953865065, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 18.534687
+      objectReference: {fileID: 0}
+    - target: {fileID: 3143748275603996762, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3270545340795847862, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: normalCollider
+      value: 
+      objectReference: {fileID: 1290298635}
     - target: {fileID: 3453184503941243488, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: menu
       value: 
@@ -28135,6 +28179,30 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 280208435}
+    - target: {fileID: 3800721378252679722, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Size.x
+      value: 5.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800721378252679722, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Size.y
+      value: 11.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800721378252679722, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800721378252679722, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.y
+      value: -1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800721378252679722, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 20.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3800721378252679722, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 18.534687
+      objectReference: {fileID: 0}
     - target: {fileID: 3830757537684299972, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: skillUI
       value: 
@@ -28159,6 +28227,26 @@ PrefabInstance:
       propertyPath: checkpointOne
       value: 
       objectReference: {fileID: 1439470031}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.x
+      value: -1.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 20.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7078700638445669618, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 18.534687
+      objectReference: {fileID: 0}
     - target: {fileID: 8694603768692714798, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: audioManager
       value: 
@@ -36961,6 +37049,11 @@ PrefabInstance:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3234662058145016666, guid: c06b53564b00b1b4ba1626853c637536, type: 3}
   m_PrefabInstance: {fileID: 1277613627}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1290298635 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3800721378252679722, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+  m_PrefabInstance: {fileID: 651881018}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1294340068
 PrefabInstance:
@@ -47225,8 +47318,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.02369976, y: -0.1573, z: 0}
-    m_Extent: {x: 24.310902, y: 9.1932, z: 0}
+    m_Center: {x: 0.02614975, y: -0.1527996, z: 0}
+    m_Extent: {x: 24.30625, y: 9.203, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
