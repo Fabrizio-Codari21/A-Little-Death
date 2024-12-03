@@ -11,6 +11,7 @@ public class GorgonMovement : FreeRoamMovement
 
     public float cooldown;
     public ThaniaHealth player;
+    public GorgonHealth gorgonHealth;
     public GameObject aimPivot;
     public GorgonProjectile projectile;
     public float shootingPower;
@@ -84,14 +85,21 @@ public class GorgonMovement : FreeRoamMovement
         aimPivot.SetActive(true);
 
         this.ExecuteUntil(timeLimit: 1f, () =>
-        {
+        {           
             dir = player.transform.position - transform.position;
             aimPivot.transform.LookAt(player.transform.position);
             aimPivot.transform.Rotate(new Vector3(0,-90,0));
-        });
+
+        }, cancelCondition: () => this.ExecuteIfCancelled(gorgonHealth.currentHealth <= 0, () =>
+        {
+            spitting = false;
+            aimPivot.SetActive(false);
+            cooldown = 99999;
+        }));
 
 
-        this.WaitAndThen(timeToWait: 1.2f, () =>
+
+        this.WaitAndThen(timeToWait: 1.4f, () =>
         {
             var proj = Instantiate(projectile.gameObject,
                                    aimPivot.transform.position,
@@ -119,8 +127,12 @@ public class GorgonMovement : FreeRoamMovement
             //    cooldown -= Time.fixedDeltaTime;
             //});
 
-        },
-        cancelCondition: () => false);
+        }, cancelCondition: () => this.ExecuteIfCancelled(gorgonHealth.currentHealth <= 0, () =>
+        {
+            spitting = false;
+            aimPivot.SetActive(false);
+            cooldown = 99999;
+        }));
     }
 
     private void OnDrawGizmos()

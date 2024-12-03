@@ -295,6 +295,7 @@ MonoBehaviour:
     m_Bits: 256
   cooldown: 1
   player: {fileID: 914536165}
+  gorgonHealth: {fileID: 10368613}
   aimPivot: {fileID: 1233394437}
   projectile: {fileID: -7222859923032879558, guid: 6ce063abe162838488c44e1cff672c11, type: 3}
   shootingPower: 8
@@ -84492,8 +84493,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.023949623, y: -0.15195036, z: 0}
-    m_Extent: {x: 24.30915, y: 9.19735, z: 0}
+    m_Center: {x: 0.031150818, y: -0.14944983, z: 0}
+    m_Extent: {x: 24.31205, y: 9.199551, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
