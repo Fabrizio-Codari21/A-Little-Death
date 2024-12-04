@@ -18,6 +18,10 @@ public class GorgonProjectile : MonoBehaviour
             interactable.PerformInteraction(true);
             OnImpact();
         }
+        else if(interactable != null)
+        {
+            Destroy(gameObject);
+        }
 
         if(collision.gameObject.tag == "Player")
         {
