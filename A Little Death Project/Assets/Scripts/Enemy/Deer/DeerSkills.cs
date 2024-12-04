@@ -36,6 +36,7 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
                     move.anim.attacked = true;
                     mySkills.secondaryHasExecuted = true;
                     move.isDashing = true;
+                    manager.jumpManager.canMove = false;
 
                     float originalGravity = rb.gravityScale;
                     rb.gravityScale = 0f;
@@ -46,6 +47,7 @@ public class DeerSkills : MonoBehaviour, ISkillDefiner
                     rb.gravityScale = originalGravity;
                     manager.SetColliderAction(mySkills, false);
                     move.isDashing = false;
+                    manager.jumpManager.canMove = true;
 
                     yield return new WaitForSeconds(mySkills.secondaryCooldown);
 

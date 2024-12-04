@@ -28,15 +28,24 @@ public class BustoMovement : FreeRoamMovement
 
     public bool canRoll;
 
+    Collider2D myColliderA;
+    Collider2D myColliderB;
     private void Awake()
     {
         canMove = false;
+        myColliderA = GetComponent<CircleCollider2D>();
+        myColliderB = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
         touchingGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-        touchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.8f, groundLayer);
+
+        Collider2D foundWall = Physics2D.OverlapCircle(wallCheck.position, 0.8f, groundLayer);
+        touchingWall = (foundWall != myColliderA && foundWall != myColliderB && foundWall != null);
+
+        //touchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.8f, groundLayer);
+
         grounded = Physics2D.OverlapBox(transform.position, boxSize, 0, groundedLayer);
         canSeePlayer = Physics2D.OverlapBox(transform.position, LOS, 0, playerLayer);
         

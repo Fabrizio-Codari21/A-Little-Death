@@ -28759,6 +28759,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3078446126167495855, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3453184503941243488, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: menu
       value: 
@@ -28783,10 +28787,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thania
       objectReference: {fileID: 0}
+    - target: {fileID: 4643223729172618066, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4643223729172618066, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4683047887223476869, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: checkpointOne
       value: 
       objectReference: {fileID: 1439470031}
+    - target: {fileID: 7252664548962173693, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: primaryDistance
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7252664548962173693, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: primaryEffectAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8694603768692714798, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: audioManager
       value: 
@@ -84890,8 +84910,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.027999878, y: -0.15350008, z: 0}
-    m_Extent: {x: 24.3146, y: 9.189301, z: 0}
+    m_Center: {x: 0.018650055, y: -0.15334988, z: 0}
+    m_Extent: {x: 24.31595, y: 9.20465, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
