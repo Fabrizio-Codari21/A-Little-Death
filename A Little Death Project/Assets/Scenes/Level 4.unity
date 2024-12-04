@@ -28085,7 +28085,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 567820306958812638, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1624110268073517172, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Sprite
@@ -28165,7 +28165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3143748275603996762, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3270545340795847862, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: normalCollider
@@ -47318,8 +47318,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.02614975, y: -0.1527996, z: 0}
-    m_Extent: {x: 24.30625, y: 9.203, z: 0}
+    m_Center: {x: 0.022850037, y: -0.15500021, z: 0}
+    m_Extent: {x: 24.31585, y: 9.1985, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
