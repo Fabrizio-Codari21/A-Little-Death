@@ -24,5 +24,9 @@ public class GorgonProjectile : MonoBehaviour
             collision.GetComponentInParent<ThaniaHealth>().Damage(gameObject, 1);
             Destroy(gameObject);
         }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -31210,11 +31210,11 @@ Transform:
   m_GameObject: {fileID: 1065531297}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.470478, y: 45.825703, z: 13.075941}
-  m_LocalScale: {x: 76.92201, y: 22.289587, z: 0.7235822}
+  m_LocalPosition: {x: 138.59018, y: 66.09361, z: 0}
+  m_LocalScale: {x: 139.27199, y: 81.26, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4369620861550414433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1065531299
 SpriteRenderer:
@@ -47221,8 +47221,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.021900177, y: -0.15910006, z: 0}
-    m_Extent: {x: 24.3129, y: 9.199301, z: 0}
+    m_Center: {x: 0.023400307, y: -0.15390015, z: 0}
+    m_Extent: {x: 24.311699, y: 9.1943, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
@@ -85940,11 +85940,11 @@ Transform:
   m_GameObject: {fileID: 2090390078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -53.08039, y: 46.1, z: 13.075941}
-  m_LocalScale: {x: 76.92201, y: 22.289587, z: 0.7235822}
+  m_LocalPosition: {x: -0.009802064, y: 67.09361, z: 0}
+  m_LocalScale: {x: 139.27199, y: 81.26, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 4369620861550414433}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2090390080
 SpriteRenderer:
@@ -87564,6 +87564,8 @@ Transform:
   - {fileID: 4648789259820233750}
   - {fileID: 8993164900827875548}
   - {fileID: 2145059227}
+  - {fileID: 2090390079}
+  - {fileID: 1065531298}
   m_Father: {fileID: 6102747977173590864}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4582168197533568301
@@ -88167,8 +88169,8 @@ Transform:
   m_GameObject: {fileID: 3661286185866055949}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.7, y: -13.2, z: 48.4}
-  m_LocalScale: {x: 0.6594807, y: 0.6594807, z: 0.6594807}
+  m_LocalPosition: {x: -11, y: -11.5, z: 44.629}
+  m_LocalScale: {x: 0.5545573, y: 0.5545573, z: 0.5545573}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3178073636273319737}
@@ -89099,8 +89101,6 @@ SceneRoots:
   - {fileID: 1336507046}
   - {fileID: 2126238069}
   - {fileID: 940190064}
-  - {fileID: 2090390079}
-  - {fileID: 1065531298}
   - {fileID: 108583289}
   - {fileID: 651881018}
   - {fileID: 2056240634}
