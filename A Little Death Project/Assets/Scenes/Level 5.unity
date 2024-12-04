@@ -38009,9 +38009,9 @@ GameObject:
   - component: {fileID: 1265995239}
   - component: {fileID: 1265995238}
   - component: {fileID: 1265995237}
-  m_Layer: 15
+  m_Layer: 7
   m_Name: Counterweight
-  m_TagString: Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84910,8 +84910,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.024299622, y: -0.1501503, z: 0}
-    m_Extent: {x: 24.3043, y: 9.19195, z: 0}
+    m_Center: {x: 0.027450562, y: -0.15024996, z: 0}
+    m_Extent: {x: 24.30765, y: 9.197149, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1

@@ -108,6 +108,14 @@ public class GorgonMovement : FreeRoamMovement
 
             if (proj != default)
             {
+                /*if (facingRight)
+                {
+                    proj.GetComponent<SpriteRenderer>().flipX = false;
+                }
+                else
+                {
+                    proj.GetComponent<SpriteRenderer>().flipX = true; 
+                }*/
                 proj.GetComponent<Rigidbody2D>().AddForce(dir * shootingPower * 25);
                 proj.skillManager = player.GetComponent<PlayerSkillManager>();
                 proj.OnImpact = () =>

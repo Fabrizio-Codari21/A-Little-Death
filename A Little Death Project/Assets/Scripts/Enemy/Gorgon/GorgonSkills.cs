@@ -56,8 +56,16 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                                                          :  default;
 
                 if (projectile != default)
-                { 
-                    projectile.GetComponent<Rigidbody2D>().AddForce(dir * mySkills.primaryDistance * 100);
+                {
+                    /*if (manager.thaniaMovement.isFacingRight)
+                    {
+                        projectile.GetComponent<SpriteRenderer>().flipX = false;
+                    }
+                    else
+                    {
+                        projectile.GetComponent<SpriteRenderer>().flipX = true; 
+                    }*/
+                    projectile.GetComponent<Rigidbody2D>().AddForceAtPosition(dir * mySkills.primaryDistance * 100, mySkills.primaryOrigin.position);
                     projectile.skillManager = manager;
                     projectile.OnImpact = () =>
                     {

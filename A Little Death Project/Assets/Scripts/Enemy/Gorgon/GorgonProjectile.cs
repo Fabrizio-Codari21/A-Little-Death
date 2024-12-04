@@ -7,6 +7,19 @@ public class GorgonProjectile : MonoBehaviour
 {
     [HideInInspector] public PlayerSkillManager skillManager;
     [HideInInspector] public Action OnImpact;
+    Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+    private void FixedUpdate()
+    {
+        float angelRad = Mathf.Atan2(rb.velocity.x, rb.velocity.y);
+        float angelDeg = (180/Mathf.PI) * angelRad - 90;
+
+        transform.rotation = Quaternion.Euler(0,0,-angelDeg);
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
