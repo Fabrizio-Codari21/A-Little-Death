@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -267,8 +267,8 @@ MonoBehaviour:
     y: 665
     width: 1425
     height: 322
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 20}
@@ -399,7 +399,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Art/PJs/Thania/Busto/Groundpound/Start/V2
+    - Assets/Art/PJs
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -407,16 +407,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Art/PJs/Thania/Busto/Groundpound/Start/V2
+  - Assets/Art/PJs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Martin\Desktop\School\Tesis\Github\A-Little-Death\A
     Little Death Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1584}
-    m_SelectedIDs: e2960000
-    m_LastClickedID: 38626
+    scrollPos: {x: 0, y: 431}
+    m_SelectedIDs: 9e910000
+    m_LastClickedID: 37278
     m_ExpandedIDs: 000000008a9100008c9100008e91000090910000929100009491000096910000989100009a9100009c9100009e910000a0910000a2910000a4910000a6910000a8910000aa910000ac910000ae910000b0910000b2910000b4910000b6910000b8910000ba910000bc910000be910000c0910000c2910000c4910000c6910000c8910000ca910000cc910000ce910000d0910000d2910000d4910000d6910000d8910000da910000dc910000de910000e0910000e2910000e4910000e6910000e8910000ea910000ec910000ee910000f0910000f2910000f4910000f6910000f8910000fa910000fc910000fe91000000920000029200000492000006920000089200000a9200000c9200003296000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -538,9 +538,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: f8f6ffff
-      m_LastClickedID: -2312
-      m_ExpandedIDs: eefaffffaa780000
+      m_SelectedIDs: 6274ffff
+      m_LastClickedID: -35742
+      m_ExpandedIDs: f4faffff0c9a00005ea400001ab900006cc30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -972,9 +972,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -60.68782, y: -6.0160766, z: 0.07243289}
+    m_Target: {x: 204.77275, y: 84.99, z: 0}
     speed: 2
-    m_Value: {x: -60.68782, y: -6.0160766, z: 0.07243289}
+    m_Value: {x: 204.77274, y: 84.98999, z: 0.0000000020491142}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1024,9 +1024,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 1.5662206
+    m_Target: 4.8605075
     speed: 2
-    m_Value: 1.5662206
+    m_Value: 4.8605075
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1476,7 +1476,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2312
+  m_LastSelectedObjectID: -35742
 --- !u!114 &22
 MonoBehaviour:
   m_ObjectHideFlags: 52
