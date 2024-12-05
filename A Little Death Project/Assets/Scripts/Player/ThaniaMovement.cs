@@ -11,6 +11,7 @@ public class ThaniaMovement : EntityMovement
     public float moveSpeed = 7f;
     public bool isFacingRight = true;
     public bool isDashing;
+    [HideInInspector] public bool isPossessing;
     public AnimationManager anim;
     public Transform checkpointOne;
 
@@ -37,7 +38,7 @@ public class ThaniaMovement : EntityMovement
         if(groundCheck) touchingGround = Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         if(wallCheck) touchingWall = Physics2D.OverlapBox(wallCheck.position, wallCheckSize, 0, groundLayer);
          
-        if (isDashing == false && canMove)
+        if (isDashing == false && isPossessing == false && canMove)
         {
             rb.velocity = new Vector2(direction * moveSpeed, rb.velocity.y);
             direction = Input.GetAxisRaw("Horizontal");
@@ -71,11 +72,11 @@ public class ThaniaMovement : EntityMovement
 
     }
 
-    private void Flip()
+    public void Flip(bool forceFlipping = false)
     {
         if (Time.timeScale > 0)
         {
-            if (isFacingRight && direction < 0f || !isFacingRight && direction > 0f)
+            if ((isFacingRight && direction < 0f || !isFacingRight && direction > 0f) || forceFlipping)
             {
                 Vector3 wheel = transform.GetChild(0).transform.localScale;
                 Vector3 wheel2 = transform.GetChild(1).transform.localScale;
