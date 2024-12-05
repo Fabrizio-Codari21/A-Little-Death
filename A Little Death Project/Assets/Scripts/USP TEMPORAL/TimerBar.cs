@@ -89,9 +89,9 @@ public class TimerBar : MonoBehaviour
 
         this.ExecuteUntil(timeLimit: maxTime, () =>
         {
-            dissolve.material.SetFloat("Vertical_Dissolve", Mathf.Lerp(1.1f,0,(timeLeft / maxTime)));
+            dissolve.material.SetFloat("DissolveAmount", Mathf.Lerp(1f,0,(timeLeft / maxTime)));
             //Shader.SetGlobalFloat("Vertical_Dissolve", 1.1f - (timeLeft/maxTime));
-            Debug.Log(1.1f - (timeLeft / maxTime));
+            Debug.Log(1f - (timeLeft / maxTime));
             
         });
 
