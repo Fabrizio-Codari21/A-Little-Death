@@ -93,6 +93,13 @@ public class PlayerSkillManager : MonoBehaviour
                 //transitionParticle.startColor = new Color(1, 0.5f, 0.25f);
                 //transitionParticle.Play();
 
+                thaniaMovement.isPossessing = true;
+                if (_victim.GetComponent<FreeRoamMovement>().facingRight != thaniaMovement.isFacingRight)
+                { 
+                    thaniaMovement.Flip(true);
+                    Debug.Log("se da vuelta");
+                }
+
                 this.WaitAndThen(1f, () =>
                 {
                     thaniaHealth.audioManager.possessionB.Play();
@@ -105,13 +112,14 @@ public class PlayerSkillManager : MonoBehaviour
                     _whilePossessing = WhilePossessing();
                     StartCoroutine(_whilePossessing);
                     possessionUI.gameObject.SetActive(true);
-                    scythePossessionIcon.gameObject.SetActive(true);
+                    if(scythePossessionIcon) scythePossessionIcon.gameObject.SetActive(true);
                     timerUI.maxTime = timerUI.timeLeft = _possessingTime;
                     timerUI.ActivateTimer(true);
                     _victim.GetComponent<PossessableHealth>().Die();
                     //thaniaMovement.canMove = true;
                     //jumpManager.canMove = true;
                     posesionSpeed = posesionSpeedBase;
+                    thaniaMovement.isPossessing = false;
                 });
             }
         }
@@ -243,7 +251,7 @@ public class PlayerSkillManager : MonoBehaviour
         //Instantiate(transitionParticle, new Vector2(transform.position.x, transform.position.y + 1), transform.rotation);
         thaniaMovement.anim.animator.SetTrigger("DESPOSESS");
         timerUI.UI.gameObject.SetActive(false);
-        scythePossessionIcon.gameObject.SetActive(false);
+        if (scythePossessionIcon) scythePossessionIcon.gameObject.SetActive(false);
     }
 
     public void EndAnimationDesposession()
