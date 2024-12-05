@@ -40,6 +40,7 @@ public class BreakableDoor : MonoBehaviour, IBreakable
         if (manager != null && manager.GetColliderAction() == ColliderAction.Break)
         {
             manager.jumpManager.anim.animator.SetTrigger("Stun");
+            manager.thaniaHealth.audioManager.wallBreak.Play();
             Break(manager.gameObject);
             Debug.Log($"{gameObject.name} was broken by {manager.sk.skills[1].skillType}");
         }

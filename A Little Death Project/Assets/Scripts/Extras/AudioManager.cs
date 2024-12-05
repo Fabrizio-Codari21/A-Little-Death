@@ -15,6 +15,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource groundPound;
     public AudioSource spit;
     public AudioSource wallHit;
-
+    public AudioSource wallBreak;
 
 }
