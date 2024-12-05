@@ -116,6 +116,7 @@ public class GorgonMovement : FreeRoamMovement
                 {
                     proj.GetComponent<SpriteRenderer>().flipX = true; 
                 }*/
+                player.audioManager.spit.Play();
                 proj.GetComponent<Rigidbody2D>().AddForce(dir * shootingPower * 25);
                 proj.skillManager = player.GetComponent<PlayerSkillManager>();
                 proj.OnImpact = () =>

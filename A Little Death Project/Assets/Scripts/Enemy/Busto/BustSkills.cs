@@ -16,6 +16,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
             if (!manager.jumpManager.grounded) { manager.isBreaking = true; }
             manager.thaniaMovement.anim.animator.SetTrigger("RockStart");
             mySkills.primaryHasExecuted = true;
+            manager.thaniaHealth.audioManager.groundDrop.Play();
 
             manager.ExecuteUntilTrue(() => manager.jumpManager.grounded, () =>
             {
@@ -40,6 +41,7 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                 Debug.Log("esta en el piso");
                 manager.thaniaMovement.StopMoving();
                 manager.jumpManager.canMove = false;
+                manager.thaniaHealth.audioManager.groundPound.Play();
 
                 manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
                 {
@@ -105,7 +107,9 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                                                 || (mySkills.primaryHasExecuted 
                                                 && manager.jumpManager.grounded), () =>
                 {
-                    Debug.Log("se choco"); ReturnToNormal();
+                    Debug.Log("se choco"); 
+                    manager.thaniaHealth.audioManager.wallHit.Play(); 
+                    ReturnToNormal();
                 }));
 
                 manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>

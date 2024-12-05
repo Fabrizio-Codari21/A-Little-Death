@@ -76,6 +76,7 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                     {
                         projectile.GetComponent<SpriteRenderer>().flipX = true; 
                     }*/
+                    manager.thaniaHealth.audioManager.spit.Play();
                     projectile.GetComponent<Rigidbody2D>().AddForceAtPosition(dir * mySkills.primaryDistance * 100, mySkills.primaryOrigin.position);
                     projectile.skillManager = manager;
                     projectile.OnImpact = () =>

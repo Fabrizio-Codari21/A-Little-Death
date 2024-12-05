@@ -80,7 +80,6 @@ public class PlayerSkillManager : MonoBehaviour
 
         if (onTarget == false && _isPossessing)
         {
-            Debug.Log("While");
             if (Vector2.Distance(transform.position, _victim.transform.position) >= 1)
             {
                 transform.position += (_victim.transform.position - transform.position) * posesionSpeed * Time.deltaTime; 
@@ -95,6 +94,7 @@ public class PlayerSkillManager : MonoBehaviour
 
                 this.WaitAndThen(1f, () =>
                 {
+                    thaniaHealth.audioManager.possessionB.Play();
                     sprites[PlayerAppearance.Soul].gameObject.SetActive(false);
                     sprites[_currentSprite].gameObject.SetActive(true);
                     defaultSkills.movement.anim = sprites[_currentSprite].animator;
@@ -195,6 +195,7 @@ public class PlayerSkillManager : MonoBehaviour
         _possessingTime = possessTime;
         //timerUI.maxTime = possessTime;
 
+        thaniaHealth.audioManager.possessionA.Play();
         sprites[PlayerAppearance.Thania].gameObject.SetActive(false);
         var cuerpo = Instantiate(cadaver, transform.position + new Vector3(1.66f, -1.2f, 0), Quaternion.identity);
         cuerpo.transform.localScale = transform.localScale;
@@ -245,6 +246,7 @@ public class PlayerSkillManager : MonoBehaviour
     {
         sprites[PlayerAppearance.Soul].gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 
+        thaniaHealth.audioManager.possessionB.Play();
         sprites[_currentSprite].gameObject.SetActive(false);
         sprites[PlayerAppearance.Thania].gameObject.SetActive(true);
         thaniaMovement.anim.baseFormAnimator.SetTrigger("DESPOSESS");

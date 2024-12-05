@@ -109,7 +109,8 @@ public class BustoMovement : FreeRoamMovement
 
     private void StopRoll()
     {
-       // cooldown = 2.5f;
+        // cooldown = 2.5f;
+        player.audioManager.wallHit.Play();
         canSeePlayer = false;
         canMove = false;
         rolling = false;
