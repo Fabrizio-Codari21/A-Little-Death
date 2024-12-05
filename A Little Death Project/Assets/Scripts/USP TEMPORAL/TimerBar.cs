@@ -14,6 +14,7 @@ public class TimerBar : MonoBehaviour
     public GameObject UI;
     public float borderEffectSpeed;
     public float slowDownTime;
+    public Shader dissolve;
 
     Color _invisible;
     Color _original;
@@ -85,6 +86,15 @@ public class TimerBar : MonoBehaviour
     {
         timerActive = active;
         timeLeft = maxTime;
+
+        this.ExecuteUntil(timeLimit: maxTime, () =>
+        {
+
+            Shader.SetGlobalFloat("Vertical_Dissolve", 1.1f - (timeLeft/maxTime));
+            Debug.Log(1.1f - (timeLeft / maxTime));
+            
+        });
+
         /*border.color = _original;
         _fadingIn = false;
         slowdown = borderEffectSpeed / (maxTime / 2);*/

@@ -23,6 +23,7 @@ public class PlayerSkillManager : MonoBehaviour
     public HabilityUI skillUI;
     public TimerBar timerUI;
     public GameObject possessionUI;
+    public GameObject scythePossessionIcon;
 
     [Header("POSSESSABLE CREATURE SPRITES")]
     public List<PlayerSprite> mySprites;
@@ -104,6 +105,7 @@ public class PlayerSkillManager : MonoBehaviour
                     _whilePossessing = WhilePossessing();
                     StartCoroutine(_whilePossessing);
                     possessionUI.gameObject.SetActive(true);
+                    scythePossessionIcon.gameObject.SetActive(true);
                     timerUI.maxTime = timerUI.timeLeft = _possessingTime;
                     timerUI.ActivateTimer(true);
                     _victim.GetComponent<PossessableHealth>().Die();
@@ -234,13 +236,14 @@ public class PlayerSkillManager : MonoBehaviour
     {
         skillUI.Default();
         timerUI.timeLeft = 0;
-        timerUI.ActivateTimer(false);
+        //timerUI.ActivateTimer(false);
         Instantiate(sprites[_currentSprite].soul, transform.position, Quaternion.Euler(270, 180, 0));
         //transitionParticle.startColor = Color.cyan;
         //transitionParticle.Play();
         //Instantiate(transitionParticle, new Vector2(transform.position.x, transform.position.y + 1), transform.rotation);
         thaniaMovement.anim.animator.SetTrigger("DESPOSESS");
         timerUI.UI.gameObject.SetActive(false);
+        scythePossessionIcon.gameObject.SetActive(false);
     }
 
     public void EndAnimationDesposession()
