@@ -45,4 +45,11 @@ public class HabilityUI : MonoBehaviour
         transform.GetChild(3).gameObject.SetActive(true);
         transform.GetChild(4).gameObject.SetActive(true);
     }
+    
+    public void Gorgona()
+    {
+        //Debug.Log("Nada en Dash");
+        transform.GetChild(5).gameObject.SetActive(false);
+        transform.GetChild(6).gameObject.SetActive(true);
+    }
 }
