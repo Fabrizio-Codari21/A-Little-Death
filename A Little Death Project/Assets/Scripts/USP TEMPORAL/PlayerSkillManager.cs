@@ -190,6 +190,7 @@ public class PlayerSkillManager : MonoBehaviour
         if (victim.secondarySkillType == SkillType.DeerSecondary) skillUI.FuerzaDash();
         if (victim.secondarySkillType == SkillType.HarpySecondary) skillUI.AlasDash();
         if (victim.secondarySkillType == SkillType.BustSecondary) skillUI.Busto();
+        if (victim.primarySkillType == SkillType.GorgonPrimary) skillUI.Gorgona();
 
         _currentSprite = newAppearance;
         _possessingTime = possessTime;
