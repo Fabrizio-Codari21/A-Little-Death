@@ -35,14 +35,25 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
 
                 //}, cancelCondition: () => !mySkills.primaryHasExecuted);
 
-                manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
+                var pivot = mySkills.primaryOrigin.GetComponent<GorgonPivot>();
+
+                manager.ExecuteAfterTrue(() => (pivot.counter >= 3 && mySkills.primaryHasExecuted), () =>
                 {
                     mySkills.primaryHasExecuted = false;
                     mySkills.primaryOrigin.gameObject.SetActive(false);
                     mySkills.primaryOrigin.rotation = Quaternion.identity;
                     manager.thaniaMovement.canMove = true;
-                },
-                cancelCondition: () => !mySkills.primaryHasExecuted);
+                    pivot.counter = 0;
+                });
+               
+                //manager.WaitAndThen(timeToWait: mySkills.primaryCooldown, () =>
+                //{
+                //    mySkills.primaryHasExecuted = false;
+                //    mySkills.primaryOrigin.gameObject.SetActive(false);
+                //    mySkills.primaryOrigin.rotation = Quaternion.identity;
+                //    manager.thaniaMovement.canMove = true;
+                //},
+                //cancelCondition: () => !mySkills.primaryHasExecuted);
 
             }
             else

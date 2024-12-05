@@ -28814,7 +28814,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1365663605620705485, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1795732228}
   m_SourcePrefab: {fileID: 100100000, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
 --- !u!114 &651881019 stripped
 MonoBehaviour:
@@ -78434,6 +78437,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1746422389}
   m_CullTransparentMesh: 1
+--- !u!1 &1746976277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1365663605620705485, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+  m_PrefabInstance: {fileID: 651881018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1764360610
 GameObject:
   m_ObjectHideFlags: 0
@@ -78808,6 +78816,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 663965430286298359, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
   m_PrefabInstance: {fileID: 651881018}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1795732228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746976277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bfee0c259519e4aa4faee55860c34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
 --- !u!1 &1805473370
 GameObject:
   m_ObjectHideFlags: 0
@@ -84910,8 +84931,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.027450562, y: -0.15024996, z: 0}
-    m_Extent: {x: 24.30765, y: 9.197149, z: 0}
+    m_Center: {x: 0.021299362, y: -0.15705013, z: 0}
+    m_Extent: {x: 24.3064, y: 9.19205, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
