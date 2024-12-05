@@ -7,7 +7,6 @@ public class FreeRoamMovement : EntityMovement
 {
     [SerializeField] float speed;
     protected float moveDirection = -1;
-    public bool facingRight = false;
     public Transform groundCheck;
     public Transform wallCheck;
     [SerializeField] public LayerMask groundLayer;

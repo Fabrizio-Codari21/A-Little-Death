@@ -5,6 +5,7 @@ using UnityEngine;
 public class EntityMovement : Spawnable
 {
     public bool canMove = true;
+    public bool facingRight;
 
     public void StopMoving()
     {

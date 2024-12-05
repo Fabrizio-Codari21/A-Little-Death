@@ -81,20 +81,21 @@ public class PlayerSkillManager : MonoBehaviour
 
         if (onTarget == false && _isPossessing)
         {
-            if (Vector2.Distance(transform.position, _victim.transform.position) >= 1)
+            if (Vector2.Distance(transform.position, _victim.transform.position) >= 0.2f)
             {
                 transform.position += (_victim.transform.position - transform.position) * posesionSpeed * Time.deltaTime; 
                 posesionSpeed *= 1.01f;
             }
             else
             {
+                transform.position = _victim.transform.position;
                 onTarget = true;
                 thaniaMovement.rb.isKinematic = false;
                 //transitionParticle.startColor = new Color(1, 0.5f, 0.25f);
                 //transitionParticle.Play();
 
                 thaniaMovement.isPossessing = true;
-                if (_victim.GetComponent<FreeRoamMovement>().facingRight != thaniaMovement.isFacingRight)
+                if (_victim.GetComponent<EntityMovement>().facingRight != thaniaMovement.isFacingRight)
                 { 
                     thaniaMovement.Flip(true);
                     Debug.Log("se da vuelta");

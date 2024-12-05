@@ -15,6 +15,7 @@ public class AnimationManager : MonoBehaviour
     public Animator baseFormAnimator;
     public bool attackEnded = true;
     public Color OriginalColor;
+    public GameObject gorgonPivot;
 
     private void Awake()
     {
@@ -88,5 +89,13 @@ public class AnimationManager : MonoBehaviour
     {
         animator.ResetTrigger("RockStart");
         animator.ResetTrigger("RockEnd");
+    }
+
+    public void AimPoison()
+    {
+        if (gorgonPivot)
+        {
+            gorgonPivot.SetActive(!gorgonPivot.activeInHierarchy);
+        }
     }
 }

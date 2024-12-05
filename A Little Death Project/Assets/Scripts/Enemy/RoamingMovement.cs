@@ -45,10 +45,12 @@ public class RoamingMovement : EntityMovement
         if (destination.x > transform.position.x)
         {
             scale.x = Mathf.Abs(scale.x) * -1;
+            facingRight = true;
         }
         else
         {
             scale.x = Mathf.Abs(scale.x);
+            facingRight = false;
         }
 
         transform.localScale = scale;

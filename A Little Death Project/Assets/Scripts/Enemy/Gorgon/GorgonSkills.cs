@@ -23,7 +23,8 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
             if (!mySkills.primaryHasExecuted)
             {
                 mySkills.primaryHasExecuted = true;
-                mySkills.primaryOrigin.gameObject.SetActive(true);
+                manager.thaniaMovement.anim.animator.SetTrigger("Aim");
+                //mySkills.primaryOrigin.gameObject.SetActive(true);
 
 
                 //manager.ExecuteUntil(timeLimit: mySkills.primaryCooldown, () =>
@@ -39,9 +40,9 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
 
                 manager.ExecuteAfterTrue(() => (pivot.counter >= 3 && mySkills.primaryHasExecuted), () =>
                 {
+                    manager.thaniaMovement.anim.animator.SetTrigger("Cancel"); 
                     mySkills.primaryHasExecuted = false;
-                    mySkills.primaryOrigin.gameObject.SetActive(false);
-                    mySkills.primaryOrigin.rotation = Quaternion.identity;
+                    //mySkills.primaryOrigin.rotation = Quaternion.identity;
                     manager.thaniaMovement.canMove = true;
                     pivot.counter = 0;
                 });
@@ -68,6 +69,8 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
 
                 if (projectile != default)
                 {
+                    manager.thaniaMovement.anim.animator.SetTrigger("Spit");
+
                     /*if (manager.thaniaMovement.isFacingRight)
                     {
                         projectile.GetComponent<SpriteRenderer>().flipX = false;
@@ -88,8 +91,8 @@ public class GorgonSkills : MonoBehaviour, ISkillDefiner
                 else Debug.Log("There is no projectile.");
 
                 mySkills.primaryHasExecuted = false;
-                mySkills.primaryOrigin.gameObject.SetActive(false);
-                mySkills.primaryOrigin.rotation = Quaternion.identity;
+                //mySkills.primaryOrigin.gameObject.SetActive(false);
+                //mySkills.primaryOrigin.rotation = Quaternion.identity;
                 manager.CanMove();
             }
 

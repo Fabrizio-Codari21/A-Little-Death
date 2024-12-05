@@ -16,7 +16,7 @@ public class GorgonMovement : FreeRoamMovement
     public GorgonProjectile projectile;
     public float shootingPower;
 
-    //public Animator animator;
+    public Animator animator;
 
     private void Update()
     {
@@ -74,6 +74,7 @@ public class GorgonMovement : FreeRoamMovement
     bool spitting = false;
     public void Spit()
     {
+        animator.SetTrigger("Attack");
         cooldown = 1;
         spitting = true;
         print("spitting: " + cooldown);
