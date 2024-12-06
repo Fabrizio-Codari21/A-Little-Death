@@ -112,8 +112,11 @@ public class PlayerSkillManager : MonoBehaviour
 
                     _whilePossessing = WhilePossessing();
                     StartCoroutine(_whilePossessing);
+
                     possessionUI.gameObject.SetActive(true);
-                    if(scythePossessionIcon) scythePossessionIcon.gameObject.SetActive(true);
+                    //if(scythePossessionIcon) scythePossessionIcon.gameObject.SetActive(true);
+                    if (sprites[_currentSprite].timerSoul) sprites[_currentSprite].timerSoul.SetActive(true);
+
                     timerUI.maxTime = timerUI.timeLeft = _possessingTime;
                     timerUI.ActivateTimer(true);
                     _victim.GetComponent<PossessableHealth>().Die();
@@ -251,8 +254,10 @@ public class PlayerSkillManager : MonoBehaviour
         //transitionParticle.Play();
         //Instantiate(transitionParticle, new Vector2(transform.position.x, transform.position.y + 1), transform.rotation);
         thaniaMovement.anim.animator.SetTrigger("DESPOSESS");
+
         timerUI.UI.gameObject.SetActive(false);
-        if (scythePossessionIcon) scythePossessionIcon.gameObject.SetActive(false);
+        //if (scythePossessionIcon) scythePossessionIcon.gameObject.SetActive(false);
+        if (sprites[_currentSprite].timerSoul) sprites[_currentSprite].timerSoul.SetActive(false);
     }
 
     public void EndAnimationDesposession()

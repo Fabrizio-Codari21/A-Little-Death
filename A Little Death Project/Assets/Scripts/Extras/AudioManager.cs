@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public List<AudioSource> Attacks = new();
 
-    public List<AudioSource> SFX = new();
+    public List<AudioSource> Hits = new();
 
     public AudioSource stunned;
     public AudioSource possessionA;

@@ -43,6 +43,7 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
             if (hits != false && manager.GetColliderAction() == ColliderAction.Damage)
             {
+                if (audioManager) audioManager.Hits[Random.Range(0, audioManager.Hits.Count - 1)].Play();
                 Debug.Log($"{mySkills.primarySkillType} dealt {mySkills.primaryEffectAmount} damage");
 
                 PossessableHealth damageable = hits.collider.gameObject.GetComponent<PossessableHealth>();

@@ -14,7 +14,7 @@ public class TimerBar : MonoBehaviour
     public GameObject UI;
     public float borderEffectSpeed;
     public float slowDownTime;
-    public SpriteRenderer dissolve;
+    public PlayerSkillManager manager;
 
     Color _invisible;
     Color _original;
@@ -27,6 +27,7 @@ public class TimerBar : MonoBehaviour
 
 
         timer = GetComponent<Image>();
+        manager = FindObjectOfType<PlayerSkillManager>();
         timeLeft = maxTime;
         UI.gameObject.SetActive(false);
     }
@@ -87,12 +88,13 @@ public class TimerBar : MonoBehaviour
         timerActive = active;
         timeLeft = maxTime;
 
-        this.ExecuteUntil(timeLimit: maxTime, () =>
+        var mat = manager.sprites[manager._currentSprite].timerSoul.GetComponent<SpriteRenderer>().material;
+
+        if(mat) this.ExecuteUntil(timeLimit: maxTime, () =>
         {
-        dissolve.material.SetFloat("DissolveAmount", Mathf.Lerp(0.95f, 0.2f, (timeLeft / maxTime)));
-        //Shader.SetGlobalFloat("Vertical_Dissolve", 1.1f - (timeLeft/maxTime));
-        Debug.Log(1f - (timeLeft / maxTime));
-        dissolve.material.SetFloat("Speed", Mathf.Lerp(10f,1.5f, (timeLeft / maxTime)));
+            mat.SetFloat("DissolveAmount", Mathf.Lerp(0.95f, 0.2f, (timeLeft / maxTime)));
+            //Shader.SetGlobalFloat("Vertical_Dissolve", 1.1f - (timeLeft/maxTime));
+            mat.SetFloat("Speed", Mathf.Lerp(10f, 1.5f, (timeLeft / maxTime)));
         });
 
 

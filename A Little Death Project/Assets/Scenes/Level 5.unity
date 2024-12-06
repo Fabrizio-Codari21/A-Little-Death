@@ -7699,6 +7699,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &296956041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2079809625067624232, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+  m_PrefabInstance: {fileID: 651881018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321704635
 GameObject:
   m_ObjectHideFlags: 0
@@ -13195,6 +13200,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &458645689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2008492299344905400, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+  m_PrefabInstance: {fileID: 651881018}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &464175108
 GameObject:
   m_ObjectHideFlags: 0
@@ -28721,12 +28731,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 386130079766746599, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: timerSoul
+      value: 
+      objectReference: {fileID: 458645689}
     - target: {fileID: 567820306958812638, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2015008566471426281, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2749319050118520076, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
@@ -28801,6 +28811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thania
       objectReference: {fileID: 0}
+    - target: {fileID: 4383624844470303454, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: timerSoul
+      value: 
+      objectReference: {fileID: 296956041}
     - target: {fileID: 4643223729172618066, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14
@@ -28827,10 +28841,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8380927874899616876, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8475344726018803925, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8694603768692714798, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
@@ -85129,8 +85139,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.028400421, y: -0.15379953, z: 0}
-    m_Extent: {x: 24.3109, y: 9.2033, z: 0}
+    m_Center: {x: 0.019599915, y: -0.14814997, z: 0}
+    m_Extent: {x: 24.3146, y: 9.193251, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1
