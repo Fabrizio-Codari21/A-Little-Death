@@ -28725,29 +28725,9 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 663965430286298359, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 663965430286298359, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365663605620705485, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2015008566471426281, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Enabled
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2134119701443586104, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.8314
-      objectReference: {fileID: 0}
-    - target: {fileID: 2134119701443586104, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.017
       objectReference: {fileID: 0}
     - target: {fileID: 2749319050118520076, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28793,10 +28773,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3244555858281387007, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3336500583964393484, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -28825,10 +28801,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thania
       objectReference: {fileID: 0}
-    - target: {fileID: 4291484108277206333, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4643223729172618066, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14
@@ -28845,10 +28817,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6371225157940212165, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: gorgonPivot
-      value: 
-      objectReference: {fileID: 995635587}
     - target: {fileID: 7252664548962173693, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: primaryDistance
       value: 2.25
@@ -32024,11 +31992,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &995635587 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1365663605620705485, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-  m_PrefabInstance: {fileID: 651881018}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &999074744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 219759348966310859, guid: b2ae12edbf3cec146ac10f88aa0244cb, type: 3}
@@ -85152,8 +85115,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.022899628, y: -0.15429974, z: 0}
-    m_Extent: {x: 24.3078, y: 9.1993, z: 0}
+    m_Center: {x: 0.021550179, y: -0.15960026, z: 0}
+    m_Extent: {x: 24.30935, y: 9.2007, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1

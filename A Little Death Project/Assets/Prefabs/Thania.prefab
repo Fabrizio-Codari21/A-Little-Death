@@ -131,6 +131,7 @@ MonoBehaviour:
   baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 1
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  gorgonPivot: {fileID: 0}
 --- !u!61 &8817554516090278058
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -221,7 +222,7 @@ Transform:
   m_GameObject: {fileID: 1365663605620705485}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2, y: 0.49, z: 0}
+  m_LocalPosition: {x: -0.04, y: 0.43, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -542,6 +543,7 @@ MonoBehaviour:
   baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 0
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  gorgonPivot: {fileID: 0}
 --- !u!114 &7312284875807472285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,7 +681,7 @@ Transform:
   m_GameObject: {fileID: 2529684155423577909}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.943, y: 0.02, z: 0}
+  m_LocalPosition: {x: 0.8314, y: -0.017, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1348,6 +1350,7 @@ MonoBehaviour:
   baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 1
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  gorgonPivot: {fileID: 0}
 --- !u!61 &3800721378252679722
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1633,6 +1636,7 @@ MonoBehaviour:
   baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 1
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  gorgonPivot: {fileID: 0}
 --- !u!114 &644169883335085290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7343,6 +7347,7 @@ MonoBehaviour:
   baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 0
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  gorgonPivot: {fileID: 1365663605620705485}
 --- !u!114 &2055641298264917712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27563,6 +27568,7 @@ MonoBehaviour:
   baseFormAnimator: {fileID: 5291872068752775122}
   attackEnded: 1
   OriginalColor: {r: 0, g: 0, b: 0, a: 0}
+  gorgonPivot: {fileID: 0}
 --- !u!1001 &1390282114676825396
 PrefabInstance:
   m_ObjectHideFlags: 0
