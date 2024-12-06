@@ -30,15 +30,18 @@ public class HabilityUI : MonoBehaviour
     public void Default()
     {
         //Debug.Log("Nada en Dash");
-        transform.GetChild(0).gameObject.SetActive(false);
-        transform.GetChild(1).gameObject.SetActive(false);
-        transform.GetChild(2).gameObject.SetActive(false);
-        transform.GetChild(3).gameObject.SetActive(false);
-        transform.GetChild(4).gameObject.SetActive(false);
-        transform.GetChild(5).gameObject.SetActive(true);
-        transform.GetChild(6).gameObject.SetActive(false);
+        if (transform.GetChild(0).gameObject) { transform.GetChild(0).gameObject.SetActive(false); }
+        if (transform.GetChild(1).gameObject) { transform.GetChild(1).gameObject.SetActive(false); }
+        if (transform.GetChild(2).gameObject) { transform.GetChild(2).gameObject.SetActive(false); }
+        if (transform.GetChild(3).gameObject)
+        {
+            transform.GetChild(3).gameObject.SetActive(false);
+        }
+        if(transform.GetChild(4).gameObject) { transform.GetChild(4).gameObject.SetActive(false); }
+        if(transform.GetChild(5).gameObject) { transform.GetChild(5).gameObject.SetActive(true); }
+        if(transform.GetChild(6).gameObject){transform.GetChild(6).gameObject.SetActive(false);}
     }
-    
+
     public void Busto()
     {
         //Debug.Log("Nada en Dash");

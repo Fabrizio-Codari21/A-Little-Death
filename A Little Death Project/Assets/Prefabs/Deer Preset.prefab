@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5282916324941508849}
   - component: {fileID: 2720234233846482254}
   - component: {fileID: 4817152987041468428}
+  - component: {fileID: 7602248737081040976}
   m_Layer: 6
   m_Name: Sprites
   m_TagString: Untagged
@@ -188,6 +189,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7602248737081040976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878933411425609405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f58f125d9fc74ca8e2d808eb59d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 0}
+  anim: {fileID: 4817152987041468428}
 --- !u!1 &4067276452488846464
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,8 +375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentSpawner: {fileID: 0}
   canMove: 1
-  speed: 4
   facingRight: 0
+  speed: 4
   groundCheck: {fileID: 7541336060568915786}
   wallCheck: {fileID: 636802330329035941}
   groundLayer:
@@ -384,6 +399,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  immune: 0
+  audioManager: {fileID: 0}
   canBePossessed: 0
   _skillManager: {fileID: 0}
   _animator: {fileID: 4817152987041468428}
@@ -418,6 +435,7 @@ MonoBehaviour:
     m_Bits: 0
   primaryColliderAction: 0
   primaryOrigin: {fileID: 0}
+  primarySpawn: {fileID: 0}
   primaryCooldown: 0
   primaryExecTime: 0
   primaryHasExecuted: 0
@@ -430,6 +448,7 @@ MonoBehaviour:
     m_Bits: 0
   secondaryColliderAction: 2
   secondaryOrigin: {fileID: 0}
+  secondarySpawn: {fileID: 0}
   secondaryCooldown: 0.5
   secondaryExecTime: 0
   secondaryHasExecuted: 0

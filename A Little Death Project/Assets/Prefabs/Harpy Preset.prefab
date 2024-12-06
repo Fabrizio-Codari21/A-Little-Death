@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 667414005413727797}
   - component: {fileID: 6429558052257034647}
   - component: {fileID: 6852644306105563988}
+  - component: {fileID: 8180112595068114815}
   m_Layer: 6
   m_Name: Sprites
   m_TagString: Untagged
@@ -269,7 +270,20 @@ MonoBehaviour:
   attacked: 0
   harpy: {fileID: 1507937835944336884}
   animator: {fileID: 6429558052257034647}
-  REFERENCIATEMPORAL: {fileID: 502392016675600772}
+--- !u!114 &8180112595068114815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2893020114931740424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3f58f125d9fc74ca8e2d808eb59d3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {fileID: 0}
+  anim: {fileID: 6429558052257034647}
 --- !u!1 &3527550949414860610
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,10 +571,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentSpawner: {fileID: 0}
   canMove: 1
+  facingRight: 0
   Waypoints:
   - {fileID: 3527550949414860610}
   - {fileID: 1236359585036526852}
   Speed: 7
+  thania: {fileID: 0}
   detected: 0
   rb: {fileID: 1127095682269720728}
   speedHunt: 800
@@ -580,6 +596,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 1
   currentHealth: 0
+  immune: 0
+  audioManager: {fileID: 0}
   canBePossessed: 0
   _skillManager: {fileID: 0}
   _animator: {fileID: 6429558052257034647}
@@ -697,6 +715,7 @@ MonoBehaviour:
     m_Bits: 64
   primaryColliderAction: 1
   primaryOrigin: {fileID: 0}
+  primarySpawn: {fileID: 0}
   primaryCooldown: 0.8
   primaryExecTime: 0
   primaryHasExecuted: 0
@@ -709,6 +728,7 @@ MonoBehaviour:
     m_Bits: 0
   secondaryColliderAction: 0
   secondaryOrigin: {fileID: 0}
+  secondarySpawn: {fileID: 0}
   secondaryCooldown: 0
   secondaryExecTime: 0
   secondaryHasExecuted: 0
