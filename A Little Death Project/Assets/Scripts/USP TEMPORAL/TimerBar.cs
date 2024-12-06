@@ -100,6 +100,16 @@ public class TimerBar : MonoBehaviour
         });
 
 
+        this.WaitAndThen(timeToWait: maxTime + 0.01f, () =>
+        {
+            mat.SetFloat("DissolveAmount", 0);
+            //Shader.SetGlobalFloat("Vertical_Dissolve", 1.1f - (timeLeft/maxTime));
+            mat.SetFloat("Speed", 1.5f);
+        },
+        cancelCondition: () => false);
+
+
+
         //this.WaitAndThen(timeToWait: maxTime - 1f, () =>
         //{
 
