@@ -75,8 +75,9 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
         {
             var sprite = manager.sprites[manager._currentSprite];
 
-            if (!manager.jumpManager.anim.jumped)
+            if (!manager.jumpManager.anim.jumped || mySkills.secondaryExecTime <= 0)
             {
+                mySkills.secondaryExecTime++;
                 manager.thaniaMovement.anim.animator.SetTrigger("AttackTrigger");
                 manager.thaniaMovement.StopMoving();
                 manager.thaniaMovement.rb.gravityScale = 4;
@@ -113,20 +114,26 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
                     ReturnToNormal();
                 }));
 
-                manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
+               /* manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
                 {
                     Debug.Log("TIMESUP");
-
                     ReturnToNormal();
                 },
                 cancelCondition: () => manager.thaniaMovement.touchingWall
-                                                || (mySkills.secondaryHasExecuted
-                                                && manager.jumpManager.grounded));
+                                                || mySkills.secondaryHasExecuted
+                                                );*/
             }
 
             void ReturnToNormal()
             {
-                manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
+                if (mySkills.primaryHasExecuted)
+                {
+                    manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
+                }
+                else
+                {
+                    manager.thaniaMovement.anim.animator.SetTrigger("PARALOCO");
+                }
                 //manager.thaniaMovement.canMove = true;
                 manager.thaniaMovement.rb.gravityScale = 2;
 
@@ -138,6 +145,12 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
 
                 manager.SetColliderAction(mySkills, false, SkillSlot.primary);
                 mySkills.secondaryHasExecuted = false;
+
+                manager.WaitAndThen(timeToWait: 1f, () =>
+                         {
+                             mySkills.secondaryExecTime = 0;
+                         },
+                         cancelCondition: () => false);
             }
         };
     }

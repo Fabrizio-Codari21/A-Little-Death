@@ -24,12 +24,13 @@ public class Spawnable : MonoBehaviour
 
         if (GetComponent<BustoMovement>())
         {
-            GetComponent<BustoMovement>().animator.SetTrigger("Reset");
+            GetComponent<BustoMovement>().animator.SetTrigger("Restart");
             GetComponent<BustoMovement>().canMove = false;
             GetComponent<BustoMovement>().hasActivated = false;
         }
         else
         {
+            Debug.Log("CANMOVE");
             GetComponent<EntityMovement>().canMove = true;
         }
 

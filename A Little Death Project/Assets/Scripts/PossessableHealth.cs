@@ -35,7 +35,11 @@ public class PossessableHealth : Health
         else return false;
     }
 
-    public void ResetHealth() => currentHealth = maxHealth;
+    public void ResetHealth() 
+    { 
+        currentHealth = maxHealth;
+        _animator.SetTrigger("Restart");
+    }
 
     public bool DamagePossessable(int damage, CharacterSkillSet victim, PlayerSkillManager skillManager, GameObject cartelTutorial = default)
     {
@@ -82,7 +86,7 @@ public class PossessableHealth : Health
 
         canBePossessed = false;
         StopCoroutine(_possessable);
-        _animator.SetTrigger("Reset");
+        _animator.SetTrigger("Restart");
         GetComponent<Spawnable>().OnDespawn();
 
         this.GetComponent<Collider2D>().enabled = true;

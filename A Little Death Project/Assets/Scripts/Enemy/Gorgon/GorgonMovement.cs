@@ -83,8 +83,6 @@ public class GorgonMovement : FreeRoamMovement
                   ? transform.right
                   : transform.right * -1;
 
-        //aimPivot.SetActive(true);
-
         this.ExecuteUntil(timeLimit: 1f, () =>
         {           
             dir = player.transform.position - transform.position;
@@ -95,7 +93,6 @@ public class GorgonMovement : FreeRoamMovement
         {
             spitting = false;
             aimPivot.SetActive(false);
-            cooldown = 99999;
         }));
 
         var healthNow = gorgonHealth.currentHealth;
@@ -143,10 +140,6 @@ public class GorgonMovement : FreeRoamMovement
         {
             spitting = false;
             aimPivot.SetActive(false);
-            if (gorgonHealth.currentHealth <= 0)
-            {
-                cooldown = 99999;
-            }
         }));
     }
 

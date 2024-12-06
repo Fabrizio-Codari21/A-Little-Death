@@ -10,7 +10,7 @@ public class Button : MonoBehaviour
     public void PerformInteraction(bool activate)
     {
         //animacion de que aparezca un puente, se abra una puerta, etc.
-        if(itemToTrigger) itemToTrigger.SetActive(activate);
+        if(itemToTrigger) itemToTrigger.SetActive(!itemToTrigger.activeInHierarchy);
         transform.position += new Vector3(0, 0.25f * (activate ? -1 : 1), 0);
         activated = activate;
     }

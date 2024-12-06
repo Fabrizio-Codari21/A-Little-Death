@@ -5,6 +5,7 @@ using UnityEngine;
 public class BustoAnim : MonoBehaviour
 {
     public BustoMovement movement;
+    public Animator anim;
 
     void startRoll()
     {
@@ -14,5 +15,11 @@ public class BustoAnim : MonoBehaviour
     void stopRoll()
     {
         movement.canRoll = false;
+    }
+
+    private void ResetAnim()
+    {
+        Debug.Log("Restart");
+        anim.ResetTrigger("Restart");
     }
 }
