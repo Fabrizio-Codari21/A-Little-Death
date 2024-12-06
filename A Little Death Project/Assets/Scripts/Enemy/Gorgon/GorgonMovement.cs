@@ -74,7 +74,7 @@ public class GorgonMovement : FreeRoamMovement
     bool spitting = false;
     public void Spit()
     {
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Aim");
         cooldown = 1;
         spitting = true;
         print("spitting: " + cooldown);
@@ -83,7 +83,7 @@ public class GorgonMovement : FreeRoamMovement
                   ? transform.right
                   : transform.right * -1;
 
-        aimPivot.SetActive(true);
+        //aimPivot.SetActive(true);
 
         this.ExecuteUntil(timeLimit: 1f, () =>
         {           
@@ -102,6 +102,8 @@ public class GorgonMovement : FreeRoamMovement
 
         this.WaitAndThen(timeToWait: 1.4f, () =>
         {
+            animator.SetTrigger("Attack");
+
             var proj = Instantiate(projectile.gameObject,
                                    aimPivot.transform.position,
                                    Quaternion.identity).

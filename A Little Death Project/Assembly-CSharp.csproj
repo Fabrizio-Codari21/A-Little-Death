@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Enemy\Deer\DeerSkills.cs" />
     <Compile Include="Assets\Scripts\CheckpointTexture.cs" />
     <Compile Include="Assets\Scripts\CreepersMenu.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Gorgon\GorgonAnimatorManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\Harpy\Harpy.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\Extras\Extensions.cs" />
