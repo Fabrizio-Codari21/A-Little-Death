@@ -25,9 +25,9 @@ public class TutorialManager : MonoBehaviour
 
         "El siguiente enemigo es de piedra, asi que no podrás dañarlo hasta que el mismo se aturda al embestirte.",
 
-        "Utiliza <b>Click Izquierdo</b> para caer contra el piso y <b>'Click Derecho'</b> para deslizarte sobre el.",
+        "Utiliza <b>Click Izquierdo</b> para caer contra el piso y <b>'Click Derecho'</b> para deslizarte sobre el y reducir tu tamaño",
 
-        "La gorgona intentará escupir veneno hacia tu posición, trata de engañarla.",
+        "La gorgona es poco ágil pero intentará escupir veneno corrosivo hacia tu posición, asi que trata de engañarla.",
 
         "Utiliza <b>Click Izquierdo</b> para apuntar y vuelve a presionarlo para escupir veneno",
     };
