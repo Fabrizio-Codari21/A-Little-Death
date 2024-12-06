@@ -115,15 +115,19 @@ public class BustSkills : MonoBehaviour, ISkillDefiner
 
                 manager.WaitAndThen(timeToWait: mySkills.secondaryCooldown, () =>
                 {
+                    Debug.Log("TIMESUP");
+
                     ReturnToNormal();
                 },
-                cancelCondition: () => false);
+                cancelCondition: () => manager.thaniaMovement.touchingWall
+                                                || (mySkills.secondaryHasExecuted
+                                                && manager.jumpManager.grounded));
             }
 
             void ReturnToNormal()
             {
                 manager.thaniaMovement.anim.animator.SetTrigger("FinishAttack");
-                manager.thaniaMovement.canMove = true;
+                //manager.thaniaMovement.canMove = true;
                 manager.thaniaMovement.rb.gravityScale = 2;
 
                 if (sprite.normalCollider && sprite.altCollider)

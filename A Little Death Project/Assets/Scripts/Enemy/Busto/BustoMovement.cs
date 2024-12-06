@@ -53,7 +53,7 @@ public class BustoMovement : FreeRoamMovement
 
         if (canMove)
         {
-            if ((!canSeePlayer && !rolling) /*|| cooldown > 0*/)
+            if ((!canSeePlayer && !rolling) || cooldown > 0)
             {
                 Debug.Log("PATROLLING");
                 Patrol();
@@ -109,17 +109,21 @@ public class BustoMovement : FreeRoamMovement
 
     private void StopRoll()
     {
-        // cooldown = 2.5f;
+        cooldown = 2.5f;
         player.audioManager.wallHit.Play();
         canSeePlayer = false;
         canMove = false;
         rolling = false;
         bustHealth.immune = false;
-        Flip();
 
         this.WaitAndThen(timeToWait: 1.33f, () =>
         {
-            canMove = true;
+            if (bustHealth.currentHealth > 0)
+            {
+                canMove = true;
+                Flip();
+            }
+            bustHealth.immune = true;
         },
         cancelCondition: () => false);
     }

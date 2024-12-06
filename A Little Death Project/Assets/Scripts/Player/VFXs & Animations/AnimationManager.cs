@@ -16,6 +16,7 @@ public class AnimationManager : MonoBehaviour
     public bool attackEnded = true;
     public Color OriginalColor;
     public GameObject gorgonPivot;
+    public BustSkills busto;
 
     private void Awake()
     {
@@ -89,6 +90,7 @@ public class AnimationManager : MonoBehaviour
     {
         animator.ResetTrigger("RockStart");
         animator.ResetTrigger("RockEnd");
+        thania.canMove = true;
     }
 
     public void AimPoison()
