@@ -359,8 +359,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.0415785, y: -1.5829246}
-  m_Size: {x: 3.4516947, y: 2.0899544}
+  m_Offset: {x: 2.0415785, y: -1.9176497}
+  m_Size: {x: 3.4516952, y: 1.420505}
   m_Direction: 1
 --- !u!114 &10368615
 MonoBehaviour:
@@ -7694,11 +7694,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &296956041 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2079809625067624232, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-  m_PrefabInstance: {fileID: 651881018}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321704635
 GameObject:
   m_ObjectHideFlags: 0
@@ -13195,11 +13190,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &458645689 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2008492299344905400, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-  m_PrefabInstance: {fileID: 651881018}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &464175108
 GameObject:
   m_ObjectHideFlags: 0
@@ -28726,36 +28716,8 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 386130079766746599, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: timerSoul
-      value: 
-      objectReference: {fileID: 458645689}
     - target: {fileID: 567820306958812638, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2081174159154366081, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 2081174159154366081, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 2081174159154366081, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 2081174159154366081, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2081174159154366081, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2081174159154366081, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2749319050118520076, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
@@ -28798,14 +28760,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3078446126167495855, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336500583964393484, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3453184503941243488, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: menu
       value: 
@@ -28814,10 +28768,6 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3830757537684299972, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: hitVFX
-      value: 
-      objectReference: {fileID: 4460011469358067606, guid: 685ca11d687c57d4bb2b03c4972526f6, type: 3}
     - target: {fileID: 3830757537684299972, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: skillUI
       value: 
@@ -28834,42 +28784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thania
       objectReference: {fileID: 0}
-    - target: {fileID: 4383624844470303454, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: timerSoul
-      value: 
-      objectReference: {fileID: 296956041}
-    - target: {fileID: 4643223729172618066, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 4643223729172618066, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 4683047887223476869, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: checkpointOne
       value: 
       objectReference: {fileID: 1439470031}
-    - target: {fileID: 6110102625730616674, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6657182584511578075, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252664548962173693, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: primaryDistance
-      value: 2.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7252664548962173693, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: primaryEffectAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8380927874899616876, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8694603768692714798, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: audioManager
       value: 
@@ -85166,8 +85084,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.029449463, y: -0.15770006, z: 0}
-    m_Extent: {x: 24.31185, y: 9.1956005, z: 0}
+    m_Center: {x: 0.02464962, y: -0.15490007, z: 0}
+    m_Extent: {x: 24.30745, y: 9.204599, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1

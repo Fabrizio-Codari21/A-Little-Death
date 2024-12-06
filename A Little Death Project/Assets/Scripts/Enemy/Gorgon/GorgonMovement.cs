@@ -98,7 +98,7 @@ public class GorgonMovement : FreeRoamMovement
             cooldown = 99999;
         }));
 
-
+        var healthNow = gorgonHealth.currentHealth;
 
         this.WaitAndThen(timeToWait: 1.4f, () =>
         {
@@ -139,11 +139,14 @@ public class GorgonMovement : FreeRoamMovement
             //    cooldown -= Time.fixedDeltaTime;
             //});
 
-        }, cancelCondition: () => this.ExecuteIfCancelled(gorgonHealth.currentHealth <= 0, () =>
+        }, cancelCondition: () => this.ExecuteIfCancelled(gorgonHealth.currentHealth <= 0 || gorgonHealth.currentHealth != healthNow, () =>
         {
             spitting = false;
             aimPivot.SetActive(false);
-            cooldown = 99999;
+            if (gorgonHealth.currentHealth <= 0)
+            {
+                cooldown = 99999;
+            }
         }));
     }
 

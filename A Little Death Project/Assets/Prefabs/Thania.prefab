@@ -804,7 +804,7 @@ Transform:
   m_GameObject: {fileID: 2378944453502927384}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 1.37, z: 0}
+  m_LocalPosition: {x: 14, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7288,6 +7288,7 @@ MonoBehaviour:
   timerUI: {fileID: 0}
   possessionUI: {fileID: 0}
   scythePossessionIcon: {fileID: 3060508396786621505}
+  hitVFX: {fileID: 4460011469358067606, guid: 685ca11d687c57d4bb2b03c4972526f6, type: 3}
   mySprites:
   - {fileID: 3440334591446172500}
   - {fileID: 386130079766746599}
@@ -7316,7 +7317,7 @@ MonoBehaviour:
   previewFeetAreaSize: 0
   creatureFeetArea: {x: 1, y: 0.3}
   primarySkillType: 1
-  primaryDistance: 1.8
+  primaryDistance: 2.25
   primaryEffectAmount: 1
   primaryValidLayer:
     serializedVersion: 2
@@ -27875,8 +27876,8 @@ Transform:
   m_GameObject: {fileID: 8870669827016555158}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.0864234, y: 4.8065696, z: 0}
-  m_LocalScale: {x: 0.25903064, y: 0.24369252, z: 0.2938912}
+  m_LocalPosition: {x: -6, y: 5, z: 0}
+  m_LocalScale: {x: 0.66, y: 0.66, z: 0.66}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1767263497670977543}
@@ -27924,7 +27925,7 @@ SpriteRenderer:
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 1f1ad9fabd4bdff4a8e77d457c10f3f9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 10.8, y: 10.8}

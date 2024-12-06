@@ -16,6 +16,23 @@ public class GorgonHealth : PossessableHealth
         movementManager = GetComponent<FreeRoamMovement>();
     }
 
+    public override bool Damage(GameObject damager, int damage)
+    {
+        Debug.Log(this + "took damage");
+        currentHealth -= damage;
+        KnockBack(damager, damage, currentHealth <= 0 ? false : true);
+        if(movementManager is GorgonMovement && currentHealth >= 1) { GetComponent<GorgonMovement>().animator.SetTrigger("Hit"); }
+
+        if (currentHealth <= 0)
+        {
+            if (audioManager) audioManager.stunned.Play();
+            _possessable = Possessable();
+            StartCoroutine(_possessable);
+            return true;
+        }
+        else return false;
+    }
+
     public override void Die()
     {
         foreach (var p in particleSystems)

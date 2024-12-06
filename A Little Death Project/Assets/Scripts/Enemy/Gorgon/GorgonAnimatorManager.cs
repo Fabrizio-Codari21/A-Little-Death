@@ -10,4 +10,9 @@ public class GorgonAnimatorManager : MonoBehaviour
     {
         movement.aimPivot.SetActive(true);
     }
+    
+    public void StopAim()
+    {
+        movement.aimPivot.SetActive(false);
+    }
 }

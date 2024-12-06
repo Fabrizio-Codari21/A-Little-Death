@@ -345,7 +345,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &51642429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28112,6 +28112,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3830757537684299972, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: skillUI
+      value: 
+      objectReference: {fileID: 1960680418}
+    - target: {fileID: 3830757537684299972, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: timerUI
+      value: 
+      objectReference: {fileID: 653018512}
+    - target: {fileID: 3830757537684299972, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: possessionUI
+      value: 
+      objectReference: {fileID: 1746422389}
     - target: {fileID: 3921727039297447124, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: m_Name
       value: Thania
@@ -28220,8 +28232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cde46431661a51344ba056444608bf23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  border: {fileID: 653018510}
-  border2: {fileID: 51642430}
   maxTime: 10
   timeLeft: 0
   timerActive: 0
@@ -47238,8 +47248,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.017499924, y: -0.1552, z: 0}
-    m_Extent: {x: 24.3104, y: 9.2018, z: 0}
+    m_Center: {x: 0.024150848, y: -0.15470028, z: 0}
+    m_Extent: {x: 24.30505, y: 9.1987, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1

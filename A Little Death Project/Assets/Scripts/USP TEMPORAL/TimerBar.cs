@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class TimerBar : MonoBehaviour
 {
     Image timer;
-    public Image border;
-    public Image border2;
+    //public Image border;
+    //public Image border2;
     public float maxTime = 10;
     public float timeLeft;
     public bool timerActive;
@@ -16,14 +16,14 @@ public class TimerBar : MonoBehaviour
     public float slowDownTime;
     public PlayerSkillManager manager;
 
-    Color _invisible;
-    Color _original;
+    //Color _invisible;
+    //Color _original;
 
     void Start()
     {
-        _invisible = new Color(1, 1, 1, 0);
-        _original = border.color;
-        slowdown = borderEffectSpeed / (maxTime / 2);
+        //_invisible = new Color(1, 1, 1, 0);
+        //_original = border.color;
+        //slowdown = borderEffectSpeed / (maxTime / 2);
 
 
         timer = GetComponent<Image>();
@@ -57,12 +57,12 @@ public class TimerBar : MonoBehaviour
             }*/
 
             timeLeft -= Time.deltaTime;
-            border.fillAmount = timeLeft / maxTime;
-            border2.fillAmount = timeLeft / maxTime;
+            //border.fillAmount = timeLeft / maxTime;
+            //border2.fillAmount = timeLeft / maxTime;
         }
     }
 
-    float slowdown;
+    /*float slowdown;
     void BorderEffect(float speed)
     {
         float sp = (speed / slowdown / timeLeft);
@@ -81,7 +81,7 @@ public class TimerBar : MonoBehaviour
         if (border.color.a <= 0.25f && timeLeft > 1f) _fadingIn = true;
 
         else if (border.color.a >= 0.75f || timeLeft <= 0.5f) _fadingIn = false;
-    }
+    }*/
 
     public void ActivateTimer(bool active)
     {

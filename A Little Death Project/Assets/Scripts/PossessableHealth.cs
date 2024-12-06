@@ -16,7 +16,7 @@ public class PossessableHealth : Health
     [HideInInspector] public bool startedPossession = false;
 
     public float stunTime;
-    IEnumerator _possessable;
+    protected IEnumerator _possessable;
     public bool isTutorial;
 
     public override bool Damage(GameObject damager, int damage)
@@ -45,7 +45,7 @@ public class PossessableHealth : Health
         return Damage(skillManager.gameObject, damage);
     }
 
-    IEnumerator Possessable()
+    protected IEnumerator Possessable()
     {
         GetComponent<EntityMovement>().canMove = false;  
         
