@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class PossessableHealth : Health
 {
-    [HideInInspector] public bool canBePossessed = false;
+    public bool canBePossessed = false;
     CharacterSkillSet _victim;
     public PlayerSkillManager _skillManager;
     [SerializeField] Animator _animator;
