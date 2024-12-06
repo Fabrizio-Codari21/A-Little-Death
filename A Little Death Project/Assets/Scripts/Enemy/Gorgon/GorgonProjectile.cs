@@ -25,7 +25,7 @@ public class GorgonProjectile : MonoBehaviour
     {
         var interactable = collision.GetComponent<IInteractable>();
 
-        if(interactable != null && skillManager.GetColliderAction() == ColliderAction.Break)
+        if(interactable != null)
         {
             print("la bala colisiono");
             interactable.PerformInteraction(true);

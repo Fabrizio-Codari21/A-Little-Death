@@ -383,7 +383,7 @@ MonoBehaviour:
   primaryValidLayer:
     serializedVersion: 2
     m_Bits: 0
-  primaryColliderAction: 2
+  primaryColliderAction: 1
   primaryOrigin: {fileID: 1795732226}
   primarySpawn: {fileID: 6112918768527085100, guid: 6ce063abe162838488c44e1cff672c11, type: 3}
   primaryCooldown: 3
@@ -867,11 +867,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05db6f89f44a58b4699b5bf4f4776663, type: 3}
---- !u!212 &81521060 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6295688979037765974, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
-  m_PrefabInstance: {fileID: 651881018}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &90204526 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4978855861634544101, guid: b2ae12edbf3cec146ac10f88aa0244cb, type: 3}
@@ -28959,7 +28954,7 @@ MonoBehaviour:
   UI: {fileID: 1746422389}
   borderEffectSpeed: 50
   slowDownTime: 3
-  dissolve: {fileID: 81521060}
+  manager: {fileID: 0}
 --- !u!1 &676049056
 GameObject:
   m_ObjectHideFlags: 0
@@ -85139,8 +85134,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.019599915, y: -0.14814997, z: 0}
-    m_Extent: {x: 24.3146, y: 9.193251, z: 0}
+    m_Center: {x: 0.025050163, y: -0.1553998, z: 0}
+    m_Extent: {x: 24.316349, y: 9.199699, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1

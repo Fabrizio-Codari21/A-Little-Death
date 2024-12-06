@@ -88,7 +88,9 @@ public class TimerBar : MonoBehaviour
         timerActive = active;
         timeLeft = maxTime;
 
-        var mat = manager.sprites[manager._currentSprite].timerSoul.GetComponent<SpriteRenderer>().material;
+        var mat = (manager.sprites[manager._currentSprite].timerSoul)
+                  ? manager.sprites[manager._currentSprite].timerSoul.GetComponent<SpriteRenderer>().material
+                  : default;
 
         if(mat) this.ExecuteUntil(timeLimit: maxTime, () =>
         {
