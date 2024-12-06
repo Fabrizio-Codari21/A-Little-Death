@@ -22,6 +22,14 @@ public class TutorialManager : MonoBehaviour
         "Si necesitas liberar tu alma, utiliza la <b>E</b>.",
 
         "Con <b>'Click Derecho'</b> vas a poder usar la habilidad secundaria brindada por este enemigo para llegar mas alto.",
+
+        "El siguiente enemigo es de piedra, asi que no podrás dañarlo hasta que el mismo se aturda al embestirte.",
+
+        "Utiliza <b>Click Izquierdo</b> para caer contra el piso y <b>'Click Derecho'</b> para deslizarte sobre el.",
+
+        "La gorgona intentará escupir veneno hacia tu posición, trata de engañarla.",
+
+        "Utiliza <b>Click Izquierdo</b> para apuntar y vuelve a presionarlo para escupir veneno",
     };
 
     int tutorialCount = 0;

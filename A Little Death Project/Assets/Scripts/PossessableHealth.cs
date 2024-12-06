@@ -116,6 +116,8 @@ public class PossessableHealth : Health
                 if (_cartelTutorial != default) { Destroy(_cartelTutorial); }
                 startedPossession = true;
                 if (GetComponent<Harpy>()) { OnPossess(3); }
+                if (GetComponent<BustHealth>()) { OnPossess(5); }
+                if (GetComponent<GorgonHealth>()) { OnPossess(7); }
                 else if (GetComponent<DeerHealth>()) 
                 {
                     OnPossess(1);

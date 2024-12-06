@@ -13,6 +13,7 @@ public class TutorialColliders : MonoBehaviour
     public GameObject tutorialBoxObj;
     public string wantToPrint;
     public float time;
+    public int printIndex;
     [SerializeField] bool venado;
     [SerializeField] bool activated = false;
 
@@ -30,7 +31,7 @@ public class TutorialColliders : MonoBehaviour
         {
             activated = true;
             Debug.Log("Calling Tutorial");
-            TutorialManager.instance.ChangeTutorial();
+            TutorialManager.instance.ChangeTutorial(printIndex != default ? printIndex : -1);
         }
     }
 
