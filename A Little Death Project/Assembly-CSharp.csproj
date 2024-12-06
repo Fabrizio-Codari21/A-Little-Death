@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Interfaces\IInteractable.cs" />
     <Compile Include="Assets\Scripts\BreakableDoor.cs" />
     <Compile Include="Assets\Scripts\Player\ThaniaMovement.cs" />
+    <Compile Include="Assets\Scripts\HitVFX.cs" />
     <Compile Include="Assets\Scripts\USP TEMPORAL\SkillList.cs" />
     <Compile Include="Assets\Scripts\Enemy\EntityMovement.cs" />
     <Compile Include="Assets\Scripts\USP TEMPORAL\USPMANAGER.cs" />

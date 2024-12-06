@@ -28815,6 +28815,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3830757537684299972, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 4460011469358067606, guid: 685ca11d687c57d4bb2b03c4972526f6, type: 3}
+    - target: {fileID: 3830757537684299972, guid: bed32ea1bb8ad8f40809f1ae9fe3f75f, type: 3}
       propertyPath: skillUI
       value: 
       objectReference: {fileID: 1960680418}
@@ -85162,8 +85166,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.026100159, y: -0.15465021, z: 0}
-    m_Extent: {x: 24.3171, y: 9.192949, z: 0}
+    m_Center: {x: 0.029449463, y: -0.15770006, z: 0}
+    m_Extent: {x: 24.31185, y: 9.1956005, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 1

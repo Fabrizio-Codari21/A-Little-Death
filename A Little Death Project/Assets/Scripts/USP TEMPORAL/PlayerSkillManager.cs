@@ -24,6 +24,7 @@ public class PlayerSkillManager : MonoBehaviour
     public TimerBar timerUI;
     public GameObject possessionUI;
     public GameObject scythePossessionIcon;
+    public GameObject hitVFX;
 
     [Header("POSSESSABLE CREATURE SPRITES")]
     public List<PlayerSprite> mySprites;

@@ -43,14 +43,18 @@ public class ThaniaSkills : MonoBehaviour, ISkillDefiner
 
             if (hits != false && manager.GetColliderAction() == ColliderAction.Damage)
             {
-                if (audioManager) audioManager.Hits[Random.Range(0, audioManager.Hits.Count - 1)].Play();
-                Debug.Log($"{mySkills.primarySkillType} dealt {mySkills.primaryEffectAmount} damage");
-
                 PossessableHealth damageable = hits.collider.gameObject.GetComponent<PossessableHealth>();
 
                 if (damageable != null && damageable.immune == false)
                 {
-                    print("pego");
+                    if (audioManager) audioManager.Hits[Random.Range(0, audioManager.Hits.Count - 1)].Play();
+                    Debug.Log($"{mySkills.primarySkillType} dealt {mySkills.primaryEffectAmount} damage");
+
+                    if(manager.hitVFX) Instantiate(manager.hitVFX, 
+                                                  hits.transform.position,
+                                                  Quaternion.Euler(0,0, Random.Range(0, 351)));
+
+
                     var victim = hits.collider.gameObject.GetComponent<CharacterSkillSet>();
                     var dead = damageable.DamagePossessable((int)mySkills.primaryEffectAmount, victim, skillManager, cartelTutorial);
                     if (dead)
